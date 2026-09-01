@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSME Health Check — Business Clinic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#122031;
+    --ink-soft:#3c4d5f;
+    --paper:#EEEBE3;
+    --panel:#FFFFFF;
+    --line:#D8D3C6;
+    --teal:#1F7A6C;
+    --teal-deep:#144F45;
+    --amber:#C98A2C;
+    --rust:#B4442E;
+    --sage:#3E7D4C;
+    --slate:#4A6D8C;
+    --shadow: 0 1px 2px rgba(18,32,49,0.06), 0 8px 24px rgba(18,32,49,0.06);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 80px;}
+  .brandline{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:28px;border-bottom:1px solid var(--line);padding-bottom:14px;}
+  .brand{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);}
+  .brand b{color:var(--ink);}
+  .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--teal-deep);background:rgba(31,122,108,0.1);padding:4px 9px;border-radius:20px;}
+  .reset-link{
+    appearance:none;background:transparent;border:1px solid var(--line);cursor:pointer;
+    font-family:'IBM Plex Sans';font-size:12px;font-weight:600;color:var(--ink-soft);
+    padding:5px 11px;border-radius:20px;transition:all .12s ease;
+  }
+  .reset-link:hover{border-color:var(--rust);color:var(--rust);}
+
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,4vw,38px);line-height:1.1;margin:0 0 10px;letter-spacing:-0.01em;}
+  .sub{color:var(--ink-soft);font-size:15.5px;line-height:1.55;margin:0 0 28px;max-width:56ch;}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:28px 26px;}
+
+  /* Intro form */
+  label{display:block;font-size:12.5px;font-weight:600;color:var(--ink-soft);margin-bottom:6px;letter-spacing:.02em;}
+  .field{margin-bottom:18px;}
+  input[type=text], select{
+    width:100%;padding:11px 12px;border-radius:8px;border:1px solid var(--line);
+    background:#FCFBF8;font-family:'IBM Plex Sans';font-size:14.5px;color:var(--ink);
+  }
+  input[type=text]:focus, select:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:var(--teal);}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:560px){.row2{grid-template-columns:1fr;}}
+
+  .btn{
+    appearance:none;border:none;cursor:pointer;font-family:'IBM Plex Sans';font-weight:600;font-size:14.5px;
+    padding:13px 22px;border-radius:9px;background:var(--ink);color:#fff;transition:transform .12s ease, background .15s ease;
+  }
+  .btn:hover{background:var(--teal-deep);}
+  .btn:active{transform:scale(0.98);}
+  .btn.secondary{background:transparent;color:var(--ink);border:1px solid var(--line);}
+  .btn.secondary:hover{background:#F3F1EA;}
+  .btn:disabled{opacity:.4;cursor:not-allowed;}
+  .btn-row{display:flex;justify-content:space-between;align-items:center;margin-top:26px;gap:12px;}
+
+  /* Progress */
+  .progress-wrap{margin-bottom:22px;}
+  .progress-top{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-soft);margin-bottom:8px;letter-spacing:.03em;}
+  .progress-track{height:6px;background:#E2DECF;border-radius:6px;overflow:hidden;}
+  .progress-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--teal-deep));border-radius:6px;transition:width .35s ease;}
+
+  .cat-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:6px;}
+  .cat-title{font-family:'Fraunces',serif;font-size:24px;font-weight:600;margin:0 0 22px;}
+
+  .q{padding:18px 0;border-top:1px solid var(--line);}
+  .q:first-of-type{border-top:none;padding-top:0;}
+  .q-text{font-size:15px;line-height:1.45;margin-bottom:12px;font-weight:500;}
+  .opts{display:flex;gap:8px;flex-wrap:wrap;}
+  .opt{
+    flex:1;min-width:96px;text-align:center;padding:10px 8px;border-radius:8px;border:1px solid var(--line);
+    background:#FCFBF8;cursor:pointer;font-size:13.5px;font-weight:600;color:var(--ink-soft);transition:all .12s ease;
+    user-select:none;
+  }
+  .opt:hover{border-color:var(--teal);}
+  .opt.sel-yes.active{background:var(--teal);border-color:var(--teal);color:#fff;}
+  .opt.sel-partial.active{background:var(--amber);border-color:var(--amber);color:#fff;}
+  .opt.sel-no.active{background:#8B8577;border-color:#8B8577;color:#fff;}
+  .opt.sel-na.active{background:var(--slate);border-color:var(--slate);color:#fff;}
+
+  .profile-note{font-size:12.5px;color:var(--ink-soft);background:#F3F1EA;border-radius:8px;padding:10px 12px;margin-bottom:20px;}
+
+  /* Results */
+  .gauge-wrap{display:flex;flex-direction:column;align-items:center;padding:8px 0 6px;}
+  .score-big{font-family:'Fraunces',serif;font-size:56px;font-weight:700;margin-top:-8px;line-height:1;}
+  .score-of{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-soft);margin-top:4px;}
+  .band-pill{display:inline-flex;align-items:center;gap:7px;padding:7px 16px;border-radius:30px;font-weight:700;font-size:14px;margin-top:14px;}
+  .band-desc{text-align:center;color:var(--ink-soft);font-size:14.5px;max-width:46ch;margin:12px auto 0;line-height:1.5;}
+
+  .section-label{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin:34px 0 14px;}
+
+  .vitals{display:flex;flex-direction:column;gap:14px;}
+  .vital-row{display:grid;grid-template-columns:1fr 120px auto;align-items:center;gap:12px;}
+  .vital-name{font-size:13.5px;font-weight:600;}
+  .vital-track{height:9px;background:#E2DECF;border-radius:5px;overflow:hidden;}
+  .vital-fill{height:100%;border-radius:5px;}
+  .vital-pct{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--ink-soft);text-align:right;min-width:34px;}
+
+  .gaps{display:flex;flex-direction:column;gap:10px;}
+  .gap-item{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;background:#FBF3EC;border:1px solid #EAD9C6;border-radius:9px;}
+  .gap-dot{width:7px;height:7px;border-radius:50%;background:var(--rust);margin-top:6px;flex-shrink:0;}
+  .gap-text b{display:block;font-size:13.5px;margin-bottom:2px;}
+  .gap-text span{font-size:12.5px;color:var(--ink-soft);}
+
+  .cta-box{margin-top:32px;background:var(--ink);border-radius:12px;padding:24px 24px;color:#fff;}
+  .cta-box h3{font-family:'Fraunces',serif;font-weight:600;font-size:19px;margin:0 0 8px;}
+  .cta-box p{font-size:13.5px;color:#C9D3D8;margin:0 0 16px;line-height:1.5;}
+  .cta-box .btn{background:var(--teal);}
+  .cta-box .btn:hover{background:#279e8c;}
+
+  footer{margin-top:26px;text-align:center;font-size:11.5px;color:var(--ink-soft);}
+  .respondent-summary{font-size:12.5px;color:var(--ink-soft);margin-bottom:6px;}
+
+  /* Modal */
+  .modal-backdrop{
+    position:fixed;left:0;right:0;bottom:0;top:84px;background:rgba(18,32,49,0.55);display:flex;align-items:center;justify-content:center;
+    padding:20px;z-index:50;
+  }
+  .modal{
+    background:var(--panel);border-radius:14px;max-width:440px;width:100%;padding:26px 26px 22px;
+    box-shadow:0 20px 60px rgba(18,32,49,0.35);max-height:90vh;overflow-y:auto;
+  }
+  .modal h2{font-family:'Fraunces',serif;font-size:21px;font-weight:600;margin:0 0 6px;}
+  .modal p.mdesc{font-size:13px;color:var(--ink-soft);margin:0 0 20px;line-height:1.5;}
+  .req{color:var(--rust);}
+  .err{font-size:11.5px;color:var(--rust);margin-top:4px;display:none;}
+  .field.has-err input{border-color:var(--rust);}
+  .field.has-err .err{display:block;}
+  .modal-note{font-size:11px;color:var(--ink-soft);margin-top:14px;line-height:1.5;background:#F3F1EA;padding:9px 11px;border-radius:8px;}
+  .confirm-modal{max-width:380px;text-align:center;}
+  .confirm-modal p{font-size:14px;color:var(--ink-soft);line-height:1.5;margin:10px 0 20px;}
+  .confirm-btn-row{display:flex;gap:10px;justify-content:center;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brandline">
+    <div class="brand"><b>Business Clinic</b> · MSME Troubleshooting</div>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button id="headerResetBtn" class="reset-link">↺ Reset</button>
+      <div class="tag">Self-Assessment</div>
+    </div>
+  </div>
+
+  <div id="app"></div>
+
+  <footer id="footerNote">Business Clinic — action-oriented advisory for Indian MSMEs. This preliminary score is directional; a full diagnostic refines it.</footer>
+</div>
+
+<script>
+/* ============================================================
+   EMAIL FORWARDING SETUP (required for lead capture to work)
+   1. Go to https://web3forms.com
+   2. Enter the Gmail address you want submissions sent to
+   3. You'll receive a free Access Key by email
+   4. Paste it below, replacing YOUR_ACCESS_KEY_HERE
+   ============================================================ */
+const WEB3FORMS_ACCESS_KEY = "056edc09-942b-4f07-b553-9a65f7892d3a";
+
+/* ---------------- DATA MODEL ---------------- */
+const CATEGORIES = [
+  {
+    id:'strategy', name:'Business Strategy & Leadership', points:10,
+    questions:[
+      'Is there a Vision and Mission Statement for the company?',
+      'Is there a documented business plan?',
+      'Are annual growth targets defined?',
+      'Is there a formal review mechanism?',
+      'Are KPIs monitored monthly?',
+      'Is succession planning in place?',
+      'Has a risk assessment of the company been carried out?'
+    ]
+  },
+  {
+    id:'sales', name:'Sales & Market Development', points:10,
+    questions:[
+      'Does leadership devote more than 50% of its time to sales & marketing?',
+      'Is there a formal sales pipeline?',
+      'Are export opportunities being pursued?',
+      'Is customer feedback systematically collected?',
+      'Is there an active digital marketing presence?'
+    ]
+  },
+  {
+    id:'manufacturing', name:'Manufacturing & Operations', points:15,
+    questions:[
+      'Are production targets consistently achieved?',
+      'Is OEE (Overall Equipment Effectiveness) measured?',
+      'Are bottlenecks identified and tracked?',
+      'Are SOPs available and followed?',
+      'Is preventive maintenance implemented?'
+    ]
+  },
+  {
+    id:'quality', name:'Quality Management', points:10,
+    questions:[
+      'Is there a documented quality system?',
+      'Are rejection rates tracked?',
+      'Is root cause analysis conducted?',
+      'Are corrective actions monitored?',
+      'Is supplier quality evaluated?'
+    ]
+  },
+  {
+    id:'supplychain', name:'Supply Chain & Vendor Management', points:10,
+    questions:[
+      'Are critical vendors formally evaluated?',
+      'Is vendor performance measured?',
+      'Are alternate suppliers available?',
+      'Are inventory levels optimized?',
+      'Are lead times monitored?'
+    ]
+  },
+  {
+    id:'financial', name:'Financial Health', points:10,
+    questions:[
+      'Are monthly MIS reports generated?',
+      'Is cash flow monitored?',
+      'Are receivables controlled?',
+      'Is profitability tracked product-wise?',
+      'Are working capital requirements understood?'
+    ]
+  },
+  {
+    id:'hr', name:'Human Resources & Organization', points:10,
+    questions:[
+      'Are roles and responsibilities documented?',
+      'Is employee turnover monitored?',
+      'Is skill development conducted?',
+      'Are performance reviews undertaken?',
+      'Is workforce productivity measured?'
+    ]
+  },
+  {
+    id:'compliance', name:'Compliance & Risk Management', points:10,
+    questions:[
+      'Are statutory compliances current?',
+      'Are licenses and certifications valid?',
+      'Is risk assessment periodically conducted?',
+      'Are contracts reviewed professionally?',
+      'Is cyber/data security addressed?'
+    ]
+  },
+  {
+    id:'technology', name:'Technology & Digital Readiness', points:5,
+    questions:[
+      'Is ERP/MRP in use?',
+      'Is production data digitized?',
+      'Is there digital document management?',
+      'Is an automation roadmap available?',
+      'Is decision-making data-driven?'
+    ]
+  },
+  {
+    id:'growth', name:'Growth & Scalability Readiness', points:10,
+    questions:[
+      'Is capacity utilization at an optimal level?',
+      'Is an expansion strategy defined?',
+      'Has export readiness been assessed?',
+      'Are relevant government schemes being utilized?',
+      'Are strategic partnerships being explored?'
+    ]
+  }
+];
+
+const BANDS = [
+  {min:85, max:100, label:'Growth Ready', color:'var(--sage)', bg:'#E7F1E7',
+   desc:'Strong systems and scalable operations.'},
+  {min:70, max:84.999, label:'Stable but Improvement Needed', color:'var(--amber)', bg:'#FBF0DE',
+   desc:'Growth potential exists, but certain bottlenecks need attention.'},
+  {min:50, max:69.999, label:'Operational Risk Zone', color:'#C1701F', bg:'#FBEADA',
+   desc:'Several weaknesses affecting profitability and competitiveness.'},
+  {min:0, max:49.999, label:'Critical Intervention Required', color:'var(--rust)', bg:'#F7E4DF',
+   desc:'Significant operational, financial, or compliance risks.'}
+];
+
+/* ---------------- STATE ---------------- */
+let state = {
+  screen:'intro', // intro | question | results
+  profile:{ company:'', country:'', industry:'', entryRoute:'', productApproach:'' },
+  contact:{ name:'', designation:'', email:'', phone:'', website:'' },
+  answers:{}, // key: catId::qIndex -> 'yes'|'partial'|'no'|'na'
+  catIndex:0,
+  showContactModal:false,
+  showRequestModal:null // null | 'diagnostic' | 'audit'
+};
+
+function activeCategories(){
+  return CATEGORIES.map(c=> ({...c, activeQuestions:c.questions}) );
+}
+
+/* ---------------- RENDER ---------------- */
+const app = document.getElementById('app');
+
+function resetApp(){
+  state = {
+    screen:'intro',
+    profile:{ company:'', country:'', industry:'', entryRoute:'', productApproach:'' },
+    contact:{ name:'', designation:'', email:'', phone:'', website:'' },
+    answers:{},
+    catIndex:0,
+    showContactModal:false,
+    showRequestModal:null
+  };
+  render();
+}
+
+function render(){
+  window.scrollTo({ top: 0, behavior: 'auto' });
+
+  const existingModal = document.getElementById('contactBackdrop');
+  if(existingModal) existingModal.remove();
+  const existingConfirm = document.getElementById('confirmBackdrop');
+  if(existingConfirm) existingConfirm.remove();
+  const existingRequest = document.getElementById('requestBackdrop');
+  if(existingRequest) existingRequest.remove();
+
+  if(state.screen==='intro') renderIntro();
+  else if(state.screen==='question') renderQuestion();
+  else renderResults();
+
+  if(state.showContactModal) renderContactModal();
+  if(state.showRequestModal) renderRequestModal(state.showRequestModal);
+}
+
+function renderContactModal(){
+  const c = state.contact;
+  const div = document.createElement('div');
+  div.className = 'modal-backdrop';
+  div.id = 'contactBackdrop';
+  div.innerHTML = `
+    <div class="modal">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <h2>Before you begin</h2>
+        <button id="modalCancel" title="Cancel and go back" style="appearance:none;border:none;background:transparent;cursor:pointer;font-size:20px;line-height:1;color:var(--ink-soft);padding:2px 4px;">&times;</button>
+      </div>
+      <p class="mdesc">Tell us who to send your health check results to. Business Clinic will use this to follow up with your Preliminary Health Check and, if relevant, an invitation to a diagnostic session.</p>
+
+      <div class="field" id="m-name-field">
+        <label>Full Name <span class="req">*</span></label>
+        <input type="text" id="m-name" placeholder="Jane Müller" value="${c.name}">
+        <div class="err">Please enter your name.</div>
+      </div>
+      <div class="field" id="m-designation-field">
+        <label>Designation <span class="req">*</span></label>
+        <input type="text" id="m-designation" placeholder="VP International Business" value="${c.designation}">
+        <div class="err">Please enter your designation.</div>
+      </div>
+      <div class="field" id="m-email-field">
+        <label>Company Email <span class="req">*</span></label>
+        <input type="text" id="m-email" placeholder="jane@company.com" value="${c.email}">
+        <div class="err">Please enter a valid email address.</div>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label>Telephone</label>
+          <input type="text" id="m-phone" placeholder="+49 30 1234567" value="${c.phone}">
+        </div>
+        <div class="field">
+          <label>Company Website</label>
+          <input type="text" id="m-website" placeholder="company.com" value="${c.website}">
+        </div>
+      </div>
+
+      <div class="btn-row" style="margin-top:6px;">
+        <span id="modalErr" style="font-size:12px;color:var(--rust);"></span>
+        <button class="btn" id="modalSubmit">Continue to Assessment →</button>
+      </div>
+      <div class="modal-note">Submitting this form sends your details to Business Clinic via email. It is not stored anywhere else.</div>
+    </div>
+  `;
+  document.body.appendChild(div);
+
+  document.getElementById('modalCancel').onclick = ()=>{
+    // Preserve whatever was typed so reopening the modal doesn't lose it
+    state.contact = {
+      name: document.getElementById('m-name').value,
+      designation: document.getElementById('m-designation').value,
+      email: document.getElementById('m-email').value,
+      phone: document.getElementById('m-phone').value,
+      website: document.getElementById('m-website').value
+    };
+    state.showContactModal = false;
+    render();
+  };
+
+  document.getElementById('modalSubmit').onclick = async ()=>{
+    const name = document.getElementById('m-name').value.trim();
+    const designation = document.getElementById('m-designation').value.trim();
+    const email = document.getElementById('m-email').value.trim();
+    const phone = document.getElementById('m-phone').value.trim();
+    const website = document.getElementById('m-website').value.trim();
+
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    document.getElementById('m-name-field').classList.toggle('has-err', !name);
+    document.getElementById('m-designation-field').classList.toggle('has-err', !designation);
+    document.getElementById('m-email-field').classList.toggle('has-err', !emailOk);
+
+    if(!name || !designation || !emailOk) return;
+
+    const btn = document.getElementById('modalSubmit');
+    const errEl = document.getElementById('modalErr');
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+    errEl.textContent = '';
+
+    const payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: `New MSME Health Check lead: ${state.profile.company || name}`,
+      from_name: 'Business Clinic Scorecard',
+      "Full Name": name,
+      "Designation": designation,
+      "Email": email,
+      "Telephone": phone || '(not provided)',
+      "Company Website": website || '(not provided)',
+      "Company Name": state.profile.company || '(not provided)',
+      "State / Location": state.profile.country || '(not provided)',
+      "Industry": state.profile.industry || '(not provided)',
+      "Number of Employees": state.profile.entryRoute || '(not provided)',
+      "Annual Turnover": state.profile.productApproach || '(not provided)'
+    };
+
+    let sent = false;
+    if(WEB3FORMS_ACCESS_KEY !== "YOUR_ACCESS_KEY_HERE"){
+      try{
+        const formData = new FormData();
+        Object.entries(payload).forEach(([k,v])=> formData.append(k, v));
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method:'POST',
+          headers:{ 'Accept':'application/json' },
+          body: formData
+        });
+        const data = await res.json();
+        sent = !!data.success;
+        if(!sent){ errEl.textContent = 'Could not send — check your Access Key. Proceeding anyway.'; }
+      }catch(err){
+        errEl.textContent = 'Network error sending details. Proceeding anyway.';
+      }
+    } else {
+      sent = false;
+    }
+
+    state.contact = { name, designation, email, phone, website, emailSent: sent };
+    state.showContactModal = false;
+    state.screen = 'question';
+    state.catIndex = 0;
+    render();
+  };
+}
+
+function renderIntro(){
+  app.innerHTML = `
+    <h1>MSME Health Check</h1>
+    <p class="sub">A structured self-assessment across ten operational dimensions. Answer honestly — the value of this tool is in the gaps it surfaces, not a high score.</p>
+    <div class="card">
+      <div class="field">
+        <label>Company Name</label>
+        <input type="text" id="f-company" placeholder="Shree Enterprises Pvt. Ltd." value="${state.profile.company}">
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label>Industry / Sector</label>
+          <select id="f-industry">
+            <option value="">Select sector</option>
+            ${['Engineering & Fabrication','Textiles & Apparel','Auto Components','Chemicals & Plastics','Food Processing','Electronics & Electricals','Pharma & Life Sciences','Other Manufacturing','Services']
+              .map(o=>`<option value="${o}" ${state.profile.industry===o?'selected':''}>${o}</option>`).join('')}
+          </select>
+        </div>
+        <div class="field">
+          <label>Number of Employees</label>
+          <select id="f-employees">
+            <option value="">Select range</option>
+            ${['Under 20','20–50','51–100','101–250','250+']
+              .map(o=>`<option value="${o}" ${state.profile.entryRoute===o?'selected':''}>${o}</option>`).join('')}
+          </select>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label>Annual Turnover</label>
+          <select id="f-turnover">
+            <option value="">Select range</option>
+            ${['Under ₹1 Cr','₹1–5 Cr','₹5–25 Cr','₹25–100 Cr','Above ₹100 Cr']
+              .map(o=>`<option value="${o}" ${state.profile.productApproach===o?'selected':''}>${o}</option>`).join('')}
+          </select>
+        </div>
+        <div class="field">
+          <label>State / Location</label>
+          <input type="text" id="f-location" placeholder="Pune, Maharashtra" value="${state.profile.country}">
+        </div>
+      </div>
+      <div class="btn-row">
+        <span style="font-size:12.5px;color:var(--ink-soft);">Takes about 8–10 minutes</span>
+        <button class="btn" id="startBtn">Begin Assessment →</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('f-company').oninput = e=> state.profile.company = e.target.value;
+  document.getElementById('f-location').oninput = e=> state.profile.country = e.target.value;
+  document.getElementById('f-industry').onchange = e=> state.profile.industry = e.target.value;
+  document.getElementById('f-employees').onchange = e=> state.profile.entryRoute = e.target.value;
+  document.getElementById('f-turnover').onchange = e=> state.profile.productApproach = e.target.value;
+  document.getElementById('startBtn').onclick = ()=>{
+    state.showContactModal = true; render();
+  };
+}
+
+function renderQuestion(){
+  const cats = activeCategories();
+  const cat = cats[state.catIndex];
+  const totalQ = cats.reduce((s,c)=>s+c.activeQuestions.length,0);
+  const answeredBefore = cats.slice(0,state.catIndex).reduce((s,c)=>s+c.activeQuestions.length,0);
+
+  function computeProgress(){
+    const answeredInCat = cat.activeQuestions.filter((_,i)=>state.answers[cat.id+'::'+i]).length;
+    const doneCount = answeredBefore + answeredInCat;
+    return { pct: Math.round((doneCount/totalQ)*100), allAnswered: answeredInCat === cat.activeQuestions.length };
+  }
+  const initial = computeProgress();
+
+  app.innerHTML = `
+    <div class="progress-wrap">
+      <div class="progress-top"><span>CATEGORY ${state.catIndex+1} OF ${cats.length}</span><span id="pctLabel">${initial.pct}% COMPLETE</span></div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:${initial.pct}%"></div></div>
+    </div>
+    <div class="card">
+      <div class="cat-eyebrow">${cat.points} points available</div>
+      <div class="cat-title">${cat.name}</div>
+      ${cat.activeQuestions.map((q,i)=>{
+        const key = cat.id+'::'+i;
+        const val = state.answers[key];
+        return `
+        <div class="q">
+          <div class="q-text">${q}</div>
+          <div class="opts">
+            <div class="opt sel-yes ${val==='yes'?'active':''}" data-key="${key}" data-val="yes">Yes</div>
+            <div class="opt sel-partial ${val==='partial'?'active':''}" data-key="${key}" data-val="partial">Partially</div>
+            <div class="opt sel-no ${val==='no'?'active':''}" data-key="${key}" data-val="no">No</div>
+            <div class="opt sel-na ${val==='na'?'active':''}" data-key="${key}" data-val="na">N/A</div>
+          </div>
+        </div>`;
+      }).join('')}
+      <div class="btn-row">
+        <button class="btn secondary" id="backBtn" ${state.catIndex===0?'disabled':''}>← Back</button>
+        <button class="btn" id="nextBtn" ${initial.allAnswered?'':'disabled'}>${state.catIndex===cats.length-1?'See Results →':'Next Category →'}</button>
+      </div>
+    </div>
+  `;
+
+  app.querySelectorAll('.opt').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      const key = el.dataset.key;
+      state.answers[key] = el.dataset.val;
+
+      // Update only this question's option buttons in place (no full re-render)
+      const qDiv = el.closest('.q');
+      qDiv.querySelectorAll('.opt').forEach(o=>{
+        o.classList.toggle('active', o.dataset.val === el.dataset.val);
+      });
+
+      // Update progress bar + next button without rebuilding the whole screen
+      const p = computeProgress();
+      const pctLabel = document.getElementById('pctLabel');
+      const fill = document.getElementById('progressFill');
+      const nextBtn = document.getElementById('nextBtn');
+      if(pctLabel) pctLabel.textContent = p.pct + '% COMPLETE';
+      if(fill) fill.style.width = p.pct + '%';
+      if(nextBtn) nextBtn.disabled = !p.allAnswered;
+    });
+  });
+  document.getElementById('backBtn').onclick = ()=>{
+    if(state.catIndex===0){ state.screen='intro'; } else { state.catIndex--; }
+    render();
+  };
+  document.getElementById('nextBtn').onclick = ()=>{
+    if(state.catIndex === cats.length-1){ state.screen='results'; }
+    else { state.catIndex++; }
+    render();
+  };
+}
+
+function scoreValue(v, perQ){
+  if(v==='yes') return perQ;
+  if(v==='partial') return perQ/2;
+  return 0;
+}
+
+function computeResults(){
+  const cats = activeCategories();
+  let totalEarned = 0;
+  let totalAchievable = 0;
+
+  const catResults = cats.map(c=>{
+    const perQ = c.points / c.activeQuestions.length;
+    const applicable = c.activeQuestions.filter((_,i)=> state.answers[c.id+'::'+i] !== 'na');
+    const naCount = c.activeQuestions.length - applicable.length;
+    const isFullyNA = applicable.length === 0;
+
+    if(isFullyNA){
+      // Whole category doesn't apply to this business — excluded from both
+      // the earned score and the 100-point ceiling, so it neither helps nor hurts.
+      return { name:c.name, points:c.points, earned:0, pct:0, isFullyNA:true, naCount };
+    }
+
+    let rawSum = 0;
+    c.activeQuestions.forEach((_,i)=>{
+      const v = state.answers[c.id+'::'+i];
+      if(v !== 'na') rawSum += scoreValue(v, perQ);
+    });
+    const maxApplicable = perQ * applicable.length;
+    const rescaledEarned = (rawSum / maxApplicable) * c.points;
+
+    totalEarned += rescaledEarned;
+    totalAchievable += c.points;
+
+    return { name:c.name, points:c.points, earned:rescaledEarned, pct: rescaledEarned/c.points*100, isFullyNA:false, naCount };
+  });
+
+  const total = totalAchievable > 0 ? (totalEarned/totalAchievable)*100 : 0;
+  return { total, catResults, totalAchievable };
+}
+
+function renderRequestModal(type){
+  const isDiagnostic = type === 'diagnostic';
+  const title = isDiagnostic ? 'Request Your Free 30-Minute Diagnostic Consultation' : 'Request a Detailed Industrial Health Audit';
+  const c = state.contact;
+
+  const div = document.createElement('div');
+  div.className = 'modal-backdrop';
+  div.id = 'requestBackdrop';
+  div.innerHTML = `
+    <div class="modal">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <h2>${title}</h2>
+        <button id="requestCancel" title="Close" style="appearance:none;border:none;background:transparent;cursor:pointer;font-size:20px;line-height:1;color:var(--ink-soft);padding:2px 4px;">&times;</button>
+      </div>
+      <p class="mdesc">We already have your details from the assessment. Confirm below and Business Clinic will reach out to schedule.</p>
+
+      <div class="field" id="r-name-field">
+        <label>Full Name <span class="req">*</span></label>
+        <input type="text" id="r-name" value="${c.name || ''}">
+        <div class="err">Please enter your name.</div>
+      </div>
+      <div class="field" id="r-email-field">
+        <label>Email <span class="req">*</span></label>
+        <input type="text" id="r-email" value="${c.email || ''}">
+        <div class="err">Please enter a valid email address.</div>
+      </div>
+      ${isDiagnostic ? `
+      <div class="row2">
+        <div class="field">
+          <label>Telephone</label>
+          <input type="text" id="r-phone" value="${c.phone || ''}">
+        </div>
+        <div class="field">
+          <label>Preferred Date & Time</label>
+          <input type="datetime-local" id="r-preferred">
+        </div>
+      </div>
+      ` : `
+      <div class="field">
+        <label>Telephone</label>
+        <input type="text" id="r-phone" value="${c.phone || ''}">
+      </div>
+      `}
+      <div class="field">
+        <label>Anything specific you'd like us to know?</label>
+        <input type="text" id="r-notes" placeholder="Optional">
+      </div>
+
+      <div class="btn-row" style="margin-top:6px;">
+        <span id="requestErr" style="font-size:12px;color:var(--rust);"></span>
+        <button class="btn" id="requestSubmit">Send Request →</button>
+      </div>
+      <div class="modal-note">This sends your request directly to Business Clinic by email.</div>
+    </div>
+  `;
+  document.body.appendChild(div);
+
+  document.getElementById('requestCancel').onclick = ()=>{
+    state.showRequestModal = null; render();
+  };
+
+  document.getElementById('requestSubmit').onclick = async ()=>{
+    const name = document.getElementById('r-name').value.trim();
+    const email = document.getElementById('r-email').value.trim();
+    const phone = document.getElementById('r-phone').value.trim();
+    const preferredEl = document.getElementById('r-preferred');
+    let preferred = '';
+    if(preferredEl && preferredEl.value){
+      const d = new Date(preferredEl.value);
+      preferred = d.toLocaleString('en-IN', { weekday:'short', day:'numeric', month:'short', year:'numeric', hour:'numeric', minute:'2-digit' });
+    }
+    const notes = document.getElementById('r-notes').value.trim();
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    document.getElementById('r-name-field').classList.toggle('has-err', !name);
+    document.getElementById('r-email-field').classList.toggle('has-err', !emailOk);
+    if(!name || !emailOk) return;
+
+    const btn = document.getElementById('requestSubmit');
+    const errEl = document.getElementById('requestErr');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    errEl.textContent = '';
+
+    const { total, catResults } = computeResults();
+    const roundedTotal = Math.round(total);
+    const band = BANDS.find(b=> total>=b.min && total<=b.max) || BANDS[BANDS.length-1];
+    const gapsSummary = [...catResults].filter(c=>!c.isFullyNA).sort((a,b)=>a.pct-b.pct).slice(0,3)
+      .map(c=>`${c.name} (${Math.round(c.pct)}%)`).join(', ');
+
+    const payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: `New ${isDiagnostic ? 'Diagnostic Consultation' : 'Industrial Health Audit'} request: ${state.profile.company || name}`,
+      from_name: 'Business Clinic MSME Health Check',
+      "Request Type": isDiagnostic ? 'Free 30-Minute Diagnostic Consultation' : 'Detailed Industrial Health Audit',
+      "Full Name": name,
+      "Email": email,
+      "Telephone": phone || '(not provided)',
+      ...(isDiagnostic ? { "Preferred Date/Time": preferred || '(not specified)' } : {}),
+      "Notes": notes || '(none)',
+      "Company Name": state.profile.company || '(not provided)',
+      "Industry": state.profile.industry || '(not provided)',
+      "Health Check Score": `${roundedTotal}/100 — ${band.label}`,
+      "Top Improvement Areas": gapsSummary || '(n/a)'
+    };
+
+    let sent = false;
+    if(WEB3FORMS_ACCESS_KEY !== "YOUR_ACCESS_KEY_HERE"){
+      try{
+        const formData = new FormData();
+        Object.entries(payload).forEach(([k,v])=> formData.append(k, v));
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method:'POST',
+          headers:{ 'Accept':'application/json' },
+          body: formData
+        });
+        const data = await res.json();
+        sent = !!data.success;
+        if(!sent){ errEl.textContent = 'Could not send — please try again or contact us directly.'; btn.disabled=false; btn.textContent='Send Request →'; return; }
+      }catch(err){
+        errEl.textContent = 'Network error — please try again.';
+        btn.disabled = false; btn.textContent = 'Send Request →';
+        return;
+      }
+    }
+
+    // Success state
+    div.querySelector('.modal').innerHTML = `
+      <div style="text-align:center;padding:10px 0;">
+        <div style="font-size:36px;margin-bottom:10px;">✓</div>
+        <h2>Request sent</h2>
+        <p class="mdesc">Business Clinic has received your request and will be in touch shortly at ${email}.</p>
+        <button class="btn" id="requestClose">Close</button>
+      </div>
+    `;
+    document.getElementById('requestClose').onclick = ()=>{
+      state.showRequestModal = null; render();
+    };
+  };
+}
+
+function renderResults(){
+  const { total, catResults, totalAchievable } = computeResults();
+  const roundedTotal = Math.round(total);
+  const band = BANDS.find(b=> total>=b.min && total<=b.max) || BANDS[BANDS.length-1];
+  const naCategories = catResults.filter(c=>c.isFullyNA);
+
+  const sortedGaps = [...catResults].filter(c=>!c.isFullyNA).sort((a,b)=>a.pct-b.pct).slice(0,3);
+
+  app.innerHTML = `
+    <div class="card">
+      ${state.profile.company ? `<div class="respondent-summary">${state.profile.company}${state.profile.industry ? ' · '+state.profile.industry : ''}${state.profile.country ? ' · '+state.profile.country : ''}</div>` : ''}
+      <div class="gauge-wrap">
+        <div class="section-label" style="margin:0 0 4px;">Your Health Check Score</div>
+        <div class="score-big" style="color:${band.color}">${roundedTotal}</div>
+        <div class="score-of">OUT OF 100</div>
+        <div class="band-pill" style="background:${band.bg};color:${band.color}">● ${band.label}</div>
+        <div class="band-desc">${band.desc}</div>
+        ${naCategories.length ? `<div style="font-size:12px;color:var(--ink-soft);margin-top:10px;">${naCategories.length} categor${naCategories.length>1?'ies':'y'} marked not applicable — scored across the remaining ${totalAchievable} points, normalized to 100.</div>` : ''}
+      </div>
+
+      <div class="section-label">Health by Category</div>
+      <div class="vitals">
+        ${catResults.map(c=>{
+          if(c.isFullyNA){
+            return `
+            <div class="vital-row">
+              <div class="vital-name">${c.name}</div>
+              <div class="vital-track"><div class="vital-fill" style="width:100%;background:repeating-linear-gradient(45deg,#4A6D8C33,#4A6D8C33 6px,#4A6D8C1a 6px,#4A6D8C1a 12px);"></div></div>
+              <div class="vital-pct" style="color:var(--slate);font-weight:600;">N/A</div>
+            </div>`;
+          }
+          const barColor = c.pct>=70 ? 'var(--sage)' : c.pct>=40 ? 'var(--amber)' : 'var(--rust)';
+          return `
+          <div class="vital-row">
+            <div class="vital-name">${c.name}</div>
+            <div class="vital-track"><div class="vital-fill" style="width:${c.pct}%;background:${barColor}"></div></div>
+            <div class="vital-pct">${Math.round(c.pct)}%</div>
+          </div>`;
+        }).join('')}
+      </div>
+
+      <div class="section-label">Your Top 3 Improvement Areas</div>
+      <div class="gaps">
+        ${sortedGaps.map(g=>`
+          <div class="gap-item">
+            <div class="gap-dot"></div>
+            <div class="gap-text"><b>${g.name}</b><span>Scoring ${Math.round(g.pct)}% health — prioritize this before it compounds into a bigger operational or financial issue.</span></div>
+          </div>
+        `).join('')}
+      </div>
+
+      <div class="cta-box">
+        <h3>Recommended Next Step</h3>
+        <p>This self-assessment is directional. Business Clinic can go deeper with a structured diagnostic — and if you want it, help you fix what's found, not just report on it.</p>
+        <div class="confirm-btn-row" style="justify-content:flex-start;flex-wrap:wrap;">
+          <button class="btn" id="ctaDiagnostic">Free 30-Minute Diagnostic Consultation</button>
+          <button class="btn secondary" id="ctaAudit" style="background:transparent;border:1px solid rgba(255,255,255,0.35);color:#fff;">Detailed Industrial Health Audit</button>
+        </div>
+      </div>
+
+      <div class="btn-row" style="margin-top:22px;">
+        <button class="btn secondary" id="restartBtn">Start Over</button>
+        <span style="font-size:12px;color:var(--ink-soft);">Score generated ${new Date().toLocaleDateString()}</span>
+      </div>
+    </div>
+  `;
+  document.getElementById('restartBtn').onclick = ()=>{
+    resetApp();
+  };
+  document.getElementById('ctaDiagnostic').onclick = ()=>{
+    state.showRequestModal = 'diagnostic'; render();
+  };
+  document.getElementById('ctaAudit').onclick = ()=>{
+    state.showRequestModal = 'audit'; render();
+  };
+}
+
+render();
+
+document.getElementById('headerResetBtn').onclick = ()=>{
+  const hasProgress = Object.keys(state.answers).length > 0 || state.profile.company || state.contact.name;
+  if(!hasProgress){ resetApp(); return; }
+
+  // Custom in-page confirmation (native confirm() can be silently blocked in embedded/sandboxed views)
+  const div = document.createElement('div');
+  div.className = 'modal-backdrop';
+  div.id = 'confirmBackdrop';
+  div.innerHTML = `
+    <div class="modal confirm-modal">
+      <h2>Start a new assessment?</h2>
+      <p>This will clear all answers and contact details you've entered so far.</p>
+      <div class="confirm-btn-row">
+        <button class="btn secondary" id="confirmCancel">Cancel</button>
+        <button class="btn" id="confirmYes" style="background:var(--rust);">Yes, reset</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(div);
+  document.getElementById('confirmCancel').onclick = ()=> div.remove();
+  document.getElementById('confirmYes').onclick = ()=>{ div.remove(); resetApp(); };
+};
+</script>
+</body>
+</html>

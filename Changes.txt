@@ -1,0 +1,81 @@
+Comments on Website: Omega Vercel
+Logo: I prefer the logo design that you had shown on video call to me. No tag line
+Relace “Industrial Advisory & India Entry Solutions” with “India Entry Solutions & Industrial Troubleshooting: A Division of Spuntech Solutions Pvt Ltd” in one line.
+About Us
+Replace “Business Clinic was founded to provide global OEMs and Indian Industries with the practical, hands-on support required to navigate compliance, set up factories, and troubleshoot shop-floor bottlenecks.” With 
+“Business Clinic is the industrial advisory and execution-support division of Spuntech Solutions Pvt Ltd.
+Business Clinic helps global companies in establishing and growing their footprint in India and assist Indian MSMEs solve business and industrial challenges. Combining industrial expertise, business advisory and execution capabilities, we bridge the gap between strategy and implementation—from diagnosis and planning to documentation, compliance, project execution, validation and ongoing support. Our single-window, execution-oriented approach delivers practical solutions across manufacturing, engineering, defence, aerospace, electronics and other industrial sectors. Preview of capability spectrum is listed:
+•	Industrial Advisory 
+•	Execution Support 
+•	Technical Assurance 
+•	Manufacturing Excellence 
+•	India Industrial Partner 
+•	Vendor Validation 
+•	Industrial Governance 
+•	Operational Excellence 
+•	Technology Absorption Support 
+•	Quality Assurance 
+Manufacturing Readiness 
+Services & Solutions 
+The following to be included: Current content to be replaced as under (Format as per constraints of website development).
+Business & Industrial Consulting
+•	India Entry Support for Foreign Industry
+•	Indian MSME troubleshooting 
+•	Operational consulting 
+•	Manufacturing advisory 
+•	Industrial setup support 
+•	Legal, Company Secretary and CA Service
+________________________________________
+Industrial Documentation & Technical Knowledge Services
+•	India Vendor Validation Services
+•	Techno-Commercial Documentation
+•	Technology Transfer (TOT) Documentation
+•	SOP & Process Documentation
+•	Governance Documentation
+•	Industrial Knowledge Management
+Industrial Assurance & Validation Services
+•	quality surveillance
+•	vendor reliability 
+•	compliance 
+•	production validation: FAT, FAI, ATP, PDI
+•	inspection integrity: Vendor & Process Audit
+Main Heading 
+Industrial Expertise
+Strategic Guidance
+Seamless Growth
+Replace In the following format: Industrial Expertise|Strategic Guidance|Seamless Growth  in small font and to be placed below the block created due to space created by the foregoing.
+In the space created please put the following blocks/cards/CTA buttons (website developers choice depending on its development constraints and website aesthetics):
+India Entry Clinic
+Indian MSME Clinic
+Defence & Aerospace Clinic
+Support Clinic 
+The scope of Support Clinic is as under:
+•	Legal advisor
+•	Finance expert 
+•	Industrial architect 
+•	HR consultant 
+•	Compliance specialist
+•	Administration & Logistics coordinator
+India Entry and Operation Readiness block in blue on the home page to be replaced by:
+
+WHY BUSINESS CLINIC
+•	35+ years industrial experience 
+•	practical execution-oriented approach 
+•	defence and aerospace exposure 
+•	technical + operational expertise 
+•	India ecosystem understanding 
+•	documentation and validation capabilities
+•	Led by Col Sanjay Chandra (Retd)
+Under Pan India “Operational Presence” to be replaced by “Operational Reach”.
+Who We Serve
+Replace existing with following:
+Global Companies     Indian Industry    Defence & Aerospace   Homeland Security   Power & Renewable Energy  Software & Cyber Security 
+Solutions We Offer (New Heading)
+Make In India Build to Print   Interconnect (Cable/Harness/OFC)  Repair & Maintenance Rejection Troubleshoot   Process Restructuring
+Deep Domain Knowledge   Replace Healthcare & High Technology with Power & High Technology
+Footer:  Include
+“Business Clinic is a business division/brand of Spuntech Solutions Pvt Ltd.”
+
+
+
+
