@@ -170,7 +170,7 @@ export default function DefenceAerospaceClinicPage() {
               <div className="space-y-4">
                 {founderBackground.projects.map((proj, idx) => (
                   <div key={idx} className="flex items-start space-x-3 text-xs sm:text-sm text-slate-700 font-medium">
-                    <div className="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center font-bold text-[10px] shrink-0">
+                    <div className="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xs shrink-0">
                       {idx + 1}
                     </div>
                     <span>{proj}</span>
@@ -241,7 +241,7 @@ export default function DefenceAerospaceClinicPage() {
               </ul>
             </div>
           </div>
-          <p className="text-[10px] text-center text-slate-600 mt-8 leading-relaxed max-w-lg mx-auto font-medium">
+          <p className="text-xs text-center text-slate-600 mt-8 leading-relaxed max-w-lg mx-auto font-medium">
             Disclaimer: The above information reflects general regulatory requirements compiled from public sources (DPIIT/DoT/WPC portals) and does not constitute formal legal advice. Business Clinic does not guarantee licensing approvals.
           </p>
         </div>
@@ -273,7 +273,7 @@ export default function DefenceAerospaceClinicPage() {
                   { step: "07", title: "License Issuance", desc: "Final clearance and formal issuance of the Defence Industrial License by the licensing authority." }
                 ].map((item, idx) => (
                   <div key={idx} className="relative">
-                    <span className="absolute -left-[35px] top-0.5 bg-primary text-white text-[10px] font-bold w-[18px] h-[18px] rounded-full flex items-center justify-center border border-white">
+                    <span className="absolute -left-[35px] top-0.5 bg-primary text-white text-xs font-bold w-[18px] h-[18px] rounded-full flex items-center justify-center border border-white">
                       {item.step}
                     </span>
                     <h4 className="font-serif text-sm font-bold text-primary">{item.title}</h4>
@@ -307,7 +307,7 @@ export default function DefenceAerospaceClinicPage() {
 
               {/* Radar Antenna Box */}
               <div className="bg-amber-50/40 border border-amber-200/60 rounded-2xl p-8 space-y-3">
-                <span className="text-[10px] font-bold text-[#D98A10] uppercase tracking-widest block">Specialized Segment</span>
+                <span className="text-xs font-bold text-[#D98A10] uppercase tracking-widest block">Specialized Segment</span>
                 <h4 className="font-serif text-base font-bold text-primary">Radar Antenna Manufacturing</h4>
                 <p className="text-xs text-slate-700 leading-relaxed">
                   We provide specialized, mission-critical advisory and on-ground licensing facilitation for high-technology organizations establishing manufacturing and assembly lines for <strong>radar antennas in the 3 GHz and 10 GHz frequency bands</strong> in India.

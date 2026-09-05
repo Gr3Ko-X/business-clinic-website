@@ -36,7 +36,7 @@ const pillars: Pillar[] = [
   {
     id: "msme-growth",
     num: "01",
-    title: "MSME Clinic",
+    title: "MSME Clinic - Tool",
     badgeIcon: TrendingUp,
     bullets: [
       "Operational Troubleshooting",
@@ -101,7 +101,7 @@ const pillars: Pillar[] = [
   {
     id: "india-entry",
     num: "02",
-    title: "India Entry Clinic",
+    title: "India Entry Clinic - Tool",
     badgeIcon: Building,
     bullets: [
       "India Market Entry Advisory",
@@ -322,7 +322,7 @@ export default function Pillars() {
         <div id="solutions" className="scroll-mt-28 text-center max-w-3xl mx-auto space-y-3.5 px-2">
           <div className="inline-flex items-center space-x-2 bg-white border border-[#D98A10]/40 rounded-full px-4 py-1.5 shadow-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-[#D98A10] animate-pulse" />
-            <span className="text-[11px] sm:text-xs font-bold tracking-[0.18em] text-[#D98A10] uppercase">
+            <span className="text-sm sm:text-xs font-bold tracking-[0.18em] text-[#D98A10] uppercase">
               OUR CORE SERVICE PILLARS
             </span>
           </div>
@@ -374,7 +374,7 @@ export default function Pillars() {
 
                     <ul className="space-y-2 text-left pt-1">
                       {pillar.bullets.map((bullet) => (
-                        <li key={bullet} className="flex items-start space-x-2.5 text-xs sm:text-sm text-slate-700 font-medium">
+                        <li key={bullet} className="flex items-start space-x-2.5 text-sm sm:text-base text-slate-700 font-medium">
                           <CheckCircle2 className="w-4 h-4 text-[#D98A10] shrink-0 mt-0.5" />
                           <span className="leading-snug">{bullet}</span>
                         </li>
@@ -403,7 +403,7 @@ export default function Pillars() {
               <div className="w-10 h-10 rounded-full bg-[#0C1D4A] flex items-center justify-center text-[#D98A10] shrink-0 border border-[#D98A10]">
                 <Headphones className="w-5 h-5" />
               </div>
-              <span className="text-xs sm:text-sm font-bold text-[#0C1D4A]">
+              <span className="text-sm sm:text-base font-bold text-[#0C1D4A]">
                 Need a custom integrated solution?
               </span>
             </div>
@@ -437,13 +437,13 @@ export default function Pillars() {
                   <Sparkles className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold text-[#D98A10] uppercase tracking-wider">
+                  <span className="text-xs font-bold text-[#D98A10] uppercase tracking-wider">
                     Clinic {activeModal.num}
                   </span>
                   <h3 className="font-serif font-bold text-lg sm:text-xl text-[#0C1D4A]">
                     {activeModal.title}
                   </h3>
-                  <p className="text-xs sm:text-sm font-semibold text-[#0C1D4A] mt-1">
+                  <p className="text-sm sm:text-base font-semibold text-[#0C1D4A] mt-1">
                     {activeModal.subtitle}
                   </p>
                   <p className="text-xs text-slate-600 leading-relaxed mt-1.5 max-w-2xl">
@@ -464,7 +464,7 @@ export default function Pillars() {
                       role="tab"
                       aria-selected={idx === activeCategoryIndex}
                       onClick={() => setActiveCategoryIndex(idx)}
-                      className={`shrink-0 px-3 py-2 rounded-lg text-[11px] sm:text-xs font-bold transition-all border ${
+                      className={`shrink-0 px-3 py-2 rounded-lg text-sm sm:text-xs font-bold transition-all border ${
                         idx === activeCategoryIndex
                           ? "bg-[#0C1D4A] text-white border-[#0C1D4A] shadow-sm"
                           : "bg-slate-50 text-slate-700 border-slate-200 hover:border-[#D98A10]/50 hover:text-[#0C1D4A]"
@@ -491,14 +491,14 @@ export default function Pillars() {
                     )}
                     {activeCategory.title}
                   </h4>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 shrink-0">
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400 shrink-0">
                     {activeCategory.items.length} services
                   </span>
                 </div>
 
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {activeCategory.items.map((item) => (
-                    <li key={item} className="flex items-start space-x-2.5 text-xs sm:text-sm text-slate-700">
+                    <li key={item} className="flex items-start space-x-2.5 text-sm sm:text-base text-slate-700">
                       <ChevronRight className="w-4 h-4 text-[#D98A10] shrink-0 mt-0.5" />
                       <span className="leading-snug font-medium">{item}</span>
                     </li>

@@ -24,7 +24,7 @@ export default function BtsLandingHero() {
       <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <p className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#c58f1a] uppercase">
+            <p className="inline-flex items-center gap-2 text-sm sm:text-xs font-bold tracking-[0.2em] text-[#c58f1a] uppercase">
               <span className="w-2 h-2 rounded-full bg-[#c58f1a] animate-pulse shrink-0" />
               Exploring India?
             </p>
@@ -61,13 +61,13 @@ export default function BtsLandingHero() {
           <div className="lg:col-span-5">
             <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.25)] space-y-5">
               <div className="inline-flex items-center gap-2 bg-[#c58f1a]/20 border border-[#c58f1a]/40 rounded-full px-3 py-1">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#c58f1a]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#c58f1a]">
                   India Entry Partner
                 </span>
               </div>
 
               <div className="space-y-1">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                <p className="text-xs font-bold uppercase tracking-widest text-slate-400">
                   Bengaluru Tech Summit 2026
                 </p>
                 <p className="font-serif font-bold text-2xl sm:text-3xl text-white leading-tight">

@@ -38,7 +38,7 @@ export default function HeroStats() {
                 <p className="text-xl sm:text-2xl font-serif font-bold text-[#0b2240] leading-none">
                   {value}
                 </p>
-                <p className="text-[11px] uppercase tracking-wider font-bold text-slate-500 mt-1">
+                <p className="text-sm uppercase tracking-wider font-bold text-slate-500 mt-1">
                   {label}
                 </p>
               </div>

@@ -72,7 +72,7 @@ export default function CaseStudiesGrid() {
                   </h3>
 
                   {/* Summary */}
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                     {cs.summary}
                   </p>
                 </div>

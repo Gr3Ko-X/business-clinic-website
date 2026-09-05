@@ -237,7 +237,7 @@ export default function BusinessIndustrialConsultingPage() {
                     <span className="font-serif text-lg font-bold text-slate-300">{step.num}</span>
                   </div>
                   <h3 className="font-serif text-sm font-bold text-primary mb-2">{step.title}</h3>
-                  <p className="text-[11px] sm:text-xs text-slate-700 font-medium leading-relaxed">{step.desc}</p>
+                  <p className="text-sm sm:text-xs text-slate-700 font-medium leading-relaxed">{step.desc}</p>
                 </div>
               </div>
             ))}

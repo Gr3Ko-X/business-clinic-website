@@ -341,10 +341,10 @@ export default function IndiaEntryClinicPage() {
               <div key={idx} className="bg-white/5 border border-white/10 rounded-xl p-5 relative flex flex-col justify-between">
                 <span className="font-serif text-3xl font-bold text-white/10 absolute top-4 right-4 leading-none">0{idx + 1}</span>
                 <div>
-                  <span className="text-[10px] font-bold text-[#D98A10] tracking-wider block mb-1.5">{step.step}</span>
+                  <span className="text-xs font-bold text-[#D98A10] tracking-wider block mb-1.5">{step.step}</span>
                   <h3 className="font-serif text-sm font-bold text-white mb-2">{step.label}</h3>
                 </div>
-                <p className="text-slate-300 text-[11px] leading-relaxed mt-2">{step.desc}</p>
+                <p className="text-slate-300 text-sm leading-relaxed mt-2">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -444,7 +444,7 @@ export default function IndiaEntryClinicPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <span className="text-[11px] font-bold text-slate-600 uppercase tracking-widest">Self Assessment Result</span>
+                  <span className="text-sm font-bold text-slate-600 uppercase tracking-widest">Self Assessment Result</span>
                   <h3 className="font-serif text-xl sm:text-2xl font-bold text-primary">
                     Total Score: <span className="text-[#D98A10]">{totalScore}</span> / 45
                   </h3>
@@ -544,7 +544,7 @@ export default function IndiaEntryClinicPage() {
 
           <div className="overflow-x-auto border border-slate-200 rounded-xl bg-white shadow-xs">
             <table className="min-w-full divide-y divide-slate-200 text-left text-xs sm:text-sm">
-              <thead className="bg-slate-50 text-slate-700 uppercase tracking-wider text-[10px] font-bold">
+              <thead className="bg-slate-50 text-slate-700 uppercase tracking-wider text-xs font-bold">
                 <tr>
                   <th className="px-6 py-4">State</th>
                   <th className="px-6 py-4">Manufacturing</th>
@@ -624,14 +624,14 @@ export default function IndiaEntryClinicPage() {
                   { name: "Business Marketing", cost: "$100,000", note: "Per Year" }
                 ].map((item, idx) => (
                   <div key={idx} className="flex justify-between items-center border-b border-slate-200/50 pb-2">
-                    <span className="text-slate-600 font-medium">{item.name} <span className="text-[10px] text-slate-400">({item.note})</span></span>
+                    <span className="text-slate-600 font-medium">{item.name} <span className="text-xs text-slate-400">({item.note})</span></span>
                     <span className="font-bold text-primary">{item.cost}</span>
                   </div>
                 ))}
               </div>
             </div>
           </div>
-          <p className="text-[9px] text-slate-400 mt-6 leading-relaxed max-w-xl mx-auto text-center font-medium">
+          <p className="text-xs text-slate-400 mt-6 leading-relaxed max-w-xl mx-auto text-center font-medium">
             * Footnote disclaimer: The timeline and cost tables represent client-supplied Rough Order of Magnitude (ROM) indicators for 2026. Actual schedules and budgets are highly dependent on the scope, industry size, location choices, and specific licensing parameters.
           </p>
         </div>

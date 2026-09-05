@@ -1,6 +1,8 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import {
   Check,
   ArrowRight,
@@ -9,25 +11,35 @@ import {
   PhoneCall,
   Mail,
   ShieldCheck,
-  ChevronRight
+  ChevronRight,
+  Globe2,
 } from "lucide-react";
 
-export default function App() {
-  const [selectedSector, setSelectedSector] = useState<any>(null);
+export default function IndustryGrid() {
+  const [selectedSector, setSelectedSector] = useState<{
+    id: string;
+    num: string;
+    title: string;
+    bullets: string[];
+    description: string;
+    icon: React.ReactNode;
+  } | null>(null);
   const [isConsultModalOpen, setIsConsultModalOpen] = useState(false);
 
   const transformSectors = [
     {
-      id: "defence-aerospace",
+      id: "defence",
       num: "01",
-      title: "Defence & Aerospace",
+      title: "Defence",
       bullets: [
-        "EW systems & electronic warfare solutions",
-        "Harbour surveillance & security systems",
-        "Defence industrial licensing & compliance",
-        "Offset facilitation & military-grade standards"
+        "Licensing and Approvals",
+        "Local Partnerships and Joint Ventures",
+        "Pre & Post Sales support",
+        "PDI, FAT & FAI",
+        "Technical Documentations",
       ],
-      description: "Providing turnkey strategic advisory, DAP compliance, and indigenization for defence OEMs and Indian Tier-1 suppliers",
+      description:
+        "Specialised industrial, technical and regulatory support for defence OEMs and Indian partners — from licensing and joint ventures through PDI, FAT, FAI and documentation.",
       icon: (
         <svg className="w-10 h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="32" cy="32" r="26" strokeDasharray="3 3" />
@@ -37,19 +49,20 @@ export default function App() {
           <line x1="4" y1="32" x2="60" y2="32" />
           <path d="M44 20 L38 28 L28 28 L22 20 L18 22 L24 32 L16 38 L12 36 L10 40 L18 42 L24 40 L34 40 L44 20 Z" fill="#D98A10" fillOpacity="0.15" />
         </svg>
-      )
+      ),
     },
     {
-      id: "electronics-semiconductors",
+      id: "electronics",
       num: "02",
-      title: "Electronics & Semiconductors",
+      title: "Electronics",
       bullets: [
-        "Cleanroom setups & precision environments",
-        "SMT lines & advanced assembly solutions",
-        "Component localization & value addition",
-        "Testing automation & supply chain security"
+        "Identification of Local Vendor",
+        "Local Supply Chain Management",
+        "Indigenization & Make in India Compliance",
+        "Cost Optimization",
       ],
-      description: "Enabling high-yield electronics manufacturing, ESD-safe facility design, and semiconductor packaging ecosystem development",
+      description:
+        "Helping electronics manufacturers build local vendor ecosystems, secure Make in India compliance, and optimise cost and supply chain for India operations.",
       icon: (
         <svg className="w-10 h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="18" y="18" width="28" height="28" rx="3" fill="#D98A10" fillOpacity="0.1" />
@@ -67,19 +80,21 @@ export default function App() {
           <line x1="46" y1="32" x2="54" y2="32" />
           <line x1="46" y1="42" x2="54" y2="42" />
         </svg>
-      )
+      ),
     },
     {
-      id: "power-renewable",
+      id: "power",
       num: "03",
-      title: "Power & Renewable Energy",
+      title: "Power",
+      subtitle: "Supporting Electrical Manufacturers & Low-voltage Equipment",
       bullets: [
-        "Power Distribution Units (PDUs) & systems",
-        "Cable deployment & EPC execution",
-        "Grid infrastructure & substation solutions",
-        "Green manufacturing & energy transition"
+        "Customize Power Management",
+        "Interconnect Power Optical Fibre & Data Cables",
+        "Turnkey Implementation of Solar Projects",
+        "MRO Capabilities",
       ],
-      description: "Supporting heavy electrical manufacturing, high-voltage equipment localization, and renewable infrastructure projects",
+      description:
+        "Supporting electrical manufacturers and low-voltage equipment players with power management, cable interconnect, solar turnkey delivery, and MRO capabilities.",
       icon: (
         <svg className="w-10 h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M22 54 L22 26" strokeWidth="2.5" />
@@ -93,22 +108,23 @@ export default function App() {
           <line x1="48" y1="22" x2="48" y2="54" />
           <rect x="8" y="44" width="20" height="10" rx="1" transform="rotate(-10 8 44)" fill="#D98A10" fillOpacity="0.1" />
         </svg>
-      )
-    }
+      ),
+    },
   ];
 
   const domainSectors = [
     {
       id: "industrial-manufacturing",
-      num: "04",
+      num: "01",
       title: "Industrial Manufacturing",
       bullets: [
-        "Plant layout optimization & engineering",
-        "Lean manufacturing & waste reduction",
-        "OEE improvement & process excellence",
-        "Assembly line automation & SOP frameworks"
+        "Lean Six-Sigma",
+        "Deployment of 5S",
+        "SCADA & IoT",
+        "OEE Improvements",
       ],
-      description: "Transforming factory floors with military-grade precision, OEE maximization, and lean operational turnarounds",
+      description:
+        "Shop-floor excellence through Lean Six-Sigma, 5S deployment, SCADA & IoT integration, and measurable OEE improvements.",
       icon: (
         <svg className="w-10 h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="8" y="48" width="48" height="8" rx="2" fill="#D98A10" fillOpacity="0.15" />
@@ -121,19 +137,19 @@ export default function App() {
           <rect x="28" y="42" width="8" height="6" rx="1" />
           <rect x="40" y="42" width="8" height="6" rx="1" />
         </svg>
-      )
+      ),
     },
     {
-      id: "telecom-ofc",
-      num: "05",
-      title: "Telecommunications & OFC",
+      id: "telecom-surveillance",
+      num: "02",
+      title: "Telecommunications & Surveillance",
       bullets: [
-        "OFC & power cable deployment",
-        "RF equipment imports & integration",
-        "WPC licensing & regulatory facilitation",
-        "Network hardware manufacturing support"
+        "Liaison with Approval & Regulatory agencies",
+        "Manpower Support for Local Demonstrations & trials",
+        "Technical Documentations",
       ],
-      description: "Facilitating WPC clearances, RF equipment imports, and optical fiber manufacturing and deployment across India",
+      description:
+        "Regulatory liaison, on-ground demo and trial support, and technical documentation for telecom and surveillance programmes.",
       icon: (
         <svg className="w-10 h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M32 10 L20 54 L44 54 Z" strokeWidth="2" />
@@ -145,19 +161,19 @@ export default function App() {
           <path d="M42 14 C48 8 54 16 54 16" />
           <path d="M10 50 C22 40 42 60 54 48" strokeWidth="2" strokeDasharray="2 2" />
         </svg>
-      )
+      ),
     },
     {
       id: "power-high-tech",
-      num: "06",
-      title: "Power & High Technology",
+      num: "03",
+      title: "Power & High Technologies",
       bullets: [
-        "PDU manufacturing & power grids integration",
-        "ISO 17025 compliance & calibration systems",
-        "Global OEM technology transfer (ToT) support",
-        "Precision engineering & high-reliability systems"
+        "Local Operational Support",
+        "Trials & Testing",
+        "PDI, FAT & FAI",
       ],
-      description: "Enabling high-reliability power systems manufacturing, ISO 17025 calibration labs, and technology transfer for global high-tech OEMs",
+      description:
+        "Local operational support, trials & testing, and inspection frameworks (PDI, FAT & FAI) for power and high-technology programmes.",
       icon: (
         <svg className="w-10 h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="32" cy="28" r="20" strokeWidth="3" />
@@ -166,16 +182,36 @@ export default function App() {
           <path d="M20 36 L44 36" strokeWidth="3" />
           <path d="M20 28 L26 28 L29 20 L32 34 L35 25 L38 28 L44 28" strokeWidth="1.8" />
         </svg>
-      )
-    }
+      ),
+    },
   ];
 
-  const renderCard = (card: any) => (
+  const internationalWorks = [
+    {
+      title: "GE Healthcare Collaboration",
+      detail: "PDU manufacturing support for CT systems — global OEM execution in India",
+      href: "/case-studies/ge-collaboration-pdu",
+    },
+    {
+      title: "Global OEM India Entry",
+      detail: "Market entry, partnerships, and industrial setup for international technology companies",
+      href: "/services/india-entry-support-foreign-industry",
+    },
+    {
+      title: "Cross-Border Defence Programmes",
+      detail: "Licensing, ToT, and offset facilitation for international defence & aerospace partners",
+      href: "/services/defence-aerospace-clinic",
+    },
+  ];
+
+  type SectorCard = (typeof transformSectors)[number] | (typeof domainSectors)[number];
+
+  const renderCard = (card: SectorCard) => (
     <div
       key={card.id}
       className="group bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-md hover:shadow-xl transition-all duration-300 p-5 sm:p-7 flex flex-col justify-between relative overflow-hidden hover:-translate-y-1"
     >
-      <div className="absolute top-0 right-0 w-32 h-32 bg-amber-50/50 rounded-bl-full -z-0 pointer-events-none transition-transform group-hover:scale-110"></div>
+      <div className="absolute top-0 right-0 w-32 h-32 bg-amber-50/50 rounded-bl-full -z-0 pointer-events-none transition-transform group-hover:scale-110" />
 
       <div>
         <div className="flex items-center space-x-4 mb-5">
@@ -187,9 +223,9 @@ export default function App() {
             </div>
           </div>
 
-          <div className="space-y-1">
+          <div className="space-y-1 min-w-0">
             <div className="flex items-center space-x-1.5">
-              <span className="bg-[#0C1D4A] text-white text-[10px] font-bold px-2 py-0.5 rounded-md tracking-wider">
+              <span className="bg-[#0C1D4A] text-white text-xs font-bold px-2 py-0.5 rounded-md tracking-wider">
                 {card.num}
               </span>
               <span className="text-slate-300 font-light text-xs">|</span>
@@ -197,12 +233,15 @@ export default function App() {
             <h3 className="font-serif font-bold text-base sm:text-lg text-[#0C1D4A] leading-snug group-hover:text-[#D98A10] transition-colors">
               {card.title}
             </h3>
+            {"subtitle" in card && card.subtitle ? (
+              <p className="text-xs text-slate-500 leading-snug">{card.subtitle}</p>
+            ) : null}
           </div>
         </div>
 
         <ul className="space-y-2.5 my-4 border-t border-slate-100 pt-4">
-          {card.bullets.map((bullet: string, idx: number) => (
-            <li key={idx} className="flex items-start space-x-2.5 text-xs sm:text-sm text-slate-700">
+          {card.bullets.map((bullet) => (
+            <li key={bullet} className="flex items-start space-x-2.5 text-sm sm:text-base text-slate-700">
               <div className="w-4 h-4 rounded-full bg-[#D98A10] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                 <Check className="w-2.5 h-2.5 stroke-[3]" />
               </div>
@@ -226,35 +265,52 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] text-slate-800 font-sans antialiased py-10 sm:py-16 lg:py-20 px-3 sm:px-6 lg:px-8 relative overflow-hidden selection:bg-[#D98A10] selection:text-white">
-      
-      {/* Background Subtle Grid Texture */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0C1D4A_1px,transparent_1px)] [background-size:24px_24px]"></div>
-      <div className="absolute top-1/3 left-10 w-96 h-96 bg-[#D98A10]/5 rounded-full filter blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-1/3 right-10 w-96 h-96 bg-[#0C1D4A]/5 rounded-full filter blur-3xl pointer-events-none"></div>
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0C1D4A_1px,transparent_1px)] [background-size:24px_24px]" />
+      <div className="absolute top-1/3 left-10 w-96 h-96 bg-[#D98A10]/5 rounded-full filter blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/3 right-10 w-96 h-96 bg-[#0C1D4A]/5 rounded-full filter blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10 space-y-12 sm:space-y-16">
-        
-        {/* Main Section Top Badge */}
-        <div className="text-center max-w-3xl mx-auto space-y-2 px-2">
-          <div className="inline-flex items-center space-x-2 bg-white border border-[#D98A10]/40 rounded-full px-5 py-1.5 shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D98A10] animate-pulse"></span>
-            <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#D98A10] uppercase">
-              SECTOR EXPERTISE
-            </span>
-          </div>
-          <p className="text-slate-600 text-xs sm:text-base max-w-2xl mx-auto leading-relaxed pt-2">
-            Specialized industrial execution and technical advisory tailored across high-impact manufacturing sectors
-          </p>
-        </div>
-
-        {}
-        <div className="space-y-6">
-          <div className="border-l-4 border-[#D98A10] pl-4 sm:pl-5 space-y-1">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0C1D4A] tracking-tight">
+        {/* Header + Leadership visual */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="lg:col-span-7 text-center lg:text-left space-y-3 px-2">
+            <div className="inline-flex items-center space-x-2 bg-white border border-[#D98A10]/40 rounded-full px-5 py-1.5 shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#D98A10] animate-pulse" />
+              <span className="text-sm sm:text-xs font-bold tracking-[0.2em] text-[#D98A10] uppercase">
+                Core Capabilities
+              </span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0C1D4A] tracking-tight leading-tight">
               Industries We Transform
             </h2>
-            <p className="text-slate-500 text-xs sm:text-sm">
-              High-value engineering sectors where we provide market entry and strategic advisory
+            <p className="text-slate-600 text-xs sm:text-base max-w-2xl lg:max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              Led by Col Sanjay Chandra (Retd) — 35+ years across defence manufacturing, global OEM
+              collaboration, and industrial execution. Sector expertise built for India entry and
+              on-ground delivery.
+            </p>
+          </div>
+
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-[280px] aspect-square rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-lg p-6 flex items-center justify-center">
+              <Image
+                src="/images/logo/IBC.png"
+                alt="India Business Clinic"
+                width={220}
+                height={220}
+                className="object-contain w-full h-auto"
+                priority={false}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Industries We Transform – Core Capabilities */}
+        <div className="space-y-6">
+          <div className="border-l-4 border-[#D98A10] pl-4 sm:pl-5 space-y-1">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-[#0C1D4A] tracking-tight">
+              Industries We Transform
+            </h3>
+            <p className="text-slate-500 text-sm sm:text-base">
+              Core capabilities across Defence, Electronics, and Power
             </p>
           </div>
 
@@ -263,14 +319,14 @@ export default function App() {
           </div>
         </div>
 
-        {}
+        {/* Deep Domain Knowledge – Core Capabilities */}
         <div className="space-y-6 pt-4 sm:pt-6">
           <div className="border-l-4 border-[#D98A10] pl-4 sm:pl-5 space-y-1">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0C1D4A] tracking-tight">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-[#0C1D4A] tracking-tight">
               Deep Domain Knowledge
-            </h2>
-            <p className="text-slate-500 text-xs sm:text-sm">
-              Technical execution expertise for specialized electronics, manufacturing and assembly operations
+            </h3>
+            <p className="text-slate-500 text-sm sm:text-base">
+              Core capabilities in manufacturing, telecom & surveillance, and high technology
             </p>
           </div>
 
@@ -279,15 +335,57 @@ export default function App() {
           </div>
         </div>
 
-        {}
-        <div className="mt-10 sm:mt-14 max-w-4xl mx-auto">
+        {/* International works highlight */}
+        <div className="rounded-2xl sm:rounded-3xl bg-[#0C1D4A] text-white border border-[#D98A10]/40 overflow-hidden shadow-xl">
+          <div className="p-6 sm:p-8 lg:p-10 space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+              <div className="w-11 h-11 rounded-full bg-[#D98A10]/20 border border-[#D98A10]/50 flex items-center justify-center shrink-0">
+                <Globe2 className="w-5 h-5 text-[#D98A10]" />
+              </div>
+              <div>
+                <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#D98A10]">
+                  Leadership · International Work
+                </span>
+                <h3 className="font-serif font-bold text-xl sm:text-2xl text-white mt-1">
+                  Proven delivery with global OEMs &amp; strategic programmes
+                </h3>
+              </div>
+            </div>
+
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl">
+              Under Col Sanjay Chandra (Retd) — Former Director, PMO Suraj, and Former SVP Defence
+              Manufacturing — Business Clinic has supported international technology and industrial
+              partners entering and executing in India.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {internationalWorks.map((work) => (
+                <Link
+                  key={work.title}
+                  href={work.href}
+                  className="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#D98A10]/40 rounded-xl p-4 transition-all"
+                >
+                  <h4 className="font-serif font-bold text-sm text-white group-hover:text-[#D98A10] transition-colors">
+                    {work.title}
+                  </h4>
+                  <p className="text-sm text-slate-400 mt-1.5 leading-relaxed">{work.detail}</p>
+                  <span className="inline-flex items-center gap-1 text-xs font-bold text-[#D98A10] uppercase tracking-wider mt-3">
+                    View <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* CTA bar */}
+        <div className="mt-6 sm:mt-8 max-w-4xl mx-auto">
           <div className="relative bg-white border border-[#D98A10]/40 rounded-2xl sm:rounded-full p-3 sm:p-4 shadow-xl overflow-hidden flex flex-col sm:flex-row items-center justify-between gap-4">
-            
             <div className="flex items-center space-x-3 px-2 sm:px-4 text-center sm:text-left">
               <div className="w-11 h-11 rounded-full bg-[#0C1D4A] border-2 border-[#D98A10] flex items-center justify-center text-white shrink-0 shadow-md">
                 <Sparkles className="w-5 h-5 text-[#D98A10]" />
               </div>
-              <p className="text-xs sm:text-sm font-bold text-[#0C1D4A] tracking-wide">
+              <p className="text-sm sm:text-base font-bold text-[#0C1D4A] tracking-wide">
                 Operating in another high-tech sector?
               </p>
             </div>
@@ -299,20 +397,17 @@ export default function App() {
               <span>Discuss Your Sector Requirements</span>
               <ArrowRight className="w-4 h-4 text-[#D98A10]" />
             </button>
-
           </div>
         </div>
-
       </div>
 
-      {}
       {selectedSector && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/80 backdrop-blur-sm animate-in fade-in duration-200">
           <div className="relative w-full max-w-lg bg-white border border-slate-200 rounded-2xl sm:rounded-3xl shadow-2xl p-5 sm:p-8 space-y-5 text-slate-900">
-            
             <button
               onClick={() => setSelectedSector(null)}
               className="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-1.5 rounded-full hover:bg-slate-100 transition-colors"
+              aria-label="Close"
             >
               <X className="w-5 h-5" />
             </button>
@@ -322,7 +417,9 @@ export default function App() {
                 <ShieldCheck className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-[10px] font-bold text-[#D98A10] uppercase tracking-wider">Sector {selectedSector.num}</span>
+                <span className="text-xs font-bold text-[#D98A10] uppercase tracking-wider">
+                  Sector {selectedSector.num}
+                </span>
                 <h3 className="font-serif font-bold text-lg sm:text-xl text-[#0C1D4A]">
                   {selectedSector.title}
                 </h3>
@@ -330,16 +427,18 @@ export default function App() {
             </div>
 
             <div className="space-y-4">
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                 {selectedSector.description}
               </p>
 
               <div className="bg-amber-50/70 border border-amber-200/80 rounded-xl p-4 space-y-2">
-                <h4 className="text-xs font-bold text-[#0C1D4A] uppercase tracking-wider">Core Capabilities Delivered</h4>
+                <h4 className="text-xs font-bold text-[#0C1D4A] uppercase tracking-wider">
+                  Core Capabilities
+                </h4>
                 <ul className="space-y-1.5">
-                  {selectedSector.bullets.map((b: string, i: number) => (
-                    <li key={i} className="text-xs text-slate-700 flex items-center space-x-2">
-                      <ChevronRight className="w-3 h-3 text-[#D98A10]" />
+                  {selectedSector.bullets.map((b) => (
+                    <li key={b} className="text-xs text-slate-700 flex items-center space-x-2">
+                      <ChevronRight className="w-3 h-3 text-[#D98A10] shrink-0" />
                       <span>{b}</span>
                     </li>
                   ))}
@@ -366,25 +465,25 @@ export default function App() {
                 </button>
               </div>
             </div>
-
           </div>
         </div>
       )}
 
-      {}
       {isConsultModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/80 backdrop-blur-sm animate-in fade-in duration-200">
           <div className="relative w-full max-w-md bg-white border border-slate-200 rounded-2xl sm:rounded-3xl shadow-2xl p-5 sm:p-7 space-y-5 text-slate-900">
-            
             <button
               onClick={() => setIsConsultModalOpen(false)}
               className="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-1.5 rounded-full hover:bg-slate-100 transition-colors"
+              aria-label="Close"
             >
               <X className="w-5 h-5" />
             </button>
 
             <div className="border-b border-slate-100 pb-3">
-              <span className="text-[10px] font-bold text-[#D98A10] uppercase tracking-wider">Industrial Advisory</span>
+              <span className="text-xs font-bold text-[#D98A10] uppercase tracking-wider">
+                Industrial Advisory
+              </span>
               <h3 className="font-serif font-bold text-lg text-[#0C1D4A]">
                 Discuss Your Sector Requirements
               </h3>
@@ -397,8 +496,11 @@ export default function App() {
               <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-[#D98A10]" />
                 <div>
-                  <p className="text-[10px] text-slate-400 font-bold uppercase">Direct Email</p>
-                  <a href="mailto:indiabusinessclinic@gmail.com" className="text-xs font-bold text-[#0C1D4A] hover:underline">
+                  <p className="text-xs text-slate-400 font-bold uppercase">Direct Email</p>
+                  <a
+                    href="mailto:indiabusinessclinic@gmail.com"
+                    className="text-xs font-bold text-[#0C1D4A] hover:underline"
+                  >
                     indiabusinessclinic@gmail.com
                   </a>
                 </div>
@@ -407,7 +509,7 @@ export default function App() {
               <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center space-x-3">
                 <PhoneCall className="w-5 h-5 text-[#D98A10]" />
                 <div>
-                  <p className="text-[10px] text-slate-400 font-bold uppercase">WhatsApp / Helpline</p>
+                  <p className="text-xs text-slate-400 font-bold uppercase">WhatsApp / Helpline</p>
                   <a href="tel:+919560714343" className="text-xs font-bold text-[#0C1D4A] hover:underline">
                     +91 9560714343
                   </a>
@@ -423,11 +525,9 @@ export default function App() {
                 </button>
               </div>
             </div>
-
           </div>
         </div>
       )}
-
     </div>
   );
 }

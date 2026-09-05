@@ -87,7 +87,7 @@ export default function AboutPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl border-l-4 border-[#D98A10] pl-4 sm:pl-6 space-y-2 sm:space-y-3">
-            <span className="text-[10px] sm:text-xs font-bold tracking-widest text-[#D98A10] uppercase">
+            <span className="text-xs sm:text-xs font-bold tracking-widest text-[#D98A10] uppercase">
               About Business Clinic
             </span>
             <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-serif font-bold leading-tight">
@@ -227,7 +227,7 @@ export default function AboutPage() {
                 <ul className="space-y-2">
                   {internationalTraining.map((train, idx) => (
                     <li key={idx} className="flex items-start space-x-3 text-xs text-slate-600">
-                      <div className="h-4 w-4 bg-accent/15 text-accent rounded-full flex items-center justify-center shrink-0 mt-0.5 text-[10px] font-bold">
+                      <div className="h-4 w-4 bg-accent/15 text-accent rounded-full flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">
                         {idx + 1}
                       </div>
                       <span>{train}</span>

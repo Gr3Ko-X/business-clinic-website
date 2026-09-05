@@ -61,7 +61,7 @@ export default function IndustriesPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl border-l-4 border-[#D98A10] pl-4 sm:pl-6 space-y-2 sm:space-y-3">
-            <span className="text-[10px] sm:text-xs font-bold tracking-widest text-[#D98A10] uppercase">
+            <span className="text-xs sm:text-xs font-bold tracking-widest text-[#D98A10] uppercase">
               Sector Specializations
             </span>
             <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-serif font-bold leading-tight">
@@ -122,7 +122,7 @@ export default function IndustriesPage() {
 
                       {/* Bullets */}
                       <div className="space-y-3">
-                        <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500">
                           Key Action Capabilities
                         </h4>
                         <ul className="space-y-2">
@@ -195,7 +195,7 @@ export default function IndustriesPage() {
 
                       {/* Bullets */}
                       <div className="space-y-3">
-                        <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500">
                           Key Action Capabilities
                         </h4>
                         <ul className="space-y-2">

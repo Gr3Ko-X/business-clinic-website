@@ -1,6 +1,7 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone, ArrowRight } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -10,16 +11,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Col 1: About Business Clinic */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center space-x-3">
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold tracking-tight text-white flex items-baseline">
-                  <span className="text-accent font-serif text-3xl mr-0.5">B</span>
-                  <span className="font-sans font-semibold tracking-wide text-white">USINESS</span>
-                </span>
-                <span className="text-xs uppercase tracking-widest text-accent font-bold -mt-1 pl-6">
-                  Clinic
-                </span>
-              </div>
+            <Link href="/" className="inline-flex items-center">
+              <Image
+                src="/images/logo/IBC.png"
+                alt="India Business Clinic"
+                width={64}
+                height={64}
+                className="object-contain"
+              />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed pt-2">
               Business Clinic is the industrial advisory and execution-support division of Spuntech Solutions Pvt Ltd.
@@ -107,6 +106,22 @@ export default function Footer() {
               <li>
                 <Link href="/contact" className="text-slate-400 hover:text-accent transition-colors">
                   Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/indian-msme-troubleshooting/health-check"
+                  className="text-slate-400 hover:text-accent transition-colors"
+                >
+                  MSME Health Check
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/india-entry-support-foreign-industry#scorecard-tool"
+                  className="text-slate-400 hover:text-accent transition-colors"
+                >
+                  India Entry Scorecard
                 </Link>
               </li>
             </ul>

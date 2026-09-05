@@ -138,7 +138,7 @@ export default function App() {
           {/* Label with Gold Decorative Accents */}
           <div className="inline-flex items-center space-x-2 sm:space-x-3 justify-center">
             <span className="w-6 sm:w-8 h-px bg-gradient-to-r from-transparent to-[#D98A10]"></span>
-            <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#D98A10] uppercase">
+            <span className="text-sm sm:text-xs font-bold tracking-[0.2em] text-[#D98A10] uppercase">
               OUR EXPERTISE
             </span>
             <span className="w-6 sm:w-8 h-px bg-gradient-to-l from-transparent to-[#D98A10]"></span>
@@ -155,7 +155,7 @@ export default function App() {
           {/* Subtitle Paragraph */}
           <p className="text-slate-600 text-xs sm:text-base max-w-2xl mx-auto leading-relaxed px-1">
             From India market entry to industrial growth and defence facilitation — <br className="hidden sm:inline" />
-            we provide execution-focused advisory that delivers real results.
+            we provide execution-focused advisory that delivers measurable output.
           </p>
         </div>
 
@@ -204,10 +204,10 @@ export default function App() {
                     {/* Step Number & Category Tag */}
                     <div className="text-right">
                       <div className="flex items-center justify-end space-x-1.5 text-xs font-bold text-[#D98A10]">
-                        <span className="text-xs sm:text-sm font-serif font-bold text-[#D98A10]">{card.num}</span>
+                        <span className="text-sm sm:text-base font-serif font-bold text-[#D98A10]">{card.num}</span>
                         <span className="w-3 sm:w-4 h-px bg-[#D98A10]"></span>
                       </div>
-                      <span className="text-[10px] sm:text-[11px] font-bold tracking-wider text-slate-500 uppercase font-sans">
+                      <span className="text-sm sm:text-base font-bold tracking-wider text-slate-500 uppercase font-sans">
                         {card.title}
                       </span>
                     </div>
@@ -236,7 +236,7 @@ export default function App() {
                           <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#0C1D4A] group-hover/bullet:bg-amber-50 group-hover/bullet:border-[#D98A10] group-hover/bullet:text-[#D98A10] transition-all shadow-md group-hover/bullet:scale-105 duration-200">
                             <BulletIcon className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.8]" />
                           </div>
-                          <span className="text-xs sm:text-sm font-bold text-slate-700 leading-snug group-hover/bullet:text-accent transition-colors max-w-[120px]">
+                          <span className="text-sm sm:text-base font-bold text-slate-700 leading-snug group-hover/bullet:text-accent transition-colors max-w-[120px]">
                             {bullet.label}
                           </span>
                         </div>
@@ -301,13 +301,13 @@ export default function App() {
                 <div className="p-4 sm:p-6 pt-2 relative z-10 space-y-2.5 sm:space-y-3 bg-white/90 backdrop-blur-xs">
                   <button
                     onClick={() => handleOpenTool(card.id)}
-                    className={`w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center space-x-2 group/btn cursor-pointer ${card.btnStyle}`}
+                    className={`w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base transition-all duration-300 flex items-center justify-center space-x-2 group/btn cursor-pointer ${card.btnStyle}`}
                   >
                     <span className="text-center">{card.btnText}</span>
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform shrink-0" />
                   </button>
 
-                  <p className="text-center text-[10px] sm:text-[11px] text-slate-500 font-medium leading-tight">
+                  <p className="text-center text-sm sm:text-base text-slate-500 font-medium leading-tight">
                     {card.subtext}
                   </p>
                 </div>
@@ -334,10 +334,10 @@ export default function App() {
                     <HlIcon className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-xs sm:text-sm font-bold text-[#0C1D4A] tracking-tight">
+                    <h4 className="text-sm sm:text-base font-bold text-[#0C1D4A] tracking-tight">
                       {hl.title}
                     </h4>
-                    <p className="text-[11px] text-slate-500 font-medium">
+                    <p className="text-sm text-slate-500 font-medium">
                       {hl.desc}
                     </p>
                   </div>
@@ -372,19 +372,19 @@ export default function App() {
                   {showModal === "msme-growth" && "MSME Company Health Check"}
                   {showModal === "defence-facilitation" && "Defence Advisory Enquiry"}
                 </h3>
-                <p className="text-[11px] sm:text-xs text-slate-500">Business Clinic Interactive Diagnostic</p>
+                <p className="text-sm sm:text-xs text-slate-500">Business Clinic Interactive Diagnostic</p>
               </div>
             </div>
 
             {!modalCompleted ? (
               <div className="space-y-3 sm:space-y-4">
-                <p className="text-[11px] text-[#D98A10] font-bold uppercase tracking-wider">
+                <p className="text-sm text-[#D98A10] font-bold uppercase tracking-wider">
                   Step {modalStep} of 2: Preliminary Assessment
                 </p>
 
                 {modalStep === 1 && (
                   <div className="space-y-3">
-                    <h4 className="text-xs sm:text-sm font-semibold text-[#0C1D4A]">
+                    <h4 className="text-sm sm:text-base font-semibold text-[#0C1D4A]">
                       {showModal === "india-entry" && "What is your primary focus area for entering the Indian market?"}
                       {showModal === "msme-growth" && "What is the primary bottleneck currently facing your plant operations?"}
                       {showModal === "defence-facilitation" && "What specific defence regulatory support do you require?"}
@@ -427,7 +427,7 @@ export default function App() {
 
                 {modalStep === 2 && (
                   <div className="space-y-3">
-                    <h4 className="text-xs sm:text-sm font-semibold text-[#0C1D4A]">
+                    <h4 className="text-sm sm:text-base font-semibold text-[#0C1D4A]">
                       What is your intended timeline for advisory engagement?
                     </h4>
 

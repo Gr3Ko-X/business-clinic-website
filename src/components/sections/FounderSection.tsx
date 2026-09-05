@@ -30,7 +30,7 @@ export default function FounderSection() {
 
             {/* Founder Quote */}
             <blockquote className="border-l-4 border-accent pl-6 py-1 italic text-slate-700 text-lg font-serif">
-              “For over 35 years, I’ve transformed technical challenges into measurable business outcomes. Business Clinic is built to help MSMEs and global companies achieve sustainable growth in India’s evolving industrial ecosystem.”
+              “For over 35 years, I have transformed technical challenges into measurable business outcomes. Business Clinic is built to help MSMEs and global companies achieve sustainable growth in India's evolving industrial ecosystem.”
             </blockquote>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
@@ -75,10 +75,10 @@ export default function FounderSection() {
               {/* Image Frame */}
               <div className="relative flex-grow w-full bg-slate-50 flex items-end">
                 <Image
-                  src="/founder.png"
+                  src="/images/assets/founder.png"
                   alt="Col Sanjay Chandra (Retd)"
                   fill
-                  className="object-cover object-bottom"
+                  className="object-cover object-top"
                   sizes="(max-w-720px) 100vw, 360px"
                 />
               </div>
@@ -88,7 +88,7 @@ export default function FounderSection() {
                 <h3 className="font-sans font-bold text-base text-white">
                   Col Sanjay Chandra (Retd)
                 </h3>
-                <p className="text-[11px] text-accent font-semibold tracking-wider mt-1 uppercase">
+                <p className="text-sm text-accent font-semibold tracking-wider mt-1 uppercase">
                   Founder, Business Clinic | Former Director, PMO Suraj
                 </p>
               </div>

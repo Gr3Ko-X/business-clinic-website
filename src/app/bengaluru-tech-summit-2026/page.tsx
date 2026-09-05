@@ -44,7 +44,7 @@ export default function BengaluruTechSummit2026Page() {
       <section className="py-16 sm:py-20 border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-10 sm:mb-12">
-            <span className="text-[11px] font-bold tracking-[0.18em] text-[#c58f1a] uppercase">
+            <span className="text-sm font-bold tracking-[0.18em] text-[#c58f1a] uppercase">
               India Entry Advisory
             </span>
             <h2 className="font-serif font-bold text-2xl sm:text-3xl lg:text-4xl text-[#0c1d4a] mt-2 leading-tight">
@@ -88,7 +88,7 @@ export default function BengaluruTechSummit2026Page() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div className="space-y-5">
-              <span className="text-[11px] font-bold tracking-[0.18em] text-[#c58f1a] uppercase">
+              <span className="text-sm font-bold tracking-[0.18em] text-[#c58f1a] uppercase">
                 At the Summit
               </span>
               <h2 className="font-serif font-bold text-2xl sm:text-3xl lg:text-4xl leading-tight">
@@ -116,13 +116,13 @@ export default function BengaluruTechSummit2026Page() {
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 space-y-6">
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">
+                  <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
                     Dates
                   </p>
                   <p className="font-semibold text-white">17–19 Nov 2026</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">
+                  <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
                     Venue
                   </p>
                   <p className="font-semibold text-white">BIEC, Bengaluru</p>

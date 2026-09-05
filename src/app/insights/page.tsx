@@ -20,7 +20,7 @@ export default function InsightsListPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl border-l-4 border-[#D98A10] pl-4 sm:pl-6 space-y-2 sm:space-y-3">
-            <span className="text-[10px] sm:text-xs font-bold tracking-widest text-[#D98A10] uppercase">
+            <span className="text-xs sm:text-xs font-bold tracking-widest text-[#D98A10] uppercase">
               Featured Insights
             </span>
             <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-serif font-bold leading-tight">
@@ -44,7 +44,7 @@ export default function InsightsListPage() {
               >
                 <div>
                   {/* Category & Read Time */}
-                  <div className="flex items-center justify-between text-[11px] text-slate-500 font-semibold mb-4">
+                  <div className="flex items-center justify-between text-sm text-slate-500 font-semibold mb-4">
                     <span className="bg-accent/10 text-accent px-2.5 py-0.5 rounded-sm uppercase tracking-wider">
                       {art.category}
                     </span>

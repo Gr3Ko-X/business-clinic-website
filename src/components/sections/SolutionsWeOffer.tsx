@@ -61,7 +61,7 @@ export default function SolutionsWeOffer() {
             Solutions We Offer
           </h2>
           <div className="w-12 h-1 bg-accent mx-auto mt-2 rounded-full"></div>
-          <p className="text-slate-600 text-xs sm:text-sm max-w-md mx-auto pt-2 leading-relaxed">
+          <p className="text-slate-600 text-sm sm:text-base max-w-md mx-auto pt-2 leading-relaxed">
             Hands-on technical advisory and process configuration to optimize manufacturing output, validate quality, and scale capabilities.
           </p>
         </div>
@@ -81,7 +81,7 @@ export default function SolutionsWeOffer() {
                   <h3 className="font-serif text-lg font-bold text-primary group-hover:text-accent transition-colors">
                     {sol.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                     {sol.desc}
                   </p>
                 </div>

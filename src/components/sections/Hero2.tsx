@@ -139,7 +139,7 @@ export default function Hero2() {
             }`}
           >
             {/* Kicker */}
-            <p className="flex items-center justify-center gap-2 text-[11px] sm:text-xs font-bold tracking-widest text-[#c58f1a] uppercase mb-5">
+            <p className="flex items-center justify-center gap-2 text-sm sm:text-xs font-bold tracking-widest text-[#c58f1a] uppercase mb-5">
               <span className="w-2 h-2 rounded-full bg-[#c58f1a] animate-pulse shrink-0" />
               {slide.kicker}
             </p>
@@ -221,7 +221,7 @@ export default function Hero2() {
         </div>
       </div>
 
-      <HeroStats />
+      {/* <HeroStats /> */}
     </section>
   );
 }

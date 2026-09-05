@@ -219,7 +219,7 @@ export default function IndustrialAssuranceValidationPage() {
                 <div>
                   <span className="font-serif text-lg font-bold text-slate-300 block mb-4">0{idx + 1}</span>
                   <h3 className="font-serif text-sm font-bold text-primary mb-2 uppercase tracking-wider">{flow.step}</h3>
-                  <p className="text-[11px] sm:text-xs text-slate-700 font-medium leading-relaxed">{flow.desc}</p>
+                  <p className="text-sm sm:text-xs text-slate-700 font-medium leading-relaxed">{flow.desc}</p>
                 </div>
               </div>
             ))}

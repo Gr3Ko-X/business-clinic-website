@@ -182,7 +182,7 @@
 
 //               {/* Diagnostic Tools Quick Launch Pills */}
 //               <div className="pt-4 text-xs flex flex-wrap items-center justify-center lg:justify-start gap-2.5 text-slate-500">
-//                 <span className="font-semibold text-slate-700 uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+//                 <span className="font-semibold text-slate-700 uppercase tracking-wider text-sm flex items-center gap-1.5">
 //                   <Sparkles className="w-3.5 h-3.5 text-[#D98A10]" /> Interactive Tools:
 //                 </span>
 //                 <button
@@ -224,10 +224,10 @@
 //                       <h3 className="text-sm font-bold text-[#0C1D4A] tracking-tight">
 //                         Single-Window Execution Architecture
 //                       </h3>
-//                       <p className="text-[11px] text-slate-500">From Strategy through Operations &amp; Scaling</p>
+//                       <p className="text-sm text-slate-500">From Strategy through Operations &amp; Scaling</p>
 //                     </div>
 //                   </div>
-//                   <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-50 text-[#D98A10] border border-[#D98A10]/30 flex items-center space-x-1">
+//                   <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-50 text-[#D98A10] border border-[#D98A10]/30 flex items-center space-x-1">
 //                     <span className="w-1.5 h-1.5 rounded-full bg-[#D98A10] animate-ping"></span>
 //                     <span>35+ YRS EXP</span>
 //                   </span>
@@ -280,7 +280,7 @@
 //                     <div className="space-y-4 bg-gradient-to-br from-slate-50 via-white to-amber-50/20 p-5 rounded-2xl border border-slate-200/90 shadow-sm relative overflow-hidden">
 //                       <div className="flex items-start justify-between">
 //                         <div>
-//                           <span className="text-[10px] font-bold uppercase tracking-wider text-[#D98A10] bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200/80 inline-block mb-1.5">
+//                           <span className="text-xs font-bold uppercase tracking-wider text-[#D98A10] bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200/80 inline-block mb-1.5">
 //                             {p.tag}
 //                           </span>
 //                           <h4 className="font-serif font-bold text-lg text-[#0C1D4A]">
@@ -297,10 +297,10 @@
 
 //                       {/* Execution Steps Flow Pills */}
 //                       <div className="space-y-1.5 pt-1">
-//                         <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+//                         <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">
 //                           Execution Methodology Roadmap:
 //                         </p>
-//                         <div className="flex items-center gap-1 overflow-x-auto pb-1 text-[11px]">
+//                         <div className="flex items-center gap-1 overflow-x-auto pb-1 text-sm">
 //                           {p.stageSteps.map((step: string, idx: number) => (
 //                             <React.Fragment key={idx}>
 //                               <span className="px-2.5 py-1 rounded-md bg-white border border-slate-200 text-[#0C1D4A] font-semibold whitespace-nowrap shadow-2xs">
@@ -318,7 +318,7 @@
 //                       <ul className="space-y-2 pt-1 border-t border-slate-200/60">
 //                         {p.points.map((point: string, idx: number) => (
 //                           <li key={idx} className="flex items-start space-x-2 text-xs text-slate-700">
-//                             <span className="w-4 h-4 rounded-full bg-[#D98A10]/15 text-[#D98A10] flex items-center justify-center shrink-0 mt-0.5 font-bold text-[10px]">
+//                             <span className="w-4 h-4 rounded-full bg-[#D98A10]/15 text-[#D98A10] flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
 //                               ✓
 //                             </span>
 //                             <span className="font-medium">{point}</span>
@@ -370,7 +370,7 @@
 //                   <div className="p-1.5 rounded-lg bg-[#0C1D4A] text-white shrink-0">
 //                     <CheckCircle2 className="w-4 h-4 text-[#D98A10]" />
 //                   </div>
-//                   <p className="text-[11px] text-slate-700 font-medium leading-snug">
+//                   <p className="text-sm text-slate-700 font-medium leading-snug">
 //                     <span className="font-bold text-[#0C1D4A]">Single-Window Guarantee:</span> We don't just provide advisory — we deploy hands-on support until operations are fully established and delivering results.
 //                   </p>
 //                 </div>
@@ -433,7 +433,7 @@
 //                     <span className="text-xs font-bold text-center text-[#0C1D4A] group-hover:text-[#D98A10] transition-colors">
 //                       {item.name}
 //                     </span>
-//                     <span className="text-[10px] text-slate-500 text-center mt-1 font-medium">
+//                     <span className="text-xs text-slate-500 text-center mt-1 font-medium">
 //                       {item.detail}
 //                     </span>
 //                   </div>
@@ -812,7 +812,7 @@ export default function App() {
               {/* Tagline Badge - Updated branding header */}
               <div className="inline-flex items-center space-x-2 bg-[#0C1D4A]/5 border border-[#0C1D4A]/15 px-3.5 py-1.5 rounded-full shadow-sm max-w-full">
                 <span className="w-2 h-2 rounded-full bg-[#D98A10] animate-pulse shrink-0"></span>
-                <span className="text-[10px] sm:text-xs font-bold tracking-wider text-[#0C1D4A] uppercase font-sans truncate">
+                <span className="text-xs sm:text-xs font-bold tracking-wider text-[#0C1D4A] uppercase font-sans truncate">
                   India Entry Solutions &amp; Industrial Troubleshooting: A Division of Spuntech Solutions Pvt Ltd
                 </span>
               </div>
@@ -836,7 +836,7 @@ export default function App() {
                   <button onClick={() => setShowConsultModal(true)} className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 border-2 border-[#0C1D4A] bg-white text-[#0C1D4A] font-bold px-8 py-4 rounded-xl transition-all duration-300">...</button>
                 </div>
                 <div className="pt-4 text-xs flex flex-wrap items-center justify-center lg:justify-start gap-2.5 text-slate-500">
-                  <span className="font-semibold text-slate-700 uppercase tracking-wider text-[11px] flex items-center gap-1.5">Interactive Tools:</span>
+                  <span className="font-semibold text-slate-700 uppercase tracking-wider text-sm flex items-center gap-1.5">Interactive Tools:</span>
                   <button onClick={() => handleOpenAssessment('india-entry')}>India Entry Scorecard</button>
                   <button onClick={() => handleOpenAssessment('msme-health')}>Company Health Check</button>
                 </div>
@@ -857,11 +857,11 @@ export default function App() {
                     <h3 className="font-serif font-bold text-base text-primary group-hover:text-accent transition-colors">
                       India Entry Clinic
                     </h3>
-                    <p className="text-[11px] text-slate-600 leading-relaxed">
-                      Single-window setup, company incorporation, factory land identification, and regulatory clearances for foreign industry.
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      Helping foreign companies enter, establish and grow in India.
                     </p>
                   </div>
-                  <div className="flex items-center space-x-1.5 text-[10px] font-bold text-[#D98A10] uppercase tracking-wider pt-3">
+                  <div className="flex items-center space-x-1.5 text-xs font-bold text-[#D98A10] uppercase tracking-wider pt-3">
                     <span>Explore Clinic</span>
                     <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -877,13 +877,13 @@ export default function App() {
                       <Building2 className="h-5 w-5 stroke-[2]" />
                     </div>
                     <h3 className="font-serif font-bold text-base text-primary group-hover:text-accent transition-colors">
-                      Indian MSME Clinic
+                      MSME Clinic
                     </h3>
-                    <p className="text-[11px] text-slate-600 leading-relaxed">
-                      Root-cause diagnostics, production troubleshooting, OEE maximization, and capacity scaling.
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      Diagnosing and solving business and operational challenges of MSMEs.
                     </p>
                   </div>
-                  <div className="flex items-center space-x-1.5 text-[10px] font-bold text-[#D98A10] uppercase tracking-wider pt-3">
+                  <div className="flex items-center space-x-1.5 text-xs font-bold text-[#D98A10] uppercase tracking-wider pt-3">
                     <span>Explore Clinic</span>
                     <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -901,11 +901,11 @@ export default function App() {
                     <h3 className="font-serif font-bold text-base text-primary group-hover:text-accent transition-colors">
                       Defence &amp; Aerospace Clinic
                     </h3>
-                    <p className="text-[11px] text-slate-600 leading-relaxed">
-                      Defence licensing, offset advisory, Technology Transfer (ToT), WPC frequency clearance, and military trials facilitation.
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      Providing specialised industrial, technical and regulatory support to defence and aerospace companies.
                     </p>
                   </div>
-                  <div className="flex items-center space-x-1.5 text-[10px] font-bold text-[#D98A10] uppercase tracking-wider pt-3">
+                  <div className="flex items-center space-x-1.5 text-xs font-bold text-[#D98A10] uppercase tracking-wider pt-3">
                     <span>Explore Clinic</span>
                     <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -923,18 +923,11 @@ export default function App() {
                     <h3 className="font-serif font-bold text-base text-primary group-hover:text-accent transition-colors">
                       Support Clinic
                     </h3>
-                    <p className="text-[11px] text-slate-600 leading-relaxed mb-2">
-                      Legal and secretarial compliance, invoicing, corporate tax secretarial, HR &amp; payroll support.
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      Providing technical documentation, audits, inspections and execution support.
                     </p>
-                    <div className="flex flex-wrap gap-1 pt-1">
-                      {["Legal Advisor", "Finance Expert", "Industrial Architect", "HR Consultant", "Compliance Specialist", "Admin & Logistics"].map((s) => (
-                        <span key={s} className="text-[8.5px] font-semibold text-slate-600 bg-slate-100 border border-slate-200 px-1.5 py-0.5 rounded-sm">
-                          {s}
-                        </span>
-                      ))}
-                    </div>
                   </div>
-                  <div className="flex items-center space-x-1.5 text-[10px] font-bold text-[#D98A10] uppercase tracking-wider pt-3">
+                  <div className="flex items-center space-x-1.5 text-xs font-bold text-[#D98A10] uppercase tracking-wider pt-3">
                     <span>Explore Clinic</span>
                     <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -943,11 +936,11 @@ export default function App() {
 
               {/* Tagline placed below the new block */}
               <div className="text-center sm:text-left pt-6 pb-2 border-t border-slate-250/60 mt-6 max-w-2xl flex flex-wrap items-center justify-center lg:justify-start gap-y-1.5">
-                <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] font-bold text-[#0c1d4a]">Industrial Expertise</span>
+                <span className="text-xs sm:text-xs uppercase tracking-[0.2em] font-bold text-[#0c1d4a]">Industrial Expertise</span>
                 <span className="mx-2.5 text-[#D98A10] font-light">|</span>
-                <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] font-bold text-[#0c1d4a]">Strategic Guidance</span>
+                <span className="text-xs sm:text-xs uppercase tracking-[0.2em] font-bold text-[#0c1d4a]">Strategic Guidance</span>
                 <span className="mx-2.5 text-[#D98A10] font-light">|</span>
-                <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] font-bold text-[#D98A10]">Seamless Growth</span>
+                <span className="text-xs sm:text-xs uppercase tracking-[0.2em] font-bold text-[#D98A10]">Seamless Growth</span>
               </div>
 
             </div>
@@ -971,10 +964,10 @@ export default function App() {
                       <h3 className="text-sm font-bold text-[#0C1D4A] tracking-tight">
                         Single-Window Execution Architecture
                       </h3>
-                      <p className="text-[11px] text-slate-500">From Strategy through Operations &amp; Scaling</p>
+                      <p className="text-sm text-slate-500">From Strategy through Operations &amp; Scaling</p>
                     </div>
                   </div>
-                  <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-50 text-[#D98A10] border border-[#D98A10]/30 flex items-center space-x-1">
+                  <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-50 text-[#D98A10] border border-[#D98A10]/30 flex items-center space-x-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#D98A10] animate-ping"></span>
                     <span>35+ YRS EXP</span>
                   </span>
@@ -1027,7 +1020,7 @@ export default function App() {
                     <div className="space-y-4 bg-gradient-to-br from-slate-50 via-white to-amber-50/20 p-5 rounded-2xl border border-slate-200/90 shadow-sm relative overflow-hidden">
                       <div className="flex items-start justify-between">
                         <div>
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-[#D98A10] bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200/80 inline-block mb-1.5">
+                          <span className="text-xs font-bold uppercase tracking-wider text-[#D98A10] bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200/80 inline-block mb-1.5">
                             {p.tag}
                           </span>
                           <h4 className="font-serif font-bold text-lg text-[#0C1D4A]">
@@ -1044,10 +1037,10 @@ export default function App() {
 
                       {/* Execution Steps Flow Pills */}
                       <div className="space-y-1.5 pt-1">
-                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                        <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">
                           Execution Methodology Roadmap:
                         </p>
-                        <div className="flex items-center gap-1 overflow-x-auto pb-1 text-[11px]">
+                        <div className="flex items-center gap-1 overflow-x-auto pb-1 text-sm">
                           {p.stageSteps.map((step: string, idx: number) => (
                             <React.Fragment key={idx}>
                               <span className="px-2.5 py-1 rounded-md bg-white border border-slate-200 text-[#0C1D4A] font-semibold whitespace-nowrap shadow-2xs">
@@ -1065,7 +1058,7 @@ export default function App() {
                       <ul className="space-y-2 pt-1 border-t border-slate-200/60">
                         {p.points.map((point: string, idx: number) => (
                           <li key={idx} className="flex items-start space-x-2 text-xs text-slate-700">
-                            <span className="w-4 h-4 rounded-full bg-[#D98A10]/15 text-[#D98A10] flex items-center justify-center shrink-0 mt-0.5 font-bold text-[10px]">
+                            <span className="w-4 h-4 rounded-full bg-[#D98A10]/15 text-[#D98A10] flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
                               ✓
                             </span>
                             <span className="font-medium">{point}</span>
@@ -1117,7 +1110,7 @@ export default function App() {
                   <div className="p-1.5 rounded-lg bg-[#0C1D4A] text-white shrink-0">
                     <CheckCircle2 className="w-4 h-4 text-[#D98A10]" />
                   </div>
-                  <p className="text-[11px] text-slate-700 font-medium leading-snug">
+                  <p className="text-sm text-slate-700 font-medium leading-snug">
                     <span className="font-bold text-[#0C1D4A]">Single-Window Guarantee:</span> We don't just provide advisory — we deploy hands-on support until operations are fully established and delivering results.
                   </p>
                 </div>
@@ -1127,7 +1120,7 @@ export default function App() {
 
           </div>
 {/* STATS ARE USED IN THE HERO2 */}
-          {/* {}
+          {}
           <div className="mt-16 sm:mt-20 bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl shadow-xl p-6 sm:p-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 divide-y lg:divide-y-0 lg:divide-x divide-slate-200">
               {stats.map((stat, idx) => {
@@ -1156,7 +1149,7 @@ export default function App() {
             </div>
           </div>
 
-          {} */}
+          {}
           <div className="mt-16 text-center space-y-6">
             <div className="inline-flex items-center space-x-3">
               <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#D98A10]"></span>
@@ -1180,7 +1173,7 @@ export default function App() {
                     <span className="text-xs font-bold text-center text-[#0C1D4A] group-hover:text-[#D98A10] transition-colors">
                       {item.name}
                     </span>
-                    <span className="text-[10px] text-slate-500 text-center mt-1 font-medium">
+                    <span className="text-xs text-slate-500 text-center mt-1 font-medium">
                       {item.detail}
                     </span>
                   </div>

@@ -46,7 +46,7 @@ export default function InsightsGrid() {
             >
               <div>
                 {/* Meta details */}
-                <div className="flex items-center justify-between text-[11px] text-slate-500 font-semibold mb-4">
+                <div className="flex items-center justify-between text-sm text-slate-500 font-semibold mb-4">
                   <span className="bg-accent/10 text-accent px-2 py-0.5 rounded-sm uppercase tracking-wider">
                     {art.category}
                   </span>

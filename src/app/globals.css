@@ -20,16 +20,28 @@
   --color-light-gray: var(--color-light-gray);
   --font-serif: var(--font-lora), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  /* Readable site-wide scale (bumped from Tailwind defaults) */
+  --text-xs: 0.8125rem;   /* 13px */
+  --text-sm: 0.9375rem;   /* 15px */
+  --text-base: 1.0625rem; /* 17px */
+  --text-lg: 1.1875rem;   /* 19px */
+  --text-xl: 1.3125rem;   /* 21px */
+  --text-2xl: 1.625rem;   /* 26px */
+  --text-3xl: 2rem;       /* 32px */
+  --text-4xl: 2.375rem;   /* 38px */
 }
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
   overflow-x: hidden;
 }
 
@@ -38,6 +50,11 @@ body {
     font-family: var(--font-serif);
     font-weight: 600;
     color: var(--color-primary);
+    line-height: 1.25;
+  }
+
+  p {
+    line-height: 1.65;
   }
 }
 

@@ -33,9 +33,40 @@ function ContactPageContent() {
     }
   }, [isBtsSource, serviceParam]);
 
+  const serviceLabels: Record<string, string> = {
+    "india-entry": "Foreign Company India Entry & Setup",
+    "msme-growth": "MSME Operations & OEE Optimization",
+    "industrial-assurance": "Industrial QA & Pre-Dispatch Inspection",
+    documentation: "Techno-Commercial / Technical Manuals",
+    "regulatory-wpc": "Defence Industrial License / WPC import clearances",
+    others: "Others",
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Contact form payload:", formData);
+
+    const category = serviceLabels[formData.service] ?? formData.service;
+    const subject = encodeURIComponent(
+      `Consultation Request — ${formData.name} (${formData.org})`
+    );
+    const body = encodeURIComponent(
+      [
+        "New consultation request from the Business Clinic website:",
+        "",
+        `Name: ${formData.name}`,
+        `Email: ${formData.email}`,
+        `Company: ${formData.org}`,
+        `Contact Number: ${formData.phone}`,
+        `Engagement Category: ${category}`,
+        "",
+        "Outline of Requirements:",
+        formData.details,
+        "",
+        "— Sent via Business Clinic Contact Form",
+      ].join("\n")
+    );
+
+    window.location.href = `mailto:indiabusinessclinic@gmail.com?subject=${subject}&body=${body}`;
     setFormSubmitted(true);
   };
 
@@ -55,7 +86,7 @@ function ContactPageContent() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl border-l-4 border-[#D98A10] pl-4 sm:pl-6 space-y-2 sm:space-y-3">
-            <span className="text-[10px] sm:text-xs font-bold tracking-widest text-[#D98A10] uppercase">
+            <span className="text-xs sm:text-xs font-bold tracking-widest text-[#D98A10] uppercase">
               Get in Touch
             </span>
             <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-serif font-bold leading-tight">
@@ -121,7 +152,7 @@ function ContactPageContent() {
                     >
                       +91 9560714343
                     </a>
-                    <span className="text-[10px] text-slate-400 font-semibold block mt-0.5">
+                    <span className="text-xs text-slate-400 font-semibold block mt-0.5">
                       Operational 24/7 for urgent troubleshooting
                     </span>
                   </div>
@@ -170,7 +201,9 @@ function ContactPageContent() {
                     Request Received
                   </h2>
                   <p className="text-slate-600 text-sm max-w-sm mx-auto leading-relaxed">
-                    Thank you. Your consultation payload has been received. Our team, led by Col Sanjay Chandra, will contact you shortly to schedule the call.
+                    Thank you. Your consultation request has been prepared for{" "}
+                    <span className="font-semibold text-primary">indiabusinessclinic@gmail.com</span>.
+                    Please send the email from your mail client if it opened. Our team will contact you shortly.
                   </p>
                   <div className="pt-4">
                     <button
@@ -206,7 +239,7 @@ function ContactPageContent() {
                         value={formData.name}
                         onChange={handleInputChange}
                         className="w-full bg-white border border-slate-300 rounded-sm py-2.5 px-3.5 text-sm text-slate-700 focus:outline-none focus:border-accent"
-                        placeholder="e.g. John Doe"
+                        placeholder="Saloni"
                       />
                     </div>
 
@@ -223,7 +256,7 @@ function ContactPageContent() {
                         value={formData.email}
                         onChange={handleInputChange}
                         className="w-full bg-white border border-slate-300 rounded-sm py-2.5 px-3.5 text-sm text-slate-700 focus:outline-none focus:border-accent"
-                        placeholder="e.g. john@company.com"
+                        placeholder="saloni@corporate.com"
                       />
                     </div>
                   </div>
@@ -242,7 +275,7 @@ function ContactPageContent() {
                         value={formData.org}
                         onChange={handleInputChange}
                         className="w-full bg-white border border-slate-300 rounded-sm py-2.5 px-3.5 text-sm text-slate-700 focus:outline-none focus:border-accent"
-                        placeholder="e.g. Global Tech OEM"
+                        placeholder="Your company name"
                       />
                     </div>
 
@@ -259,7 +292,7 @@ function ContactPageContent() {
                         value={formData.phone}
                         onChange={handleInputChange}
                         className="w-full bg-white border border-slate-300 rounded-sm py-2.5 px-3.5 text-sm text-slate-700 focus:outline-none focus:border-accent"
-                        placeholder="e.g. +91 9876543210"
+                        placeholder="+91 9560714343"
                       />
                     </div>
                   </div>
@@ -281,6 +314,7 @@ function ContactPageContent() {
                       <option value="industrial-assurance">Industrial QA &amp; Pre-Dispatch Inspection</option>
                       <option value="documentation">Techno-Commercial / Technical Manuals</option>
                       <option value="regulatory-wpc">Defence Industrial License / WPC import clearances</option>
+                      <option value="others">Others</option>
                     </select>
                   </div>
 

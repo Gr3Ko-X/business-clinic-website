@@ -26,87 +26,96 @@ export default function App() {
     {
       step: "01",
       code: "ENTER",
-      title: "Assess & Validate",
-      desc: "Market Feasibility & Strategy",
+      title: "Ascertain Market Potential & Prepare Sales Roadmap",
+      desc: "Ascertain Market Potential & Prepare Sales Roadmap",
       icon: Globe,
       color: "gold",
-      details: "Comprehensive market sizing, competitor mapping, regulatory scoping, and DAP/FEMA feasibility analysis to de-risk market entry into India."
+      description: "",
+      methodology: "Ascertain Market Potential & Prepare Sales Roadmap",
     },
     {
       step: "02",
       code: "ESTABLISH",
-      title: "Build Foundation",
-      desc: "Incorporation, EPC & Setup",
+      title: "Create Infrastructure & Firm-up Supply Chain Management",
+      desc: "Finalize Business Plan",
       icon: Building,
       color: "gold",
-      details: "Entity incorporation, factory land identification, EPC contractor selection, state approvals, and joint venture partner structuring."
+      description: "Create Infrastructure & Firm-up Supply Chain Management",
+      methodology: "Finalize Business Plan",
     },
     {
       step: "03",
       code: "ENABLE",
-      title: "Become Operational",
-      desc: "Licensing, Regulatory, Approvals",
+      title: "Populate, Orderbook, Commence Supply",
+      desc: "Customer Engagement & Feedback",
       icon: FileCheck2,
       color: "gold",
-      details: "Securing Defence Industrial Licensing, WPC import clearances, environmental permits, and liaison with government agencies for launch readiness."
+      description: "Populate, Orderbook, Commence Supply",
+      methodology: "Customer Engagement & Feedback",
     },
     {
       step: "04",
       code: "EXPAND",
-      title: "Scale & Grow",
-      desc: "Revenue, Supply Chain & Order Books",
+      title: "Business Development Growth & Pipeline for future projects",
+      desc: "Risk Mitigation & Diversification",
       icon: TrendingUp,
       color: "gold",
-      details: "Building vendor ecosystems, indigenization plans, order book pipeline development, and ongoing offset fulfillment."
-    }
+      description: "Business Development Growth & Pipeline for future projects",
+      methodology: "Risk Mitigation & Diversification",
+    },
   ];
 
   const msmeMethodology = [
     {
       step: "01",
-      code: "DISCOVER",
-      title: "Identify Problems & Symptoms",
-      desc: "Identify Problems & Symptoms",
+      code: "DETECT",
+      title: "Operational Audit",
+      desc: "Understanding organization & business framework",
       icon: Search,
       color: "navy",
-      details: "In-depth plant floor walkthroughs, executive interviews, and data gathering to isolate operational bottlenecks and throughput constraints."
+      description: "Operational Audit",
+      methodology: "Understanding organization & business framework",
     },
     {
       step: "02",
       code: "DIAGNOSE",
-      title: "Root Cause Analysis & Audit",
-      desc: "Root Cause Analysis & Audit",
+      title: "Identify Weak Components & Process Failure",
+      desc: "Identify Weak components & process failure",
       icon: Target,
       color: "navy",
-      details: "Rigorous root-cause analysis, quality system audits, OEE calculations, and cost-of-poor-quality (COPQ) evaluations."
+      description: "",
+      methodology: "Identify Weak components & process failure",
     },
     {
       step: "03",
       code: "DESIGN",
-      title: "Solution Architecture & Action Plan",
-      desc: "Solution Architecture & Action Plan",
+      title: "Prepare Solutions for Repair & Recovery",
+      desc: "Prepare Solutions for Repair & Recovery",
       icon: Lightbulb,
       color: "navy",
-      details: "Engineering customized SOPs, lean manufacturing workflows, capacity scaling models, and commercial recovery roadmaps."
+      description: "",
+      methodology: "Prepare Solutions for Repair & Recovery",
     },
     {
       step: "04",
       code: "DEPLOY",
-      title: "On-Ground Implementation & Handholding",
-      desc: "On-Ground Implementation & Handholding",
+      title: "Implementation Action Plan",
+      desc: "Implementation Action Plan",
       icon: Cog,
       color: "navy",
-      details: "Direct on-the-floor execution, operator training, shop floor restructuring, and military-grade quality protocol installation."
+      description: "",
+      methodology: "Implementation Action Plan",
     },
     {
       step: "05",
-      code: "SUSTAIN",
-      title: "Performance Monitoring & Continuous OEE",
-      desc: "Performance Monitoring & Continuous OEE",
+      code: "DELIVER",
+      title: "Performance Validation & Optimization",
+      desc: "Measure Results & Ensure Sustainable Performance",
       icon: LineChart,
       color: "navy",
-      details: "Instituting KPIs, periodic audit health checks, leadership coaching, and continuous improvement cycles to prevent relapse."
-    }
+      description: "Performance Validation & Optimization",
+      methodology: "Measure Results & Ensure Sustainable Performance",
+    },
   ];
 
   return (
@@ -125,7 +134,7 @@ export default function App() {
           {/* Top Pill Badge */}
           <div className="inline-flex items-center space-x-2 bg-white border border-[#D98A10]/40 rounded-full px-4 py-1.5 shadow-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-[#D98A10] animate-pulse"></span>
-            <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#D98A10] uppercase">
+            <span className="text-sm sm:text-xs font-bold tracking-[0.2em] text-[#D98A10] uppercase">
               OUR METHODOLOGY
             </span>
           </div>
@@ -153,7 +162,7 @@ export default function App() {
             {/* Top Center Pill Header Badge */}
             <div className="inline-flex bg-[#0C1D4A] text-white px-5 sm:px-7 py-2 rounded-full shadow-md border border-[#D98A10]/50 items-center space-x-2.5 mb-8 sm:mb-10 whitespace-nowrap">
               <Globe className="w-4 h-4 text-[#D98A10]" />
-              <span className="text-xs sm:text-sm font-bold tracking-widest uppercase">
+              <span className="text-sm sm:text-base font-bold tracking-widest uppercase">
                 GLOBAL ENTERPRISES: 4E METHODOLOGY
               </span>
             </div>
@@ -169,9 +178,9 @@ export default function App() {
                     
                     {/* Top Step Code Badge */}
                     <div className="flex items-center space-x-1 mb-3">
-                      <span className="text-xs sm:text-sm font-bold text-[#D98A10]">{item.step}</span>
+                      <span className="text-sm sm:text-base font-bold text-[#D98A10]">{item.step}</span>
                       <span className="text-slate-300 font-light">|</span>
-                      <span className="text-xs sm:text-sm font-serif font-bold text-[#0C1D4A] tracking-wider">
+                      <span className="text-sm sm:text-base font-serif font-bold text-[#0C1D4A] tracking-wider">
                         {item.code}
                       </span>
                     </div>
@@ -188,18 +197,26 @@ export default function App() {
 
                     {/* Stage Title & Short Subtitle */}
                     <div className="space-y-1 max-w-[190px]">
-                      <h4 className="font-bold text-xs sm:text-sm text-[#0C1D4A] leading-snug">
-                        {item.title}
-                      </h4>
-                      <p className="text-[11px] sm:text-xs text-slate-500 leading-tight">
-                        {item.desc}
-                      </p>
+                      {item.description ? (
+                        <>
+                          <h4 className="font-bold text-sm sm:text-base text-[#0C1D4A] leading-snug">
+                            {item.description}
+                          </h4>
+                          <p className="text-sm sm:text-xs text-slate-500 leading-tight">
+                            {item.methodology}
+                          </p>
+                        </>
+                      ) : (
+                        <h4 className="font-bold text-sm sm:text-base text-[#0C1D4A] leading-snug">
+                          {item.methodology}
+                        </h4>
+                      )}
                     </div>
 
                     {/* Interactive Clickable Info Trigger */}
                     <button
                       onClick={() => setActiveStepModal(item)}
-                      className="mt-3 text-[10px] font-bold text-[#D98A10] hover:text-[#0C1D4A] inline-flex items-center space-x-1 transition-colors cursor-pointer"
+                      className="mt-3 text-xs font-bold text-[#D98A10] hover:text-[#0C1D4A] inline-flex items-center space-x-1 transition-colors cursor-pointer"
                     >
                       <span>Explore Stage</span>
                       <ChevronRight className="w-3 h-3" />
@@ -229,7 +246,7 @@ export default function App() {
             {/* Top Center Pill Header Badge */}
             <div className="inline-flex bg-[#0C1D4A] text-white px-5 sm:px-7 py-2 rounded-full shadow-md border border-[#D98A10]/50 items-center space-x-2.5 mb-8 sm:mb-10 whitespace-nowrap">
               <Factory className="w-4 h-4 text-[#D98A10]" />
-              <span className="text-xs sm:text-sm font-bold tracking-widest uppercase">
+              <span className="text-sm sm:text-base font-bold tracking-widest uppercase">
                 INDIAN MSMEs: 5D METHODOLOGY
               </span>
             </div>
@@ -245,9 +262,9 @@ export default function App() {
                     
                     {/* Step Code Header */}
                     <div className="flex items-center space-x-1 mb-3">
-                      <span className="text-xs sm:text-sm font-bold text-[#0C1D4A]">{item.step}</span>
+                      <span className="text-sm sm:text-base font-bold text-[#0C1D4A]">{item.step}</span>
                       <span className="text-slate-300 font-light">|</span>
-                      <span className="text-xs sm:text-sm font-serif font-bold text-[#0C1D4A] tracking-wider">
+                      <span className="text-sm sm:text-base font-serif font-bold text-[#0C1D4A] tracking-wider">
                         {item.code}
                       </span>
                     </div>
@@ -264,15 +281,26 @@ export default function App() {
 
                     {/* Stage Title */}
                     <div className="space-y-1 max-w-[170px]">
-                      <p className="text-xs text-slate-600 font-medium leading-snug">
-                        {item.title}
-                      </p>
+                      {item.description ? (
+                        <>
+                          <p className="text-xs text-[#0C1D4A] font-bold leading-snug">
+                            {item.description}
+                          </p>
+                          <p className="text-sm text-slate-500 font-medium leading-snug">
+                            {item.methodology}
+                          </p>
+                        </>
+                      ) : (
+                        <p className="text-xs text-slate-600 font-medium leading-snug">
+                          {item.methodology}
+                        </p>
+                      )}
                     </div>
 
                     {/* Interactive Clickable Info Trigger */}
                     <button
                       onClick={() => setActiveStepModal(item)}
-                      className="mt-3 text-[10px] font-bold text-[#0C1D4A] hover:text-[#D98A10] inline-flex items-center space-x-1 transition-colors cursor-pointer"
+                      className="mt-3 text-xs font-bold text-[#0C1D4A] hover:text-[#D98A10] inline-flex items-center space-x-1 transition-colors cursor-pointer"
                     >
                       <span>Explore Stage</span>
                       <ChevronRight className="w-3 h-3" />
@@ -309,12 +337,12 @@ export default function App() {
                 <ShieldCheck className="w-6 h-6 text-[#0C1D4A]" />
               </div>
 
-              {/* Commitment Banner Text (NO FULL STOP AT END) */}
-              <div className="text-xs sm:text-sm font-semibold text-white tracking-wide leading-relaxed">
+              {/* Commitment Banner Text */}
+              <div className="text-sm sm:text-base font-semibold text-white tracking-wide leading-relaxed">
                 <span className="font-bold text-white">From Diagnosis to Execution</span>
                 <span className="mx-2 text-[#D98A10]">―</span>
                 <span className="text-[#F3C06B] italic font-serif text-sm sm:text-base">
-                  We stay with you until operations deliver results
+                  Constant support throughout the engagement and beyond
                 </span>
               </div>
 
@@ -342,24 +370,43 @@ export default function App() {
                 <Sparkles className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-[10px] font-bold text-[#D98A10] uppercase tracking-wider">Stage {activeStepModal.step}</span>
+                <span className="text-xs font-bold text-[#D98A10] uppercase tracking-wider">Stage {activeStepModal.step}</span>
                 <h3 className="font-serif font-bold text-lg sm:text-xl text-[#0C1D4A]">
-                  {activeStepModal.code} — {activeStepModal.title}
+                  {activeStepModal.code}
                 </h3>
               </div>
             </div>
 
             <div className="space-y-4">
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                {activeStepModal.details}
-              </p>
+              {activeStepModal.description ? (
+                <div className="space-y-1.5">
+                  <h4 className="text-xs font-bold text-[#0C1D4A] uppercase tracking-wider">Description</h4>
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                    {activeStepModal.description}
+                  </p>
+                </div>
+              ) : null}
 
-              <div className="bg-amber-50/60 border border-amber-200/80 rounded-xl p-4">
-                <h4 className="text-xs font-bold text-[#0C1D4A] uppercase tracking-wider mb-1">Methodology Objective</h4>
-                <p className="text-xs text-slate-700">
-                  Deliver turnkey execution and risk-free transition throughout Stage {activeStepModal.step} with dedicated subject matter advisors.
-                </p>
-              </div>
+              {activeStepModal.methodology ? (
+                <div className="bg-amber-50/60 border border-amber-200/80 rounded-xl p-4 space-y-1.5">
+                  <h4 className="text-xs font-bold text-[#0C1D4A] uppercase tracking-wider">Methodology</h4>
+                  <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                    {activeStepModal.methodology}
+                  </p>
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                    {activeStepModal.details}
+                  </p>
+                  <div className="bg-amber-50/60 border border-amber-200/80 rounded-xl p-4">
+                    <h4 className="text-xs font-bold text-[#0C1D4A] uppercase tracking-wider mb-1">Methodology Objective</h4>
+                    <p className="text-xs text-slate-700">
+                      Deliver turnkey execution and risk-free transition throughout Stage {activeStepModal.step} with dedicated subject matter advisors.
+                    </p>
+                  </div>
+                </div>
+              )}
 
               <div className="pt-2 flex justify-end">
                 <button

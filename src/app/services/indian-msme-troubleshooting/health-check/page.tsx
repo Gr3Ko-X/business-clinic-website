@@ -511,7 +511,7 @@ export default function MSMEHealthCheckPage() {
           >
             ↺ Reset
           </button>
-          <span className="hidden sm:inline-block font-mono text-[10px] tracking-wide text-[#144F45] bg-[#1F7A6C]/10 px-2.5 py-1 rounded-full font-medium">
+          <span className="hidden sm:inline-block font-mono text-xs tracking-wide text-[#144F45] bg-[#1F7A6C]/10 px-2.5 py-1 rounded-full font-medium">
             Self-Assessment
           </span>
         </div>
@@ -631,7 +631,7 @@ export default function MSMEHealthCheckPage() {
           <div className="space-y-5 animate-in fade-in slide-in-from-bottom-2 duration-200">
             {/* Progress Area */}
             <div className="space-y-2">
-              <div className="flex justify-between text-[11px] font-mono text-[#3c4d5f] font-semibold">
+              <div className="flex justify-between text-sm font-mono text-[#3c4d5f] font-semibold">
                 <span>CATEGORY {catIndex + 1} OF {CATEGORIES.length}</span>
                 <span>{progressPct}% COMPLETE</span>
               </div>
@@ -647,7 +647,7 @@ export default function MSMEHealthCheckPage() {
             <div className="bg-white border border-[#D8D3C6] rounded-2xl shadow-sm p-6 sm:p-8 space-y-6">
               
               <div className="space-y-1">
-                <span className="font-mono text-[10px] font-bold text-[#144F45] tracking-wider uppercase bg-[#1F7A6C]/10 px-2.5 py-1 rounded-full">
+                <span className="font-mono text-xs font-bold text-[#144F45] tracking-wider uppercase bg-[#1F7A6C]/10 px-2.5 py-1 rounded-full">
                   {activeCategory.points} points available
                 </span>
                 <h2 className="font-serif font-bold text-xl sm:text-2xl pt-2">
@@ -724,7 +724,7 @@ export default function MSMEHealthCheckPage() {
               
               {/* Respondent info */}
               {profile.company && (
-                <div className="text-[11px] font-mono font-bold text-[#3c4d5f] border-b border-[#EEEBE3] pb-3 flex flex-wrap gap-x-3">
+                <div className="text-sm font-mono font-bold text-[#3c4d5f] border-b border-[#EEEBE3] pb-3 flex flex-wrap gap-x-3">
                   <span>{profile.company}</span>
                   {profile.industry && <span>• {profile.industry}</span>}
                   {profile.country && <span>• {profile.country}</span>}
@@ -753,7 +753,7 @@ export default function MSMEHealthCheckPage() {
                 </p>
 
                 {catResults.filter(c => c.isFullyNA).length > 0 && (
-                  <p className="text-[10px] text-[#3c4d5f] max-w-sm">
+                  <p className="text-xs text-[#3c4d5f] max-w-sm">
                     {catResults.filter(c => c.isFullyNA).length} category/ies marked N/A. Scored across remaining {totalAchievable} points and normalized to 100.
                   </p>
                 )}
@@ -859,7 +859,7 @@ export default function MSMEHealthCheckPage() {
                 >
                   Start Over
                 </button>
-                <span className="text-[#3c4d5f] font-mono text-[10px]">
+                <span className="text-[#3c4d5f] font-mono text-xs">
                   Generated on {new Date().toLocaleDateString("en-IN")}
                 </span>
               </div>
@@ -909,7 +909,7 @@ export default function MSMEHealthCheckPage() {
                     contactValidation.name ? "border-[#D8D3C6] focus:border-[#1F7A6C]" : "border-[#B4442E]"
                   }`}
                 />
-                {!contactValidation.name && <div className="text-[10px] text-[#B4442E]">Please enter your name.</div>}
+                {!contactValidation.name && <div className="text-xs text-[#B4442E]">Please enter your name.</div>}
               </div>
 
               <div className="space-y-1">
@@ -925,7 +925,7 @@ export default function MSMEHealthCheckPage() {
                     contactValidation.designation ? "border-[#D8D3C6] focus:border-[#1F7A6C]" : "border-[#B4442E]"
                   }`}
                 />
-                {!contactValidation.designation && <div className="text-[10px] text-[#B4442E]">Please enter your designation.</div>}
+                {!contactValidation.designation && <div className="text-xs text-[#B4442E]">Please enter your designation.</div>}
               </div>
 
               <div className="space-y-1">
@@ -941,7 +941,7 @@ export default function MSMEHealthCheckPage() {
                     contactValidation.email ? "border-[#D8D3C6] focus:border-[#1F7A6C]" : "border-[#B4442E]"
                   }`}
                 />
-                {!contactValidation.email && <div className="text-[10px] text-[#B4442E]">Please enter a valid company email.</div>}
+                {!contactValidation.email && <div className="text-xs text-[#B4442E]">Please enter a valid company email.</div>}
               </div>
 
               <div className="grid grid-cols-2 gap-4">
@@ -969,7 +969,7 @@ export default function MSMEHealthCheckPage() {
             </div>
 
             <div className="pt-2 flex flex-col items-stretch gap-2 border-t border-[#EEEBE3]">
-              {modalErr && <span className="text-[10px] text-[#B4442E] leading-normal">{modalErr}</span>}
+              {modalErr && <span className="text-xs text-[#B4442E] leading-normal">{modalErr}</span>}
               <button 
                 onClick={handleContactSubmit}
                 disabled={submittingLead}
@@ -977,7 +977,7 @@ export default function MSMEHealthCheckPage() {
               >
                 {submittingLead ? "Submitting..." : "Continue to Assessment →"}
               </button>
-              <div className="text-[10px] text-[#3c4d5f] bg-[#F3F1EA] p-3 rounded-lg leading-relaxed text-center">
+              <div className="text-xs text-[#3c4d5f] bg-[#F3F1EA] p-3 rounded-lg leading-relaxed text-center">
                 Submitting this form sends your details to Business Clinic via email. It is not stored anywhere else.
               </div>
             </div>
@@ -1027,7 +1027,7 @@ export default function MSMEHealthCheckPage() {
                         requestValidation.name ? "border-[#D8D3C6] focus:border-[#1F7A6C]" : "border-[#B4442E]"
                       }`}
                     />
-                    {!requestValidation.name && <div className="text-[10px] text-[#B4442E]">Please enter your name.</div>}
+                    {!requestValidation.name && <div className="text-xs text-[#B4442E]">Please enter your name.</div>}
                   </div>
 
                   <div className="space-y-1">
@@ -1042,7 +1042,7 @@ export default function MSMEHealthCheckPage() {
                         requestValidation.email ? "border-[#D8D3C6] focus:border-[#1F7A6C]" : "border-[#B4442E]"
                       }`}
                     />
-                    {!requestValidation.email && <div className="text-[10px] text-[#B4442E]">Please enter a valid email.</div>}
+                    {!requestValidation.email && <div className="text-xs text-[#B4442E]">Please enter a valid email.</div>}
                   </div>
 
                   {showRequestModal === "diagnostic" ? (
@@ -1089,7 +1089,7 @@ export default function MSMEHealthCheckPage() {
                 </div>
 
                 <div className="pt-2 flex flex-col items-stretch gap-2 border-t border-[#EEEBE3]">
-                  {requestErr && <span className="text-[10px] text-[#B4442E] leading-normal">{requestErr}</span>}
+                  {requestErr && <span className="text-xs text-[#B4442E] leading-normal">{requestErr}</span>}
                   <button 
                     onClick={handleRequestSubmit}
                     disabled={submittingRequest}
@@ -1097,7 +1097,7 @@ export default function MSMEHealthCheckPage() {
                   >
                     {submittingRequest ? "Sending..." : "Send Request →"}
                   </button>
-                  <div className="text-[10px] text-[#3c4d5f] text-center">
+                  <div className="text-xs text-[#3c4d5f] text-center">
                     This sends your request directly to Business Clinic by email.
                   </div>
                 </div>

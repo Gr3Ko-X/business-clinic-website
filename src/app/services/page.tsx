@@ -38,7 +38,7 @@ export default function ServicesPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl border-l-4 border-[#D98A10] pl-4 sm:pl-6 space-y-2 sm:space-y-3">
-            <span className="text-[10px] sm:text-xs font-bold tracking-widest text-[#D98A10] uppercase">
+            <span className="text-xs sm:text-xs font-bold tracking-widest text-[#D98A10] uppercase">
               Our Capabilities
             </span>
             <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-serif font-bold leading-tight">
@@ -71,7 +71,7 @@ export default function ServicesPage() {
                         <Icon className="h-6 w-6" />
                       </div>
                       <div>
-                        <span className="text-[10px] font-bold text-slate-400 tracking-widest block">
+                        <span className="text-xs font-bold text-slate-400 tracking-widest block">
                           CLINIC {num}
                         </span>
                         <h2 className="font-serif text-2xl font-bold text-primary">

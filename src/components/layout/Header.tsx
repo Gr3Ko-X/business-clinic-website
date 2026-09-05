@@ -1,9 +1,39 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
+import { insightsData } from "@/lib/data/insights";
+
+function BrandMark({ size = 48 }: { size?: number }) {
+  return (
+    <Image
+      src="/images/logo/IBC.png"
+      alt="India Business Clinic"
+      width={size}
+      height={size}
+      className="object-contain shrink-0"
+      priority
+    />
+  );
+}
+
+function BrandWordmark({ className = "" }: { className?: string }) {
+  const goldLetter =
+    "bg-gradient-to-b from-[#F5D76E] via-[#E2A128] to-[#C58F1A] bg-clip-text text-transparent font-bold";
+
+  return (
+    <span
+      className={`font-['Times_New_Roman',Times,serif] text-white tracking-wide leading-tight ${className}`}
+    >
+      <span className={goldLetter}>I</span>ndia{" "}
+      <span className={goldLetter}>B</span>usiness{" "}
+      <span className={goldLetter}>C</span>linic
+    </span>
+  );
+}
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,17 +65,16 @@ export default function Header() {
       href: "/services",
       isMegaMenu: true,
     },
-    { name: "Solutions", href: "/solutions" },
+    // { name: "Solutions", href: "/solutions" },
     {
       name: "Insights",
       href: "/insights",
       dropdown: [
-        { name: "The Great MSME Disconnect", href: "/insights/great-msme-disconnect" },
-        { name: "Why MSMEs Fail to Deliver", href: "/insights/hr-gaps-msme-recruitment" },
-        { name: "India Entry Challenges", href: "/insights/india-market-entry-handbook" },
-        { name: "Defence & WPC Licensing", href: "/insights/defence-industrial-wpc-licensing" },
         { name: "Bengaluru Tech Summit 2026", href: "/bengaluru-tech-summit-2026" },
-        { name: "BTS 2026 Strategy Guide", href: "/insights/bts-2026-strategy-guide" },
+        ...insightsData.map((article) => ({
+          name: article.title,
+          href: `/insights/${article.slug}`,
+        })),
       ],
     },
     { name: "Contact Us", href: "/contact" },
@@ -78,16 +107,9 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold tracking-tight text-white flex items-baseline">
-                  <span className="text-accent font-serif text-3xl mr-0.5">B</span>
-                  <span className="font-sans font-semibold tracking-wide text-white">USINESS</span>
-                </span>
-                <span className="text-xs uppercase tracking-widest text-accent font-bold -mt-1 pl-6">
-                  Clinic
-                </span>
-              </div>
+            <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group min-w-0">
+              {/* <BrandMark size={44} /> */}
+              <BrandWordmark className="text-base sm:text-lg lg:text-xl font-semibold truncate" />
             </Link>
 
             {/* Desktop Nav with Hover Dropdowns */}
@@ -118,37 +140,37 @@ export default function Header() {
                           <div className="flex flex-col space-y-1">
                             <Link
                               href="/services/india-entry-support-foreign-industry"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-[11px] leading-snug hover:bg-slate-50 transition-colors"
+                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
                             >
                               India Entry Support for Foreign Industry
                             </Link>
                             <Link
                               href="/services/indian-msme-troubleshooting"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-[11px] leading-snug hover:bg-slate-50 transition-colors"
+                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
                             >
                               Indian MSME Troubleshooting
                             </Link>
                             <Link
                               href="/services/business-industrial-consulting"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-[11px] leading-snug hover:bg-slate-50 transition-colors"
+                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
                             >
                               Operational Consulting
                             </Link>
                             <Link
                               href="/services/business-industrial-consulting"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-[11px] leading-snug hover:bg-slate-50 transition-colors"
+                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
                             >
                               Manufacturing Advisory
                             </Link>
                             <Link
                               href="/services/business-industrial-consulting"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-[11px] leading-snug hover:bg-slate-50 transition-colors"
+                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
                             >
                               Industrial Setup Support
                             </Link>
                             <Link
                               href="/services/legal-company-secretary-ca-services"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-[11px] leading-snug hover:bg-slate-50 transition-colors"
+                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
                             >
                               Legal, Company Secretary and CA Services
                             </Link>
@@ -163,37 +185,37 @@ export default function Header() {
                           <div className="flex flex-col space-y-1">
                             <Link
                               href="/services/documentation-technical-knowledge"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-[11px] leading-snug hover:bg-slate-50 transition-colors"
+                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
                             >
                               India Vendor Validation Services
                             </Link>
                             <Link
                               href="/services/documentation-technical-knowledge"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-[11px] leading-snug hover:bg-slate-50 transition-colors"
+                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
                             >
                               Techno-Commercial Documentation
                             </Link>
                             <Link
                               href="/services/documentation-technical-knowledge"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-[11px] leading-snug hover:bg-slate-50 transition-colors"
+                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
                             >
                               Technology Transfer (TOT) Documentation
                             </Link>
                             <Link
                               href="/services/documentation-technical-knowledge"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-[11px] leading-snug hover:bg-slate-50 transition-colors"
+                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
                             >
                               SOP &amp; Process Documentation
                             </Link>
                             <Link
                               href="/services/documentation-technical-knowledge"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-[11px] leading-snug hover:bg-slate-50 transition-colors"
+                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
                             >
                               Governance Documentation
                             </Link>
                             <Link
                               href="/services/documentation-technical-knowledge"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-[11px] leading-snug hover:bg-slate-50 transition-colors"
+                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
                             >
                               Industrial Knowledge Management
                             </Link>
@@ -208,40 +230,40 @@ export default function Header() {
                           <div className="flex flex-col space-y-1">
                             <Link
                               href="/services/industrial-assurance-validation"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-[11px] leading-snug hover:bg-slate-50 transition-colors"
+                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
                             >
                               Quality Surveillance
                             </Link>
                             <Link
                               href="/services/industrial-assurance-validation"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-[11px] leading-snug hover:bg-slate-50 transition-colors"
+                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
                             >
                               Vendor Reliability
                             </Link>
                             <Link
                               href="/services/industrial-assurance-validation"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-[11px] leading-snug hover:bg-slate-50 transition-colors"
+                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
                             >
                               Compliance
                             </Link>
                             <div className="py-1">
-                              <span className="text-slate-800 font-bold block text-[10px] uppercase tracking-wider px-2">
+                              <span className="text-slate-800 font-bold block text-xs uppercase tracking-wider px-2">
                                 Production Validation
                               </span>
                               <Link
                                 href="/services/industrial-assurance-validation"
-                                className="pl-4 py-0.5 text-[10px] text-slate-500 font-semibold hover:text-accent block transition-colors"
+                                className="pl-4 py-0.5 text-xs text-slate-500 font-semibold hover:text-accent block transition-colors"
                               >
                                 FAT / FAI / ATP / PDI
                               </Link>
                             </div>
                             <div className="py-1">
-                              <span className="text-slate-800 font-bold block text-[10px] uppercase tracking-wider px-2">
+                              <span className="text-slate-800 font-bold block text-xs uppercase tracking-wider px-2">
                                 Inspection Integrity
                               </span>
                               <Link
                                 href="/services/industrial-assurance-validation"
-                                className="pl-4 py-0.5 text-[10px] text-slate-500 font-semibold hover:text-accent block transition-colors"
+                                className="pl-4 py-0.5 text-xs text-slate-500 font-semibold hover:text-accent block transition-colors"
                               >
                                 Vendor Audit &amp; Process Audit
                               </Link>
@@ -269,12 +291,12 @@ export default function Header() {
                       </Link>
 
                       {/* Dropdown Menu Overlay */}
-                      <div className="absolute left-0 mt-2 w-64 bg-white border border-slate-200 rounded-md shadow-lg py-2 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50">
+                      <div className="absolute left-0 mt-2 w-80 bg-white border border-slate-200 rounded-md shadow-lg py-2 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50 max-h-[70vh] overflow-y-auto">
                         {link.dropdown.map((subItem) => (
                           <Link
-                            key={subItem.name}
+                            key={subItem.href}
                             href={subItem.href}
-                            className="block px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-accent transition-colors"
+                            className="block px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-accent transition-colors leading-snug"
                           >
                             {subItem.name}
                           </Link>
@@ -569,7 +591,7 @@ export default function Header() {
                       <div className="pl-6 flex flex-col space-y-2 pt-1 pb-2 border-l-2 border-slate-100">
                         {link.dropdown.map((subItem) => (
                           <Link
-                            key={subItem.name}
+                            key={subItem.href}
                             href={subItem.href}
                             onClick={handleMobileNavClick}
                             className="text-xs font-semibold text-slate-500 hover:text-accent py-1 block"
