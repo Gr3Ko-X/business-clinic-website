@@ -86,16 +86,31 @@ export default function AboutPage() {
         <div className="absolute -top-12 -right-12 w-64 h-64 bg-[#D98A10]/8 rounded-full filter blur-3xl pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl border-l-4 border-[#D98A10] pl-4 sm:pl-6 space-y-2 sm:space-y-3">
-            <span className="text-xs sm:text-xs font-bold tracking-widest text-[#D98A10] uppercase">
-              About Business Clinic
-            </span>
-            <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-serif font-bold leading-tight">
-              Bridging the Gap Between Operational Advice and On-Ground Execution
-            </h1>
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed pt-1 max-w-2xl">
-              Business Clinic is the industrial advisory and execution-support division of Spuntech Solutions Pvt Ltd. Business Clinic helps global companies in establishing and growing their footprint in India and assist Indian MSMEs solve business and industrial challenges. Combining industrial expertise, business advisory and execution capabilities, we bridge the gap between strategy and implementation—from diagnosis and planning to documentation, compliance, project execution, validation and ongoing support. Our single-window, execution-oriented approach delivers practical solutions across manufacturing, engineering, defence, aerospace, electronics and other industrial sectors. Preview of capability spectrum is listed:
-            </p>
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-12">
+            <div className="max-w-3xl border-l-4 border-[#D98A10] pl-4 sm:pl-6 space-y-2 sm:space-y-3">
+              <span className="text-xs sm:text-xs font-bold tracking-widest text-[#D98A10] uppercase">
+                About Business Clinic
+              </span>
+              <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-serif font-bold leading-tight">
+                Bridging the Gap Between Operational Advice and On-Ground Execution
+              </h1>
+              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed pt-1 max-w-2xl">
+                Business Clinic is the industrial advisory and execution-support division of Spuntech Solutions Pvt Ltd. Business Clinic helps global companies in establishing and growing their footprint in India and assist Indian MSMEs solve business and industrial challenges. Combining industrial expertise, business advisory and execution capabilities, we bridge the gap between strategy and implementation—from diagnosis and planning to documentation, compliance, project execution, validation and ongoing support. Our single-window, execution-oriented approach delivers practical solutions across manufacturing, engineering, defence, aerospace, electronics and other industrial sectors. Preview of capability spectrum is listed:
+              </p>
+            </div>
+
+            <div className="shrink-0 flex justify-center lg:justify-end self-center">
+              <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full bg-slate-100 border border-white/30 shadow-lg flex items-center justify-center p-3 sm:p-4">
+                <Image
+                  src="/images/logo/IBC.png"
+                  alt="India Business Clinic"
+                  width={120}
+                  height={120}
+                  className="object-contain w-full h-full"
+                  priority
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -137,7 +152,7 @@ export default function AboutPage() {
             <div className="lg:col-span-4 flex flex-col items-center">
               <div className="relative w-full max-w-[320px] aspect-[4/5] rounded-lg overflow-hidden border border-slate-200 shadow-md">
                 <Image
-                  src="/founder.png"
+                  src="/images/assets/founder.png"
                   alt="Col Sanjay Chandra (Retd)"
                   fill
                   className="object-cover object-bottom bg-slate-50"

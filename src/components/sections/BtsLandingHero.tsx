@@ -81,7 +81,7 @@ export default function BtsLandingHero() {
                   <MapPin className="h-4 w-4 text-[#c58f1a] shrink-0 mt-0.5" />
                   <span>Bangalore International Exhibition Centre (BIEC)</span>
                 </div>
-                <p className="text-xs text-slate-400 leading-relaxed">
+                <p className="text-s text-slate-100 leading-relaxed">
                   Theme: <span className="text-white font-semibold">AI &amp; Beyond</span> — global
                   platform for technology, innovation, and cross-border collaboration.
                 </p>

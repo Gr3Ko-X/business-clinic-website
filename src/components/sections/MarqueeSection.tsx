@@ -2,10 +2,10 @@ import React from "react";
 import Link from "next/link";
 
 const ITEMS = [
-  { label: "BTS 2026", href: "/bengaluru-tech-summit-2026", accent: true },
+  { label: "Bengaluru Tech Summit 2026", href: "/bengaluru-tech-summit-2026", accent: true },
   { label: "Industrial Expertise", href: null, accent: false },
   { label: "Strategic Guidance", href: null, accent: false },
-  { label: "Seamless Growth", href: null, accent: true },
+  { label: "Seamless Growth", href: null, accent: false },
 ] as const;
 
 function MarqueeTrack() {

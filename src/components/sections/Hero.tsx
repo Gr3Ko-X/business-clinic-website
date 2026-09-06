@@ -703,7 +703,6 @@ import {
 } from "lucide-react";
 
 export default function App() {
-  const [activePathway, setActivePathway] = useState<"india-entry" | "msme-growth" | "defence-ecosystem">("india-entry");
   const [showAssessmentModal, setShowAssessmentModal] = useState(false);
   const [assessmentType, setAssessmentType] = useState("india-entry");
   const [assessmentStep, setAssessmentStep] = useState(1);
@@ -726,62 +725,15 @@ export default function App() {
     { name: "Software & Cyber Security", icon: Cpu, detail: "Secure Tech Systems" },
   ];
 
-  const pathways = {
-    "india-entry": {
-      tag: "GLOBAL ENTERPRISES",
-      title: "Foreign Company India Entry",
-      subtitle: "Enter. Build Right. Grow.",
-      icon: Globe,
-      accent: "#D98A10",
-      description: "End-to-end single-window facilitation for foreign OEMs launching in India.",
-      points: [
-        "India entry strategy & market feasibility assessment",
-        "Business setup, incorporation & team creation",
-        "Factory footprint setup & operational readiness",
-        "Regulatory compliance, approvals & WPC clearances",
-        "Local partnerships & strategic vendor development"
-      ],
-      ctaText: "Launch India Entry Scorecard",
-      ctaType: "scorecard",
-      stageSteps: ["Enter", "Establish", "Enable", "Expand"]
-    },
-    "msme-growth": {
-      tag: "INDIAN INDUSTRY & MSMES",
-      title: "MSME Growth & Troubleshooting",
-      subtitle: "Diagnose. Resolve. Strengthen. Scale.",
-      icon: Building2,
-      accent: "#0C1D4A",
-      description: "Targeted operational diagnosis, bottleneck resolution, and sustainable scaling.",
-      points: [
-        "Business & operational bottleneck diagnosis",
-        "Root-cause analysis & rapid troubleshooting",
-        "Process & OEE productivity improvement",
-        "Organisation & capability building with SOPs",
-        "Growth, scale-up & sustainable execution support"
-      ],
-      ctaText: "Take Company Health Check",
-      ctaType: "health-check",
-      stageSteps: ["Discover", "Diagnose", "Design", "Deploy", "Sustain"]
-    },
-    "defence-ecosystem": {
-      tag: "DEFENCE & STRATEGIC SECTORS",
-      title: "Defence & Industrial Facilitation",
-      subtitle: "Navigate. Connect. Facilitate. Execute.",
-      icon: ShieldCheck,
-      accent: "#D98A10",
-      description: "Specialized regulatory, licensing, and Transfer of Technology (ToT) advisory.",
-      points: [
-        "Defence Industrial Licensing & regulatory facilitation",
-        "Offset management & Transfer of Technology (ToT)",
-        "Indian industrial partnerships & indigenisation",
-        "WPC facilitation & RF equipment import clearances",
-        "Local support for trials, demos & exhibitions"
-      ],
-      ctaText: "Explore Defence Advisory",
-      ctaType: "consult",
-      stageSteps: ["Licensing", "ToT", "Localisation", "Execution"]
-    }
-  };
+  const whyChooseCredentials = [
+    "35+ years industrial experience",
+    "Practical execution-oriented approach",
+    "Defence and aerospace exposure",
+    "Technical + operational expertise",
+    "India ecosystem understanding",
+    "Documentation and validation capabilities",
+    "Led by Col Sanjay Chandra (Retd)",
+  ];
 
   const handleOpenAssessment = (type: string) => {
     setAssessmentType(type);
@@ -812,7 +764,7 @@ export default function App() {
               {/* Tagline Badge - Updated branding header */}
               <div className="inline-flex items-center space-x-2 bg-[#0C1D4A]/5 border border-[#0C1D4A]/15 px-3.5 py-1.5 rounded-full shadow-sm max-w-full">
                 <span className="w-2 h-2 rounded-full bg-[#D98A10] animate-pulse shrink-0"></span>
-                <span className="text-xs sm:text-xs font-bold tracking-wider text-[#0C1D4A] uppercase font-sans truncate">
+                <span className="text-xs sm:text-xs font-bold tracking-wider text-[#0C1D4A] uppercase font-sans">
                   India Entry Solutions &amp; Industrial Troubleshooting: A Division of Spuntech Solutions Pvt Ltd
                 </span>
               </div>
@@ -945,176 +897,55 @@ export default function App() {
 
             </div>
 
-            {}
             <div className="lg:col-span-5 relative">
-              
-              {/* Modern Ambient Soft Glow Overlay */}
-              <div className="absolute -inset-2 bg-gradient-to-tr from-[#D98A10]/20 via-[#0C1D4A]/30 to-[#D98A10]/20 rounded-3xl blur-2xl opacity-60"></div>
+              <div className="absolute -inset-2 bg-gradient-to-tr from-[#D98A10]/20 via-[#0C1D4A]/30 to-[#D98A10]/20 rounded-3xl blur-2xl opacity-60" />
 
-              {/* Modern Glassmorphic Execution Canvas Container */}
-              <div className="relative rounded-3xl bg-white/90 backdrop-blur-xl border border-slate-200/80 shadow-2xl overflow-hidden p-6 sm:p-7 space-y-6">
-                
-                {/* Header Badge & Title */}
-                <div className="flex items-center justify-between border-b border-slate-100 pb-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 rounded-2xl bg-[#0C1D4A] flex items-center justify-center font-bold text-white text-base shadow-md border border-[#D98A10]/40">
-                      <Target className="w-5 h-5 text-[#D98A10]" />
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-bold text-[#0C1D4A] tracking-tight">
-                        Single-Window Execution Architecture
+              <div className="relative rounded-3xl bg-[#0C1D4A] border border-[#0C1D4A]/80 shadow-2xl overflow-hidden p-6 sm:p-7 space-y-5 text-white">
+                <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[url('/window.svg')] bg-no-repeat bg-center bg-cover" />
+
+                <div className="relative z-10 space-y-4">
+                  <div className="flex items-start justify-between gap-3 border-b border-white/10 pb-4">
+                    <div className="space-y-2 min-w-0">
+                      <span className="inline-block text-xs font-bold tracking-widest text-[#D98A10] uppercase bg-white/10 px-3 py-1 rounded-full">
+                        Credentials
+                      </span>
+                      <h3 className="font-serif font-bold text-xl sm:text-2xl text-white leading-tight">
+                        Why Choose Business Clinic
                       </h3>
-                      <p className="text-sm text-slate-500">From Strategy through Operations &amp; Scaling</p>
+                      <p className="text-sm text-slate-300 leading-relaxed">
+                        Deep industrial competence with hands-on on-ground execution for operations in India.
+                      </p>
                     </div>
+                    <span className="shrink-0 px-2.5 py-1 rounded-full text-xs font-bold bg-[#D98A10]/15 text-[#D98A10] border border-[#D98A10]/40 flex items-center space-x-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#D98A10] animate-ping" />
+                      <span>35+ YRS</span>
+                    </span>
                   </div>
-                  <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-50 text-[#D98A10] border border-[#D98A10]/30 flex items-center space-x-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D98A10] animate-ping"></span>
-                    <span>35+ YRS EXP</span>
-                  </span>
-                </div>
 
-                {/* Interactive Pillar Selector Tabs */}
-                <div className="grid grid-cols-3 gap-1.5 bg-slate-100/80 p-1.5 rounded-xl border border-slate-200/80">
-                  <button
-                    onClick={() => setActivePathway("india-entry")}
-                    className={`py-2 px-2 rounded-lg text-xs font-bold transition-all flex flex-col sm:flex-row items-center justify-center gap-1 ${
-                      activePathway === "india-entry"
-                        ? "bg-[#0C1D4A] text-white shadow-md"
-                        : "text-slate-600 hover:text-slate-900 hover:bg-white/50"
-                    }`}
-                  >
-                    <Globe className={`w-3.5 h-3.5 ${activePathway === "india-entry" ? "text-[#D98A10]" : "text-slate-500"}`} />
-                    <span>India Entry</span>
-                  </button>
-
-                  <button
-                    onClick={() => setActivePathway("msme-growth")}
-                    className={`py-2 px-2 rounded-lg text-xs font-bold transition-all flex flex-col sm:flex-row items-center justify-center gap-1 ${
-                      activePathway === "msme-growth"
-                        ? "bg-[#0C1D4A] text-white shadow-md"
-                        : "text-slate-600 hover:text-slate-900 hover:bg-white/50"
-                    }`}
-                  >
-                    <Building2 className={`w-3.5 h-3.5 ${activePathway === "msme-growth" ? "text-[#D98A10]" : "text-slate-500"}`} />
-                    <span>MSME Scale</span>
-                  </button>
-
-                  <button
-                    onClick={() => setActivePathway("defence-ecosystem")}
-                    className={`py-2 px-2 rounded-lg text-xs font-bold transition-all flex flex-col sm:flex-row items-center justify-center gap-1 ${
-                      activePathway === "defence-ecosystem"
-                        ? "bg-[#0C1D4A] text-white shadow-md"
-                        : "text-slate-600 hover:text-slate-900 hover:bg-white/50"
-                    }`}
-                  >
-                    <ShieldCheck className={`w-3.5 h-3.5 ${activePathway === "defence-ecosystem" ? "text-[#D98A10]" : "text-slate-500"}`} />
-                    <span>Defence</span>
-                  </button>
-                </div>
-
-                {/* Active Pathway Content Card */}
-                {(() => {
-                  const p = pathways[activePathway];
-                  const IconComp = p.icon;
-                  return (
-                    <div className="space-y-4 bg-gradient-to-br from-slate-50 via-white to-amber-50/20 p-5 rounded-2xl border border-slate-200/90 shadow-sm relative overflow-hidden">
-                      <div className="flex items-start justify-between">
-                        <div>
-                          <span className="text-xs font-bold uppercase tracking-wider text-[#D98A10] bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200/80 inline-block mb-1.5">
-                            {p.tag}
-                          </span>
-                          <h4 className="font-serif font-bold text-lg text-[#0C1D4A]">
-                            {p.title}
-                          </h4>
-                          <p className="text-xs text-slate-500 font-serif italic mt-0.5">
-                            "{p.subtitle}"
-                          </p>
+                  <div className="grid grid-cols-1 gap-2.5">
+                    {whyChooseCredentials.map((bullet) => (
+                      <div
+                        key={bullet}
+                        className="flex items-start space-x-3 bg-white/5 border border-white/10 p-3 rounded-xl hover:bg-white/10 transition-colors"
+                      >
+                        <div className="bg-[#D98A10]/20 border border-[#D98A10]/30 rounded-lg p-1 shrink-0 mt-0.5">
+                          <Check className="h-3.5 w-3.5 text-[#D98A10] stroke-[3]" />
                         </div>
-                        <div className="p-2.5 rounded-xl bg-[#0C1D4A]/5 border border-[#0C1D4A]/10 text-[#0C1D4A]">
-                          <IconComp className="w-5 h-5 text-[#D98A10]" />
-                        </div>
+                        <span className="text-sm font-semibold text-slate-100 leading-snug">
+                          {bullet}
+                        </span>
                       </div>
-
-                      {/* Execution Steps Flow Pills */}
-                      <div className="space-y-1.5 pt-1">
-                        <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                          Execution Methodology Roadmap:
-                        </p>
-                        <div className="flex items-center gap-1 overflow-x-auto pb-1 text-sm">
-                          {p.stageSteps.map((step: string, idx: number) => (
-                            <React.Fragment key={idx}>
-                              <span className="px-2.5 py-1 rounded-md bg-white border border-slate-200 text-[#0C1D4A] font-semibold whitespace-nowrap shadow-2xs">
-                                {step}
-                              </span>
-                              {idx < p.stageSteps.length - 1 && (
-                                <ChevronRight className="w-3 h-3 text-[#D98A10] shrink-0" />
-                              )}
-                            </React.Fragment>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Core Scope Checkpoints */}
-                      <ul className="space-y-2 pt-1 border-t border-slate-200/60">
-                        {p.points.map((point: string, idx: number) => (
-                          <li key={idx} className="flex items-start space-x-2 text-xs text-slate-700">
-                            <span className="w-4 h-4 rounded-full bg-[#D98A10]/15 text-[#D98A10] flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
-                              ✓
-                            </span>
-                            <span className="font-medium">{point}</span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      {/* Dynamic CTA Button */}
-                      <div className="pt-2">
-                        {p.ctaType === 'scorecard' && (
-                          <button
-                            onClick={() => handleOpenAssessment('india-entry')}
-                            className="w-full py-3 px-4 bg-gradient-to-r from-[#D98A10] to-[#C47A08] hover:from-[#C47A08] hover:to-[#A86804] text-white font-bold text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-2 group"
-                          >
-                            <Sparkles className="w-4 h-4" />
-                            <span>{p.ctaText}</span>
-                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                          </button>
-                        )}
-
-                        {p.ctaType === 'health-check' && (
-                          <Link
-                            href="/services/indian-msme-troubleshooting/health-check"
-                            className="w-full py-3 px-4 bg-[#0C1D4A] hover:bg-[#071333] text-white font-bold text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-2 group"
-                          >
-                            <Activity className="w-4 h-4 text-[#D98A10]" />
-                            <span>{p.ctaText}</span>
-                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                          </Link>
-                        )}
-
-                        {p.ctaType === 'consult' && (
-                          <button
-                            onClick={() => setShowConsultModal(true)}
-                            className="w-full py-3 px-4 bg-[#0C1D4A] hover:bg-[#071333] text-white font-bold text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-2 border border-[#D98A10]/40 group"
-                          >
-                            <ShieldCheck className="w-4 h-4 text-[#D98A10]" />
-                            <span>{p.ctaText}</span>
-                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                          </button>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })()}
-
-                {/* Single Window Execution Guarantee Tag */}
-                <div className="bg-[#0C1D4A]/5 border border-[#0C1D4A]/10 p-3 rounded-xl flex items-center space-x-3">
-                  <div className="p-1.5 rounded-lg bg-[#0C1D4A] text-white shrink-0">
-                    <CheckCircle2 className="w-4 h-4 text-[#D98A10]" />
+                    ))}
                   </div>
-                  <p className="text-sm text-slate-700 font-medium leading-snug">
-                    <span className="font-bold text-[#0C1D4A]">Single-Window Guarantee:</span> We don't just provide advisory — we deploy hands-on support until operations are fully established and delivering results.
-                  </p>
-                </div>
 
+                  <Link
+                    href="/about"
+                    className="w-full inline-flex items-center justify-center space-x-2 bg-[#D98A10] hover:bg-[#C47A08] text-white px-6 py-3.5 rounded-xl font-bold text-sm transition-all shadow-md hover:shadow-lg group"
+                  >
+                    <span>Leadership Profile</span>
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -1150,7 +981,7 @@ export default function App() {
           </div>
 
           {}
-          <div className="mt-16 text-center space-y-6">
+          {/* <div className="mt-16 text-center space-y-6">
             <div className="inline-flex items-center space-x-3">
               <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#D98A10]"></span>
               <p className="text-xs uppercase tracking-widest text-[#0C1D4A] font-bold">
@@ -1180,7 +1011,7 @@ export default function App() {
                 );
               })}
             </div>
-          </div>
+          </div> */}
 
         </div>
       </section>

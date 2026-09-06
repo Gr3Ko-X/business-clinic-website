@@ -11,12 +11,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Col 1: About Business Clinic */}
           <div className="space-y-4">
-            <Link href="/" className="inline-flex items-center">
+            <Link
+              href="/"
+              className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-200 p-2"
+            >
               <Image
                 src="/images/logo/IBC.png"
                 alt="India Business Clinic"
-                width={64}
-                height={64}
+                width={48}
+                height={48}
                 className="object-contain"
               />
             </Link>
@@ -73,7 +76,7 @@ export default function Footer() {
               Quick Links
             </h3>
             <ul className="space-y-3 text-sm">
-              <li>
+              {/* <li>
                 <Link href="/" className="text-slate-400 hover:text-accent transition-colors">
                   Home
                 </Link>
@@ -87,7 +90,7 @@ export default function Footer() {
                 <Link href="/services" className="text-slate-400 hover:text-accent transition-colors">
                   Solutions
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/services" className="text-slate-400 hover:text-accent transition-colors">
                   Services
@@ -103,11 +106,11 @@ export default function Footer() {
                   Our Methodology
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/contact" className="text-slate-400 hover:text-accent transition-colors">
                   Contact Us
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/services/indian-msme-troubleshooting/health-check"

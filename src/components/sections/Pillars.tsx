@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import {
   ArrowRight,
   Headphones,
@@ -27,6 +28,7 @@ interface Pillar {
   badgeIcon: React.ComponentType<{ className?: string }>;
   bullets: string[];
   btnText: string;
+  ctaHref: string;
   subtitle: string;
   description: string;
   categories: PillarCategory[];
@@ -45,6 +47,7 @@ const pillars: Pillar[] = [
       "Business Growth Consulting",
     ],
     btnText: "Explore MSME Clinic",
+    ctaHref: "/services/indian-msme-troubleshooting",
     subtitle: "Diagnosis, Turnaround & Scaling for Indian Manufacturers",
     description:
       "End-to-end support for MSMEs — from resolving shop-floor bottlenecks and quality failures to building lean systems, automation readiness, and sustainable growth.",
@@ -112,6 +115,7 @@ const pillars: Pillar[] = [
       "Ongoing India Operations Support",
     ],
     btnText: "Explore India Entry Clinic",
+    ctaHref: "/services/india-entry-support-foreign-industry",
     subtitle: "Single-Window Execution for Global Companies Entering India",
     description:
       "Comprehensive on-ground support guiding global enterprises through market entry, entity formation, factory setup, partnerships, and sustained India operations.",
@@ -193,6 +197,7 @@ const pillars: Pillar[] = [
       "Compliance Guidance & Documentation",
     ],
     btnText: "Explore Defence Clinic",
+    ctaHref: "/insights/defence-industrial-wpc-licensing",
     subtitle: "Strategic Guidance for Defence & Aerospace Sectors",
     description:
       "Specialised advisory for defence industrial licensing, offset management, ecosystem mapping, and technology collaboration across India's DPSU and private defence landscape.",
@@ -222,6 +227,7 @@ const pillars: Pillar[] = [
       "Ancillary Services",
     ],
     btnText: "Explore Support Clinic",
+    ctaHref: "/contact",
     subtitle: "Integrated Assurance, Risk & Corporate Support Functions",
     description:
       "Quality assurance, project risk management, and a full panel of ancillary corporate services — legal, secretarial, finance, liaison, and administration.",
@@ -507,15 +513,13 @@ export default function Pillars() {
               </div>
 
               <div className="pt-5 flex flex-col sm:flex-row gap-3">
-                <button
-                  onClick={() => {
-                    setActiveModal(null);
-                    setConsultModalOpen(true);
-                  }}
+                <Link
+                  href={activeModal.ctaHref}
+                  onClick={() => setActiveModal(null)}
                   className="flex-1 py-3 px-4 bg-[#0C1D4A] hover:bg-[#071230] text-white font-bold text-xs rounded-xl transition-all shadow-md text-center cursor-pointer"
                 >
                   Request Consultation for {activeModal.title}
-                </button>
+                </Link>
                 <button
                   onClick={() => setActiveModal(null)}
                   className="py-3 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition-all text-center cursor-pointer"

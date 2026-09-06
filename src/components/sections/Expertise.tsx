@@ -1,33 +1,31 @@
 "use client"
 
-import React, { useState } from "react";
+import React from "react";
+import Link from "next/link";
 import {
   Globe,
   Factory,
   ShieldCheck,
   ArrowRight,
-  Map,
-  UserPlus,
   Building2,
   FileCheck2,
   Activity,
   Target,
   TrendingUp,
-  Users,
   FileText,
   Handshake,
   Radio,
-  Sparkles,
   MapPin,
-  Check,
-  ChevronRight,
-  X
 } from "lucide-react";
+// Modal-only icons kept for when modal is re-enabled:
+// Sparkles, Check, ChevronRight, X
+// import { useState } from "react";
 
 export default function App() {
-  const [showModal, setShowModal] = useState<string | null>(null);
-  const [modalStep, setModalStep] = useState(1);
-  const [modalCompleted, setModalCompleted] = useState(false);
+  // Modal popup disabled — card CTAs now navigate to service/insight pages
+  // const [showModal, setShowModal] = useState<string | null>(null);
+  // const [modalStep, setModalStep] = useState(1);
+  // const [modalCompleted, setModalCompleted] = useState(false);
 
   const cards = [
     {
@@ -46,7 +44,7 @@ export default function App() {
         { label: "Regulatory Compliance & Approvals", icon: FileCheck2 },
       ],
       btnText: "India Entry Readiness Scorecard",
-      btnLink: "#india-entry",
+      btnLink: "/services/india-entry-support-foreign-industry",
       subtext: "Assess your readiness to enter the Indian market.",
       watermarkType: "architecture"
     },
@@ -66,7 +64,7 @@ export default function App() {
         { label: "Process & Capacity Scaling", icon: TrendingUp },
       ],
       btnText: "Company Health Check",
-      btnLink: "#msme-growth",
+      btnLink: "/services/indian-msme-troubleshooting",
       subtext: "Identify strengths, gaps and risks affecting your business.",
       watermarkType: "industrial"
     },
@@ -86,7 +84,7 @@ export default function App() {
         { label: "WPC Clearance & RF Imports", icon: Radio },
       ],
       btnText: "Explore Our Defence Services",
-      btnLink: "#defence-services",
+      btnLink: "/insights/defence-industrial-wpc-licensing",
       subtext: "Navigate India's strategic industrial regulatory systems.",
       watermarkType: "defence"
     },
@@ -113,11 +111,11 @@ export default function App() {
     },
   ];
 
-  const handleOpenTool = (cardId: string) => {
-    setShowModal(cardId);
-    setModalStep(1);
-    setModalCompleted(false);
-  };
+  // const handleOpenTool = (cardId: string) => {
+  //   setShowModal(cardId);
+  //   setModalStep(1);
+  //   setModalCompleted(false);
+  // };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#F7FAFC] via-[#F1F5F9] to-[#E2E8F0] text-slate-800 font-sans antialiased pt-20 pb-8 sm:pt-24 sm:pb-12 lg:pt-28 lg:pb-16 px-3 sm:px-6 lg:px-8 relative overflow-hidden selection:bg-[#D98A10] selection:text-white">
@@ -299,13 +297,13 @@ export default function App() {
 
                 {/* Card Button CTA Area */}
                 <div className="p-4 sm:p-6 pt-2 relative z-10 space-y-2.5 sm:space-y-3 bg-white/90 backdrop-blur-xs">
-                  <button
-                    onClick={() => handleOpenTool(card.id)}
+                  <Link
+                    href={card.btnLink}
                     className={`w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base transition-all duration-300 flex items-center justify-center space-x-2 group/btn cursor-pointer ${card.btnStyle}`}
                   >
                     <span className="text-center">{card.btnText}</span>
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform shrink-0" />
-                  </button>
+                  </Link>
 
                   <p className="text-center text-sm sm:text-base text-slate-500 font-medium leading-tight">
                     {card.subtext}
@@ -349,8 +347,7 @@ export default function App() {
 
       </div>
 
-      {/* Interactive Tool Diagnostic Modal */}
-      {}
+      {/* Interactive Tool Diagnostic Modal — commented out; CTAs navigate to pages instead
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/80 backdrop-blur-sm animate-in fade-in duration-200">
           <div className="relative w-full max-w-lg bg-white border border-slate-200 rounded-2xl sm:rounded-3xl shadow-2xl p-5 sm:p-8 space-y-4 sm:space-y-5 text-slate-900 max-h-[90vh] overflow-y-auto">
@@ -480,6 +477,7 @@ export default function App() {
           </div>
         </div>
       )}
+      */}
 
     </div>
   );
