@@ -84,7 +84,7 @@ export const methodologiesData: MethodologyFramework[] = [
       },
       {
         stepNumber: "05",
-        name: "SUSTAIN",
+        name: "DELIVER",
         subTitle: "Monitor & Improve",
         description: "Track outcomes, resolve emerging issues, and continuously optimise performance/OEE.",
         iconName: "CheckCircle2"

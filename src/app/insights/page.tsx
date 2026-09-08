@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { insightsData } from "@/lib/data/insights";
 import { Clock, ArrowRight, BookOpen } from "lucide-react";
 
@@ -43,6 +44,22 @@ export default function InsightsListPage() {
                 className="bg-slate-50/50 border border-slate-200/80 rounded-lg p-8 flex flex-col justify-between hover:bg-white hover:shadow-md hover:border-accent/40 transition-all duration-300"
               >
                 <div>
+                  {art.image && (
+                    <Link
+                      href={`/insights/${art.slug}`}
+                      className="block mb-5 rounded-lg overflow-hidden border border-slate-200 shadow-xs group"
+                    >
+                      <div className="relative aspect-[16/9] w-full bg-slate-100 overflow-hidden">
+                        <Image
+                          src={art.image}
+                          alt={art.title}
+                          fill
+                          className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                    </Link>
+                  )}
+
                   {/* Category & Read Time */}
                   <div className="flex items-center justify-between text-sm text-slate-500 font-semibold mb-4">
                     <span className="bg-accent/10 text-accent px-2.5 py-0.5 rounded-sm uppercase tracking-wider">

@@ -305,14 +305,7 @@ export default function DefenceAerospaceClinicPage() {
                 </div>
               </div>
 
-              {/* Radar Antenna Box */}
-              <div className="bg-amber-50/40 border border-amber-200/60 rounded-2xl p-8 space-y-3">
-                <span className="text-xs font-bold text-[#D98A10] uppercase tracking-widest block">Specialized Segment</span>
-                <h4 className="font-serif text-base font-bold text-primary">Radar Antenna Manufacturing</h4>
-                <p className="text-xs text-slate-700 leading-relaxed">
-                  We provide specialized, mission-critical advisory and on-ground licensing facilitation for high-technology organizations establishing manufacturing and assembly lines for <strong>radar antennas in the 3 GHz and 10 GHz frequency bands</strong> in India.
-                </p>
-              </div>
+          
             </div>
 
           </div>

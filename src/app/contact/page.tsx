@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, Suspense } from "react";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { Mail, MessageSquare, Clock, ShieldCheck, ArrowRight, Calendar, X } from "lucide-react";
 import { BTS_PREFILL_MESSAGE } from "@/lib/bts";
@@ -66,7 +67,7 @@ function ContactPageContent() {
       ].join("\n")
     );
 
-    window.location.href = `mailto:indiabusinessclinic@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:sanjay@indiabusinessclinic.com?cc=indiabusinessclinic@gmail.com&subject=${subject}&body=${body}`;
     setFormSubmitted(true);
   };
 
@@ -85,16 +86,31 @@ function ContactPageContent() {
         <div className="absolute -top-12 -right-12 w-64 h-64 bg-[#D98A10]/8 rounded-full filter blur-3xl pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl border-l-4 border-[#D98A10] pl-4 sm:pl-6 space-y-2 sm:space-y-3">
-            <span className="text-xs sm:text-xs font-bold tracking-widest text-[#D98A10] uppercase">
-              Get in Touch
-            </span>
-            <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-serif font-bold leading-tight">
-              Schedule a Consultation
-            </h1>
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed pt-1 max-w-2xl">
-              Have an industrial bottleneck to resolve, or planning your India entry roadmap? Let’s establish a direct execution dialogue.
-            </p>
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-12">
+            <div className="max-w-3xl border-l-4 border-[#D98A10] pl-4 sm:pl-6 space-y-2 sm:space-y-3">
+              <span className="text-xs sm:text-xs font-bold tracking-widest text-[#D98A10] uppercase">
+                Get in Touch
+              </span>
+              <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-serif font-bold leading-tight">
+                Schedule a Consultation
+              </h1>
+              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed pt-1 max-w-2xl">
+                Have an industrial bottleneck to resolve, or planning your India entry roadmap? Let’s establish a direct execution dialogue.
+              </p>
+            </div>
+
+            <div className="shrink-0 flex justify-center lg:justify-end self-center">
+              <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full bg-white border border-white/40 shadow-xl flex items-center justify-center p-3 sm:p-4 hover:scale-105 transition-transform">
+                <Image
+                  src="/images/logo/IBC.png"
+                  alt="India Business Clinic"
+                  width={120}
+                  height={120}
+                  className="object-contain w-full h-full"
+                  priority
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -119,19 +135,31 @@ function ContactPageContent() {
               <div className="space-y-4">
                 {/* Email card */}
                 <div className="bg-slate-50 border border-slate-200/80 p-6 rounded-md flex items-start space-x-4">
-                  <div className="p-3 bg-white text-accent rounded-full border border-slate-200 shadow-xs shrink-0">
+                  <div className="p-3 bg-white text-accent rounded-full border border-slate-200 shadow-xs shrink-0 mt-0.5">
                     <Mail className="h-5 w-5" />
                   </div>
-                  <div>
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
-                      Email Address
+                  <div className="space-y-1.5">
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                      Email Addresses
                     </h3>
-                    <a
-                      href="mailto:indiabusinessclinic@gmail.com"
-                      className="text-sm font-bold text-primary hover:text-accent transition-colors"
-                    >
-                      indiabusinessclinic@gmail.com
-                    </a>
+                    <div>
+                      <span className="text-xs text-slate-500 font-semibold block">Primary:</span>
+                      <a
+                        href="mailto:sanjay@indiabusinessclinic.com"
+                        className="text-sm font-bold text-primary hover:text-accent transition-colors break-all"
+                      >
+                        sanjay@indiabusinessclinic.com
+                      </a>
+                    </div>
+                    <div className="pt-0.5">
+                      <span className="text-xs text-slate-500 font-semibold block">Alternate:</span>
+                      <a
+                        href="mailto:indiabusinessclinic@gmail.com"
+                        className="text-sm font-bold text-primary hover:text-accent transition-colors break-all"
+                      >
+                        indiabusinessclinic@gmail.com
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -202,7 +230,8 @@ function ContactPageContent() {
                   </h2>
                   <p className="text-slate-600 text-sm max-w-sm mx-auto leading-relaxed">
                     Thank you. Your consultation request has been prepared for{" "}
-                    <span className="font-semibold text-primary">indiabusinessclinic@gmail.com</span>.
+                    <span className="font-semibold text-primary">sanjay@indiabusinessclinic.com</span>{" "}
+                    (Alternate: <span className="font-semibold text-primary">indiabusinessclinic@gmail.com</span>).
                     Please send the email from your mail client if it opened. Our team will contact you shortly.
                   </p>
                   <div className="pt-4">

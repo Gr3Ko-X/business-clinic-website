@@ -601,7 +601,7 @@
 //                 <label className="text-xs font-bold text-slate-700 block mb-1">Corporate Email / Phone</label>
 //                 <input 
 //                   type="text" 
-//                   placeholder="indiabusinessclinic@gmail.com / +91 9560714343" 
+//                   placeholder="sanjay@indiabusinessclinic.com / +91 9560714343" 
 //                   className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-xs text-slate-900 focus:outline-none focus:border-[#D98A10]"
 //                 />
 //               </div>
@@ -678,6 +678,7 @@ import {
   ShieldCheck,
   Building2,
   Cpu,
+  Laptop,
   Zap,
   Settings,
   Globe,
@@ -721,8 +722,8 @@ export default function App() {
     { name: "Indian Industry", icon: Building2, detail: "Operational Scaling" },
     { name: "Defence & Aerospace", icon: ShieldCheck, detail: "Licensing & ToT" },
     { name: "Homeland Security", icon: Shield, detail: "Security Systems" },
-    { name: "Power & Renewable Energy", icon: Zap, detail: "Turnkey Power Systems" },
-    { name: "Software & Cyber Security", icon: Cpu, detail: "Secure Tech Systems" },
+    { name: "Electronics and Semiconductors", icon: Cpu, detail: "High-Tech Manufacturing" },
+    { name: "Software & Cyber Security", icon: Laptop, detail: "Secure Tech Systems" },
   ];
 
   const whyChooseCredentials = [
@@ -765,7 +766,7 @@ export default function App() {
               <div className="inline-flex items-center space-x-2 bg-[#0C1D4A]/5 border border-[#0C1D4A]/15 px-3.5 py-1.5 rounded-full shadow-sm max-w-full">
                 <span className="w-2 h-2 rounded-full bg-[#D98A10] animate-pulse shrink-0"></span>
                 <span className="text-xs sm:text-xs font-bold tracking-wider text-[#0C1D4A] uppercase font-sans">
-                  India Entry Solutions &amp; Industrial Troubleshooting: A Division of Spuntech Solutions Pvt Ltd
+                  India Entry Solutions &amp; Industrial Troubleshooting
                 </span>
               </div>
 
@@ -906,20 +907,15 @@ export default function App() {
                 <div className="relative z-10 space-y-4">
                   <div className="flex items-start justify-between gap-3 border-b border-white/10 pb-4">
                     <div className="space-y-2 min-w-0">
-                      <span className="inline-block text-xs font-bold tracking-widest text-[#D98A10] uppercase bg-white/10 px-3 py-1 rounded-full">
-                        Credentials
-                      </span>
+                      
                       <h3 className="font-serif font-bold text-xl sm:text-2xl text-white leading-tight">
-                        Why Choose Business Clinic
+                        Why Choose India Business Clinic?
                       </h3>
                       <p className="text-sm text-slate-300 leading-relaxed">
                         Deep industrial competence with hands-on on-ground execution for operations in India.
                       </p>
                     </div>
-                    <span className="shrink-0 px-2.5 py-1 rounded-full text-xs font-bold bg-[#D98A10]/15 text-[#D98A10] border border-[#D98A10]/40 flex items-center space-x-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#D98A10] animate-ping" />
-                      <span>35+ YRS</span>
-                    </span>
+          
                   </div>
 
                   <div className="grid grid-cols-1 gap-2.5">
@@ -939,7 +935,7 @@ export default function App() {
                   </div>
 
                   <Link
-                    href="/about"
+                    href="/about#leadership-profile"
                     className="w-full inline-flex items-center justify-center space-x-2 bg-[#D98A10] hover:bg-[#C47A08] text-white px-6 py-3.5 rounded-xl font-bold text-sm transition-all shadow-md hover:shadow-lg group"
                   >
                     <span>Leadership Profile</span>
@@ -1172,7 +1168,7 @@ export default function App() {
                 <label className="text-xs font-bold text-slate-700 block mb-1">Corporate Email / Phone</label>
                 <input 
                   type="text" 
-                  placeholder="indiabusinessclinic@gmail.com / +91 9560714343" 
+                  placeholder="sanjay@indiabusinessclinic.com / +91 9560714343" 
                   className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-xs text-slate-900 focus:outline-none focus:border-[#D98A10]"
                 />
               </div>

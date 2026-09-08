@@ -4,6 +4,16 @@ import { notFound } from "next/navigation";
 import { insightsData } from "@/lib/data/insights";
 import { ArrowLeft, Clock, Calendar, BookOpen } from "lucide-react";
 
+import BTS2026ExecutiveBrief from "../BTS2026ExecutiveBrief";
+import IndiaMarketEntryHandbook from "../IndiaMarketEntryHandbook";
+import GreatMSMEDisconnect from "../GreatMSMEDisconnect";
+import HRGapsMSMERecruitment from "../HRGapsMSMERecruitment";
+import FromAdviceToDelivery from "../FromAdviceToDelivery";
+import ManufacturingMSMEsCrossroads from "../ManufacturingMSMEsCrossroads";
+import DefenceLicensingRegulatorySupport from "../DefenceLicensingRegulatorySupport";
+import IndiaEntryMadeEasy from "../IndiaEntryMadeEasy";
+import WhyMSMEsFailToDeliver from "../WhyMSMEsFailToDeliver";
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
@@ -31,6 +41,35 @@ export default async function InsightDetailPage({ params }: Props) {
 
   if (!article) {
     notFound();
+  }
+
+  // Render specialized rich interactive components if available
+  if (slug === "bts-2026-strategy-guide" || slug === "bts-2026-executive-brief") {
+    return <BTS2026ExecutiveBrief />;
+  }
+  if (slug === "india-market-entry-handbook") {
+    return <IndiaMarketEntryHandbook />;
+  }
+  if (slug === "great-msme-disconnect") {
+    return <GreatMSMEDisconnect />;
+  }
+  if (slug === "hr-gaps-msme-recruitment") {
+    return <HRGapsMSMERecruitment />;
+  }
+  if (slug === "from-advice-to-delivery") {
+    return <FromAdviceToDelivery />;
+  }
+  if (slug === "manufacturing-msmes-at-a-crossroads") {
+    return <ManufacturingMSMEsCrossroads />;
+  }
+  if (slug === "defence-industrial-wpc-licensing") {
+    return <DefenceLicensingRegulatorySupport />;
+  }
+  if (slug === "india-entry-challenges-global-companies") {
+    return <IndiaEntryMadeEasy />;
+  }
+  if (slug === "why-msmes-fail-to-deliver") {
+    return <WhyMSMEsFailToDeliver />;
   }
 
   return (

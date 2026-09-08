@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Globe, 
   Building2, 
@@ -17,159 +18,8 @@ import {
 } from "lucide-react";
 
 export default function IndiaEntryClinicPage() {
-  // Scorecard state
-  const [activeCategory, setActiveCategory] = useState(0);
-  const [completed, setCompleted] = useState(false);
   const [activeMistakeIndex, setActiveMistakeIndex] = useState<number | null>(null);
   const [activeFAQIndex, setActiveFAQIndex] = useState<number | null>(null);
-  
-  const scorecardCategories = [
-    {
-      name: "Market Understanding",
-      maxPoints: 6,
-      questions: [
-        "Have you conducted an India market assessment?",
-        "Is India part of a documented growth strategy?",
-        "Have you identified target customers?",
-        "Do you understand local competition?",
-        "Have you estimated market size and opportunity?",
-        "Have you identified key market-entry barriers?"
-      ]
-    },
-    {
-      name: "Entry Strategy & Business Model",
-      maxPoints: 4,
-      questions: [
-        "Have you selected your preferred entry route? (Distributor, Rep Office, Joint Venture, Wholly-Owned Subsidiary, or Manufacturing)",
-        "Have you defined revenue targets?",
-        "Is your pricing strategy India-specific?",
-        "Is your business model adapted for India?"
-      ]
-    },
-    {
-      name: "Regulatory & Compliance Readiness",
-      maxPoints: 5,
-      questions: [
-        "Do you understand FEMA requirements and Automatic Route limits?",
-        "Have sector-specific approvals been mapped to the unified SWAGAT-FI digital gateway?",
-        "Is there a designated Board Director residing locally in India?",
-        "Are import/export codes (IEC) and customs clearance procedures understood?",
-        "Have industrial licensing list needs (including Arms Act or DIL lists) been identified?"
-      ]
-    },
-    {
-      name: "Manufacturing & Supply Chain Readiness",
-      maxPoints: 5,
-      questions: [
-        "Have potential manufacturing locations been evaluated?",
-        "Have supply chain requirements been mapped?",
-        "Have local sourcing opportunities been assessed?",
-        "Have vendor qualification criteria been established?",
-        "Is localization strategy defined?"
-      ]
-    },
-    {
-      name: "Financial Readiness",
-      maxPoints: 5,
-      questions: [
-        "Has investment budget been approved?",
-        "Are automatic route share allotments planned for FC-GPR reporting within 30 days?",
-        "Has transfer pricing arm's-length price documentation been prepared for audits?",
-        "Are GST 2.0 electronic invoicing systems mapped for claiming input tax credits?",
-        "Has funding and banking setup strategy been finalized?"
-      ]
-    },
-    {
-      name: "Organization & Talent Readiness",
-      maxPoints: 5,
-      questions: [
-        "Have key leadership positions been identified?",
-        "Is there a hiring strategy?",
-        "Are payroll models and employment contracts aligned with the Four Labour Codes?",
-        "Is HR compliance understood?",
-        "Is a local management structure planned?"
-      ]
-    },
-    {
-      name: "Partnership & Ecosystem Readiness",
-      maxPoints: 5,
-      questions: [
-        "Have potential partners been identified?",
-        "Have distributors been evaluated?",
-        "Have vendors been shortlisted?",
-        "Is due diligence planned?",
-        "Have industry associations been identified?"
-      ]
-    },
-    {
-      name: "Operational Setup Readiness",
-      maxPoints: 5,
-      questions: [
-        "Are office/factory requirements defined?",
-        "Are utilities and infrastructure requirements assessed?",
-        "Are ERP systems planned?",
-        "Are banking arrangements identified?",
-        "Is the logistics model defined?"
-      ]
-    },
-    {
-      name: "Risk Management & Governance",
-      maxPoints: 5,
-      questions: [
-        "Has an India risk assessment been performed?",
-        "Are customer/employee digital architectures aligned with Digital Personal Data Protection (DPDP) rules?",
-        "Are environmental safety clearance protocols mapped to State Pollution Control Boards?",
-        "Is the governance structure defined?",
-        "Is compliance monitoring planned?"
-      ]
-    }
-  ];
-
-  // Initialize selected answers (checked indices per category)
-  const [answers, setAnswers] = useState<Record<number, number[]>>({
-    0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: []
-  });
-
-  const handleToggleQuestion = (catIdx: number, qIdx: number) => {
-    const current = answers[catIdx] || [];
-    let updated;
-    if (current.includes(qIdx)) {
-      updated = current.filter(item => item !== qIdx);
-    } else {
-      updated = [...current, qIdx];
-    }
-    setAnswers({
-      ...answers,
-      [catIdx]: updated
-    });
-  };
-
-  const calculateTotalScore = () => {
-    let total = 0;
-    Object.keys(answers).forEach((key) => {
-      const idx = parseInt(key);
-      total += answers[idx].length;
-    });
-    return total;
-  };
-
-  const getScoreStatus = (score: number) => {
-    if (score >= 40) return { label: "India Entry Ready", color: "text-emerald-600 border-emerald-200 bg-emerald-50", desc: "You have a well-developed market-entry plan and are positioned for successful execution.", indicator: "🟢" };
-    if (score >= 35) return { label: "Moderate Readiness", color: "text-amber-600 border-amber-200 bg-amber-50", desc: "Good foundation exists, but several critical gaps should be addressed before market entry.", indicator: "🟡" };
-    if (score >= 30) return { label: "High-Risk Entry", color: "text-orange-600 border-orange-200 bg-orange-50", desc: "Significant planning and validation required before committing resources.", indicator: "🟠" };
-    return { label: "Not Ready", color: "text-red-600 border-red-200 bg-red-50", desc: "Entry at this stage may result in delays, compliance issues, and unnecessary costs.", indicator: "🔴" };
-  };
-
-  const resetScorecard = () => {
-    setAnswers({
-      0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: []
-    });
-    setActiveCategory(0);
-    setCompleted(false);
-  };
-
-  const totalScore = calculateTotalScore();
-  const currentStatus = getScoreStatus(totalScore);
 
   const pillars = [
     {
@@ -351,128 +201,42 @@ export default function IndiaEntryClinicPage() {
         </div>
       </section>
 
-      {/* 5. Interactive Scorecard Section */}
-      <section id="scorecard-tool" className="py-20 bg-slate-50/50 scroll-mt-20">
+      {/* 5. India Entry Readiness Scorecard Interactive Tool */}
+      <section id="scorecard-tool" className="py-20 bg-slate-50/50 scroll-mt-20 border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 space-y-3">
-            <div className="inline-flex items-center space-x-2 justify-center">
-              <ClipboardCheck className="w-5 h-5 text-[#D98A10]" />
-              <span className="text-xs font-bold tracking-widest text-[#D98A10] uppercase font-sans">
-                Self Assessment
-              </span>
+          <div className="bg-white border border-slate-200/80 rounded-3xl shadow-lg p-8 sm:p-12 relative overflow-hidden flex flex-col md:flex-row items-center gap-8">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#D98A10]/5 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div className="flex-1 space-y-5 text-center md:text-left relative z-10">
+              <div className="inline-flex items-center space-x-2 bg-[#D98A10]/10 border border-[#D98A10]/20 px-3 py-1 rounded-full text-xs font-bold text-[#D98A10] uppercase tracking-wide">
+                <ClipboardCheck className="w-4 h-4" />
+                <span>Full Operational Assessment</span>
+              </div>
+              
+              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary leading-tight">
+                India Entry Readiness Scorecard
+              </h2>
+              
+              <p className="text-slate-600 text-sm leading-relaxed max-w-xl">
+                Assess your enterprise honestly across 9 critical readiness dimensions including Market Understanding, Entry Strategy, Regulatory Compliance, Manufacturing, Financial, and Governance. Surfacing operational bottlenecks takes only 8–10 minutes.
+              </p>
+              
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-slate-500 pt-1">
+                <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-[#D98A10]" /> 9 Assessment Categories</span>
+                <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-[#D98A10]" /> 50+ Critical Readiness Benchmarks</span>
+                <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-[#D98A10]" /> Directional 100-Point Scorecard</span>
+              </div>
             </div>
-            <h2 className="text-3xl font-serif font-bold text-primary">India Entry Readiness Scorecard</h2>
-            <p className="text-slate-600 text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
-              Carry out an objective assessment of your setup status across 9 attributes based on the client document.
-            </p>
-          </div>
-
-          <div className="bg-white border border-slate-200/80 rounded-2xl shadow-md p-6 sm:p-10 space-y-6">
-            {!completed ? (
-              <div className="space-y-6">
-                {/* Category Header */}
-                <div className="flex flex-col sm:flex-row justify-between sm:items-center border-b border-slate-100 pb-4 gap-2">
-                  <span className="text-xs font-bold text-[#D98A10] uppercase tracking-wider">
-                    Category {activeCategory + 1} of 9: {scorecardCategories[activeCategory].name}
-                  </span>
-                  <span className="text-xs text-slate-600 font-bold">
-                    Points: {(answers[activeCategory] || []).length} / {scorecardCategories[activeCategory].maxPoints}
-                  </span>
-                </div>
-
-                {/* Question Checklist */}
-                <div className="space-y-3">
-                  <p className="text-xs font-bold text-slate-700 uppercase tracking-wide">Select the items you have verified / completed:</p>
-                  <div className="space-y-2.5">
-                    {scorecardCategories[activeCategory].questions.map((q, idx) => {
-                      const isChecked = (answers[activeCategory] || []).includes(idx);
-                      return (
-                        <button
-                          key={idx}
-                          onClick={() => handleToggleQuestion(activeCategory, idx)}
-                          className={`w-full text-left p-3.5 rounded-xl border text-xs sm:text-sm font-medium transition-all flex items-start space-x-3 cursor-pointer ${
-                            isChecked 
-                              ? "bg-amber-50/50 border-[#D98A10] text-[#0C1D4A]" 
-                              : "bg-slate-50/30 border-slate-200 hover:bg-slate-50 text-slate-700"
-                          }`}
-                        >
-                          <div className={`w-5 h-5 rounded-md border flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
-                            isChecked ? "bg-[#D98A10] border-[#D98A10] text-white" : "border-slate-300 bg-white"
-                          }`}>
-                            {isChecked && <Check className="w-3.5 h-3.5 stroke-[3]" />}
-                          </div>
-                          <span className="leading-snug">{q}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Bottom Navigation */}
-                <div className="flex justify-between items-center pt-4 border-t border-slate-100">
-                  <button
-                    disabled={activeCategory === 0}
-                    onClick={() => setActiveCategory(activeCategory - 1)}
-                    className="px-4 py-2 text-xs font-bold text-slate-700 hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed uppercase"
-                  >
-                    Previous
-                  </button>
-
-                  {activeCategory < 8 ? (
-                    <button
-                      onClick={() => setActiveCategory(activeCategory + 1)}
-                      className="inline-flex items-center space-x-1.5 bg-primary hover:bg-[#071230] text-white px-5 py-2.5 rounded-sm font-bold text-xs uppercase tracking-wider transition-all"
-                    >
-                      <span>Next Category</span>
-                      <ChevronRight className="w-4 h-4" />
-                    </button>
-                  ) : (
-                    <button
-                      onClick={() => setCompleted(true)}
-                      className="inline-flex items-center space-x-1.5 bg-accent hover:bg-accent-dark text-white px-5 py-2.5 rounded-sm font-bold text-xs uppercase tracking-wider transition-all"
-                    >
-                      <span>Submit Assessment</span>
-                      <Sparkles className="w-4 h-4 text-white" />
-                    </button>
-                  )}
-                </div>
-              </div>
-            ) : (
-              <div className="text-center py-6 space-y-6">
-                <div className={`w-14 h-14 rounded-full flex items-center justify-center mx-auto border ${currentStatus.color} shadow-sm`}>
-                  <span className="text-2xl">{currentStatus.indicator}</span>
-                </div>
-
-                <div className="space-y-2">
-                  <span className="text-sm font-bold text-slate-600 uppercase tracking-widest">Self Assessment Result</span>
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-primary">
-                    Total Score: <span className="text-[#D98A10]">{totalScore}</span> / 45
-                  </h3>
-                  <p className={`inline-block px-3 py-1 border rounded-full text-xs font-bold ${currentStatus.color}`}>
-                    Status: {currentStatus.label}
-                  </p>
-                  <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed pt-2">
-                    {currentStatus.desc}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-slate-100 max-w-md mx-auto flex flex-col sm:flex-row gap-3 justify-center">
-                  <button
-                    onClick={resetScorecard}
-                    className="inline-flex items-center justify-center space-x-1.5 border border-slate-300 hover:bg-slate-50 text-slate-600 px-5 py-2.5 rounded-sm font-bold text-xs uppercase tracking-wider transition-all"
-                  >
-                    <RefreshCw className="w-4 h-4" />
-                    <span>Retake Assessment</span>
-                  </button>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center justify-center space-x-1.5 bg-accent hover:bg-accent-dark text-white px-6 py-2.5 rounded-sm font-bold text-xs uppercase tracking-wider transition-all"
-                  >
-                    <span>Request Free 45-Min Session</span>
-                  </Link>
-                </div>
-              </div>
-            )}
+            
+            <div className="shrink-0 w-full md:w-auto text-center md:text-left relative z-10">
+              <Link 
+                href="/services/india-entry-support-foreign-industry/scorecard" 
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#0C1D4A] hover:bg-[#071333] text-white px-8 py-4.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-lg cursor-pointer"
+              >
+                <span>Launch Readiness Scorecard</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -520,13 +284,38 @@ export default function IndiaEntryClinicPage() {
               </div>
             ))}
           </div>
-          <div className="text-center pt-8">
+          <div className="mt-10 bg-gradient-to-br from-[#0C1D4A] via-[#0B2240] to-[#061230] rounded-2xl p-6 sm:p-8 text-white flex flex-col sm:flex-row items-center gap-6 justify-between border border-[#D98A10]/30 shadow-xl">
             <Link
               href="/insights/india-market-entry-handbook"
-              className="text-xs font-bold text-[#D98A10] hover:text-[#0C1D4A] uppercase tracking-wider animate-pulse"
+              className="shrink-0 group block"
+              title="Read India Market Entry Handbook"
             >
-              Read Full Handbook Analysis &rarr;
+              <div className="w-24 sm:w-28 rounded-lg overflow-hidden border border-white/20 shadow-lg transition-transform duration-300 group-hover:scale-105">
+                <Image
+                  src="/india-market-entry-cover.jpg"
+                  alt="India Market Entry Handbook Cover"
+                  width={112}
+                  height={158}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
             </Link>
+            <div className="space-y-2 text-center sm:text-left flex-1">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#D98A10]">Official Publication</span>
+              <h3 className="text-lg sm:text-xl font-serif font-bold text-white">India Market Entry Handbook for Global Companies</h3>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Access the complete 2026 execution roadmap covering FDI, state incentives, legal structures, and partner due diligence.
+              </p>
+            </div>
+            <div className="shrink-0">
+              <Link
+                href="/insights/india-market-entry-handbook"
+                className="inline-flex items-center space-x-2 bg-[#D98A10] hover:bg-[#b57209] text-white px-5 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition-all shadow-sm"
+              >
+                <span>Read Handbook</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

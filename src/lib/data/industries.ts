@@ -80,7 +80,7 @@ export const industriesData: IndustryCategory[] = [
   {
     id: "power-high-tech",
     number: "06",
-    name: "Power & High Technology",
+    name: "Power & Cutting Edge Technology",
     iconName: "Activity",
     bullets: [
       "PDU manufacturing & power grids integration",

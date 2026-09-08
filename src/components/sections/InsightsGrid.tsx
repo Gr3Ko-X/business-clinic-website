@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { insightsData } from "@/lib/data/insights";
 import { ArrowRight, BookOpen, Clock } from "lucide-react";
 
@@ -45,6 +46,22 @@ export default function InsightsGrid() {
               className="bg-slate-50/50 border border-slate-200/60 rounded-md p-6 flex flex-col justify-between hover:bg-white hover:shadow-md hover:border-accent/40 transition-all duration-300"
             >
               <div>
+                {art.image && (
+                  <Link
+                    href={`/insights/${art.slug}`}
+                    className="block mb-4 rounded-md overflow-hidden border border-slate-200 shadow-xs group"
+                  >
+                    <div className="relative aspect-[16/9] w-full bg-slate-100 overflow-hidden">
+                      <Image
+                        src={art.image}
+                        alt={art.title}
+                        fill
+                        className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                  </Link>
+                )}
+
                 {/* Meta details */}
                 <div className="flex items-center justify-between text-sm text-slate-500 font-semibold mb-4">
                   <span className="bg-accent/10 text-accent px-2 py-0.5 rounded-sm uppercase tracking-wider">

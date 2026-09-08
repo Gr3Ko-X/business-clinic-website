@@ -143,7 +143,7 @@ export default function App() {
           </div>
 
           {/* Main Display Headline updated with pipe separator */}
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#0C1D4A] tracking-tight leading-tight md:whitespace-nowrap">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-serif font-bold text-[#0C1D4A] tracking-tight leading-tight">
             End-to-End Solutions <span className="text-[#D98A10] font-light mx-1 sm:mx-2.5">|</span> <span className="text-[#D98A10] italic font-serif inline-block">Measurable Impact</span>
           </h2>
 
@@ -158,8 +158,7 @@ export default function App() {
         </div>
 
         {/* 3 Main Cards Grid - Fully Responsive */}
-        {}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6 xl:gap-8 items-stretch">
           {cards.map((card) => {
             return (
               <div
@@ -167,7 +166,7 @@ export default function App() {
                 className="relative flex flex-col justify-between bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 overflow-hidden group"
               >
                 {/* Header Content Area */}
-                <div className="relative pt-5 sm:pt-7 px-4 sm:px-7 pb-3 sm:pb-4">
+                <div className="relative pt-5 sm:pt-7 px-4 sm:px-6 xl:px-7 pb-3 sm:pb-4">
                   
                   {/* Top Header Row: Circle Emblem & Card Number */}
                   <div className="flex items-start justify-between relative z-10">
@@ -175,25 +174,25 @@ export default function App() {
                     {/* Circle Emblem Badge */}
                     <div className="relative">
                       {card.id === "india-entry" && (
-                        <div className="w-13 h-13 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#0C1D4A] to-[#061230] p-0.5 shadow-md flex items-center justify-center border-2 border-[#D98A10]">
+                        <div className="w-12 h-12 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#0C1D4A] to-[#061230] p-0.5 shadow-md flex items-center justify-center border-2 border-[#D98A10]">
                           <div className="w-full h-full rounded-full bg-[#0C1D4A] flex items-center justify-center text-[#D98A10]">
-                            <Globe className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.8]" />
+                            <Globe className="w-5 h-5 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
                           </div>
                         </div>
                       )}
 
                       {card.id === "msme-growth" && (
-                        <div className="w-13 h-13 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#D98A10] to-[#B37007] p-0.5 shadow-md flex items-center justify-center border-2 border-amber-200">
+                        <div className="w-12 h-12 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#D98A10] to-[#B37007] p-0.5 shadow-md flex items-center justify-center border-2 border-amber-200">
                           <div className="w-full h-full rounded-full bg-[#D98A10] flex items-center justify-center text-white">
-                            <Factory className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.8]" />
+                            <Factory className="w-5 h-5 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
                           </div>
                         </div>
                       )}
 
                       {card.id === "defence-facilitation" && (
-                        <div className="w-13 h-13 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#0C1D4A] to-[#061230] p-0.5 shadow-md flex items-center justify-center border-2 border-[#D98A10]">
+                        <div className="w-12 h-12 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#0C1D4A] to-[#061230] p-0.5 shadow-md flex items-center justify-center border-2 border-[#D98A10]">
                           <div className="w-full h-full rounded-full bg-[#0C1D4A] flex items-center justify-center text-[#D98A10]">
-                            <ShieldCheck className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.8]" />
+                            <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
                           </div>
                         </div>
                       )}
@@ -205,7 +204,7 @@ export default function App() {
                         <span className="text-sm sm:text-base font-serif font-bold text-[#D98A10]">{card.num}</span>
                         <span className="w-3 sm:w-4 h-px bg-[#D98A10]"></span>
                       </div>
-                      <span className="text-sm sm:text-base font-bold tracking-wider text-slate-500 uppercase font-sans">
+                      <span className="text-xs sm:text-sm xl:text-base font-bold tracking-wider text-slate-500 uppercase font-sans">
                         {card.title}
                       </span>
                     </div>
@@ -213,8 +212,8 @@ export default function App() {
                   </div>
 
                   {/* Card Title Headline with constant minimum height for horizontal alignment */}
-                  <div className="min-h-[52px] sm:min-h-[64px] lg:min-h-[72px] flex items-end mt-4 sm:mt-5">
-                    <h3 className="text-lg sm:text-2xl font-serif font-bold text-[#0C1D4A] leading-snug">
+                  <div className="min-h-[48px] sm:min-h-[58px] lg:min-h-[64px] flex items-end mt-4 sm:mt-5">
+                    <h3 className="text-lg sm:text-xl xl:text-2xl font-serif font-bold text-[#0C1D4A] leading-snug">
                       {card.heading}
                     </h3>
                   </div>
@@ -222,19 +221,19 @@ export default function App() {
                   {/* Divider Line */}
                   <div className="w-full h-px bg-slate-100 my-3 sm:my-4"></div>
 
-                  {/* Bullet Highlights Grid - 3-across in a single line */}
-                  <div className="grid grid-cols-3 gap-3 pt-2 pb-2 sm:pb-4">
+                  {/* Bullet Highlights Grid - 3-across with proper column isolation & typography */}
+                  <div className="grid grid-cols-3 gap-1.5 sm:gap-2 xl:gap-3 pt-2 pb-2 sm:pb-4 items-start">
                     {card.bullets.map((bullet, idx) => {
                       const BulletIcon = bullet.icon;
                       return (
                         <div
                           key={idx}
-                          className="flex flex-col items-center text-center space-y-2 sm:space-y-3 group/bullet p-1"
+                          className="flex flex-col items-center text-center space-y-2 group/bullet min-w-0 w-full px-0.5"
                         >
-                          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#0C1D4A] group-hover/bullet:bg-amber-50 group-hover/bullet:border-[#D98A10] group-hover/bullet:text-[#D98A10] transition-all shadow-md group-hover/bullet:scale-105 duration-200">
-                            <BulletIcon className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.8]" />
+                          <div className="w-11 h-11 sm:w-12 sm:h-12 xl:w-14 xl:h-14 rounded-xl xl:rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#0C1D4A] group-hover/bullet:bg-amber-50 group-hover/bullet:border-[#D98A10] group-hover/bullet:text-[#D98A10] transition-all shadow-xs group-hover/bullet:scale-105 duration-200 shrink-0">
+                            <BulletIcon className="w-5 h-5 xl:w-6 xl:h-6 stroke-[1.8]" />
                           </div>
-                          <span className="text-sm sm:text-base font-bold text-slate-700 leading-snug group-hover/bullet:text-accent transition-colors max-w-[120px]">
+                          <span className="text-[11px] sm:text-xs xl:text-[13px] font-semibold text-slate-700 leading-snug group-hover/bullet:text-accent transition-colors w-full text-center break-words hyphens-auto">
                             {bullet.label}
                           </span>
                         </div>

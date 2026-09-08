@@ -99,7 +99,7 @@ export default function BusinessIndustrialConsultingPage() {
     },
     {
       num: "05",
-      step: "Sustain",
+      step: "Deliver",
       title: "Monitor & Improve",
       desc: "Track quality and availability performance, resolve secondary challenges, and continuously optimize operations.",
     },

@@ -121,7 +121,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services/india-entry-support-foreign-industry#scorecard-tool"
+                  href="/services/india-entry-support-foreign-industry/scorecard"
                   className="text-slate-400 hover:text-accent transition-colors"
                 >
                   India Entry Scorecard
@@ -139,11 +139,22 @@ export default function Footer() {
               Have an industrial challenge or planning to establish a facility in India? Speak to our team.
             </p>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-center space-x-3 text-slate-300">
-                <Mail className="h-5 w-5 text-accent shrink-0" />
-                <a href="mailto:indiabusinessclinic@gmail.com" className="hover:text-accent transition-colors">
-                  indiabusinessclinic@gmail.com
-                </a>
+              <li className="flex items-start space-x-3 text-slate-300">
+                <Mail className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                <div className="flex flex-col space-y-1">
+                  <div>
+                    <span className="text-xs text-slate-400 font-medium mr-1.5">Primary:</span>
+                    <a href="mailto:sanjay@indiabusinessclinic.com" className="hover:text-accent transition-colors">
+                      sanjay@indiabusinessclinic.com
+                    </a>
+                  </div>
+                  <div>
+                    <span className="text-xs text-slate-400 font-medium mr-1.5">Alternate:</span>
+                    <a href="mailto:indiabusinessclinic@gmail.com" className="hover:text-accent transition-colors">
+                      indiabusinessclinic@gmail.com
+                    </a>
+                  </div>
+                </div>
               </li>
               <li className="flex items-center space-x-3 text-slate-300">
                 <Phone className="h-5 w-5 text-accent shrink-0" />

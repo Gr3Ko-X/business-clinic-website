@@ -4,19 +4,22 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown, Phone } from "lucide-react";
 import { insightsData } from "@/lib/data/insights";
+import { caseStudiesData } from "@/lib/data/caseStudies";
 
-function BrandMark({ size = 48 }: { size?: number }) {
+function BrandMark({ size = 36 }: { size?: number }) {
   return (
-    <Image
-      src="/images/logo/IBC.png"
-      alt="India Business Clinic"
-      width={size}
-      height={size}
-      className="object-contain shrink-0"
-      priority
-    />
+    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border border-white/40 shadow-xs flex items-center justify-center p-1 shrink-0 group-hover:scale-105 transition-transform">
+      <Image
+        src="/images/logo/IBC.png"
+        alt="India Business Clinic"
+        width={size}
+        height={size}
+        className="object-contain w-full h-full"
+        priority
+      />
+    </div>
   );
 }
 
@@ -40,10 +43,30 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
+  // Desktop mega menu visibility state (replaces CSS-only group-hover)
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
+  const [desktopInsightsOpen, setDesktopInsightsOpen] = useState(false);
+
   // Mobile navigation sub-menus state
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileCategoryOpen, setMobileCategoryOpen] = useState<number | null>(null);
   const [mobileInsightsOpen, setMobileInsightsOpen] = useState(false);
+  const [mobileInsightsCategoryOpen, setMobileInsightsCategoryOpen] = useState<number | null>(null);
+
+  // Close all menus when the route changes (client-side navigation)
+  useEffect(() => {
+    setDesktopServicesOpen(false);
+    setDesktopInsightsOpen(false);
+    setIsOpen(false);
+    setMobileServicesOpen(false);
+    setMobileCategoryOpen(null);
+    setMobileInsightsOpen(false);
+    setMobileInsightsCategoryOpen(null);
+  }, [pathname]);
+
+  const insightsArticlesList = insightsData.filter(
+    (art) => art.slug !== "bts-2026-strategy-guide"
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,17 +88,10 @@ export default function Header() {
       href: "/services",
       isMegaMenu: true,
     },
-    // { name: "Solutions", href: "/solutions" },
     {
       name: "Insights",
       href: "/insights",
-      dropdown: [
-        { name: "Bengaluru Tech Summit 2026", href: "/bengaluru-tech-summit-2026" },
-        ...insightsData.map((article) => ({
-          name: article.title,
-          href: `/insights/${article.slug}`,
-        })),
-      ],
+      isInsightsMegaMenu: true,
     },
     { name: "Contact Us", href: "/contact" },
   ];
@@ -92,23 +108,24 @@ export default function Header() {
     setMobileServicesOpen(false);
     setMobileCategoryOpen(null);
     setMobileInsightsOpen(false);
+    setMobileInsightsCategoryOpen(null);
   };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       {/* Main Navigation Bar */}
       <div
-        className={`transition-all duration-300 ${
+        className={`transition-all duration-300 border-b border-[#c58f1a]/40 ${
           scrolled
-            ? "bg-[#0c1d4a]/98 backdrop-blur-md shadow-md py-3"
-            : "bg-[#0c1d4a] py-5"
+            ? "bg-[#0c1d4a]/98 backdrop-blur-md shadow-lg py-3"
+            : "bg-[#0c1d4a] shadow-md py-5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group min-w-0">
-              {/* <BrandMark size={44} /> */}
+              <BrandMark size={36} />
               <BrandWordmark className="text-base sm:text-lg lg:text-xl font-semibold truncate" />
             </Link>
 
@@ -117,7 +134,12 @@ export default function Header() {
               {navLinks.map((link) => {
                 if (link.isMegaMenu) {
                   return (
-                    <div key={link.name} className="relative group py-2">
+                    <div
+                      key={link.name}
+                      className="relative py-2"
+                      onMouseEnter={() => setDesktopServicesOpen(true)}
+                      onMouseLeave={() => setDesktopServicesOpen(false)}
+                    >
                       <Link
                         href={link.href}
                         className={`text-sm font-medium transition-colors hover:text-accent flex items-center space-x-1 ${
@@ -127,14 +149,17 @@ export default function Header() {
                         }`}
                       >
                         <span>{link.name}</span>
-                        <ChevronDown className="h-3.5 w-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
+                        <ChevronDown className={`h-3.5 w-3.5 opacity-60 transition-transform duration-200 ${desktopServicesOpen ? "rotate-180" : ""}`} />
                       </Link>
 
                       {/* Mega Menu Dropdown */}
-                      <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-[850px] bg-white border border-slate-200 rounded-xl shadow-xl p-6 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50 grid grid-cols-3 gap-6">
+                      <div
+                        onClick={() => setDesktopServicesOpen(false)}
+                        className={`absolute left-1/2 -translate-x-1/2 mt-2 w-[850px] bg-white border border-slate-200 rounded-xl shadow-xl p-6 transition-all duration-200 z-50 grid grid-cols-3 gap-6 ${desktopServicesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2 pointer-events-none"}`}
+                      >
                         {/* Column 1 */}
                         <div className="space-y-3">
-                          <span className="text-xs font-bold text-primary uppercase tracking-wider border-b border-slate-100 pb-2 block">
+                          <span className="text-xs font-bold text-primary tracking-wide border-b border-slate-100 pb-2 block">
                             Business &amp; Industrial Consulting
                           </span>
                           <div className="flex flex-col space-y-1">
@@ -179,7 +204,7 @@ export default function Header() {
 
                         {/* Column 2 */}
                         <div className="space-y-3">
-                          <span className="text-xs font-bold text-primary uppercase tracking-wider border-b border-slate-100 pb-2 block">
+                          <span className="text-xs font-bold text-primary tracking-wide border-b border-slate-100 pb-2 block">
                             Industrial Documentation &amp; Technical Knowledge Services
                           </span>
                           <div className="flex flex-col space-y-1">
@@ -224,7 +249,7 @@ export default function Header() {
 
                         {/* Column 3 */}
                         <div className="space-y-3">
-                          <span className="text-xs font-bold text-primary uppercase tracking-wider border-b border-slate-100 pb-2 block">
+                          <span className="text-xs font-bold text-primary tracking-wide border-b border-slate-100 pb-2 block">
                             Industrial Assurance &amp; Validation Services
                           </span>
                           <div className="flex flex-col space-y-1">
@@ -275,9 +300,14 @@ export default function Header() {
                   );
                 }
 
-                if (link.dropdown) {
+                if (link.isInsightsMegaMenu) {
                   return (
-                    <div key={link.name} className="relative group py-2">
+                    <div
+                      key={link.name}
+                      className="relative py-2"
+                      onMouseEnter={() => setDesktopInsightsOpen(true)}
+                      onMouseLeave={() => setDesktopInsightsOpen(false)}
+                    >
                       <Link
                         href={link.href}
                         className={`text-sm font-medium transition-colors hover:text-accent flex items-center space-x-1 ${
@@ -287,20 +317,123 @@ export default function Header() {
                         }`}
                       >
                         <span>{link.name}</span>
-                        <ChevronDown className="h-3.5 w-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
+                        <ChevronDown className={`h-3.5 w-3.5 opacity-60 transition-transform duration-200 ${desktopInsightsOpen ? "rotate-180" : ""}`} />
                       </Link>
 
-                      {/* Dropdown Menu Overlay */}
-                      <div className="absolute left-0 mt-2 w-80 bg-white border border-slate-200 rounded-md shadow-lg py-2 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50 max-h-[70vh] overflow-y-auto">
-                        {link.dropdown.map((subItem) => (
+                      {/* Insights Mega Menu Dropdown */}
+                      <div
+                        onClick={() => setDesktopInsightsOpen(false)}
+                        className={`absolute left-1/2 -translate-x-1/2 mt-2 w-[850px] bg-white border border-slate-200 rounded-xl shadow-xl p-6 transition-all duration-200 z-50 grid grid-cols-3 gap-6 ${desktopInsightsOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2 pointer-events-none"}`}
+                      >
+                        {/* Column 1: Current */}
+                        <div className="space-y-3">
+                          <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+                            <span className="text-xs font-bold text-primary tracking-wide block">
+                              Current
+                            </span>
+                            <span className="px-2 py-0.5 text-[10px] font-bold uppercase bg-amber-100 text-amber-900 rounded-full">
+                              Flagship
+                            </span>
+                          </div>
+                          <div className="flex flex-col space-y-2">
+                            <Link
+                              href="/bengaluru-tech-summit-2026"
+                              className="text-slate-700 hover:text-accent font-semibold rounded-lg py-2 px-2.5 text-xs leading-snug hover:bg-slate-50 transition-colors block group/item"
+                            >
+                              <div className="font-bold text-slate-900 group-hover/item:text-accent text-xs">
+                                Bengaluru Tech Summit 2026
+                              </div>
+                              <div className="text-[11px] text-slate-500 font-normal mt-0.5">
+                                Strategic Roadmaps &amp; Innovation Pavilion
+                              </div>
+                            </Link>
+                            <Link
+                              href="/insights/bts-2026-strategy-guide"
+                              className="text-slate-700 hover:text-accent font-semibold rounded-lg py-2 px-2.5 text-xs leading-snug hover:bg-slate-50 transition-colors block group/item"
+                            >
+                              <div className="font-bold text-slate-900 group-hover/item:text-accent text-xs">
+                                BTS 2026 Strategy Guide
+                              </div>
+                              <div className="text-[11px] text-slate-500 font-normal mt-0.5">
+                                Executive Strategy Briefing &amp; Roadmap
+                              </div>
+                            </Link>
+
+                            <div className="p-3.5 bg-gradient-to-br from-amber-50/60 to-slate-50 border border-amber-200/50 rounded-xl mt-2">
+                              <span className="text-[10px] font-bold text-amber-900 uppercase tracking-wider block mb-1">
+                                BTS 2026 Advisory
+                              </span>
+                              <p className="text-[11px] text-slate-600 font-medium leading-relaxed">
+                                Connect directly with our delegation setup and strategic facilitation team for Bengaluru Tech Summit 2026.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Column 2: Articles */}
+                        <div className="space-y-3">
+                          <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+                            <span className="text-xs font-bold text-primary tracking-wide block">
+                              Articles
+                            </span>
+                            <span className="text-[10px] text-slate-400 font-medium">
+                              {insightsArticlesList.length} Insights
+                            </span>
+                          </div>
+                          <div className="flex flex-col space-y-1 max-h-[340px] overflow-y-auto pr-1">
+                            {insightsArticlesList.map((article) => (
+                              <Link
+                                key={article.slug}
+                                href={`/insights/${article.slug}`}
+                                className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-xs leading-snug hover:bg-slate-50 transition-colors"
+                              >
+                                {article.title}
+                              </Link>
+                            ))}
+                          </div>
                           <Link
-                            key={subItem.href}
-                            href={subItem.href}
-                            className="block px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-accent transition-colors leading-snug"
+                            href="/insights"
+                            className="pt-2 border-t border-slate-100 text-xs font-bold text-[#D98A10] hover:text-[#0C1D4A] flex items-center space-x-1 px-2 transition-colors block"
                           >
-                            {subItem.name}
+                            <span>View All Insights &amp; Articles</span>
+                            <ArrowRight className="w-3 h-3 inline ml-1" />
                           </Link>
-                        ))}
+                        </div>
+
+                        {/* Column 3: Case Studies */}
+                        <div className="space-y-3">
+                          <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+                            <span className="text-xs font-bold text-primary tracking-wide block">
+                              Case Studies
+                            </span>
+                            <span className="text-[10px] text-slate-400 font-medium">
+                              Real Impact
+                            </span>
+                          </div>
+                          <div className="flex flex-col space-y-2">
+                            {caseStudiesData.map((cs) => (
+                              <Link
+                                key={cs.slug}
+                                href={`/case-studies/${cs.slug}`}
+                                className="text-slate-700 hover:text-accent font-semibold rounded-lg py-2 px-2.5 text-xs leading-snug hover:bg-slate-50 transition-colors block group/item"
+                              >
+                                <div className="font-bold text-slate-900 group-hover/item:text-accent text-xs">
+                                  {cs.title}
+                                </div>
+                                <div className="text-[11px] text-slate-500 font-normal mt-0.5">
+                                  {cs.client} • {cs.category}
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+                          <Link
+                            href="/case-studies"
+                            className="pt-2 border-t border-slate-100 text-xs font-bold text-[#D98A10] hover:text-[#0C1D4A] flex items-center space-x-1 px-2 transition-colors block"
+                          >
+                            <span>Explore All Case Studies</span>
+                            <ArrowRight className="w-3 h-3 inline ml-1" />
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   );
@@ -325,15 +458,27 @@ export default function Header() {
               })}
             </nav>
 
-            {/* CTA Button */}
+            {/* CTA Button: Talk to an Expert / WhatsApp */}
             <div className="hidden lg:block">
-              <Link
-                href="/contact"
-                className="inline-flex items-center space-x-2 bg-accent hover:bg-accent-dark text-white px-5 py-2.5 rounded-sm font-medium text-sm transition-all shadow-sm hover:shadow-md"
+              <a
+                href="https://wa.me/919560714343?text=Hello%2C%20I%20would%20like%20to%20consult%20an%20expert%20at%20Business%20Clinic."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center space-x-2.5 bg-gradient-to-r from-[#D98A10] to-[#b87309] hover:from-[#e09418] hover:to-[#c58010] text-white px-3.5 py-1.5 rounded-lg transition-all shadow-sm hover:shadow-md border border-amber-300/30"
+                title="Voice, SMS & WhatsApp: +91 9560714343"
               >
-                <span>Talk to an Expert</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+                <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                  <Phone className="h-3.5 w-3.5 text-white" />
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="text-xs font-bold tracking-tight text-white leading-none">
+                    Talk to an Expert
+                  </span>
+                  <span className="text-[10px] text-amber-100 font-medium leading-tight mt-1">
+                    +91 9560714343 (Voice, SMS &amp; WhatsApp)
+                  </span>
+                </div>
+              </a>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -569,7 +714,7 @@ export default function Header() {
                 );
               }
 
-              if (link.dropdown) {
+              if (link.isInsightsMegaMenu) {
                 return (
                   <div key={link.name} className="flex flex-col space-y-1">
                     <button
@@ -587,18 +732,126 @@ export default function Header() {
                         }`}
                       />
                     </button>
+
+                    {/* Mobile Insights Accordion Body */}
                     {mobileInsightsOpen && (
-                      <div className="pl-6 flex flex-col space-y-2 pt-1 pb-2 border-l-2 border-slate-100">
-                        {link.dropdown.map((subItem) => (
-                          <Link
-                            key={subItem.href}
-                            href={subItem.href}
-                            onClick={handleMobileNavClick}
-                            className="text-xs font-semibold text-slate-500 hover:text-accent py-1 block"
+                      <div className="pl-4 flex flex-col space-y-3 pt-1 pb-3 border-l-2 border-slate-100">
+                        {/* Category 1: Current */}
+                        <div>
+                          <button
+                            onClick={() =>
+                              setMobileInsightsCategoryOpen(
+                                mobileInsightsCategoryOpen === 0 ? null : 0
+                              )
+                            }
+                            className="w-full text-left text-sm font-bold text-slate-800 py-1.5 px-2 flex items-center justify-between hover:bg-slate-50 rounded"
                           >
-                            {subItem.name}
-                          </Link>
-                        ))}
+                            <span>Current</span>
+                            <ChevronDown
+                              className={`h-3.5 w-3.5 transition-transform duration-200 ${
+                                mobileInsightsCategoryOpen === 0 ? "rotate-180" : ""
+                              }`}
+                            />
+                          </button>
+                          {mobileInsightsCategoryOpen === 0 && (
+                            <div className="pl-4 flex flex-col space-y-2 pt-1 pb-2">
+                              <Link
+                                href="/bengaluru-tech-summit-2026"
+                                onClick={handleMobileNavClick}
+                                className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
+                              >
+                                Bengaluru Tech Summit 2026
+                              </Link>
+                              <Link
+                                href="/insights/bts-2026-strategy-guide"
+                                onClick={handleMobileNavClick}
+                                className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
+                              >
+                                BTS 2026 Executive Strategy Guide
+                              </Link>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Category 2: Articles */}
+                        <div>
+                          <button
+                            onClick={() =>
+                              setMobileInsightsCategoryOpen(
+                                mobileInsightsCategoryOpen === 1 ? null : 1
+                              )
+                            }
+                            className="w-full text-left text-sm font-bold text-slate-800 py-1.5 px-2 flex items-center justify-between hover:bg-slate-50 rounded"
+                          >
+                            <span>Articles</span>
+                            <ChevronDown
+                              className={`h-3.5 w-3.5 transition-transform duration-200 ${
+                                mobileInsightsCategoryOpen === 1 ? "rotate-180" : ""
+                              }`}
+                            />
+                          </button>
+                          {mobileInsightsCategoryOpen === 1 && (
+                            <div className="pl-4 flex flex-col space-y-2 pt-1 pb-2">
+                              {insightsArticlesList.map((article) => (
+                                <Link
+                                  key={article.slug}
+                                  href={`/insights/${article.slug}`}
+                                  onClick={handleMobileNavClick}
+                                  className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
+                                >
+                                  {article.title}
+                                </Link>
+                              ))}
+                              <Link
+                                href="/insights"
+                                onClick={handleMobileNavClick}
+                                className="text-xs font-bold text-[#D98A10] hover:text-[#0C1D4A] py-1 block"
+                              >
+                                View All Insights &amp; Articles →
+                              </Link>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Category 3: Case Studies */}
+                        <div>
+                          <button
+                            onClick={() =>
+                              setMobileInsightsCategoryOpen(
+                                mobileInsightsCategoryOpen === 2 ? null : 2
+                              )
+                            }
+                            className="w-full text-left text-sm font-bold text-slate-800 py-1.5 px-2 flex items-center justify-between hover:bg-slate-50 rounded"
+                          >
+                            <span>Case Studies</span>
+                            <ChevronDown
+                              className={`h-3.5 w-3.5 transition-transform duration-200 ${
+                                mobileInsightsCategoryOpen === 2 ? "rotate-180" : ""
+                              }`}
+                            />
+                          </button>
+                          {mobileInsightsCategoryOpen === 2 && (
+                            <div className="pl-4 flex flex-col space-y-2 pt-1 pb-2">
+                              {caseStudiesData.map((cs) => (
+                                <Link
+                                  key={cs.slug}
+                                  href={`/case-studies/${cs.slug}`}
+                                  onClick={handleMobileNavClick}
+                                  className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
+                                >
+                                  {cs.title}
+                                </Link>
+                              ))}
+                              <Link
+                                href="/case-studies"
+                                onClick={handleMobileNavClick}
+                                className="text-xs font-bold text-[#D98A10] hover:text-[#0C1D4A] py-1 block"
+                              >
+                                Explore All Case Studies →
+                              </Link>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     )}
                   </div>
@@ -623,14 +876,25 @@ export default function Header() {
           </div>
 
           <div className="pb-16 px-3">
-            <Link
-              href="/contact"
+            <a
+              href="https://wa.me/919560714343?text=Hello%2C%20I%20would%20like%20to%20consult%20an%20expert%20at%20Business%20Clinic."
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={handleMobileNavClick}
-              className="w-full justify-center inline-flex items-center space-x-2 bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-sm font-medium text-base transition-all shadow-md"
+              className="w-full justify-center flex items-center space-x-3 bg-gradient-to-r from-[#D98A10] to-[#b87309] hover:from-[#e09418] hover:to-[#c58010] text-white px-5 py-3 rounded-xl font-medium transition-all shadow-md"
             >
-              <span>Talk to an Expert</span>
-              <ArrowRight className="h-5 w-5" />
-            </Link>
+              <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+                <Phone className="h-4 w-4 text-white" />
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="text-sm font-bold tracking-tight text-white">
+                  Talk to an Expert
+                </span>
+                <span className="text-xs text-amber-100 font-medium mt-0.5">
+                  +91 9560714343 (Voice, SMS &amp; WhatsApp)
+                </span>
+              </div>
+            </a>
           </div>
         </div>
       </div>

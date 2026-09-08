@@ -10,7 +10,7 @@ import InsightsGrid from "@/components/sections/InsightsGrid";
 import CaseStudiesGrid from "@/components/sections/CaseStudiesGrid";
 import SolutionsWeOffer from "@/components/sections/SolutionsWeOffer";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import { Cpu, Zap, Shield, ShieldCheck, Building2, Globe } from "lucide-react";
+import { Cpu, Laptop, Shield, ShieldCheck, Building2, Globe } from "lucide-react";
 import BtsLandingHero from "@/components/sections/BtsLandingHero";
 
 export default function Home() {
@@ -20,8 +20,8 @@ export default function Home() {
     { name: "Indian Industry", icon: Building2, detail: "Operational Scaling" },
     { name: "Defence & Aerospace", icon: ShieldCheck, detail: "Licensing & ToT" },
     { name: "Homeland Security", icon: Shield, detail: "Security Systems" },
-    { name: "Power & Renewable Energy", icon: Zap, detail: "Turnkey Power Systems" },
-    { name: "Software & Cyber Security", icon: Cpu, detail: "Secure Tech Systems" },
+    { name: "Electronics and Semiconductors", icon: Cpu, detail: "High-Tech Manufacturing" },
+    { name: "Software & Cyber Security", icon: Laptop, detail: "Secure Tech Systems" },
   ];
 
   return (
@@ -31,11 +31,12 @@ export default function Home() {
 
   
     <div className="flex flex-col min-h-screen">
+      {/* 0. Marquee Announcement Bar directly below navbar */}
+      <MarqueeSection />
+
       {/* 1. Hero Section */}
       <Hero />
       {/* <Hero2 /> */}
-      {/* 1.1 add the Marquee section here */}
-      <MarqueeSection />
 
       <BtsLandingHero />
 

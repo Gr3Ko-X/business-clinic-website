@@ -28,7 +28,7 @@ Primary conversion actions: **Talk to an Expert / Schedule a Consultation** (`/c
 | Brand | Business Clinic |
 | Legal framing | Business division/brand of **Spuntech Solutions Pvt Ltd** |
 | Founder | Col Sanjay Chandra (Retd) |
-| Email | indiabusinessclinic@gmail.com |
+| Email | Primary: sanjay@indiabusinessclinic.com <br/> Alternate: indiabusinessclinic@gmail.com |
 | WhatsApp | +91 9560714343 (`wa.me/919560714343`) |
 | LinkedIn | Col Sanjay Chandra (Retd) profile linked in footer |
 | Locale / SEO | `en_IN`; keywords around India entry, defence licensing, vendor audit, factory setup |
@@ -163,7 +163,7 @@ Three categories:
 3. Power & Renewable Energy  
 4. Industrial Manufacturing  
 5. Telecommunications & OFC  
-6. Power & High Technology  
+6. Power & Cutting Edge Technology  
 
 Home “who we serve” / transform cards also mention Global Companies, Indian Industry, Homeland Security, Software & Cyber Security (check `IndustryGrid` / Expertise vs this list — IA is slightly duplicated across components).
 
