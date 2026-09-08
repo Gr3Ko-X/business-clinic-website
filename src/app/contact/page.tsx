@@ -14,6 +14,8 @@ function ContactPageContent() {
 
   const [showBtsBanner, setShowBtsBanner] = useState(isBtsSource);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -34,41 +36,48 @@ function ContactPageContent() {
     }
   }, [isBtsSource, serviceParam]);
 
-  const serviceLabels: Record<string, string> = {
-    "india-entry": "Foreign Company India Entry & Setup",
-    "msme-growth": "MSME Operations & OEE Optimization",
-    "industrial-assurance": "Industrial QA & Pre-Dispatch Inspection",
-    documentation: "Techno-Commercial / Technical Manuals",
-    "regulatory-wpc": "Defence Industrial License / WPC import clearances",
-    others: "Others",
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
 
-    const category = serviceLabels[formData.service] ?? formData.service;
-    const subject = encodeURIComponent(
-      `Consultation Request — ${formData.name} (${formData.org})`
-    );
-    const body = encodeURIComponent(
-      [
-        "New consultation request from the Business Clinic website:",
-        "",
-        `Name: ${formData.name}`,
-        `Email: ${formData.email}`,
-        `Company: ${formData.org}`,
-        `Contact Number: ${formData.phone}`,
-        `Engagement Category: ${category}`,
-        "",
-        "Outline of Requirements:",
-        formData.details,
-        "",
-        "— Sent via Business Clinic Contact Form",
-      ].join("\n")
-    );
+    setSubmitError(null);
+    setIsSubmitting(true);
 
-    window.location.href = `mailto:sanjay@indiabusinessclinic.com?cc=indiabusinessclinic@gmail.com&subject=${subject}&body=${body}`;
-    setFormSubmitted(true);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = (await response.json().catch(() => null)) as
+        | { error?: string }
+        | null;
+
+      if (!response.ok) {
+        setSubmitError(
+          result?.error ||
+            "Unable to send your message right now. Please try again later."
+        );
+        return;
+      }
+
+      setFormSubmitted(true);
+      setFormData({
+        name: "",
+        email: "",
+        org: "",
+        phone: "",
+        service: "india-entry",
+        details: "",
+      });
+    } catch {
+      setSubmitError(
+        "Unable to send your message right now. Please try again later."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -229,14 +238,16 @@ function ContactPageContent() {
                     Request Received
                   </h2>
                   <p className="text-slate-600 text-sm max-w-sm mx-auto leading-relaxed">
-                    Thank you. Your consultation request has been prepared for{" "}
-                    <span className="font-semibold text-primary">sanjay@indiabusinessclinic.com</span>{" "}
-                    (Alternate: <span className="font-semibold text-primary">indiabusinessclinic@gmail.com</span>).
-                    Please send the email from your mail client if it opened. Our team will contact you shortly.
+                    Thank you. Your consultation request has been sent successfully.
+                    Our team will contact you shortly.
                   </p>
                   <div className="pt-4">
                     <button
-                      onClick={() => setFormSubmitted(false)}
+                      type="button"
+                      onClick={() => {
+                        setFormSubmitted(false);
+                        setSubmitError(null);
+                      }}
                       className="inline-flex items-center space-x-2 bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-sm font-bold text-xs uppercase tracking-wider"
                     >
                       <span>Submit Another Query</span>
@@ -254,6 +265,15 @@ function ContactPageContent() {
                     </p>
                   </div>
 
+                  {submitError && (
+                    <div
+                      role="alert"
+                      className="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+                    >
+                      {submitError}
+                    </div>
+                  )}
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Name */}
                     <div className="space-y-1.5">
@@ -265,9 +285,10 @@ function ContactPageContent() {
                         name="name"
                         id="name"
                         required
+                        disabled={isSubmitting}
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full bg-white border border-slate-300 rounded-sm py-2.5 px-3.5 text-sm text-slate-700 focus:outline-none focus:border-accent"
+                        className="w-full bg-white border border-slate-300 rounded-sm py-2.5 px-3.5 text-sm text-slate-700 focus:outline-none focus:border-accent disabled:opacity-60"
                         placeholder="Saloni"
                       />
                     </div>
@@ -282,9 +303,10 @@ function ContactPageContent() {
                         name="email"
                         id="email"
                         required
+                        disabled={isSubmitting}
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full bg-white border border-slate-300 rounded-sm py-2.5 px-3.5 text-sm text-slate-700 focus:outline-none focus:border-accent"
+                        className="w-full bg-white border border-slate-300 rounded-sm py-2.5 px-3.5 text-sm text-slate-700 focus:outline-none focus:border-accent disabled:opacity-60"
                         placeholder="saloni@corporate.com"
                       />
                     </div>
@@ -301,9 +323,10 @@ function ContactPageContent() {
                         name="org"
                         id="org"
                         required
+                        disabled={isSubmitting}
                         value={formData.org}
                         onChange={handleInputChange}
-                        className="w-full bg-white border border-slate-300 rounded-sm py-2.5 px-3.5 text-sm text-slate-700 focus:outline-none focus:border-accent"
+                        className="w-full bg-white border border-slate-300 rounded-sm py-2.5 px-3.5 text-sm text-slate-700 focus:outline-none focus:border-accent disabled:opacity-60"
                         placeholder="Your company name"
                       />
                     </div>
@@ -318,9 +341,10 @@ function ContactPageContent() {
                         name="phone"
                         id="phone"
                         required
+                        disabled={isSubmitting}
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full bg-white border border-slate-300 rounded-sm py-2.5 px-3.5 text-sm text-slate-700 focus:outline-none focus:border-accent"
+                        className="w-full bg-white border border-slate-300 rounded-sm py-2.5 px-3.5 text-sm text-slate-700 focus:outline-none focus:border-accent disabled:opacity-60"
                         placeholder="+91 9560714343"
                       />
                     </div>
@@ -334,9 +358,10 @@ function ContactPageContent() {
                     <select
                       name="service"
                       id="service"
+                      disabled={isSubmitting}
                       value={formData.service}
                       onChange={handleInputChange}
-                      className="w-full bg-white border border-slate-300 rounded-sm py-2.5 px-3.5 text-sm text-slate-700 focus:outline-none focus:border-accent"
+                      className="w-full bg-white border border-slate-300 rounded-sm py-2.5 px-3.5 text-sm text-slate-700 focus:outline-none focus:border-accent disabled:opacity-60"
                     >
                       <option value="india-entry">Foreign Company India Entry &amp; Setup</option>
                       <option value="msme-growth">MSME Operations &amp; OEE Optimization</option>
@@ -357,9 +382,10 @@ function ContactPageContent() {
                       id="details"
                       rows={5}
                       required
+                      disabled={isSubmitting}
                       value={formData.details}
                       onChange={handleInputChange}
-                      className="w-full bg-white border border-slate-300 rounded-sm py-2.5 px-3.5 text-sm text-slate-700 focus:outline-none focus:border-accent"
+                      className="w-full bg-white border border-slate-300 rounded-sm py-2.5 px-3.5 text-sm text-slate-700 focus:outline-none focus:border-accent disabled:opacity-60"
                       placeholder="Briefly describe your industrial challenges, target timeline, or factory setup scale..."
                     />
                   </div>
@@ -368,11 +394,16 @@ function ContactPageContent() {
                   <div>
                     <button
                       type="submit"
-                      className="w-full inline-flex items-center justify-center space-x-2 bg-accent hover:bg-accent-dark text-white py-3.5 px-6 rounded-sm font-bold text-xs uppercase tracking-wider transition-all shadow-md"
+                      disabled={isSubmitting}
+                      className="w-full inline-flex items-center justify-center space-x-2 bg-accent hover:bg-accent-dark text-white py-3.5 px-6 rounded-sm font-bold text-xs uppercase tracking-wider transition-all shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       <Calendar className="h-4.5 w-4.5 text-white" />
-                      <span>Request Consultation Booking</span>
-                      <ArrowRight className="h-4 w-4" />
+                      <span>
+                        {isSubmitting
+                          ? "Sending..."
+                          : "Request Consultation Booking"}
+                      </span>
+                      {!isSubmitting && <ArrowRight className="h-4 w-4" />}
                     </button>
                   </div>
                 </form>
