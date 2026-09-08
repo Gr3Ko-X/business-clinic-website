@@ -106,11 +106,7 @@ export default function Footer() {
                   Our Methodology
                 </Link>
               </li>
-              {/* <li>
-                <Link href="/contact" className="text-slate-400 hover:text-accent transition-colors">
-                  Contact Us
-                </Link>
-              </li> */}
+
               <li>
                 <Link
                   href="/services/indian-msme-troubleshooting/health-check"
