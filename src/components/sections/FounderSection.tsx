@@ -52,7 +52,7 @@ export default function FounderSection() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-6">
               <Link
-                href="/about"
+                href="/about#leadership-profile"
                 className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-sm font-semibold text-sm transition-all"
               >
                 <span>Meet the Founder &amp; Team</span>

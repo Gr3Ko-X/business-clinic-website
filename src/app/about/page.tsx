@@ -74,41 +74,90 @@ export default function AboutPage() {
     "Technology Absorption Support",
     "Quality Assurance",
     "Manufacturing Readiness",
+    "Technical Documentation",
   ];
 
   return (
     <div className="bg-white">
       {/* 1. Header / Intro banner */}
-      <section className="relative bg-gradient-to-br from-[#0C1D4A] via-[#0b2240] to-[#061230] text-white py-10 sm:py-12 overflow-hidden border-b border-[#D98A10]/20">
+      <section className="relative bg-gradient-to-br from-[#0C1D4A] via-[#0b2240] to-[#061230] text-white py-12 sm:py-16 overflow-hidden border-b border-[#D98A10]/30 shadow-md">
         {/* Subtle decorative dot pattern */}
         <div className="absolute inset-0 opacity-[0.035] pointer-events-none bg-[radial-gradient(white_1.2px,transparent_1.2px)] [background-size:24px_24px]"></div>
         {/* Ambient gold glow */}
-        <div className="absolute -top-12 -right-12 w-64 h-64 bg-[#D98A10]/8 rounded-full filter blur-3xl pointer-events-none"></div>
+        <div className="absolute -top-16 -right-16 w-80 h-80 bg-[#D98A10]/10 rounded-full filter blur-3xl pointer-events-none"></div>
+        <div className="absolute -bottom-16 -left-16 w-80 h-80 bg-[#0C1D4A]/40 rounded-full filter blur-3xl pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-12">
-            <div className="max-w-3xl border-l-4 border-[#D98A10] pl-4 sm:pl-6 space-y-2 sm:space-y-3">
-              <span className="text-xs sm:text-xs font-bold tracking-widest text-[#D98A10] uppercase">
-                About Business Clinic
-              </span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Left Content Column */}
+            <div className="lg:col-span-8 border-l-4 border-[#D98A10] pl-5 sm:pl-7 space-y-4">
+              <div className="inline-flex items-center space-x-2 bg-white/10 px-3 py-1 rounded-full border border-white/15">
+                <span className="w-2 h-2 rounded-full bg-[#D98A10] animate-pulse"></span>
+                <span className="text-xs font-bold tracking-widest text-[#D98A10] uppercase">
+                  About Business Clinic
+                </span>
+              </div>
+
               <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-serif font-bold leading-tight">
                 Bridging the Gap Between Operational Advice and On-Ground Execution
               </h1>
-              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed pt-1 max-w-2xl">
-                Business Clinic is the industrial advisory and execution-support division of Spuntech Solutions Pvt Ltd. Business Clinic helps global companies in establishing and growing their footprint in India and assist Indian MSMEs solve business and industrial challenges. Combining industrial expertise, business advisory and execution capabilities, we bridge the gap between strategy and implementation—from diagnosis and planning to documentation, compliance, project execution, validation and ongoing support. Our single-window, execution-oriented approach delivers practical solutions across manufacturing, engineering, defence, aerospace, electronics and other industrial sectors. Preview of capability spectrum is listed:
+
+              {/* Paragraph 1 - Justified */}
+              <p className="text-slate-200 text-sm sm:text-[15px] leading-relaxed text-justify hyphens-auto">
+                <strong className="text-white font-semibold">Business Clinic</strong> is the industrial advisory and execution-support division of <strong className="text-white font-semibold">Spuntech Solutions Pvt. Ltd.</strong> It helps global companies navigate the complexities of establishing, developing, and scaling their business footprint in India, while supporting Indian MSMEs in addressing critical business and industrial challenges.
               </p>
+
+              {/* Divider Line between Paragraphs */}
+              <div className="h-px w-full bg-gradient-to-r from-[#D98A10]/80 via-white/20 to-transparent my-3" aria-hidden="true" />
+
+              {/* Paragraph 2 - Justified */}
+              <div className="space-y-3">
+                <p className="text-slate-200 text-sm sm:text-[15px] leading-relaxed text-justify hyphens-auto">
+                  Combining <strong className="text-white font-semibold">industrial expertise, business advisory, and execution capabilities</strong>, Business Clinic bridges the gap between strategy and implementation. Our support extends across the entire journey—from <strong className="text-white font-semibold">diagnosis, strategy, and planning to documentation, regulatory compliance, project execution, validation, and ongoing operational support.</strong>
+                </p>
+                <p className="text-slate-300 text-sm sm:text-[15px] leading-relaxed text-justify hyphens-auto">
+                  Our <strong className="text-white font-semibold">single-window, execution-oriented approach</strong> is designed to deliver practical, outcome-focused solutions across a wide range of industrial sectors, including <strong className="text-white font-semibold">manufacturing, engineering, defence, aerospace, electronics, and other technology-intensive industries.</strong>
+                </p>
+              </div>
+
+              <div className="pt-2 flex items-center gap-2 text-xs font-bold tracking-wider text-[#D98A10] uppercase">
+                <span>A preview of our capability spectrum is outlined below</span>
+                <span className="inline-block animate-bounce font-mono">↓</span>
+              </div>
             </div>
 
-            <div className="shrink-0 flex justify-center lg:justify-end self-center">
-              <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full bg-slate-100 border border-white/30 shadow-lg flex items-center justify-center p-3 sm:p-4">
-                <Image
-                  src="/images/logo/IBC.png"
-                  alt="India Business Clinic"
-                  width={120}
-                  height={120}
-                  className="object-contain w-full h-full"
-                  priority
-                />
+            {/* Right Logo Showcase Column */}
+            <div className="lg:col-span-4 flex justify-center items-center">
+              <div className="relative group w-full max-w-[280px] sm:max-w-[300px]">
+                {/* Glow ring */}
+                <div className="absolute -inset-1.5 bg-gradient-to-tr from-[#D98A10]/40 via-white/10 to-[#D98A10]/20 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition duration-500"></div>
+
+                {/* Elegant Glassmorphic Card Container */}
+                <div className="relative rounded-2xl bg-white/10 backdrop-blur-md border border-white/25 p-7 sm:p-8 flex flex-col items-center text-center shadow-2xl space-y-4 group-hover:border-[#D98A10]/50 transition-colors">
+                  <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-white shadow-xl flex items-center justify-center p-4.5 border-2 border-[#D98A10]/30 group-hover:scale-105 transition-transform duration-300">
+                    <Image
+                      src="/images/logo/IBC.png"
+                      alt="India Business Clinic Logo"
+                      width={140}
+                      height={140}
+                      className="object-contain w-full h-full"
+                      priority
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <p className="font-serif font-bold text-white text-base tracking-wide">
+                      India Business Clinic
+                    </p>
+                    <p className="text-xs text-amber-200/90 font-medium tracking-wider uppercase">
+                      India Entry Solutions &amp; Industrial Troubleshooting
+                    </p>
+                  </div>
+
+                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#0c1d4a]/80 border border-[#D98A10]/40 text-[11px] font-bold text-amber-300 tracking-wide">
+                    Spuntech Solutions Pvt. Ltd.
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -120,13 +169,13 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#D98A10] uppercase">
-              Spectrum of Expertise
+              Expertise
             </span>
             <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#0C1D4A]">
               Our Capability Spectrum
             </h2>
             <p className="text-slate-600 text-xs sm:text-sm">
-              Comprehensive end-to-end execution capabilities across modern manufacturing and engineering domains
+              Comprehensive end-to-end execution capabilities across all business domains
             </p>
           </div>
 
@@ -144,7 +193,7 @@ export default function AboutPage() {
       </section>
 
       {/* 2. Founder Section */}
-      <section className="py-20 border-b border-slate-100">
+      <section id="leadership-profile" className="py-20 border-b border-slate-100 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
@@ -183,7 +232,7 @@ export default function AboutPage() {
               </blockquote>
 
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                During his military and corporate tenure, Col Sanjay Chandra (Retd) managed some of India’s most complex defence acquisitions and industrial integrations. His expertise spans turkey manufacturing lines, aerospace standards, military electronics, international joint ventures, and facility certification.
+                During his military and corporate tenure, Col Sanjay Chandra (Retd) managed some of India’s most complex defence acquisitions and industrial integrations. His expertise spans turnkey manufacturing lines, aerospace standards, military electronics, international joint ventures, and facility certification.
               </p>
 
               {/* Major Projects list */}

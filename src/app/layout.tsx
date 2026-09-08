@@ -26,6 +26,18 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
   },
+  icons: {
+    icon: [
+      { url: "/images/logo/ibc-favicon.png?v=2" },
+      { url: "/images/logo/ibc-favicon-32x32.png?v=2", sizes: "32x32", type: "image/png" },
+      { url: "/images/logo/ibc-favicon-16x16.png?v=2", sizes: "16x16", type: "image/png" },
+      { url: "/images/logo/ibc-favicon-48x48.png?v=2", sizes: "48x48", type: "image/png" },
+    ],
+    shortcut: "/images/logo/ibc-favicon.png?v=2",
+    apple: [
+      { url: "/images/logo/ibc-favicon-180x180.png?v=2", sizes: "180x180", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({

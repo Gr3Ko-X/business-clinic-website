@@ -60,7 +60,7 @@ export default function IndianMSMEClinicPage() {
     { step: "Diagnose", title: "Find the Root Cause", desc: "Conduct on-ground data audits to map process gaps and OEE inefficiencies." },
     { step: "Design", title: "Develop the Solution", desc: "Formulate visually clear work instruction cards, layout adjustments, and checklists." },
     { step: "Deploy", title: "Execute & Implement", desc: "Provide direct, on-ground implementation support alongside your floor team." },
-    { step: "Sustain", title: "Monitor & Improve", desc: "Establish permanent tracking metrics, review yields, and stabilize quality outcomes." }
+    { step: "Deliver", title: "Monitor & Improve", desc: "Establish permanent tracking metrics, review yields, and stabilize quality outcomes." }
   ];
 
   const recruitmentStages = [

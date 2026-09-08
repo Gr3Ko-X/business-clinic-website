@@ -121,7 +121,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services/india-entry-support-foreign-industry#scorecard-tool"
+                  href="/services/india-entry-support-foreign-industry/scorecard"
                   className="text-slate-400 hover:text-accent transition-colors"
                 >
                   India Entry Scorecard

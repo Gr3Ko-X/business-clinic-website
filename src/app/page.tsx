@@ -31,11 +31,12 @@ export default function Home() {
 
   
     <div className="flex flex-col min-h-screen">
+      {/* 0. Marquee Announcement Bar directly below navbar */}
+      <MarqueeSection />
+
       {/* 1. Hero Section */}
       <Hero />
       {/* <Hero2 /> */}
-      {/* 1.1 add the Marquee section here */}
-      <MarqueeSection />
 
       <BtsLandingHero />
 

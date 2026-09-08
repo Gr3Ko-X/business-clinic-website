@@ -32,6 +32,11 @@ const nextConfig: NextConfig = {
         destination: "/services/legal-company-secretary-ca-services",
         permanent: true,
       },
+      {
+        source: "/scorecard",
+        destination: "/services/india-entry-support-foreign-industry/scorecard",
+        permanent: false,
+      },
     ];
   },
 };
