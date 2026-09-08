@@ -69,6 +69,11 @@ export default function CaseStudiesGrid() {
                   {/* Title */}
                   <h3 className="font-serif text-base sm:text-lg font-bold text-primary leading-tight">
                     {cs.title}
+                    {cs.subtitle && (
+                      <span className="block text-accent text-xs sm:text-sm font-sans font-semibold mt-1">
+                        {cs.subtitle}
+                      </span>
+                    )}
                   </h3>
 
                   {/* Summary */}

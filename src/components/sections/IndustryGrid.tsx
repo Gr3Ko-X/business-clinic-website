@@ -166,14 +166,14 @@ export default function IndustryGrid() {
     {
       id: "power-high-tech",
       num: "03",
-      title: "Power & High Technologies",
+      title: "Power & Cutting Edge Technology",
       bullets: [
         "Local Operational Support",
         "Trials & Testing",
         "PDI, FAT & FAI",
       ],
       description:
-        "Local operational support, trials & testing, and inspection frameworks (PDI, FAT & FAI) for power and high-technology programmes.",
+        "Local operational support, trials & testing, and inspection frameworks (PDI, FAT & FAI) for power and cutting-edge technology programmes.",
       icon: (
         <svg className="w-10 h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="32" cy="28" r="20" strokeWidth="3" />
@@ -493,16 +493,28 @@ export default function IndustryGrid() {
             </div>
 
             <div className="space-y-3">
-              <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-[#D98A10]" />
-                <div>
+              <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-start space-x-3">
+                <Mail className="w-5 h-5 text-[#D98A10] shrink-0 mt-0.5" />
+                <div className="space-y-1">
                   <p className="text-xs text-slate-400 font-bold uppercase">Direct Email</p>
-                  <a
-                    href="mailto:indiabusinessclinic@gmail.com"
-                    className="text-xs font-bold text-[#0C1D4A] hover:underline"
-                  >
-                    indiabusinessclinic@gmail.com
-                  </a>
+                  <div>
+                    <span className="text-[11px] text-slate-500 font-semibold mr-1">Primary:</span>
+                    <a
+                      href="mailto:sanjay@indiabusinessclinic.com"
+                      className="text-xs font-bold text-[#0C1D4A] hover:underline"
+                    >
+                      sanjay@indiabusinessclinic.com
+                    </a>
+                  </div>
+                  <div>
+                    <span className="text-[11px] text-slate-500 font-semibold mr-1">Alternate:</span>
+                    <a
+                      href="mailto:indiabusinessclinic@gmail.com"
+                      className="text-xs font-bold text-[#0C1D4A] hover:underline"
+                    >
+                      indiabusinessclinic@gmail.com
+                    </a>
+                  </div>
                 </div>
               </div>
 

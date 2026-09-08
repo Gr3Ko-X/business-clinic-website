@@ -43,11 +43,26 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
+  // Desktop mega menu visibility state (replaces CSS-only group-hover)
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
+  const [desktopInsightsOpen, setDesktopInsightsOpen] = useState(false);
+
   // Mobile navigation sub-menus state
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileCategoryOpen, setMobileCategoryOpen] = useState<number | null>(null);
   const [mobileInsightsOpen, setMobileInsightsOpen] = useState(false);
   const [mobileInsightsCategoryOpen, setMobileInsightsCategoryOpen] = useState<number | null>(null);
+
+  // Close all menus when the route changes (client-side navigation)
+  useEffect(() => {
+    setDesktopServicesOpen(false);
+    setDesktopInsightsOpen(false);
+    setIsOpen(false);
+    setMobileServicesOpen(false);
+    setMobileCategoryOpen(null);
+    setMobileInsightsOpen(false);
+    setMobileInsightsCategoryOpen(null);
+  }, [pathname]);
 
   const insightsArticlesList = insightsData.filter(
     (art) => art.slug !== "bts-2026-strategy-guide"
@@ -119,7 +134,12 @@ export default function Header() {
               {navLinks.map((link) => {
                 if (link.isMegaMenu) {
                   return (
-                    <div key={link.name} className="relative group py-2">
+                    <div
+                      key={link.name}
+                      className="relative py-2"
+                      onMouseEnter={() => setDesktopServicesOpen(true)}
+                      onMouseLeave={() => setDesktopServicesOpen(false)}
+                    >
                       <Link
                         href={link.href}
                         className={`text-sm font-medium transition-colors hover:text-accent flex items-center space-x-1 ${
@@ -129,14 +149,17 @@ export default function Header() {
                         }`}
                       >
                         <span>{link.name}</span>
-                        <ChevronDown className="h-3.5 w-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
+                        <ChevronDown className={`h-3.5 w-3.5 opacity-60 transition-transform duration-200 ${desktopServicesOpen ? "rotate-180" : ""}`} />
                       </Link>
 
                       {/* Mega Menu Dropdown */}
-                      <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-[850px] bg-white border border-slate-200 rounded-xl shadow-xl p-6 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50 grid grid-cols-3 gap-6">
+                      <div
+                        onClick={() => setDesktopServicesOpen(false)}
+                        className={`absolute left-1/2 -translate-x-1/2 mt-2 w-[850px] bg-white border border-slate-200 rounded-xl shadow-xl p-6 transition-all duration-200 z-50 grid grid-cols-3 gap-6 ${desktopServicesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2 pointer-events-none"}`}
+                      >
                         {/* Column 1 */}
                         <div className="space-y-3">
-                          <span className="text-xs font-bold text-primary uppercase tracking-wider border-b border-slate-100 pb-2 block">
+                          <span className="text-xs font-bold text-primary tracking-wide border-b border-slate-100 pb-2 block">
                             Business &amp; Industrial Consulting
                           </span>
                           <div className="flex flex-col space-y-1">
@@ -181,7 +204,7 @@ export default function Header() {
 
                         {/* Column 2 */}
                         <div className="space-y-3">
-                          <span className="text-xs font-bold text-primary uppercase tracking-wider border-b border-slate-100 pb-2 block">
+                          <span className="text-xs font-bold text-primary tracking-wide border-b border-slate-100 pb-2 block">
                             Industrial Documentation &amp; Technical Knowledge Services
                           </span>
                           <div className="flex flex-col space-y-1">
@@ -226,7 +249,7 @@ export default function Header() {
 
                         {/* Column 3 */}
                         <div className="space-y-3">
-                          <span className="text-xs font-bold text-primary uppercase tracking-wider border-b border-slate-100 pb-2 block">
+                          <span className="text-xs font-bold text-primary tracking-wide border-b border-slate-100 pb-2 block">
                             Industrial Assurance &amp; Validation Services
                           </span>
                           <div className="flex flex-col space-y-1">
@@ -279,7 +302,12 @@ export default function Header() {
 
                 if (link.isInsightsMegaMenu) {
                   return (
-                    <div key={link.name} className="relative group py-2">
+                    <div
+                      key={link.name}
+                      className="relative py-2"
+                      onMouseEnter={() => setDesktopInsightsOpen(true)}
+                      onMouseLeave={() => setDesktopInsightsOpen(false)}
+                    >
                       <Link
                         href={link.href}
                         className={`text-sm font-medium transition-colors hover:text-accent flex items-center space-x-1 ${
@@ -289,15 +317,18 @@ export default function Header() {
                         }`}
                       >
                         <span>{link.name}</span>
-                        <ChevronDown className="h-3.5 w-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
+                        <ChevronDown className={`h-3.5 w-3.5 opacity-60 transition-transform duration-200 ${desktopInsightsOpen ? "rotate-180" : ""}`} />
                       </Link>
 
                       {/* Insights Mega Menu Dropdown */}
-                      <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-[850px] bg-white border border-slate-200 rounded-xl shadow-xl p-6 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50 grid grid-cols-3 gap-6">
+                      <div
+                        onClick={() => setDesktopInsightsOpen(false)}
+                        className={`absolute left-1/2 -translate-x-1/2 mt-2 w-[850px] bg-white border border-slate-200 rounded-xl shadow-xl p-6 transition-all duration-200 z-50 grid grid-cols-3 gap-6 ${desktopInsightsOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2 pointer-events-none"}`}
+                      >
                         {/* Column 1: Current */}
                         <div className="space-y-3">
                           <div className="flex items-center justify-between border-b border-slate-100 pb-2">
-                            <span className="text-xs font-bold text-primary uppercase tracking-wider block">
+                            <span className="text-xs font-bold text-primary tracking-wide block">
                               Current
                             </span>
                             <span className="px-2 py-0.5 text-[10px] font-bold uppercase bg-amber-100 text-amber-900 rounded-full">
@@ -342,7 +373,7 @@ export default function Header() {
                         {/* Column 2: Articles */}
                         <div className="space-y-3">
                           <div className="flex items-center justify-between border-b border-slate-100 pb-2">
-                            <span className="text-xs font-bold text-primary uppercase tracking-wider block">
+                            <span className="text-xs font-bold text-primary tracking-wide block">
                               Articles
                             </span>
                             <span className="text-[10px] text-slate-400 font-medium">
@@ -372,7 +403,7 @@ export default function Header() {
                         {/* Column 3: Case Studies */}
                         <div className="space-y-3">
                           <div className="flex items-center justify-between border-b border-slate-100 pb-2">
-                            <span className="text-xs font-bold text-primary uppercase tracking-wider block">
+                            <span className="text-xs font-bold text-primary tracking-wide block">
                               Case Studies
                             </span>
                             <span className="text-[10px] text-slate-400 font-medium">

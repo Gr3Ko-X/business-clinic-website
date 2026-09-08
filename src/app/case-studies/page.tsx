@@ -69,6 +69,11 @@ export default function CaseStudiesListPage() {
                     {/* Title */}
                     <h2 className="font-serif text-lg font-bold text-primary leading-tight">
                       {cs.title}
+                      {cs.subtitle && (
+                        <span className="block text-accent text-sm font-sans font-semibold mt-1">
+                          {cs.subtitle}
+                        </span>
+                      )}
                     </h2>
 
                     {/* Summary */}

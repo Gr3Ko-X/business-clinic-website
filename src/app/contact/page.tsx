@@ -67,7 +67,7 @@ function ContactPageContent() {
       ].join("\n")
     );
 
-    window.location.href = `mailto:indiabusinessclinic@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:sanjay@indiabusinessclinic.com?cc=indiabusinessclinic@gmail.com&subject=${subject}&body=${body}`;
     setFormSubmitted(true);
   };
 
@@ -135,19 +135,31 @@ function ContactPageContent() {
               <div className="space-y-4">
                 {/* Email card */}
                 <div className="bg-slate-50 border border-slate-200/80 p-6 rounded-md flex items-start space-x-4">
-                  <div className="p-3 bg-white text-accent rounded-full border border-slate-200 shadow-xs shrink-0">
+                  <div className="p-3 bg-white text-accent rounded-full border border-slate-200 shadow-xs shrink-0 mt-0.5">
                     <Mail className="h-5 w-5" />
                   </div>
-                  <div>
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
-                      Email Address
+                  <div className="space-y-1.5">
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                      Email Addresses
                     </h3>
-                    <a
-                      href="mailto:indiabusinessclinic@gmail.com"
-                      className="text-sm font-bold text-primary hover:text-accent transition-colors"
-                    >
-                      indiabusinessclinic@gmail.com
-                    </a>
+                    <div>
+                      <span className="text-xs text-slate-500 font-semibold block">Primary:</span>
+                      <a
+                        href="mailto:sanjay@indiabusinessclinic.com"
+                        className="text-sm font-bold text-primary hover:text-accent transition-colors break-all"
+                      >
+                        sanjay@indiabusinessclinic.com
+                      </a>
+                    </div>
+                    <div className="pt-0.5">
+                      <span className="text-xs text-slate-500 font-semibold block">Alternate:</span>
+                      <a
+                        href="mailto:indiabusinessclinic@gmail.com"
+                        className="text-sm font-bold text-primary hover:text-accent transition-colors break-all"
+                      >
+                        indiabusinessclinic@gmail.com
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -218,7 +230,8 @@ function ContactPageContent() {
                   </h2>
                   <p className="text-slate-600 text-sm max-w-sm mx-auto leading-relaxed">
                     Thank you. Your consultation request has been prepared for{" "}
-                    <span className="font-semibold text-primary">indiabusinessclinic@gmail.com</span>.
+                    <span className="font-semibold text-primary">sanjay@indiabusinessclinic.com</span>{" "}
+                    (Alternate: <span className="font-semibold text-primary">indiabusinessclinic@gmail.com</span>).
                     Please send the email from your mail client if it opened. Our team will contact you shortly.
                   </p>
                   <div className="pt-4">

@@ -601,7 +601,7 @@
 //                 <label className="text-xs font-bold text-slate-700 block mb-1">Corporate Email / Phone</label>
 //                 <input 
 //                   type="text" 
-//                   placeholder="indiabusinessclinic@gmail.com / +91 9560714343" 
+//                   placeholder="sanjay@indiabusinessclinic.com / +91 9560714343" 
 //                   className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-xs text-slate-900 focus:outline-none focus:border-[#D98A10]"
 //                 />
 //               </div>
@@ -678,6 +678,7 @@ import {
   ShieldCheck,
   Building2,
   Cpu,
+  Laptop,
   Zap,
   Settings,
   Globe,
@@ -721,8 +722,8 @@ export default function App() {
     { name: "Indian Industry", icon: Building2, detail: "Operational Scaling" },
     { name: "Defence & Aerospace", icon: ShieldCheck, detail: "Licensing & ToT" },
     { name: "Homeland Security", icon: Shield, detail: "Security Systems" },
-    { name: "Power & Renewable Energy", icon: Zap, detail: "Turnkey Power Systems" },
-    { name: "Software & Cyber Security", icon: Cpu, detail: "Secure Tech Systems" },
+    { name: "Electronics and Semiconductors", icon: Cpu, detail: "High-Tech Manufacturing" },
+    { name: "Software & Cyber Security", icon: Laptop, detail: "Secure Tech Systems" },
   ];
 
   const whyChooseCredentials = [
@@ -908,7 +909,7 @@ export default function App() {
                     <div className="space-y-2 min-w-0">
                       
                       <h3 className="font-serif font-bold text-xl sm:text-2xl text-white leading-tight">
-                        Why Choose Business Clinic
+                        Why Choose India Business Clinic?
                       </h3>
                       <p className="text-sm text-slate-300 leading-relaxed">
                         Deep industrial competence with hands-on on-ground execution for operations in India.
@@ -1167,7 +1168,7 @@ export default function App() {
                 <label className="text-xs font-bold text-slate-700 block mb-1">Corporate Email / Phone</label>
                 <input 
                   type="text" 
-                  placeholder="indiabusinessclinic@gmail.com / +91 9560714343" 
+                  placeholder="sanjay@indiabusinessclinic.com / +91 9560714343" 
                   className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-xs text-slate-900 focus:outline-none focus:border-[#D98A10]"
                 />
               </div>
