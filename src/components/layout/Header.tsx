@@ -458,14 +458,12 @@ export default function Header() {
               })}
             </nav>
 
-            {/* CTA Button: Talk to an Expert / WhatsApp */}
+            {/* CTA Button: Talk to an Expert → Contact */}
             <div className="hidden lg:block">
-              <a
-                href="https://wa.me/919560714343?text=Hello%2C%20I%20would%20like%20to%20consult%20an%20expert%20at%20Business%20Clinic."
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/contact"
                 className="group flex items-center space-x-2.5 bg-gradient-to-r from-[#D98A10] to-[#b87309] hover:from-[#e09418] hover:to-[#c58010] text-white px-3.5 py-1.5 rounded-lg transition-all shadow-sm hover:shadow-md border border-amber-300/30"
-                title="Voice, SMS & WhatsApp: +91 9560714343"
+                title="Schedule a consultation"
               >
                 <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                   <Phone className="h-3.5 w-3.5 text-white" />
@@ -478,7 +476,7 @@ export default function Header() {
                     +91 9560714343 (Voice, SMS &amp; WhatsApp)
                   </span>
                 </div>
-              </a>
+              </Link>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -876,10 +874,8 @@ export default function Header() {
           </div>
 
           <div className="pb-16 px-3">
-            <a
-              href="https://wa.me/919560714343?text=Hello%2C%20I%20would%20like%20to%20consult%20an%20expert%20at%20Business%20Clinic."
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/contact"
               onClick={handleMobileNavClick}
               className="w-full justify-center flex items-center space-x-3 bg-gradient-to-r from-[#D98A10] to-[#b87309] hover:from-[#e09418] hover:to-[#c58010] text-white px-5 py-3 rounded-xl font-medium transition-all shadow-md"
             >
@@ -894,7 +890,7 @@ export default function Header() {
                   +91 9560714343 (Voice, SMS &amp; WhatsApp)
                 </span>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
