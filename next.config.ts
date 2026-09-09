@@ -1,6 +1,18 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Shared hosting (cPanel/CloudLinux) process limits — prevents spawn EAGAIN
+  experimental: {
+    workerThreads: false,
+    cpus: 1,
+  },
+  // Avoid extra tsc/eslint child processes during build on low-NPROC hosts
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     remotePatterns: [
       {
