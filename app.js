@@ -1,35 +1,50 @@
 const { createServer } = require("http");
 const { parse } = require("url");
+const fs = require("fs");
+const path = require("path");
 const next = require("next");
 
+const logFile = path.join(__dirname, "startup.log");
+
+function log(message) {
+  const line = `${new Date().toISOString()} ${message}\n`;
+  try {
+    fs.appendFileSync(logFile, line);
+  } catch (_) {
+    // ignore log write failures
+  }
+  console.log(message);
+}
+
 // cPanel / Phusion Passenger support
-if (typeof PhusionPassenger !== "undefined") {
+const underPassenger = typeof PhusionPassenger !== "undefined";
+if (underPassenger) {
   PhusionPassenger.configure({ autoInstall: false });
 }
 
-const dev = false;
+log(`boot underPassenger=${underPassenger} cwd=${process.cwd()} dir=${__dirname}`);
+
 const app = next({
-  dev,
+  dev: false,
   dir: __dirname,
 });
 const handle = app.getRequestHandler();
-
-const port =
-  typeof PhusionPassenger !== "undefined"
-    ? "passenger"
-    : Number(process.env.PORT) || 3000;
+const port = underPassenger ? "passenger" : Number(process.env.PORT) || 3000;
 
 app
   .prepare()
   .then(() => {
-    createServer((req, res) => {
+    log("next.prepare() ok");
+    const server = createServer((req, res) => {
       const parsedUrl = parse(req.url, true);
       handle(req, res, parsedUrl);
-    }).listen(port, () => {
-      console.log(`Next.js ready (${String(port)})`);
+    });
+
+    server.listen(port, () => {
+      log(`listening on ${String(port)}`);
     });
   })
   .catch((err) => {
-    console.error("Failed to start Next.js:", err);
+    log(`FATAL: ${err && err.stack ? err.stack : String(err)}`);
     process.exit(1);
   });
