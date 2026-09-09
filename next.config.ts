@@ -6,12 +6,9 @@ const nextConfig: NextConfig = {
     workerThreads: false,
     cpus: 1,
   },
-  // Avoid extra tsc/eslint child processes during build on low-NPROC hosts
+  // Avoid extra tsc child processes during build on low-NPROC hosts
   typescript: {
     ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
   },
   images: {
     remotePatterns: [
