@@ -18,6 +18,13 @@ export type ContactPayload = {
   details: string;
 };
 
+/** Strip accidental quotes/whitespace from cPanel env values. */
+function env(name: string): string {
+  const raw = process.env[name];
+  if (!raw) return "";
+  return raw.trim().replace(/^['"]|['"]$/g, "");
+}
+
 export function escapeHtml(value: string): string {
   return value
     .replace(/&/g, "&amp;")
@@ -28,27 +35,29 @@ export function escapeHtml(value: string): string {
 }
 
 export function getRecipients(): string[] {
-  const fromList = process.env.CONTACT_EMAILS
-    ?.split(",")
+  const fromList = env("CONTACT_EMAILS")
+    .split(",")
     .map((email) => email.trim())
     .filter(Boolean);
 
-  if (fromList && fromList.length > 0) {
+  if (fromList.length > 0) {
     return fromList;
   }
 
-  const single = process.env.CONTACT_EMAIL?.trim();
+  const single = env("CONTACT_EMAIL");
   return single ? [single] : [];
 }
 
 export function createTransporter() {
-  const host = process.env.SMTP_HOST?.trim();
-  const user = process.env.SMTP_USER?.trim();
-  const pass = process.env.SMTP_PASS;
-  const port = Number(process.env.SMTP_PORT ?? "465");
+  const host = env("SMTP_HOST");
+  const user = env("SMTP_USER");
+  const pass = env("SMTP_PASS");
+  const port = Number(env("SMTP_PORT") || "465");
 
   if (!host || !user || !pass || !Number.isFinite(port)) {
-    throw new Error("SMTP configuration is incomplete");
+    throw new Error(
+      `SMTP configuration is incomplete (host=${Boolean(host)} user=${Boolean(user)} pass=${Boolean(pass)} port=${port})`
+    );
   }
 
   const secure = port === 465;
@@ -58,6 +67,13 @@ export function createTransporter() {
     port,
     secure,
     auth: { user, pass },
+    connectionTimeout: 15000,
+    greetingTimeout: 15000,
+    socketTimeout: 20000,
+    tls: {
+      // Shared hosts often use self-signed / mismatched certs on mail.*
+      rejectUnauthorized: false,
+    },
   });
 }
 

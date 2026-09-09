@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
 import {
   SERVICE_LABELS,
   buildContactEmail,
@@ -20,6 +22,18 @@ const MAX_DETAILS = 5000;
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
 const RATE_LIMIT_MAX = 5;
 const submissionLog = new Map<string, number[]>();
+
+function logContactError(message: string) {
+  console.error(message);
+  try {
+    fs.appendFileSync(
+      path.join(process.cwd(), "contact-error.log"),
+      `${new Date().toISOString()} ${message}\n`
+    );
+  } catch {
+    // ignore
+  }
+}
 
 function getClientIp(request: Request): string {
   const forwarded = request.headers.get("x-forwarded-for");
@@ -122,10 +136,16 @@ export async function POST(request: Request) {
     }
 
     const recipients = getRecipients();
-    const smtpUser = process.env.SMTP_USER?.trim();
+    const smtpUser = process.env.SMTP_USER?.trim().replace(/^['"]|['"]$/g, "");
 
     if (!smtpUser || recipients.length === 0) {
-      console.error("Contact API misconfigured: missing SMTP_USER or recipients");
+      logContactError(
+        `Contact API misconfigured: smtpUser=${Boolean(smtpUser)} recipients=${recipients.length} keys=${Object.keys(
+          process.env
+        )
+          .filter((k) => k.startsWith("SMTP") || k.startsWith("CONTACT"))
+          .join(",")}`
+      );
       return NextResponse.json(
         { error: "Unable to send your message right now. Please try again later." },
         { status: 500 }
@@ -146,7 +166,9 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ ok: true }, { status: 200 });
   } catch (error) {
-    console.error("Contact form email failed:", error);
+    const message =
+      error instanceof Error ? error.stack || error.message : String(error);
+    logContactError(`Contact form email failed: ${message}`);
     return NextResponse.json(
       { error: "Unable to send your message right now. Please try again later." },
       { status: 500 }
