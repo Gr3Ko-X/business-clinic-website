@@ -1,24 +1,32 @@
 const { createServer } = require("http");
+const { parse } = require("url");
 const next = require("next");
 
-const port = Number(process.env.PORT) || 3000;
-const hostname = "0.0.0.0";
+// cPanel / Phusion Passenger support
+if (typeof PhusionPassenger !== "undefined") {
+  PhusionPassenger.configure({ autoInstall: false });
+}
 
+const dev = false;
 const app = next({
-  dev: false,
-  hostname,
-  port,
+  dev,
+  dir: __dirname,
 });
-
 const handle = app.getRequestHandler();
+
+const port =
+  typeof PhusionPassenger !== "undefined"
+    ? "passenger"
+    : Number(process.env.PORT) || 3000;
 
 app
   .prepare()
   .then(() => {
     createServer((req, res) => {
-      handle(req, res);
-    }).listen(port, hostname, () => {
-      console.log(`Next.js running on http://${hostname}:${port}`);
+      const parsedUrl = parse(req.url, true);
+      handle(req, res, parsedUrl);
+    }).listen(port, () => {
+      console.log(`Next.js ready (${String(port)})`);
     });
   })
   .catch((err) => {
