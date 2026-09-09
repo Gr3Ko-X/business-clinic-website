@@ -1,0 +1,11 @@
+---
+deployment:
+  tasks:
+    # cPanel user: indiabus
+    # Git clone (repo): /home3/indiabus/repositories/business-clinic-website-production
+    # Deploy path must match Setup Node.js App → Application Root
+    - export DEPLOYPATH=/home3/indiabus/business-clinic-website-production/
+    - /bin/mkdir -p $DEPLOYPATH
+    - /usr/bin/rsync -a --delete --exclude='.git' --exclude='node_modules' --exclude='.next' ./ $DEPLOYPATH/
+    - /bin/mkdir -p $DEPLOYPATH/tmp
+    - /bin/touch $DEPLOYPATH/tmp/restart.txt
