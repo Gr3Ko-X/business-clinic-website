@@ -7,7 +7,7 @@ export const BTS_WHATSAPP_HREF =
   );
 
 export const BTS_QR_URL =
-  "https://businessclinic.in/bengaluru-tech-summit-2026?ref=bts-qr";
+  "https://indiabusinessclinic.com/contact?source=bts-2026&service=india-entry";
 
 export const BTS_PREFILL_MESSAGE =
   "BTS 2026 — India Entry Discussion request. I am an international technology, manufacturing or industrial company exploring opportunities in India and would like to schedule a conversation at Bengaluru Tech Summit 2026 (17–19 November 2026).";

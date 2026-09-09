@@ -8,7 +8,7 @@ const root = path.resolve(__dirname, "..");
 const outDir = path.join(root, "public", "qr");
 
 const BTS_QR_URL =
-  "https://businessclinic.in/bengaluru-tech-summit-2026?ref=bts-qr";
+  "https://indiabusinessclinic.com/contact?source=bts-2026&service=india-entry";
 
 const baseName = "bengaluru-tech-summit-2026";
 
