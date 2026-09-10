@@ -413,6 +413,9 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
   // Answers State: key is "catId::qIndex" -> "yes" | "partial" | "no"
   const [answers, setAnswers] = useState<Record<string, "yes" | "partial" | "no">>({});
 
+  // Mobile Category Navigation Expansion State
+  const [showMobileCatNav, setShowMobileCatNav] = useState(false);
+
   // Scroll on screen transition
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -707,9 +710,9 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
           SCREEN 1: INTRO & ENTERPRISE PROFILE FORM
           ======================================================== */}
       {screen === "intro" && (
-        <main className={`max-w-4xl mx-auto px-4 sm:px-6 animate-fadeIn ${embedded ? "py-2 sm:py-4" : "py-10 sm:py-16"}`}>
+        <main className={`max-w-4xl mx-auto px-4 sm:px-6 animate-fadeIn ${embedded ? "py-2 sm:py-4" : "py-6 sm:py-16"}`}>
           {/* Hero Banner */}
-          <div className="bg-white border border-slate-200/80 rounded-2xl p-8 sm:p-12 shadow-sm relative overflow-hidden mb-8">
+          <div className="bg-white border border-slate-200/80 rounded-2xl p-5 sm:p-12 shadow-sm relative overflow-hidden mb-6 sm:mb-8">
             <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-[#D98A10]/10 via-[#0C1D4A]/5 to-transparent rounded-full filter blur-3xl pointer-events-none -mr-20 -mt-20" />
             
             <div className="max-w-2xl relative z-10 space-y-4">
@@ -718,7 +721,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
                 <span>Executive Maturity Benchmark</span>
               </div>
               
-              <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0C1D4A] tracking-tight leading-tight">
+              <h1 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-[#0C1D4A] tracking-tight leading-tight">
                 India Entry Readiness Scorecard
               </h1>
               
@@ -728,7 +731,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
             </div>
 
             {/* Diagnostic Pillars Highlight Strip */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-8 border-t border-slate-100 text-slate-700">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-slate-100 text-slate-700">
               <div className="space-y-1">
                 <div className="font-mono text-xs text-[#D98A10] font-bold uppercase">Coverage</div>
                 <div className="text-sm font-semibold text-[#0C1D4A]">9 Critical Pillars</div>
@@ -749,7 +752,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
           </div>
 
           {/* Profile Form Card */}
-          <div className="bg-white border border-slate-200/80 rounded-2xl p-8 sm:p-10 shadow-sm space-y-6">
+          <div className="bg-white border border-slate-200/80 rounded-2xl p-5 sm:p-10 shadow-sm space-y-5 sm:space-y-6">
             <div className="border-b border-slate-100 pb-4">
               <div className="flex items-center space-x-2 text-xs font-mono font-bold uppercase tracking-widest text-[#D98A10] mb-1">
                 <Layers className="w-4 h-4" />
@@ -860,13 +863,154 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
           SCREEN 2: SPLIT-SCREEN ASSESSMENT WORKSPACE
           ======================================================== */}
       {screen === "question" && currentCat && (
-        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fadeIn ${embedded ? "py-2 sm:py-4" : "py-8"}`}>
+        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fadeIn ${embedded ? "py-2 sm:py-4" : "py-4 sm:py-8"}`}>
+          
+          {/* ----------------------------------------------------
+              MOBILE CATEGORY STEPPER & DRAWER (< lg only)
+              ---------------------------------------------------- */}
+          <div className="lg:hidden mb-4 space-y-2">
+            <div className="bg-white border border-slate-200/80 rounded-2xl p-3.5 shadow-xs">
+              {/* Category Info & Total Progress */}
+              <div className="flex items-center justify-between text-xs mb-2">
+                <div className="flex items-center space-x-2 truncate pr-2">
+                  <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#D98A10] shrink-0">
+                    Dimension {catIndex + 1}/{activeCategories.length}
+                  </span>
+                  <span className="text-slate-300 shrink-0">•</span>
+                  <span className="font-bold text-[#0C1D4A] truncate">
+                    {currentCat.shortName || currentCat.name}
+                  </span>
+                </div>
+                <div className="flex items-center space-x-1 shrink-0 font-mono text-xs font-bold text-slate-700">
+                  <span>{progressPercent}%</span>
+                </div>
+              </div>
+
+              {/* Progress Bar */}
+              <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden mb-3">
+                <div
+                  className="h-full bg-gradient-to-r from-[#0C1D4A] via-[#1E3A8A] to-[#D98A10] transition-all duration-300 rounded-full"
+                  style={{ width: `${progressPercent}%` }}
+                />
+              </div>
+
+              {/* Horizontal Scrollable Category Stepper Pills */}
+              <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none -mx-1 px-1">
+                {activeCategories.map((cat, idx) => {
+                  const isCurrent = idx === catIndex;
+                  const isDone = isCategoryComplete(cat);
+                  return (
+                    <button
+                      key={cat.id}
+                      type="button"
+                      onClick={() => {
+                        setCatIndex(idx);
+                        setShowMobileCatNav(false);
+                      }}
+                      className={`shrink-0 inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
+                        isCurrent
+                          ? "bg-[#0C1D4A] text-white shadow-xs font-semibold"
+                          : isDone
+                          ? "bg-emerald-50 text-emerald-800 border border-emerald-200/80"
+                          : "bg-slate-50 text-slate-600 border border-slate-200/80 hover:bg-slate-100"
+                      }`}
+                    >
+                      <span
+                        className={`w-4 h-4 rounded-full flex items-center justify-center text-[9px] font-mono shrink-0 ${
+                          isCurrent
+                            ? "bg-[#D98A10] text-[#0C1D4A] font-bold"
+                            : isDone
+                            ? "bg-emerald-600 text-white"
+                            : "bg-slate-200 text-slate-500"
+                        }`}
+                      >
+                        {isDone ? <Check className="w-2.5 h-2.5" /> : idx + 1}
+                      </span>
+                      <span className="whitespace-nowrap">{cat.shortName || cat.name}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Expand / View All Categories Toggle */}
+              <div className="pt-2 mt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                <button
+                  type="button"
+                  onClick={() => setShowMobileCatNav(!showMobileCatNav)}
+                  className="inline-flex items-center space-x-1 text-[#0C1D4A] font-medium hover:text-[#D98A10] transition-colors cursor-pointer"
+                >
+                  <span>{showMobileCatNav ? "Close Category Index" : "View All Dimensions"}</span>
+                  <ChevronDown className={`w-3.5 h-3.5 text-[#D98A10] transition-transform duration-200 ${showMobileCatNav ? "rotate-180" : ""}`} />
+                </button>
+
+                <span className="text-slate-400 font-mono">
+                  {activeCategories.filter((c) => isCategoryComplete(c)).length}/{activeCategories.length} completed
+                </span>
+              </div>
+
+              {/* Collapsible Category List */}
+              {showMobileCatNav && (
+                <div className="mt-3 pt-3 border-t border-slate-100 space-y-1.5 max-h-60 overflow-y-auto pr-1">
+                  {activeCategories.map((cat, idx) => {
+                    const isCurrent = idx === catIndex;
+                    const isDone = isCategoryComplete(cat);
+                    const answeredCountInCat = cat.activeQuestions.filter(
+                      (_, i) => answers[`${cat.id}::${i}`]
+                    ).length;
+
+                    return (
+                      <button
+                        key={cat.id}
+                        type="button"
+                        onClick={() => {
+                          setCatIndex(idx);
+                          setShowMobileCatNav(false);
+                        }}
+                        className={`w-full text-left p-2.5 rounded-xl transition-all flex items-center justify-between text-xs cursor-pointer ${
+                          isCurrent
+                            ? "bg-[#0C1D4A] text-white font-semibold"
+                            : isDone
+                            ? "bg-emerald-50/70 text-slate-700 border border-emerald-200/60"
+                            : "hover:bg-slate-50 text-slate-600 border border-slate-100"
+                        }`}
+                      >
+                        <div className="flex items-center space-x-2 truncate">
+                          <span
+                            className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-mono shrink-0 ${
+                              isCurrent
+                                ? "bg-[#D98A10] text-[#0C1D4A] font-bold"
+                                : isDone
+                              ? "bg-emerald-600 text-white"
+                              : "bg-slate-100 text-slate-400"
+                            }`}
+                          >
+                            {isDone ? <Check className="w-3 h-3" /> : idx + 1}
+                          </span>
+                          <span className="truncate">{cat.name}</span>
+                        </div>
+                        <div className="flex items-center space-x-1 shrink-0 ml-2 font-mono text-[10px]">
+                          <span className={isCurrent ? "text-slate-300" : "text-slate-400"}>
+                            {answeredCountInCat}/{cat.activeQuestions.length}
+                          </span>
+                          <span className="text-slate-400">•</span>
+                          <span className={isCurrent ? "text-[#D98A10]" : "text-slate-500"}>
+                            {cat.points}p
+                          </span>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
             {/* ----------------------------------------------------
-                LEFT SIDEBAR: EXECUTIVE CATEGORY INDEX (Sticky)
+                LEFT SIDEBAR: EXECUTIVE CATEGORY INDEX (Sticky on Desktop >= lg only)
                 ---------------------------------------------------- */}
-            <aside className="lg:col-span-4 sticky top-24 space-y-4">
+            <aside className="hidden lg:block lg:col-span-4 lg:sticky lg:top-24 space-y-4">
               <div className="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-xs">
                 
                 {/* Progress Overview Header */}
@@ -989,7 +1133,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
                       <span>•</span>
                       <span>{currentCat.points} Points Weighting</span>
                     </div>
-                    <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#0C1D4A]">
+                    <h2 className="font-serif text-xl sm:text-3xl font-bold text-[#0C1D4A]">
                       {currentCat.name}
                     </h2>
                   </div>
@@ -1116,7 +1260,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
           SCREEN 3: EXECUTIVE DIAGNOSTIC RESULTS DASHBOARD
           ======================================================== */}
       {screen === "results" && (
-        <main className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 animate-fadeIn ${embedded ? "py-4 sm:py-6" : "py-10 sm:py-16"}`}>
+        <main className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-10 animate-fadeIn ${embedded ? "py-4 sm:py-6" : "py-6 sm:py-16"}`}>
           
           {/* Header Metadata Bar */}
           <div className="bg-white border border-slate-200/80 rounded-2xl px-6 py-4 shadow-xs flex flex-wrap items-center justify-between text-xs text-slate-600">
@@ -1152,7 +1296,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             
             {/* Left Col: SVG Radial Circular Gauge & Verdict */}
-            <div className="lg:col-span-7 bg-white border border-slate-200/80 rounded-2xl p-8 sm:p-10 shadow-sm flex flex-col items-center justify-center text-center space-y-5">
+            <div className="lg:col-span-7 bg-white border border-slate-200/80 rounded-2xl p-5 sm:p-10 shadow-sm flex flex-col items-center justify-center text-center space-y-5">
               <div className="inline-flex items-center space-x-2 text-xs font-mono font-bold uppercase tracking-widest text-[#D98A10]">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Executive Readiness Verdict</span>
@@ -1225,7 +1369,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
             </div>
 
             {/* Right Col: Benchmark Comparison & Key Takeaways */}
-            <div className="lg:col-span-5 bg-gradient-to-br from-[#0C1D4A] to-[#142B6A] text-white rounded-2xl p-8 sm:p-10 shadow-sm flex flex-col justify-between space-y-6">
+            <div className="lg:col-span-5 bg-gradient-to-br from-[#0C1D4A] to-[#142B6A] text-white rounded-2xl p-5 sm:p-10 shadow-sm flex flex-col justify-between space-y-6">
               <div className="space-y-4">
                 <div className="inline-flex items-center space-x-2 text-xs font-mono font-bold uppercase tracking-widest text-[#D98A10]">
                   <TrendingUp className="w-4 h-4" />
@@ -1290,7 +1434,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
           </div>
 
           {/* Dimension Breakdown Grid (9 Pillars) */}
-          <div className="bg-white border border-slate-200/80 rounded-2xl p-8 sm:p-10 shadow-sm space-y-6">
+          <div className="bg-white border border-slate-200/80 rounded-2xl p-5 sm:p-10 shadow-sm space-y-6">
             <div className="border-b border-slate-100 pb-4 flex items-center justify-between">
               <div>
                 <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#D98A10]">
@@ -1349,7 +1493,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
           </div>
 
           {/* Top 3 Strategic Vulnerabilities Matrix */}
-          <div className="bg-white border border-slate-200/80 rounded-2xl p-8 sm:p-10 shadow-sm space-y-6">
+          <div className="bg-white border border-slate-200/80 rounded-2xl p-5 sm:p-10 shadow-sm space-y-5 sm:space-y-6">
             <div className="border-b border-slate-100 pb-4">
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#B4442E]">
                 Critical Gaps
@@ -1397,13 +1541,13 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
           </div>
 
           {/* Strategic Next Steps CTA Card */}
-          <div className="bg-[#0C1D4A] text-white rounded-2xl p-8 sm:p-12 shadow-lg relative overflow-hidden space-y-6">
+          <div className="bg-[#0C1D4A] text-white rounded-2xl p-5 sm:p-12 shadow-lg relative overflow-hidden space-y-5 sm:space-y-6">
             <div className="max-w-2xl space-y-3 relative z-10">
               <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#D98A10]">
                 <ShieldCheck className="w-4 h-4 text-[#D98A10]" />
                 <span>Executive Advisory Roadmap</span>
               </div>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold leading-tight">
+              <h3 className="font-serif text-xl sm:text-3xl font-bold leading-tight">
                 Turn this into an entry plan
               </h3>
               <p className="text-slate-300 text-xs sm:text-sm leading-relaxed text-justify">
@@ -1414,7 +1558,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
             <div className="flex flex-wrap items-center gap-4 relative z-10 pt-2">
               <Link
                 href="/contact"
-                className="inline-flex items-center space-x-2 bg-[#D98A10] hover:bg-[#c57e0e] text-white text-xs sm:text-sm font-semibold px-7 py-3.5 rounded-xl shadow-md transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#D98A10] hover:bg-[#c57e0e] text-white text-xs sm:text-sm font-semibold px-7 py-3.5 rounded-xl shadow-md transition-all cursor-pointer"
               >
                 <span>Book a Diagnostic Session</span>
                 <ChevronRight className="w-4 h-4" />
@@ -1423,7 +1567,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
               <button
                 type="button"
                 onClick={handlePrint}
-                className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/15 text-white text-xs sm:text-sm font-semibold px-5 py-3.5 rounded-xl border border-white/20 transition-all print:hidden cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/15 text-white text-xs sm:text-sm font-semibold px-5 py-3.5 rounded-xl border border-white/20 transition-all print:hidden cursor-pointer"
               >
                 <Printer className="w-4 h-4 text-slate-300" />
                 <span>Print Executive Summary</span>

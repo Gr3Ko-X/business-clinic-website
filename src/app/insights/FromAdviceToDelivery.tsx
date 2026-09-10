@@ -707,23 +707,25 @@ export default function FromAdviceToDelivery() {
             </section>
 
             {/* Advisory CTA Card */}
-            <div className="mt-12 p-6 sm:p-8 bg-[#0C1D4A] text-white rounded-xl shadow-lg flex flex-col sm:flex-row items-center justify-between gap-6 print:hidden">
-              <div className="space-y-2 text-center sm:text-left">
+            <div className="mt-12 p-6 sm:p-8 md:p-10 bg-gradient-to-br from-[#0C1D4A] via-[#0B2240] to-[#061230] text-white rounded-2xl shadow-xl border border-[#D98A10]/25 flex flex-col items-center sm:items-start text-center sm:text-left gap-6 print:hidden relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#D98A10]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+              <div className="space-y-2.5 relative z-10 max-w-2xl">
                 <span className="text-xs font-bold text-amber-400 uppercase tracking-widest block">
                   Translate Strategy Into Delivery
                 </span>
-                <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-white leading-tight">
                   Ready to Discuss Your India Journey?
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                   Connect with Col Sanjay Chandra and the India Business Clinic team for an executive dialogue on market entry, partner due diligence, or operational handholding.
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto relative z-10">
                 <Link
                   href="/services/india-entry-support-foreign-industry/scorecard"
-                  className="inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-5 py-2.5 rounded-sm font-semibold text-xs transition-all uppercase tracking-wider text-center"
+                  className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3 rounded-lg font-semibold text-xs transition-all uppercase tracking-wider text-center"
                 >
                   <span>Readiness Scorecard</span>
                 </Link>
@@ -731,7 +733,7 @@ export default function FromAdviceToDelivery() {
                   href="https://wa.me/919560714343?text=Hello%2C%20I%20would%20like%20to%20consult%20an%20expert%20at%20Business%20Clinic."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-5 py-2.5 rounded-sm font-semibold text-xs transition-all uppercase tracking-wider shadow-md text-center"
+                  className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-6 py-3 rounded-lg font-semibold text-xs transition-all uppercase tracking-wider shadow-md text-center"
                 >
                   <span>Talk to an Expert (+91 9560714343)</span>
                   <ChevronRight className="w-4 h-4" />

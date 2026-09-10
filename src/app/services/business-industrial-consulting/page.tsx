@@ -123,7 +123,7 @@ export default function BusinessIndustrialConsultingPage() {
   return (
     <div className="bg-white">
       {/* 1. Hero / Header Banner */}
-      <section className="relative bg-gradient-to-br from-[#0C1D4A] via-[#0b2240] to-[#061230] text-white py-14 sm:py-20 overflow-hidden border-b border-[#D98A10]/20">
+      <section className="relative bg-gradient-to-br from-[#0C1D4A] via-[#0b2240] to-[#061230] text-white py-8 sm:py-20 overflow-hidden border-b border-[#D98A10]/20">
         <div className="absolute inset-0 opacity-[0.035] pointer-events-none bg-[radial-gradient(white_1.2px,transparent_1.2px)] [background-size:24px_24px]"></div>
         <div className="absolute -top-12 -right-12 w-64 h-64 bg-[#D98A10]/8 rounded-full filter blur-3xl pointer-events-none"></div>
 
@@ -132,22 +132,22 @@ export default function BusinessIndustrialConsultingPage() {
             <span className="text-xs font-bold tracking-widest text-[#D98A10] uppercase">
               Services // Strategic &amp; Operational Advisory
             </span>
-            <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl font-serif font-bold leading-tight">
+            <h1 className="text-white text-2xl sm:text-4xl lg:text-5xl font-serif font-bold leading-tight">
               Business &amp; Industrial Consulting
             </h1>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed pt-1">
+            <p className="text-slate-300 text-xs sm:text-base leading-relaxed pt-1">
               Providing hands-on diagnostics, shop-floor troubleshooting, manufacturing excellence frameworks, and strategic scaling support to optimize industrial capability.
             </p>
-            <div className="pt-2 flex flex-wrap gap-3">
+            <div className="pt-2 flex flex-wrap gap-2.5 sm:gap-3">
               <Link 
                 href="/contact" 
-                className="bg-accent hover:bg-accent-dark text-white px-5 py-2.5 rounded-sm font-semibold text-xs transition-all uppercase tracking-wider"
+                className="w-full sm:w-auto text-center bg-accent hover:bg-accent-dark text-white px-5 py-2.5 rounded-sm font-semibold text-xs transition-all uppercase tracking-wider"
               >
                 Schedule Consultation
               </Link>
               <Link 
                 href="/services/indian-msme-troubleshooting" 
-                className="border border-slate-400 hover:bg-white/5 text-white px-5 py-2.5 rounded-sm font-semibold text-xs transition-all uppercase tracking-wider"
+                className="w-full sm:w-auto text-center border border-slate-400 hover:bg-white/5 text-white px-5 py-2.5 rounded-sm font-semibold text-xs transition-all uppercase tracking-wider"
               >
                 MSME Troubleshooting Clinic
               </Link>
@@ -157,26 +157,26 @@ export default function BusinessIndustrialConsultingPage() {
       </section>
 
       {/* 2. The Problem Section */}
-      <section className="py-20 bg-slate-50/50">
+      <section className="py-8 sm:py-20 bg-slate-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-16 space-y-2 sm:space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#D98A10] uppercase">The Challenge</span>
-            <h2 className="text-3xl font-serif font-bold text-primary">Critical Bottlenecks in Production Execution</h2>
-            <p className="text-slate-600 text-sm leading-relaxed max-w-lg mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary">Critical Bottlenecks in Production Execution</h2>
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-lg mx-auto">
               Manufacturers face ongoing challenges that disrupt delivery timelines, degrade quality levels, and restrict growth.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {problems.map((prob) => {
               const Icon = prob.icon;
               return (
-                <div key={prob.title} className="bg-white border border-slate-200/60 rounded-lg p-8 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
-                  <div className="space-y-4">
-                    <div className="p-3 bg-red-50 text-red-600 rounded-lg w-12 h-12 flex items-center justify-center border border-red-100">
-                      <Icon className="h-5 w-5 shrink-0" />
+                <div key={prob.title} className="bg-white border border-slate-200/60 rounded-lg p-5 sm:p-8 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="p-2.5 sm:p-3 bg-red-50 text-red-600 rounded-lg w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border border-red-100">
+                      <Icon className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
                     </div>
-                    <h3 className="font-serif text-lg font-bold text-primary">{prob.title}</h3>
+                    <h3 className="font-serif text-base sm:text-lg font-bold text-primary">{prob.title}</h3>
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{prob.desc}</p>
                   </div>
                 </div>
@@ -187,24 +187,24 @@ export default function BusinessIndustrialConsultingPage() {
       </section>
 
       {/* 3. Detailed Capabilities Section */}
-      <section className="py-20 bg-white">
+      <section className="py-8 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-16 space-y-2 sm:space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#D98A10] uppercase">Our Capabilities</span>
-            <h2 className="text-3xl font-serif font-bold text-primary">Core Spheres of Engagement</h2>
-            <p className="text-slate-600 text-sm leading-relaxed">
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary">Core Spheres of Engagement</h2>
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
               We focus on practical, execution-oriented workflows designed to build sustainable capabilities inside your organization.
             </p>
           </div>
 
-          <div className="space-y-12 max-w-5xl mx-auto">
+          <div className="space-y-4 sm:space-y-8 lg:space-y-12 max-w-5xl mx-auto">
             {capabilities.map((cap) => (
-              <div key={cap.title} className="bg-slate-50/50 border border-slate-200/50 rounded-lg p-8 sm:p-10">
-                <h3 className="font-serif text-xl font-bold text-primary mb-6 border-b border-slate-200 pb-3">{cap.title}</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div key={cap.title} className="bg-slate-50/50 border border-slate-200/50 rounded-lg p-5 sm:p-10">
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-primary mb-4 sm:mb-6 border-b border-slate-200 pb-3">{cap.title}</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                   {cap.items.map((item) => (
                     <div key={item} className="flex items-start space-x-2.5">
-                      <Check className="h-4.5 w-4.5 text-[#D98A10] shrink-0 mt-0.5" />
+                      <Check className="h-4 sm:h-4.5 w-4 sm:w-4.5 text-[#D98A10] shrink-0 mt-0.5" />
                       <span className="text-xs sm:text-sm text-slate-700 leading-relaxed">{item}</span>
                     </div>
                   ))}
@@ -216,28 +216,28 @@ export default function BusinessIndustrialConsultingPage() {
       </section>
 
       {/* 4. Methodology (5D) Section */}
-      <section className="py-20 bg-slate-50/50 border-t border-b border-slate-100">
+      <section className="py-8 sm:py-20 bg-slate-50/50 border-t border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-16 space-y-2 sm:space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#D98A10] uppercase">Methodology</span>
-            <h2 className="text-3xl font-serif font-bold text-primary">Our Step-by-Step Diagnostic Framework</h2>
-            <p className="text-slate-600 text-sm leading-relaxed max-w-md mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary">Our Step-by-Step Diagnostic Framework</h2>
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-md mx-auto">
               From diagnosis to execution, we stay with you until the solution delivers results.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 sm:gap-6 max-w-5xl mx-auto">
             {methodologySteps.map((step) => (
-              <div key={step.step} className="bg-white border border-slate-200/80 rounded-lg p-6 relative flex flex-col justify-between hover:border-[#D98A10] transition-colors">
+              <div key={step.step} className="bg-white border border-slate-200/80 rounded-lg p-4 sm:p-6 relative flex flex-col justify-between hover:border-[#D98A10] transition-colors">
                 <div>
-                  <div className="flex justify-between items-center mb-4">
+                  <div className="flex justify-between items-center mb-3 sm:mb-4">
                     <span className="text-xs font-bold text-[#D98A10] bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-sm uppercase tracking-wide">
                       {step.step}
                     </span>
-                    <span className="font-serif text-lg font-bold text-slate-300">{step.num}</span>
+                    <span className="font-serif text-base sm:text-lg font-bold text-slate-300">{step.num}</span>
                   </div>
-                  <h3 className="font-serif text-sm font-bold text-primary mb-2">{step.title}</h3>
-                  <p className="text-sm sm:text-xs text-slate-700 font-medium leading-relaxed">{step.desc}</p>
+                  <h3 className="font-serif text-sm font-bold text-primary mb-1.5 sm:mb-2">{step.title}</h3>
+                  <p className="text-xs text-slate-700 font-medium leading-relaxed">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -246,16 +246,16 @@ export default function BusinessIndustrialConsultingPage() {
       </section>
 
       {/* 5. FAQs */}
-      <section className="py-20 bg-white">
+      <section className="py-8 sm:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 space-y-3">
+          <div className="text-center mb-6 sm:mb-16 space-y-2 sm:space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#D98A10] uppercase">Questions</span>
-            <h2 className="text-3xl font-serif font-bold text-primary">Frequently Asked Questions</h2>
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary">Frequently Asked Questions</h2>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-3 sm:space-y-6">
             {faqs.map((faq, idx) => (
-              <div key={idx} className="bg-slate-50/50 border border-slate-100 rounded-lg p-6 space-y-2">
+              <div key={idx} className="bg-slate-50/50 border border-slate-100 rounded-lg p-4 sm:p-6 space-y-2">
                 <h3 className="font-serif font-bold text-sm sm:text-base text-primary flex items-start">
                   <span className="text-[#D98A10] font-bold mr-2 shrink-0">Q.</span>
                   <span>{faq.q}</span>
@@ -270,10 +270,10 @@ export default function BusinessIndustrialConsultingPage() {
       </section>
 
       {/* 6. Call To Action (CTA) */}
-      <section className="bg-primary text-white py-16 text-center relative overflow-hidden">
+      <section className="bg-primary text-white py-10 sm:py-16 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.035] pointer-events-none bg-[radial-gradient(white_1.2px,transparent_1.2px)] [background-size:24px_24px]"></div>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white leading-tight">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4 sm:space-y-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-white leading-tight">
             Ready to Troubleshoot Plant Operations or Structure Scaling?
           </h2>
           <p className="text-slate-300 text-xs sm:text-sm max-w-lg mx-auto leading-relaxed">
@@ -282,7 +282,7 @@ export default function BusinessIndustrialConsultingPage() {
           <div className="pt-2">
             <Link 
               href="/contact" 
-              className="inline-flex items-center space-x-2 bg-accent hover:bg-accent-dark text-white px-7 py-3 rounded-sm font-bold text-xs uppercase tracking-wider transition-all"
+              className="inline-flex items-center space-x-2 bg-accent hover:bg-accent-dark text-white px-6 sm:px-7 py-3 rounded-sm font-bold text-xs uppercase tracking-wider transition-all"
             >
               <span>Speak to an Advisor</span>
               <ArrowRight className="h-4 w-4" />
