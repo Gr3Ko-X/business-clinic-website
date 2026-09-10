@@ -125,12 +125,12 @@ function ContactPageContent() {
       </section>
 
       {/* 2. Form & Contact cards */}
-      <section className="py-12 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 max-w-5xl mx-auto">
+      <section className="py-8 sm:py-20">
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 max-w-5xl mx-auto">
             
             {/* Left: Contact Info cards */}
-            <div className="lg:col-span-5 space-y-8">
+            <div className="lg:col-span-5 space-y-5 sm:space-y-8">
               <div className="space-y-4">
                 <h2 className="font-serif text-xl sm:text-2xl font-bold text-primary">
                   Direct Contact
@@ -213,7 +213,7 @@ function ContactPageContent() {
             </div>
 
             {/* Right: Contact Form */}
-            <div className="lg:col-span-7 bg-slate-50 border border-slate-200/80 rounded-2xl sm:rounded-lg p-5 sm:p-10 shadow-xs">
+            <div className="lg:col-span-7 bg-slate-50 border border-slate-200/80 rounded-2xl sm:rounded-lg p-4 sm:p-10 shadow-xs">
               {showBtsBanner && !formSubmitted && (
                 <div className="mb-6 flex items-start justify-between gap-3 rounded-lg border border-[#c58f1a]/30 bg-amber-50/80 px-4 py-3">
                   <p className="text-xs sm:text-sm text-[#0c1d4a] font-medium leading-relaxed">
