@@ -60,18 +60,33 @@ export function createTransporter() {
     );
   }
 
-  const secure = port === 465;
+  // Port 465 = SMTPS (implicit TLS) → secure: true
+  // Port 587 = submission (STARTTLS) → secure: false
+  if (port === 465) {
+    return nodemailer.createTransport({
+      host,
+      port: 465,
+      secure: true,
+      auth: { user, pass },
+      connectionTimeout: 20000,
+      greetingTimeout: 20000,
+      socketTimeout: 25000,
+      tls: {
+        rejectUnauthorized: false,
+      },
+    });
+  }
 
   return nodemailer.createTransport({
     host,
     port,
-    secure,
+    secure: false,
+    requireTLS: true,
     auth: { user, pass },
-    connectionTimeout: 15000,
-    greetingTimeout: 15000,
-    socketTimeout: 20000,
+    connectionTimeout: 20000,
+    greetingTimeout: 20000,
+    socketTimeout: 25000,
     tls: {
-      // Shared hosts often use self-signed / mismatched certs on mail.*
       rejectUnauthorized: false,
     },
   });

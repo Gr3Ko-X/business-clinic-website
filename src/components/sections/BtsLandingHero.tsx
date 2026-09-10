@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +8,7 @@ export default function BtsLandingHero() {
   return (
     <section className="relative min-h-[85dvh] flex items-center overflow-hidden">
       <Image
-        src="/images/bg_businessClinic.png"
+        src="/images/bg_businessClinic.webp"
         alt=""
         fill
         priority

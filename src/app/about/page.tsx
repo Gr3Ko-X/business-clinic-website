@@ -201,7 +201,7 @@ export default function AboutPage() {
             <div className="lg:col-span-4 flex flex-col items-center">
               <div className="relative w-full max-w-[320px] aspect-[4/5] rounded-lg overflow-hidden border border-slate-200 shadow-md">
                 <Image
-                  src="/images/assets/founder.png"
+                  src="/images/assets/founder.webp"
                   alt="Col Sanjay Chandra (Retd)"
                   fill
                   className="object-cover object-bottom bg-slate-50"

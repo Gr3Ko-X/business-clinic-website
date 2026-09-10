@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -75,7 +73,7 @@ export default function FounderSection() {
               {/* Image Frame */}
               <div className="relative flex-grow w-full bg-slate-50 flex items-end">
                 <Image
-                  src="/images/assets/founder.png"
+                  src="/images/assets/founder.webp"
                   alt="Col Sanjay Chandra (Retd)"
                   fill
                   className="object-cover object-top"

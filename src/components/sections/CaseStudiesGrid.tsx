@@ -1,8 +1,6 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
-import { caseStudiesData } from "@/lib/data/caseStudies";
+import { caseStudiesIndexData } from "@/lib/data/case-studies-index";
 import { ArrowRight, Shield, Anchor, Zap } from "lucide-react";
 
 export default function CaseStudiesGrid() {
@@ -50,7 +48,7 @@ export default function CaseStudiesGrid() {
 
         {/* Case Studies Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {caseStudiesData.map((cs) => {
+          {caseStudiesIndexData.map((cs) => {
             const Icon = getIcon(cs.slug);
             return (
               <div

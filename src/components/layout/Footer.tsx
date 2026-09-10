@@ -13,6 +13,7 @@ export default function Footer() {
           <div className="space-y-4">
             <Link
               href="/"
+              prefetch={false}
               className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-200 p-2"
             >
               <Image
@@ -48,22 +49,38 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="/services/india-entry-support-foreign-industry" className="text-slate-400 hover:text-accent transition-colors">
+                <Link
+                  href="/services/india-entry-support-foreign-industry"
+                  prefetch={false}
+                  className="text-slate-400 hover:text-accent transition-colors"
+                >
                   India Entry Clinic
                 </Link>
               </li>
               <li>
-                <Link href="/services/indian-msme-troubleshooting" className="text-slate-400 hover:text-accent transition-colors">
+                <Link
+                  href="/services/indian-msme-troubleshooting"
+                  prefetch={false}
+                  className="text-slate-400 hover:text-accent transition-colors"
+                >
                   Indian MSME Clinic
                 </Link>
               </li>
               <li>
-                <Link href="/services/defence-aerospace-clinic" className="text-slate-400 hover:text-accent transition-colors">
+                <Link
+                  href="/services/defence-aerospace-clinic"
+                  prefetch={false}
+                  className="text-slate-400 hover:text-accent transition-colors"
+                >
                   Defence &amp; Aerospace Clinic
                 </Link>
               </li>
               <li>
-                <Link href="/services/legal-company-secretary-ca-services" className="text-slate-400 hover:text-accent transition-colors">
+                <Link
+                  href="/services/legal-company-secretary-ca-services"
+                  prefetch={false}
+                  className="text-slate-400 hover:text-accent transition-colors"
+                >
                   Support Clinic
                 </Link>
               </li>
@@ -92,17 +109,29 @@ export default function Footer() {
                 </Link>
               </li> */}
               <li>
-                <Link href="/services" className="text-slate-400 hover:text-accent transition-colors">
+                <Link
+                  href="/services"
+                  prefetch={false}
+                  className="text-slate-400 hover:text-accent transition-colors"
+                >
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/insights" className="text-slate-400 hover:text-accent transition-colors">
+                <Link
+                  href="/insights"
+                  prefetch={false}
+                  className="text-slate-400 hover:text-accent transition-colors"
+                >
                   Featured Insights
                 </Link>
               </li>
               <li>
-                <Link href="/methodology" className="text-slate-400 hover:text-accent transition-colors">
+                <Link
+                  href="/methodology"
+                  prefetch={false}
+                  className="text-slate-400 hover:text-accent transition-colors"
+                >
                   Our Methodology
                 </Link>
               </li>
@@ -110,6 +139,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services/indian-msme-troubleshooting/health-check"
+                  prefetch={false}
                   className="text-slate-400 hover:text-accent transition-colors"
                 >
                   MSME Health Check
@@ -118,6 +148,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services/india-entry-support-foreign-industry/scorecard"
+                  prefetch={false}
                   className="text-slate-400 hover:text-accent transition-colors"
                 >
                   India Entry Scorecard
@@ -168,7 +199,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0">
           <p>© {new Date().getFullYear()} Business Clinic. Business Clinic is a business division/brand of Spuntech Solutions Pvt Ltd. All rights reserved.</p>
           <div className="flex space-x-6">
-            <Link href="/contact" className="hover:text-accent transition-colors">
+            <Link href="/contact" prefetch={false} className="hover:text-accent transition-colors">
               Schedule Consultation
             </Link>
             <span className="text-slate-700">|</span>

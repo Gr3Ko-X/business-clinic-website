@@ -1,14 +1,12 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { insightsData } from "@/lib/data/insights";
+import { insightsIndexData } from "@/lib/data/insights-index";
 import { ArrowRight, BookOpen, Clock } from "lucide-react";
 
 export default function InsightsGrid() {
   // Show first 3 insights on the homepage
-  const articles = insightsData.slice(0, 3);
+  const articles = insightsIndexData.slice(0, 3);
 
   return (
     <section className="bg-white py-20 border-b border-slate-100">

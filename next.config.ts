@@ -5,12 +5,19 @@ const nextConfig: NextConfig = {
   experimental: {
     workerThreads: false,
     cpus: 1,
+    optimizePackageImports: ["lucide-react"],
   },
   // Avoid extra tsc child processes during build on low-NPROC hosts
   typescript: {
     ignoreBuildErrors: true,
   },
   images: {
+    // This app serves pre-compressed WebP for large local images (hero,
+    // founder photo). On shared cPanel hosting with `cpus: 1`, the live
+    // /_next/image optimizer (sharp resize per request) becomes a
+    // CPU-bound bottleneck that stalls page load. Skipping it and serving
+    // the already-optimized static files directly is faster on this host.
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",

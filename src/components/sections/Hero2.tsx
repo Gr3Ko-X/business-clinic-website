@@ -24,7 +24,7 @@ const slides: Slide[] = [
     accentLine: "Seamless Growth.",
     body: "Empowering Indian MSMEs and Global Companies with execution-focused advisory and end-to-end support for sustainable industrial growth and successful market entry in India.",
     image:
-      "/images/bg_businessClinic.png",
+      "/images/bg_businessClinic.webp",
     imageAlt: "Industrial manufacturing floor with robotic arms",
   },
   {

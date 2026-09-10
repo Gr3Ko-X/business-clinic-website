@@ -1,0 +1,21 @@
+2026-09-10T16:10:58.980Z Contact form email failed: Error: Connection timeout
+    at SMTPConnection._formatError (/Users/greko/Downloads/Business-Clinic/.next/dev/server/chunks/node_modules_nodemailer_dist_esm_0m6tc-5._.js:17371:19)
+    at SMTPConnection._onError (/Users/greko/Downloads/Business-Clinic/.next/dev/server/chunks/node_modules_nodemailer_dist_esm_0m6tc-5._.js:17352:20)
+    at SMTPConnection._onConnectionError (/Users/greko/Downloads/Business-Clinic/.next/dev/server/chunks/node_modules_nodemailer_dist_esm_0m6tc-5._.js:16967:18)
+    at Timeout.<anonymous> (/Users/greko/Downloads/Business-Clinic/.next/dev/server/chunks/node_modules_nodemailer_dist_esm_0m6tc-5._.js:16951:18)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7)
+2026-09-10T16:12:03.866Z Contact form email failed: Error: Connection timeout
+    at SMTPConnection._formatError (/Users/greko/Downloads/Business-Clinic/.next/dev/server/chunks/node_modules_nodemailer_dist_esm_0m6tc-5._.js:17371:19)
+    at SMTPConnection._onError (/Users/greko/Downloads/Business-Clinic/.next/dev/server/chunks/node_modules_nodemailer_dist_esm_0m6tc-5._.js:17352:20)
+    at SMTPConnection._onConnectionError (/Users/greko/Downloads/Business-Clinic/.next/dev/server/chunks/node_modules_nodemailer_dist_esm_0m6tc-5._.js:16967:18)
+    at Timeout.<anonymous> (/Users/greko/Downloads/Business-Clinic/.next/dev/server/chunks/node_modules_nodemailer_dist_esm_0m6tc-5._.js:16951:18)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7)
+2026-09-10T16:12:54.467Z Contact form email failed: Error: Connection timeout
+    at SMTPConnection._formatError (/Users/greko/Downloads/Business-Clinic/.next/dev/server/chunks/node_modules_nodemailer_dist_esm_0m6tc-5._.js:17371:19)
+    at SMTPConnection._onError (/Users/greko/Downloads/Business-Clinic/.next/dev/server/chunks/node_modules_nodemailer_dist_esm_0m6tc-5._.js:17352:20)
+    at SMTPConnection._onConnectionError (/Users/greko/Downloads/Business-Clinic/.next/dev/server/chunks/node_modules_nodemailer_dist_esm_0m6tc-5._.js:16967:18)
+    at Timeout.<anonymous> (/Users/greko/Downloads/Business-Clinic/.next/dev/server/chunks/node_modules_nodemailer_dist_esm_0m6tc-5._.js:16951:18)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7)

@@ -5,8 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight, ChevronDown, Phone } from "lucide-react";
-import { insightsData } from "@/lib/data/insights";
-import { caseStudiesData } from "@/lib/data/caseStudies";
+// Slim metadata-only modules — do NOT import the full `insights`/`caseStudies`
+// data (they contain full article/case-study bodies) into this client
+// component; it would ship all that text to every page's JS bundle.
+import { insightsIndexData } from "@/lib/data/insights-index";
+import { caseStudiesIndexData } from "@/lib/data/case-studies-index";
 
 function BrandMark({ size = 36 }: { size?: number }) {
   return (
@@ -64,7 +67,7 @@ export default function Header() {
     setMobileInsightsCategoryOpen(null);
   }, [pathname]);
 
-  const insightsArticlesList = insightsData.filter(
+  const insightsArticlesList = insightsIndexData.filter(
     (art) => art.slug !== "bts-2026-strategy-guide"
   );
 
@@ -152,150 +155,170 @@ export default function Header() {
                         <ChevronDown className={`h-3.5 w-3.5 opacity-60 transition-transform duration-200 ${desktopServicesOpen ? "rotate-180" : ""}`} />
                       </Link>
 
-                      {/* Mega Menu Dropdown */}
-                      <div
-                        onClick={() => setDesktopServicesOpen(false)}
-                        className={`absolute left-1/2 -translate-x-1/2 mt-2 w-[850px] bg-white border border-slate-200 rounded-xl shadow-xl p-6 transition-all duration-200 z-50 grid grid-cols-3 gap-6 ${desktopServicesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2 pointer-events-none"}`}
-                      >
-                        {/* Column 1 */}
-                        <div className="space-y-3">
-                          <span className="text-xs font-bold text-primary tracking-wide border-b border-slate-100 pb-2 block">
-                            Business &amp; Industrial Consulting
-                          </span>
-                          <div className="flex flex-col space-y-1">
-                            <Link
-                              href="/services/india-entry-support-foreign-industry"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
-                            >
-                              India Entry Support for Foreign Industry
-                            </Link>
-                            <Link
-                              href="/services/indian-msme-troubleshooting"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
-                            >
-                              Indian MSME Troubleshooting
-                            </Link>
-                            <Link
-                              href="/services/business-industrial-consulting"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
-                            >
-                              Operational Consulting
-                            </Link>
-                            <Link
-                              href="/services/business-industrial-consulting"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
-                            >
-                              Manufacturing Advisory
-                            </Link>
-                            <Link
-                              href="/services/business-industrial-consulting"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
-                            >
-                              Industrial Setup Support
-                            </Link>
-                            <Link
-                              href="/services/legal-company-secretary-ca-services"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
-                            >
-                              Legal, Company Secretary and CA Services
-                            </Link>
-                          </div>
-                        </div>
-
-                        {/* Column 2 */}
-                        <div className="space-y-3">
-                          <span className="text-xs font-bold text-primary tracking-wide border-b border-slate-100 pb-2 block">
-                            Industrial Documentation &amp; Technical Knowledge Services
-                          </span>
-                          <div className="flex flex-col space-y-1">
-                            <Link
-                              href="/services/documentation-technical-knowledge"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
-                            >
-                              India Vendor Validation Services
-                            </Link>
-                            <Link
-                              href="/services/documentation-technical-knowledge"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
-                            >
-                              Techno-Commercial Documentation
-                            </Link>
-                            <Link
-                              href="/services/documentation-technical-knowledge"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
-                            >
-                              Technology Transfer (TOT) Documentation
-                            </Link>
-                            <Link
-                              href="/services/documentation-technical-knowledge"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
-                            >
-                              SOP &amp; Process Documentation
-                            </Link>
-                            <Link
-                              href="/services/documentation-technical-knowledge"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
-                            >
-                              Governance Documentation
-                            </Link>
-                            <Link
-                              href="/services/documentation-technical-knowledge"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
-                            >
-                              Industrial Knowledge Management
-                            </Link>
-                          </div>
-                        </div>
-
-                        {/* Column 3 */}
-                        <div className="space-y-3">
-                          <span className="text-xs font-bold text-primary tracking-wide border-b border-slate-100 pb-2 block">
-                            Industrial Assurance &amp; Validation Services
-                          </span>
-                          <div className="flex flex-col space-y-1">
-                            <Link
-                              href="/services/industrial-assurance-validation"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
-                            >
-                              Quality Surveillance
-                            </Link>
-                            <Link
-                              href="/services/industrial-assurance-validation"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
-                            >
-                              Vendor Reliability
-                            </Link>
-                            <Link
-                              href="/services/industrial-assurance-validation"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
-                            >
-                              Compliance
-                            </Link>
-                            <div className="py-1">
-                              <span className="text-slate-800 font-bold block text-xs uppercase tracking-wider px-2">
-                                Production Validation
-                              </span>
+                      {/* Mega Menu Dropdown — only mounted while open so its links
+                          aren't eagerly prefetched on first paint */}
+                      {desktopServicesOpen && (
+                        <div
+                          onClick={() => setDesktopServicesOpen(false)}
+                          className="absolute left-1/2 -translate-x-1/2 mt-2 w-[850px] bg-white border border-slate-200 rounded-xl shadow-xl p-6 z-50 grid grid-cols-3 gap-6"
+                        >
+                          {/* Column 1 */}
+                          <div className="space-y-3">
+                            <span className="text-xs font-bold text-primary tracking-wide border-b border-slate-100 pb-2 block">
+                              Business &amp; Industrial Consulting
+                            </span>
+                            <div className="flex flex-col space-y-1">
                               <Link
-                                href="/services/industrial-assurance-validation"
-                                className="pl-4 py-0.5 text-xs text-slate-500 font-semibold hover:text-accent block transition-colors"
+                                href="/services/india-entry-support-foreign-industry"
+                                prefetch={false}
+                                className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
                               >
-                                FAT / FAI / ATP / PDI
+                                India Entry Support for Foreign Industry
                               </Link>
-                            </div>
-                            <div className="py-1">
-                              <span className="text-slate-800 font-bold block text-xs uppercase tracking-wider px-2">
-                                Inspection Integrity
-                              </span>
                               <Link
-                                href="/services/industrial-assurance-validation"
-                                className="pl-4 py-0.5 text-xs text-slate-500 font-semibold hover:text-accent block transition-colors"
+                                href="/services/indian-msme-troubleshooting"
+                                prefetch={false}
+                                className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
                               >
-                                Vendor Audit &amp; Process Audit
+                                Indian MSME Troubleshooting
+                              </Link>
+                              <Link
+                                href="/services/business-industrial-consulting"
+                                prefetch={false}
+                                className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
+                              >
+                                Operational Consulting
+                              </Link>
+                              <Link
+                                href="/services/business-industrial-consulting"
+                                prefetch={false}
+                                className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
+                              >
+                                Manufacturing Advisory
+                              </Link>
+                              <Link
+                                href="/services/business-industrial-consulting"
+                                prefetch={false}
+                                className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
+                              >
+                                Industrial Setup Support
+                              </Link>
+                              <Link
+                                href="/services/legal-company-secretary-ca-services"
+                                prefetch={false}
+                                className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
+                              >
+                                Legal, Company Secretary and CA Services
                               </Link>
                             </div>
                           </div>
+
+                          {/* Column 2 */}
+                          <div className="space-y-3">
+                            <span className="text-xs font-bold text-primary tracking-wide border-b border-slate-100 pb-2 block">
+                              Industrial Documentation &amp; Technical Knowledge Services
+                            </span>
+                            <div className="flex flex-col space-y-1">
+                              <Link
+                                href="/services/documentation-technical-knowledge"
+                                prefetch={false}
+                                className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
+                              >
+                                India Vendor Validation Services
+                              </Link>
+                              <Link
+                                href="/services/documentation-technical-knowledge"
+                                prefetch={false}
+                                className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
+                              >
+                                Techno-Commercial Documentation
+                              </Link>
+                              <Link
+                                href="/services/documentation-technical-knowledge"
+                                prefetch={false}
+                                className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
+                              >
+                                Technology Transfer (TOT) Documentation
+                              </Link>
+                              <Link
+                                href="/services/documentation-technical-knowledge"
+                                prefetch={false}
+                                className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
+                              >
+                                SOP &amp; Process Documentation
+                              </Link>
+                              <Link
+                                href="/services/documentation-technical-knowledge"
+                                prefetch={false}
+                                className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
+                              >
+                                Governance Documentation
+                              </Link>
+                              <Link
+                                href="/services/documentation-technical-knowledge"
+                                prefetch={false}
+                                className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
+                              >
+                                Industrial Knowledge Management
+                              </Link>
+                            </div>
+                          </div>
+
+                          {/* Column 3 */}
+                          <div className="space-y-3">
+                            <span className="text-xs font-bold text-primary tracking-wide border-b border-slate-100 pb-2 block">
+                              Industrial Assurance &amp; Validation Services
+                            </span>
+                            <div className="flex flex-col space-y-1">
+                              <Link
+                                href="/services/industrial-assurance-validation"
+                                prefetch={false}
+                                className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
+                              >
+                                Quality Surveillance
+                              </Link>
+                              <Link
+                                href="/services/industrial-assurance-validation"
+                                prefetch={false}
+                                className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
+                              >
+                                Vendor Reliability
+                              </Link>
+                              <Link
+                                href="/services/industrial-assurance-validation"
+                                prefetch={false}
+                                className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-sm leading-snug hover:bg-slate-50 transition-colors"
+                              >
+                                Compliance
+                              </Link>
+                              <div className="py-1">
+                                <span className="text-slate-800 font-bold block text-xs uppercase tracking-wider px-2">
+                                  Production Validation
+                                </span>
+                                <Link
+                                  href="/services/industrial-assurance-validation"
+                                  prefetch={false}
+                                  className="pl-4 py-0.5 text-xs text-slate-500 font-semibold hover:text-accent block transition-colors"
+                                >
+                                  FAT / FAI / ATP / PDI
+                                </Link>
+                              </div>
+                              <div className="py-1">
+                                <span className="text-slate-800 font-bold block text-xs uppercase tracking-wider px-2">
+                                  Inspection Integrity
+                                </span>
+                                <Link
+                                  href="/services/industrial-assurance-validation"
+                                  prefetch={false}
+                                  className="pl-4 py-0.5 text-xs text-slate-500 font-semibold hover:text-accent block transition-colors"
+                                >
+                                  Vendor Audit &amp; Process Audit
+                                </Link>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                      </div>
+                      )}
                     </div>
                   );
                 }
@@ -320,121 +343,129 @@ export default function Header() {
                         <ChevronDown className={`h-3.5 w-3.5 opacity-60 transition-transform duration-200 ${desktopInsightsOpen ? "rotate-180" : ""}`} />
                       </Link>
 
-                      {/* Insights Mega Menu Dropdown */}
-                      <div
-                        onClick={() => setDesktopInsightsOpen(false)}
-                        className={`absolute left-1/2 -translate-x-1/2 mt-2 w-[850px] bg-white border border-slate-200 rounded-xl shadow-xl p-6 transition-all duration-200 z-50 grid grid-cols-3 gap-6 ${desktopInsightsOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible translate-y-2 pointer-events-none"}`}
-                      >
-                        {/* Column 1: Current */}
-                        <div className="space-y-3">
-                          <div className="flex items-center justify-between border-b border-slate-100 pb-2">
-                            <span className="text-xs font-bold text-primary tracking-wide block">
-                              Current
-                            </span>
-                            <span className="px-2 py-0.5 text-[10px] font-bold uppercase bg-amber-100 text-amber-900 rounded-full">
-                              Flagship
-                            </span>
-                          </div>
-                          <div className="flex flex-col space-y-2">
-                            <Link
-                              href="/bengaluru-tech-summit-2026"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-lg py-2 px-2.5 text-xs leading-snug hover:bg-slate-50 transition-colors block group/item"
-                            >
-                              <div className="font-bold text-slate-900 group-hover/item:text-accent text-xs">
-                                Bengaluru Tech Summit 2026
-                              </div>
-                              <div className="text-[11px] text-slate-500 font-normal mt-0.5">
-                                Strategic Roadmaps &amp; Innovation Pavilion
-                              </div>
-                            </Link>
-                            <Link
-                              href="/insights/bts-2026-strategy-guide"
-                              className="text-slate-700 hover:text-accent font-semibold rounded-lg py-2 px-2.5 text-xs leading-snug hover:bg-slate-50 transition-colors block group/item"
-                            >
-                              <div className="font-bold text-slate-900 group-hover/item:text-accent text-xs">
-                                BTS 2026 Strategy Guide
-                              </div>
-                              <div className="text-[11px] text-slate-500 font-normal mt-0.5">
-                                Executive Strategy Briefing &amp; Roadmap
-                              </div>
-                            </Link>
-
-                            <div className="p-3.5 bg-gradient-to-br from-amber-50/60 to-slate-50 border border-amber-200/50 rounded-xl mt-2">
-                              <span className="text-[10px] font-bold text-amber-900 uppercase tracking-wider block mb-1">
-                                BTS 2026 Advisory
+                      {/* Insights Mega Menu Dropdown — only mounted while open */}
+                      {desktopInsightsOpen && (
+                        <div
+                          onClick={() => setDesktopInsightsOpen(false)}
+                          className="absolute left-1/2 -translate-x-1/2 mt-2 w-[850px] bg-white border border-slate-200 rounded-xl shadow-xl p-6 z-50 grid grid-cols-3 gap-6"
+                        >
+                          {/* Column 1: Current */}
+                          <div className="space-y-3">
+                            <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+                              <span className="text-xs font-bold text-primary tracking-wide block">
+                                Current
                               </span>
-                              <p className="text-[11px] text-slate-600 font-medium leading-relaxed">
-                                Connect directly with our delegation setup and strategic facilitation team for Bengaluru Tech Summit 2026.
-                              </p>
+                              <span className="px-2 py-0.5 text-[10px] font-bold uppercase bg-amber-100 text-amber-900 rounded-full">
+                                Flagship
+                              </span>
                             </div>
-                          </div>
-                        </div>
-
-                        {/* Column 2: Articles */}
-                        <div className="space-y-3">
-                          <div className="flex items-center justify-between border-b border-slate-100 pb-2">
-                            <span className="text-xs font-bold text-primary tracking-wide block">
-                              Articles
-                            </span>
-                            <span className="text-[10px] text-slate-400 font-medium">
-                              {insightsArticlesList.length} Insights
-                            </span>
-                          </div>
-                          <div className="flex flex-col space-y-1 max-h-[340px] overflow-y-auto pr-1">
-                            {insightsArticlesList.map((article) => (
+                            <div className="flex flex-col space-y-2">
                               <Link
-                                key={article.slug}
-                                href={`/insights/${article.slug}`}
-                                className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-xs leading-snug hover:bg-slate-50 transition-colors"
-                              >
-                                {article.title}
-                              </Link>
-                            ))}
-                          </div>
-                          <Link
-                            href="/insights"
-                            className="pt-2 border-t border-slate-100 text-xs font-bold text-[#D98A10] hover:text-[#0C1D4A] flex items-center space-x-1 px-2 transition-colors block"
-                          >
-                            <span>View All Insights &amp; Articles</span>
-                            <ArrowRight className="w-3 h-3 inline ml-1" />
-                          </Link>
-                        </div>
-
-                        {/* Column 3: Case Studies */}
-                        <div className="space-y-3">
-                          <div className="flex items-center justify-between border-b border-slate-100 pb-2">
-                            <span className="text-xs font-bold text-primary tracking-wide block">
-                              Case Studies
-                            </span>
-                            <span className="text-[10px] text-slate-400 font-medium">
-                              Real Impact
-                            </span>
-                          </div>
-                          <div className="flex flex-col space-y-2">
-                            {caseStudiesData.map((cs) => (
-                              <Link
-                                key={cs.slug}
-                                href={`/case-studies/${cs.slug}`}
+                                href="/bengaluru-tech-summit-2026"
+                                prefetch={false}
                                 className="text-slate-700 hover:text-accent font-semibold rounded-lg py-2 px-2.5 text-xs leading-snug hover:bg-slate-50 transition-colors block group/item"
                               >
                                 <div className="font-bold text-slate-900 group-hover/item:text-accent text-xs">
-                                  {cs.title}
+                                  Bengaluru Tech Summit 2026
                                 </div>
                                 <div className="text-[11px] text-slate-500 font-normal mt-0.5">
-                                  {cs.client} • {cs.category}
+                                  Strategic Roadmaps &amp; Innovation Pavilion
                                 </div>
                               </Link>
-                            ))}
+                              <Link
+                                href="/insights/bts-2026-strategy-guide"
+                                prefetch={false}
+                                className="text-slate-700 hover:text-accent font-semibold rounded-lg py-2 px-2.5 text-xs leading-snug hover:bg-slate-50 transition-colors block group/item"
+                              >
+                                <div className="font-bold text-slate-900 group-hover/item:text-accent text-xs">
+                                  BTS 2026 Strategy Guide
+                                </div>
+                                <div className="text-[11px] text-slate-500 font-normal mt-0.5">
+                                  Executive Strategy Briefing &amp; Roadmap
+                                </div>
+                              </Link>
+
+                              <div className="p-3.5 bg-gradient-to-br from-amber-50/60 to-slate-50 border border-amber-200/50 rounded-xl mt-2">
+                                <span className="text-[10px] font-bold text-amber-900 uppercase tracking-wider block mb-1">
+                                  BTS 2026 Advisory
+                                </span>
+                                <p className="text-[11px] text-slate-600 font-medium leading-relaxed">
+                                  Connect directly with our delegation setup and strategic facilitation team for Bengaluru Tech Summit 2026.
+                                </p>
+                              </div>
+                            </div>
                           </div>
-                          <Link
-                            href="/case-studies"
-                            className="pt-2 border-t border-slate-100 text-xs font-bold text-[#D98A10] hover:text-[#0C1D4A] flex items-center space-x-1 px-2 transition-colors block"
-                          >
-                            <span>Explore All Case Studies</span>
-                            <ArrowRight className="w-3 h-3 inline ml-1" />
-                          </Link>
+
+                          {/* Column 2: Articles */}
+                          <div className="space-y-3">
+                            <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+                              <span className="text-xs font-bold text-primary tracking-wide block">
+                                Articles
+                              </span>
+                              <span className="text-[10px] text-slate-400 font-medium">
+                                {insightsArticlesList.length} Insights
+                              </span>
+                            </div>
+                            <div className="flex flex-col space-y-1 max-h-[340px] overflow-y-auto pr-1">
+                              {insightsArticlesList.map((article) => (
+                                <Link
+                                  key={article.slug}
+                                  href={`/insights/${article.slug}`}
+                                  prefetch={false}
+                                  className="text-slate-700 hover:text-accent font-semibold rounded-sm py-1.5 px-2 text-xs leading-snug hover:bg-slate-50 transition-colors"
+                                >
+                                  {article.title}
+                                </Link>
+                              ))}
+                            </div>
+                            <Link
+                              href="/insights"
+                              prefetch={false}
+                              className="pt-2 border-t border-slate-100 text-xs font-bold text-[#D98A10] hover:text-[#0C1D4A] flex items-center space-x-1 px-2 transition-colors block"
+                            >
+                              <span>View All Insights &amp; Articles</span>
+                              <ArrowRight className="w-3 h-3 inline ml-1" />
+                            </Link>
+                          </div>
+
+                          {/* Column 3: Case Studies */}
+                          <div className="space-y-3">
+                            <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+                              <span className="text-xs font-bold text-primary tracking-wide block">
+                                Case Studies
+                              </span>
+                              <span className="text-[10px] text-slate-400 font-medium">
+                                Real Impact
+                              </span>
+                            </div>
+                            <div className="flex flex-col space-y-2">
+                              {caseStudiesIndexData.map((cs) => (
+                                <Link
+                                  key={cs.slug}
+                                  href={`/case-studies/${cs.slug}`}
+                                  prefetch={false}
+                                  className="text-slate-700 hover:text-accent font-semibold rounded-lg py-2 px-2.5 text-xs leading-snug hover:bg-slate-50 transition-colors block group/item"
+                                >
+                                  <div className="font-bold text-slate-900 group-hover/item:text-accent text-xs">
+                                    {cs.title}
+                                  </div>
+                                  <div className="text-[11px] text-slate-500 font-normal mt-0.5">
+                                    {cs.client} • {cs.category}
+                                  </div>
+                                </Link>
+                              ))}
+                            </div>
+                            <Link
+                              href="/case-studies"
+                              prefetch={false}
+                              className="pt-2 border-t border-slate-100 text-xs font-bold text-[#D98A10] hover:text-[#0C1D4A] flex items-center space-x-1 px-2 transition-colors block"
+                            >
+                              <span>Explore All Case Studies</span>
+                              <ArrowRight className="w-3 h-3 inline ml-1" />
+                            </Link>
+                          </div>
                         </div>
-                      </div>
+                      )}
                     </div>
                   );
                 }
@@ -493,13 +524,15 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer — body is only mounted while open so its links
+          (and the article/case-study accordions) aren't prefetched eagerly */}
       <div
         className={`lg:hidden fixed inset-0 z-40 bg-white transform transition-transform duration-300 ease-in-out ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+          isOpen ? "translate-x-0" : "translate-x-full pointer-events-none"
         }`}
         style={{ top: scrolled ? "60px" : "76px" }}
       >
+        {isOpen && (
         <div className="px-4 pt-6 pb-6 space-y-3 bg-white border-t border-slate-100 h-full flex flex-col justify-between overflow-y-auto">
           <div className="flex flex-col space-y-4">
             {navLinks.map((link) => {
@@ -545,6 +578,7 @@ export default function Header() {
                               <Link
                                 href="/services/india-entry-support-foreign-industry"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
                               >
                                 India Entry Support for Foreign Industry
@@ -552,6 +586,7 @@ export default function Header() {
                               <Link
                                 href="/services/indian-msme-troubleshooting"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
                               >
                                 Indian MSME Troubleshooting
@@ -559,6 +594,7 @@ export default function Header() {
                               <Link
                                 href="/services/business-industrial-consulting"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
                               >
                                 Operational Consulting
@@ -566,6 +602,7 @@ export default function Header() {
                               <Link
                                 href="/services/business-industrial-consulting"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
                               >
                                 Manufacturing Advisory
@@ -573,6 +610,7 @@ export default function Header() {
                               <Link
                                 href="/services/business-industrial-consulting"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
                               >
                                 Industrial Setup Support
@@ -580,6 +618,7 @@ export default function Header() {
                               <Link
                                 href="/services/legal-company-secretary-ca-services"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
                               >
                                 Legal, Company Secretary and CA Services
@@ -608,6 +647,7 @@ export default function Header() {
                               <Link
                                 href="/services/documentation-technical-knowledge"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
                               >
                                 India Vendor Validation Services
@@ -615,6 +655,7 @@ export default function Header() {
                               <Link
                                 href="/services/documentation-technical-knowledge"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
                               >
                                 Techno-Commercial Documentation
@@ -622,6 +663,7 @@ export default function Header() {
                               <Link
                                 href="/services/documentation-technical-knowledge"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
                               >
                                 Technology Transfer (TOT) Documentation
@@ -629,6 +671,7 @@ export default function Header() {
                               <Link
                                 href="/services/documentation-technical-knowledge"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
                               >
                                 SOP &amp; Process Documentation
@@ -636,6 +679,7 @@ export default function Header() {
                               <Link
                                 href="/services/documentation-technical-knowledge"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
                               >
                                 Governance Documentation
@@ -643,6 +687,7 @@ export default function Header() {
                               <Link
                                 href="/services/documentation-technical-knowledge"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
                               >
                                 Industrial Knowledge Management
@@ -671,6 +716,7 @@ export default function Header() {
                               <Link
                                 href="/services/industrial-assurance-validation"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
                               >
                                 Quality Surveillance
@@ -678,6 +724,7 @@ export default function Header() {
                               <Link
                                 href="/services/industrial-assurance-validation"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
                               >
                                 Vendor Reliability
@@ -685,6 +732,7 @@ export default function Header() {
                               <Link
                                 href="/services/industrial-assurance-validation"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
                               >
                                 Compliance
@@ -692,6 +740,7 @@ export default function Header() {
                               <Link
                                 href="/services/industrial-assurance-validation"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-bold text-slate-800 py-1 pl-2 block border-l-2 border-slate-100"
                               >
                                 Production Validation: FAT / FAI / ATP / PDI
@@ -699,6 +748,7 @@ export default function Header() {
                               <Link
                                 href="/services/industrial-assurance-validation"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-bold text-slate-800 py-1 pl-2 block border-l-2 border-slate-100"
                               >
                                 Inspection Integrity: Vendor &amp; Process Audits
@@ -756,6 +806,7 @@ export default function Header() {
                               <Link
                                 href="/bengaluru-tech-summit-2026"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
                               >
                                 Bengaluru Tech Summit 2026
@@ -763,6 +814,7 @@ export default function Header() {
                               <Link
                                 href="/insights/bts-2026-strategy-guide"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
                               >
                                 BTS 2026 Executive Strategy Guide
@@ -795,6 +847,7 @@ export default function Header() {
                                   key={article.slug}
                                   href={`/insights/${article.slug}`}
                                   onClick={handleMobileNavClick}
+                                  prefetch={false}
                                   className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
                                 >
                                   {article.title}
@@ -803,6 +856,7 @@ export default function Header() {
                               <Link
                                 href="/insights"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-bold text-[#D98A10] hover:text-[#0C1D4A] py-1 block"
                               >
                                 View All Insights &amp; Articles →
@@ -830,11 +884,12 @@ export default function Header() {
                           </button>
                           {mobileInsightsCategoryOpen === 2 && (
                             <div className="pl-4 flex flex-col space-y-2 pt-1 pb-2">
-                              {caseStudiesData.map((cs) => (
+                              {caseStudiesIndexData.map((cs) => (
                                 <Link
                                   key={cs.slug}
                                   href={`/case-studies/${cs.slug}`}
                                   onClick={handleMobileNavClick}
+                                  prefetch={false}
                                   className="text-xs font-semibold text-slate-600 hover:text-accent py-1 block"
                                 >
                                   {cs.title}
@@ -843,6 +898,7 @@ export default function Header() {
                               <Link
                                 href="/case-studies"
                                 onClick={handleMobileNavClick}
+                                prefetch={false}
                                 className="text-xs font-bold text-[#D98A10] hover:text-[#0C1D4A] py-1 block"
                               >
                                 Explore All Case Studies →
@@ -877,6 +933,7 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={handleMobileNavClick}
+              prefetch={false}
               className="w-full justify-center flex items-center space-x-3 bg-gradient-to-r from-[#D98A10] to-[#b87309] hover:from-[#e09418] hover:to-[#c58010] text-white px-5 py-3 rounded-xl font-medium transition-all shadow-md"
             >
               <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center shrink-0">
@@ -893,6 +950,7 @@ export default function Header() {
             </Link>
           </div>
         </div>
+        )}
       </div>
     </header>
   );
