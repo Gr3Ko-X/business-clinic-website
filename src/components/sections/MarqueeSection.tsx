@@ -43,7 +43,7 @@ function MarqueeTrack() {
 export default function MarqueeSection() {
   return (
     <section
-      aria-label="Business Clinic highlights"
+      aria-label="India Business Clinic highlights"
       className="relative z-10 bg-[#071333] border-t-2 border-t-[#c58f1a] border-b border-b-[#c58f1a]/40 shadow-inner overflow-hidden"
     >
       <div className="py-2.5 sm:py-3.5">

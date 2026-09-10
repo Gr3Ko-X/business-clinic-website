@@ -28,11 +28,11 @@ export default function FounderSection() {
 
             {/* Founder Quote */}
             <blockquote className="border-l-4 border-accent pl-4 sm:pl-6 py-1 italic text-slate-700 text-base sm:text-lg font-serif">
-              “For over 35 years, I have transformed technical challenges into measurable business outcomes. Business Clinic is built to help MSMEs and global companies achieve sustainable growth in India's evolving industrial ecosystem.”
+              “For over 35 years, I have transformed technical challenges into measurable business outcomes. India Business Clinic is built to help MSMEs and global companies achieve sustainable growth in India's evolving industrial ecosystem.”
             </blockquote>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Led by Col Sanjay Chandra (Retd), Business Clinic bridges the operational gaps that consulting firms leave behind. We combine military precision, global OEM standards, and deep local industrial knowledge to deliver practical shop-floor results.
+              Led by Col Sanjay Chandra (Retd), India Business Clinic bridges the operational gaps that consulting firms leave behind. We combine military precision, global OEM standards, and deep local industrial knowledge to deliver practical shop-floor results.
             </p>
 
             {/* Qualifications / Pillars */}
@@ -87,7 +87,7 @@ export default function FounderSection() {
                   Col Sanjay Chandra (Retd)
                 </h3>
                 <p className="text-xs sm:text-sm text-accent font-semibold tracking-wider mt-1 uppercase">
-                  Founder, Business Clinic | Former Director, PMO Suraj
+                  Founder, India Business Clinic | Former Director, PMO Suraj
                 </p>
               </div>
             </div>

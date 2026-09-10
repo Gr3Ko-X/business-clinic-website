@@ -98,61 +98,61 @@ export default function IndiaMarketEntryHandbook() {
   };
 
   return (
-    <div className="bg-slate-100/70 min-h-screen py-8 sm:py-12 print:bg-white print:py-0">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-slate-100/70 min-h-screen py-4 sm:py-12 print:bg-white print:py-0">
+      <div className="max-w-4xl mx-auto px-3.5 sm:px-6 lg:px-8">
         
         {/* Top Navigation Bar */}
-        <div className="flex items-center justify-between mb-6 print:hidden">
+        <div className="flex items-center justify-between mb-4 sm:mb-6 print:hidden">
           <Link
             href="/insights"
-            className="inline-flex items-center space-x-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-primary transition-colors"
+            className="inline-flex items-center space-x-1.5 sm:space-x-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-primary transition-colors"
           >
-            <ArrowLeft className="h-4 w-4" />
+            <ArrowLeft className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             <span>Back to Insights</span>
           </Link>
 
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 sm:space-x-3">
             <button
               onClick={handlePrint}
-              className="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold text-slate-700 bg-white border border-slate-200 rounded hover:bg-slate-50 transition-colors shadow-sm"
+              className="inline-flex items-center space-x-1 sm:space-x-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-semibold text-slate-700 bg-white border border-slate-200 rounded hover:bg-slate-50 transition-colors shadow-sm"
               title="Print or Save as PDF"
             >
-              <Printer className="h-3.5 w-3.5 text-slate-500" />
+              <Printer className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-slate-500" />
               <span>Print / Save PDF</span>
             </button>
           </div>
         </div>
 
         {/* Paper Document Container */}
-        <article className="bg-white border border-slate-200/80 shadow-md rounded-lg p-6 sm:p-12 lg:p-16 print:shadow-none print:border-none print:p-0 text-slate-800">
+        <article className="bg-white border border-slate-200/80 shadow-md rounded-lg p-4 sm:p-12 lg:p-16 print:shadow-none print:border-none print:p-0 text-slate-800">
           
           {/* Masthead with Exact PDF Cover Image */}
-          <header className="border-b border-slate-200 pb-10 mb-8">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 bg-amber-50 border border-amber-200/80 rounded text-[11px] font-bold text-amber-900 uppercase tracking-widest mb-6">
-              <Sparkles className="w-3.5 h-3.5 text-amber-700" />
+          <header className="border-b border-slate-200 pb-6 sm:pb-10 mb-6 sm:mb-8 text-left">
+            <div className="inline-flex items-center space-x-2 px-2.5 sm:px-3 py-1 bg-amber-50 border border-amber-200/80 rounded text-[10px] sm:text-[11px] font-bold text-amber-900 uppercase tracking-widest mb-4 sm:mb-6">
+              <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-700" />
               <span>Comprehensive Strategic Handbook</span>
             </div>
 
             {/* Grid showcasing title and the exact PDF cover graphic */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-              <div className="md:col-span-7 space-y-4">
-                <span className="text-xs font-bold text-[#D98A10] uppercase tracking-wider block">
-                  Business Clinic Advisory • Global Expansion Series
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-center">
+              <div className="md:col-span-7 space-y-3 sm:space-y-4">
+                <span className="text-[11px] sm:text-xs font-bold text-[#D98A10] uppercase tracking-wider block">
+                  India Business Clinic Advisory • Global Expansion Series
                 </span>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#0C1D4A] tracking-tight leading-tight">
+                <h1 className="text-2xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#0C1D4A] tracking-tight leading-tight">
                   India Market Entry Handbook
                 </h1>
-                <p className="text-base sm:text-lg font-medium text-slate-700">
+                <p className="text-sm sm:text-lg font-medium text-slate-700">
                   A Practical Guide for Global Companies
                 </p>
                 <p className="text-xs sm:text-sm text-slate-500 italic">
                   Navigate India with Confidence. Minimize Risk. Maximize Opportunity. Build Sustainable Success.
                 </p>
 
-                <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-4 text-xs text-slate-500 font-medium">
+                <div className="pt-3 sm:pt-4 border-t border-slate-100 flex flex-wrap items-center gap-3 sm:gap-4 text-xs text-slate-500 font-medium">
                   <div>
                     <span className="text-slate-400 block text-[10px] uppercase">Published by</span>
-                    <strong className="text-slate-900">Business Clinic</strong>
+                    <strong className="text-slate-900">India Business Clinic</strong>
                   </div>
                   <div>
                     <span className="text-slate-400 block text-[10px] uppercase">Duration</span>
@@ -171,18 +171,18 @@ export default function IndiaMarketEntryHandbook() {
                   href="/india-market-entry-cover.jpg"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative w-full max-w-[280px] rounded-lg overflow-hidden shadow-xl border-2 border-slate-200 group block cursor-pointer"
+                  className="relative w-full max-w-[220px] sm:max-w-[280px] rounded-lg overflow-hidden shadow-xl border-2 border-slate-200 group block cursor-pointer"
                   title="Click to view full cover graphic"
                 >
                   <Image
                     src="/india-market-entry-cover.jpg"
-                    alt="India Market Entry Handbook Cover - Business Clinic"
+                    alt="India Market Entry Handbook Cover - India Business Clinic"
                     width={560}
                     height={790}
                     className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                     priority
                   />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 to-transparent p-3 text-white text-[11px] font-semibold text-center">
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 to-transparent p-2 sm:p-3 text-white text-[10px] sm:text-[11px] font-semibold text-center">
                     Official Executive Cover Page (Click to enlarge)
                   </div>
                 </a>
@@ -199,24 +199,24 @@ export default function IndiaMarketEntryHandbook() {
             </div>
 
             {/* Value Props Bar from Cover */}
-            <div className="mt-8 grid grid-cols-2 sm:grid-cols-5 gap-3 pt-6 border-t border-slate-100 text-center">
-              <div className="p-2.5 bg-slate-50 rounded border border-slate-200/80">
+            <div className="mt-6 sm:mt-8 grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-3 pt-4 sm:pt-6 border-t border-slate-100 text-center">
+              <div className="p-2 sm:p-2.5 bg-slate-50 rounded border border-slate-200/80">
                 <span className="block text-xs sm:text-sm font-bold text-[#0C1D4A]">~7.7% GDP</span>
                 <span className="text-[10px] text-slate-500">Fastest Growth</span>
               </div>
-              <div className="p-2.5 bg-slate-50 rounded border border-slate-200/80">
+              <div className="p-2 sm:p-2.5 bg-slate-50 rounded border border-slate-200/80">
                 <span className="block text-xs sm:text-sm font-bold text-[#0C1D4A]">1.4B+ People</span>
                 <span className="text-[10px] text-slate-500">Massive Consumer Base</span>
               </div>
-              <div className="p-2.5 bg-slate-50 rounded border border-slate-200/80">
+              <div className="p-2 sm:p-2.5 bg-slate-50 rounded border border-slate-200/80">
                 <span className="block text-xs sm:text-sm font-bold text-[#0C1D4A]">$81B FDI</span>
                 <span className="text-[10px] text-slate-500">Global Capital Inflows</span>
               </div>
-              <div className="p-2.5 bg-slate-50 rounded border border-slate-200/80">
+              <div className="p-2 sm:p-2.5 bg-slate-50 rounded border border-slate-200/80">
                 <span className="block text-xs sm:text-sm font-bold text-[#0C1D4A]">China + 1</span>
                 <span className="text-[10px] text-slate-500">Preferred Hub</span>
               </div>
-              <div className="p-2.5 bg-slate-50 rounded border border-slate-200/80 col-span-2 sm:col-span-1">
+              <div className="p-2 sm:p-2.5 bg-slate-50 rounded border border-slate-200/80 col-span-2 sm:col-span-1">
                 <span className="block text-xs sm:text-sm font-bold text-[#0C1D4A]">55% GDP</span>
                 <span className="text-[10px] text-slate-500">Services &amp; Tech</span>
               </div>
@@ -224,12 +224,12 @@ export default function IndiaMarketEntryHandbook() {
           </header>
 
           {/* Table of Contents */}
-          <nav aria-label="Table of contents" className="mb-12 p-6 bg-slate-50 border border-slate-200/90 rounded-lg print:hidden">
-            <div className="flex items-center space-x-2 text-xs font-bold text-[#0C1D4A] uppercase tracking-wider mb-4 pb-2 border-b border-slate-200">
+          <nav aria-label="Table of contents" className="mb-6 sm:mb-10 p-3.5 sm:p-5 bg-slate-50 border border-slate-200/90 rounded-lg print:hidden">
+            <div className="flex items-center space-x-2 text-xs font-bold text-[#0C1D4A] uppercase tracking-wider mb-2.5 sm:mb-3">
               <ListOrdered className="w-4 h-4 text-[#D98A10]" />
               <span>Table of Contents</span>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-xs sm:text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 text-xs sm:text-sm">
               <a href="#executive-summary" className="text-slate-600 hover:text-[#D98A10] transition-colors py-0.5 flex items-center space-x-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
                 <span>1. Executive Summary &amp; Growth Opportunity</span>
@@ -240,7 +240,7 @@ export default function IndiaMarketEntryHandbook() {
               </a>
               <a href="#business-clinic-framework" className="text-slate-600 hover:text-[#D98A10] transition-colors py-0.5 flex items-center space-x-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
-                <span>3. Business Clinic India Entry Framework™</span>
+                <span>3. India Business Clinic India Entry Framework™</span>
               </a>
               <a href="#preamble-glance" className="text-slate-600 hover:text-[#D98A10] transition-colors py-0.5 flex items-center space-x-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
@@ -250,7 +250,7 @@ export default function IndiaMarketEntryHandbook() {
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
                 <span>5. 10 Common Mistakes &amp; Best Practices</span>
               </a>
-              <a href="#practical-roadmap" className="text-slate-600 hover:text-[#D98A10] transition-colors py-0.5 flex items-center space-x-2">
+              <a href="#legal-structures" className="text-slate-600 hover:text-[#D98A10] transition-colors py-0.5 flex items-center space-x-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
                 <span>6. Legal Structures &amp; Entry Model Matrix</span>
               </a>
@@ -294,7 +294,7 @@ export default function IndiaMarketEntryHandbook() {
           </nav>
 
           {/* Document Body */}
-          <div className="space-y-12 text-[15px] sm:text-[16px] leading-relaxed text-slate-700 font-normal [&_p]:text-justify [&_p]:[text-justify:inter-word] [&_li]:text-justify">
+          <div className="space-y-8 sm:space-y-12 text-[15px] sm:text-[16px] leading-relaxed text-slate-700 font-normal [&_p]:text-left sm:[&_p]:text-justify sm:[&_p]:[text-justify:inter-word] [&_li]:text-left sm:[&_li]:text-justify">
             
             {/* Section 1: Executive Summary */}
             <section id="executive-summary" className="space-y-4 scroll-mt-8">
@@ -369,9 +369,9 @@ export default function IndiaMarketEntryHandbook() {
               </div>
 
               <div className="p-5 sm:p-6 bg-[#0C1D4A]/5 border-l-4 border-[#D98A10] rounded-r-md text-[#0C1D4A] space-y-2 my-4">
-                <h4 className="font-bold text-base text-[#0C1D4A] text-left">How Business Clinic Can Help?</h4>
+                <h4 className="font-bold text-base text-[#0C1D4A] text-left">How India Business Clinic Can Help?</h4>
                 <p className="text-sm">
-                  Business Clinic specializes in assisting foreign companies throughout their India market entry journey by providing execution-oriented advisory and implementation support. Our services include:
+                  India Business Clinic specializes in assisting foreign companies throughout their India market entry journey by providing execution-oriented advisory and implementation support. Our services include:
                 </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs sm:text-sm pt-2">
                   <li className="flex items-center space-x-1.5">
@@ -410,10 +410,10 @@ export default function IndiaMarketEntryHandbook() {
               </div>
             </section>
 
-            {/* Section 3: Business Clinic Framework */}
+            {/* Section 3: India Business Clinic Framework */}
             <section id="business-clinic-framework" className="space-y-4 scroll-mt-8">
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-[#0C1D4A] pb-2 border-b border-slate-100 text-left">
-                Business Clinic India Entry Framework™
+                India Business Clinic India Entry Framework™
               </h2>
               <p>
                 Our objective is not merely to advise but to help clients successfully establish 
@@ -1270,9 +1270,9 @@ export default function IndiaMarketEntryHandbook() {
                     a: "India should be approached as a long-term investment. While some companies reach cash-flow breakeven within 18 to 24 months, sustained profitability typically materializes in years 2 to 3 through repeat orders and localized scale."
                   },
                   {
-                    cat: "Working with Business Clinic",
-                    q: "20. How can Business Clinic support our India entry?",
-                    a: "Business Clinic provides end-to-end execution advisory: market feasibility, entry model selection, state location scouting, partner due diligence, factory setup, regulatory clearances, and ongoing project management. We take on-ground ownership of results, saving clients time and minimizing investment risk."
+                    cat: "Working with India Business Clinic",
+                    q: "20. How can India Business Clinic support our India entry?",
+                    a: "India Business Clinic provides end-to-end execution advisory: market feasibility, entry model selection, state location scouting, partner due diligence, factory setup, regulatory clearances, and ongoing project management. We take on-ground ownership of results, saving clients time and minimizing investment risk."
                   }
                 ].map((faq, idx) => {
                   const isOpen = openFaq === idx;
@@ -1300,7 +1300,7 @@ export default function IndiaMarketEntryHandbook() {
                         />
                       </button>
                       {isOpen && (
-                        <div className="p-4 sm:p-5 bg-white text-xs sm:text-sm text-slate-700 leading-relaxed border-t border-slate-100 text-justify [text-justify:inter-word]">
+                        <div className="p-4 sm:p-5 bg-white text-xs sm:text-sm text-slate-700 leading-relaxed border-t border-slate-100 text-left sm:text-justify sm:[text-justify:inter-word]">
                           {faq.a}
                         </div>
                       )}
@@ -1324,12 +1324,12 @@ export default function IndiaMarketEntryHandbook() {
               </p>
 
               {/* Readiness Scorecard CTA Card */}
-              <div className="mt-8 p-6 sm:p-8 bg-[#0C1D4A] text-white rounded-xl shadow-lg flex flex-col sm:flex-row items-center justify-between gap-6 print:hidden">
-                <div className="space-y-2 text-center sm:text-left">
-                  <span className="text-xs font-bold text-amber-400 uppercase tracking-widest block">
+              <div className="mt-6 sm:mt-8 p-4 sm:p-8 bg-[#0C1D4A] text-white rounded-xl shadow-lg flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 print:hidden">
+                <div className="space-y-1.5 sm:space-y-2 text-center sm:text-left">
+                  <span className="text-[11px] sm:text-xs font-bold text-amber-400 uppercase tracking-widest block">
                     Turn Market Opportunity into Long-Term Reality
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">
+                  <h3 className="text-lg sm:text-2xl font-serif font-bold text-white">
                     India Entry Readiness Scorecard
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
@@ -1339,7 +1339,7 @@ export default function IndiaMarketEntryHandbook() {
 
                 <Link
                   href="/services/india-entry-support-foreign-industry/scorecard"
-                  className="inline-flex items-center space-x-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-6 py-3 rounded-sm font-semibold text-xs transition-all uppercase tracking-wider shadow-md shrink-0"
+                  className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-sm font-semibold text-xs transition-all uppercase tracking-wider shadow-md shrink-0 active:scale-[0.98]"
                 >
                   <span>Launch Scorecard</span>
                   <ChevronRight className="w-4 h-4" />

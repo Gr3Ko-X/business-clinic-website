@@ -4,7 +4,7 @@ import { industriesData } from "@/lib/data/industries";
 import { Plane, Cpu, Zap, Settings, Rss, Activity, Check, ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Industries We Serve | Business Clinic",
+  title: "Industries We Serve | India Business Clinic",
   description: "Specialized industrial execution and technical advisory tailored across high-impact manufacturing sectors including Defence, Electronics, Power, Telecommunications and Power & Cutting Edge Technology.",
 };
 

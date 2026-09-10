@@ -545,7 +545,7 @@ export default function MSMEHealthCheckPage() {
     const payload = {
       access_key: WEB3FORMS_ACCESS_KEY,
       subject: `New MSME Health Check lead: ${profile.company || contact.name}`,
-      from_name: "Business Clinic MSME Health Check",
+      from_name: "India Business Clinic MSME Health Check",
       "Full Name": contact.name,
       "Designation": contact.designation,
       "Email": contact.email,
@@ -617,7 +617,7 @@ export default function MSMEHealthCheckPage() {
     const payload = {
       access_key: WEB3FORMS_ACCESS_KEY,
       subject: `New ${isDiagnostic ? "Diagnostic Consultation" : "Industrial Health Audit"} request: ${profile.company || contact.name}`,
-      from_name: "Business Clinic MSME Health Check",
+      from_name: "India Business Clinic MSME Health Check",
       "Request Type": isDiagnostic
         ? "Free 30-Minute Diagnostic Consultation"
         : "Detailed Industrial Health Audit",
@@ -711,7 +711,7 @@ export default function MSMEHealthCheckPage() {
             <span className="text-slate-600 hidden sm:inline">|</span>
             <div className="flex items-center space-x-2">
               <span className="font-serif font-bold text-sm sm:text-base tracking-tight">
-                Business Clinic
+                India Business Clinic
               </span>
               <span className="hidden md:inline-block text-[11px] font-mono tracking-widest text-[#D98A10] uppercase bg-white/10 px-2 py-0.5 rounded-xs">
                 MSME Diagnostic Studio
@@ -1658,7 +1658,7 @@ export default function MSMEHealthCheckPage() {
                 Recommended Next Step: Turn Diagnosis into Action
               </h3>
               <p className="text-slate-300 text-xs sm:text-sm leading-relaxed text-justify">
-                This self-assessment is directional. Business Clinic can go deeper with a structured diagnostic — and if you want it, help you fix what&apos;s found on your plant floor, not just report on it.
+                This self-assessment is directional. India Business Clinic can go deeper with a structured diagnostic — and if you want it, help you fix what&apos;s found on your plant floor, not just report on it.
               </p>
             </div>
 
@@ -1714,7 +1714,7 @@ export default function MSMEHealthCheckPage() {
           </div>
 
           <footer className="text-center text-xs text-slate-400 pt-4 leading-relaxed">
-            Business Clinic — action-oriented advisory for Indian MSMEs. This preliminary score is directional; a full diagnostic refines it.
+            India Business Clinic — action-oriented advisory for Indian MSMEs. This preliminary score is directional; a full diagnostic refines it.
           </footer>
         </main>
       )}
@@ -1731,7 +1731,7 @@ export default function MSMEHealthCheckPage() {
                   Before you begin
                 </h2>
                 <p className="text-xs text-slate-500 mt-1 leading-relaxed text-justify">
-                  Tell us who to send your health check results to. Business Clinic will use this to follow up with your Preliminary Health Check and, if relevant, an invitation to a diagnostic session.
+                  Tell us who to send your health check results to. India Business Clinic will use this to follow up with your Preliminary Health Check and, if relevant, an invitation to a diagnostic session.
                 </p>
               </div>
               <button
@@ -1860,7 +1860,7 @@ export default function MSMEHealthCheckPage() {
               </div>
 
               <p className="text-[11px] text-slate-400 text-center">
-                Submitting this form sends your details to Business Clinic via email. It is not stored anywhere else.
+                Submitting this form sends your details to India Business Clinic via email. It is not stored anywhere else.
               </p>
             </form>
           </div>
@@ -1883,7 +1883,7 @@ export default function MSMEHealthCheckPage() {
                     Request Received
                   </h3>
                   <p className="text-xs text-slate-500 max-w-sm mx-auto leading-relaxed">
-                    Business Clinic has received your request and your diagnostic summary. We will reach out to you shortly at {contact.email || "your email"}.
+                    India Business Clinic has received your request and your diagnostic summary. We will reach out to you shortly at {contact.email || "your email"}.
                   </p>
                 </div>
                 <button
@@ -1904,7 +1904,7 @@ export default function MSMEHealthCheckPage() {
                         : "Request Detailed Industrial Health Audit"}
                     </h2>
                     <p className="text-xs text-slate-500 mt-1 leading-relaxed text-justify">
-                      We already have your operational assessment details. Confirm below and Business Clinic will reach out to schedule.
+                      We already have your operational assessment details. Confirm below and India Business Clinic will reach out to schedule.
                     </p>
                   </div>
                   <button
@@ -2009,7 +2009,7 @@ export default function MSMEHealthCheckPage() {
                   </div>
 
                   <p className="text-[11px] text-slate-400 text-center">
-                    This sends your request directly to Business Clinic by email.
+                    This sends your request directly to India Business Clinic by email.
                   </p>
                 </form>
               </>

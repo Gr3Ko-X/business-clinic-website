@@ -4,7 +4,7 @@ import { servicesData } from "@/lib/data/services";
 import { Globe, Factory, ShieldCheck, FileText, Briefcase, Check, ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Our Services | Business Clinic",
+  title: "Our Services | India Business Clinic",
   description: "Explore our specialized industrial advisory clinics including India Entry support, Industrial Growth advisory, Industrial Quality Assurance, Documentation services, and Support solutions.",
 };
 

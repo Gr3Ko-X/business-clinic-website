@@ -4,7 +4,7 @@ import { caseStudiesData } from "@/lib/data/caseStudies";
 import { ArrowRight, Shield, Anchor, Zap } from "lucide-react";
 
 export const metadata = {
-  title: "Execution Case Studies | Business Clinic",
+  title: "Execution Case Studies | India Business Clinic",
   description: "Factual profiles of complex programs coordinated, set up, and validated under our leadership across defence, Navy, and industrial sectors.",
 };
 

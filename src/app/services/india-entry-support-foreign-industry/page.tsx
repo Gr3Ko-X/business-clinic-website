@@ -175,12 +175,12 @@ export default function IndiaEntryClinicPage() {
         </div>
       </section>
 
-      {/* 4. Methodology (6-Stage Business Clinic India Entry Framework™) */}
+      {/* 4. Methodology (6-Stage India Business Clinic India Entry Framework™) */}
       <section className="py-8 sm:py-20 bg-primary text-white overflow-hidden border-t border-b border-[#D98A10]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-16 space-y-2 sm:space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#D98A10] uppercase font-sans">Methodology</span>
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white">Business Clinic India Entry Framework™</h2>
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white">India Business Clinic India Entry Framework™</h2>
             <p className="text-slate-300 text-xs sm:text-sm">
               Our 6-stage modular transition pathway maps your expansion from initial assessment to commercial scaling.
             </p>
@@ -458,7 +458,7 @@ export default function IndiaEntryClinicPage() {
               { q: "Will our company need environmental approvals?", a: "Manufacturing facilities must secure Consents to Establish and Operate from State Pollution Control Boards. Requirements depend on the environmental impact categorization of the process." },
               { q: "How much investment should we budget?", a: "Budgets must cover market research, incorporation, legal advisory, workspace setup, recruitment, and working capital buffers. Maintaining adequate financial reserves prevents implementation delays." },
               { q: "How soon can we expect returns?", a: "India should be viewed as a long-term investment. While some companies achieve operational profitability within 2 to 3 years, building a strong market presence requires patience and sustained execution." },
-              { q: "How can Business Clinic support our India entry?", a: "Business Clinic provides modular strategy, regulatory approvals liaison, state site selection support, partner due diligence, and factory project management to minimize operational risk and accelerate launch times." }
+              { q: "How can India Business Clinic support our India entry?", a: "India Business Clinic provides modular strategy, regulatory approvals liaison, state site selection support, partner due diligence, and factory project management to minimize operational risk and accelerate launch times." }
             ].map((item, idx) => (
               <div key={idx} className="border border-slate-200 bg-white rounded-xl overflow-hidden">
                 <button
@@ -489,7 +489,7 @@ export default function IndiaEntryClinicPage() {
             Planning to Establish Your Facility in India?
           </h2>
           <p className="text-slate-300 text-xs sm:text-sm max-w-lg mx-auto leading-relaxed">
-            Contact Business Clinic to discuss custom entry strategies, regulatory approvals, site selection, or vendor vetting.
+            Contact India Business Clinic to discuss custom entry strategies, regulatory approvals, site selection, or vendor vetting.
           </p>
           <div className="pt-2">
             <Link 

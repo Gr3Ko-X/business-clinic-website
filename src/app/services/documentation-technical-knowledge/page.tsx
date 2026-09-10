@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Documentation & Technical Knowledge Services | Business Clinic",
+  title: "Documentation & Technical Knowledge Services | India Business Clinic",
   description: "Techno-commercial documentation, SOP development, Transfer of Technology (ToT) support, and plant standing orders for industrial setups.",
 };
 

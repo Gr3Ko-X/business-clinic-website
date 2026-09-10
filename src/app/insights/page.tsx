@@ -5,7 +5,7 @@ import { insightsData } from "@/lib/data/insights";
 import { Clock, ArrowRight, BookOpen } from "lucide-react";
 
 export const metadata = {
-  title: "Featured Insights & Capability Notes | Business Clinic",
+  title: "Featured Insights & Capability Notes | India Business Clinic",
   description: "Browse our articles and capability notes on India market entry, regulatory compliance, industrial operational growth, and industrial setups.",
 };
 
@@ -19,7 +19,7 @@ export default function InsightsListPage() {
         {/* Ambient gold glow */}
         <div className="absolute -top-12 -right-12 w-64 h-64 bg-[#D98A10]/8 rounded-full filter blur-3xl pointer-events-none"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl border-l-4 border-[#D98A10] pl-4 sm:pl-6 space-y-2 sm:space-y-3">
             <span className="text-xs sm:text-xs font-bold tracking-widest text-[#D98A10] uppercase">
               Featured Insights
@@ -35,19 +35,19 @@ export default function InsightsListPage() {
       </section>
 
       {/* Articles Grid Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <section className="py-8 sm:py-20">
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 max-w-5xl mx-auto">
             {insightsData.map((art) => (
               <article
                 key={art.slug}
-                className="bg-slate-50/50 border border-slate-200/80 rounded-lg p-8 flex flex-col justify-between hover:bg-white hover:shadow-md hover:border-accent/40 transition-all duration-300"
+                className="bg-slate-50/50 border border-slate-200/80 rounded-lg p-4 sm:p-8 flex flex-col justify-between hover:bg-white hover:shadow-md hover:border-accent/40 transition-all duration-300"
               >
                 <div>
                   {art.image && (
                     <Link
                       href={`/insights/${art.slug}`}
-                      className="block mb-5 rounded-lg overflow-hidden border border-slate-200 shadow-xs group"
+                      className="block mb-3.5 sm:mb-5 rounded-lg overflow-hidden border border-slate-200 shadow-xs group"
                     >
                       <div className="relative aspect-[16/9] w-full bg-slate-100 overflow-hidden">
                         <Image
@@ -61,7 +61,7 @@ export default function InsightsListPage() {
                   )}
 
                   {/* Category & Read Time */}
-                  <div className="flex items-center justify-between text-sm text-slate-500 font-semibold mb-4">
+                  <div className="flex items-center justify-between text-sm text-slate-500 font-semibold mb-3 sm:mb-4">
                     <span className="bg-accent/10 text-accent px-2.5 py-0.5 rounded-sm uppercase tracking-wider">
                       {art.category}
                     </span>
@@ -72,12 +72,12 @@ export default function InsightsListPage() {
                   </div>
 
                   {/* Title */}
-                  <h2 className="font-serif text-lg sm:text-xl font-bold text-primary mb-3 hover:text-accent transition-colors">
+                  <h2 className="font-serif text-lg sm:text-xl font-bold text-primary mb-2 sm:mb-3 hover:text-accent transition-colors">
                     <Link href={`/insights/${art.slug}`}>{art.title}</Link>
                   </h2>
 
                   {/* Summary */}
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4 sm:mb-6">
                     {art.summary}
                   </p>
                 </div>

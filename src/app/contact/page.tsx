@@ -217,7 +217,7 @@ function ContactPageContent() {
               {showBtsBanner && !formSubmitted && (
                 <div className="mb-6 flex items-start justify-between gap-3 rounded-lg border border-[#c58f1a]/30 bg-amber-50/80 px-4 py-3">
                   <p className="text-xs sm:text-sm text-[#0c1d4a] font-medium leading-relaxed">
-                    You&apos;re booking a <span className="font-bold">BTS 2026 India Entry discussion</span> with Business Clinic at Bengaluru Tech Summit.
+                    You&apos;re booking a <span className="font-bold">BTS 2026 India Entry discussion</span> with India Business Clinic at Bengaluru Tech Summit.
                   </p>
                   <button
                     type="button"

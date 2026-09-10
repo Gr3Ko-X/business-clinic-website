@@ -108,7 +108,7 @@ export default function TestimonialsSection() {
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
             Feedback from international companies entering India and MSMEs strengthening operations
-            with Business Clinic.
+            with India Business Clinic.
           </p>
         </div>
 

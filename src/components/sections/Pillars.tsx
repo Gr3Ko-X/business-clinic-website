@@ -555,7 +555,7 @@ export default function Pillars() {
                 <h3 className="font-serif font-bold text-lg text-[#0C1D4A]">
                   Speak with an Industrial Expert
                 </h3>
-                <p className="text-xs text-slate-500">Business Clinic Custom Solution Advisory</p>
+                <p className="text-xs text-slate-500">India Business Clinic Custom Solution Advisory</p>
               </div>
             </div>
 

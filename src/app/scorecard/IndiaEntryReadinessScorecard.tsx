@@ -543,7 +543,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
     const payload = {
       access_key: WEB3FORMS_ACCESS_KEY,
       subject: `New India Entry Readiness Scorecard lead: ${profile.company || nameTrim}`,
-      from_name: "Business Clinic Scorecard",
+      from_name: "India Business Clinic Scorecard",
       "Full Name": nameTrim,
       "Designation": desigTrim,
       "Email": emailTrim,
@@ -623,7 +623,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
               <span className="text-slate-600 hidden sm:inline">|</span>
               <div className="flex items-center space-x-2">
                 <span className="font-serif font-bold text-sm sm:text-base tracking-tight">
-                  Business Clinic
+                  India Business Clinic
                 </span>
                 <span className="hidden md:inline-block text-[11px] font-mono tracking-widest text-[#D98A10] uppercase bg-white/10 px-2 py-0.5 rounded-xs">
                   Diagnostic Studio
@@ -1551,7 +1551,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
                 Turn this into an entry plan
               </h3>
               <p className="text-slate-300 text-xs sm:text-sm leading-relaxed text-justify">
-                This self-assessment is directional. Business Clinic&apos;s India Entry Diagnostic goes category-by-category with you and builds a prioritized roadmap — with hands-on support through execution if you want it.
+                This self-assessment is directional. India Business Clinic&apos;s India Entry Diagnostic goes category-by-category with you and builds a prioritized roadmap — with hands-on support through execution if you want it.
               </p>
             </div>
 
@@ -1590,7 +1590,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
           </div>
 
           <footer className="text-center text-xs text-slate-400 pt-4 leading-relaxed">
-            Business Clinic — action-oriented advisory. This preliminary score is directional; a full diagnostic refines it.
+            India Business Clinic — action-oriented advisory. This preliminary score is directional; a full diagnostic refines it.
           </footer>
         </main>
       )}
@@ -1607,7 +1607,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
                   Before you begin
                 </h2>
                 <p className="text-xs text-slate-500 mt-1 leading-relaxed text-justify">
-                  Tell us who to send your readiness results to. Business Clinic will use this to follow up with your Preliminary Scorecard and, if relevant, an invitation to a diagnostic session.
+                  Tell us who to send your readiness results to. India Business Clinic will use this to follow up with your Preliminary Scorecard and, if relevant, an invitation to a diagnostic session.
                 </p>
               </div>
               <button
@@ -1740,7 +1740,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
               </div>
 
               <p className="text-[11px] text-slate-400 text-center">
-                Submitting this form sends your details to Business Clinic via email. It is not stored anywhere else.
+                Submitting this form sends your details to India Business Clinic via email. It is not stored anywhere else.
               </p>
             </form>
           </div>

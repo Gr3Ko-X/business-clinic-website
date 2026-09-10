@@ -9,7 +9,7 @@ export default function Footer() {
       {/* Top Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-row lg:justify-between lg:items-start gap-8 sm:gap-8 md:gap-10 lg:gap-0">
-          {/* Col 1: About Business Clinic */}
+          {/* Col 1: About India Business Clinic */}
           <div className="space-y-4 lg:max-w-[260px] lg:shrink-0">
             <div className="flex items-center space-x-3.5 md:block">
               <Link
@@ -25,12 +25,12 @@ export default function Footer() {
                 />
               </Link>
               <div className="md:hidden">
-                <span className="font-serif text-lg font-bold text-white block">Business Clinic</span>
+                <span className="font-serif text-lg font-bold text-white block">India Business Clinic</span>
                 <span className="text-xs text-[#c58f1a] font-medium tracking-wide block">Industrial Advisory &amp; Execution</span>
               </div>
             </div>
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed pt-1 md:pt-2">
-              Business Clinic is the industrial advisory and execution-support division of Spuntech Solutions Pvt Ltd.
+              India Business Clinic is the industrial advisory and execution-support division of Spuntech Solutions Pvt Ltd.
             </p>
             <div className="flex items-center space-x-4 pt-1 md:pt-2">
               <a
@@ -194,7 +194,7 @@ export default function Footer() {
       <div className="bg-[#071333] py-5 sm:py-6 border-t border-[#0a1835] text-xs text-slate-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between items-center gap-3 lg:gap-0 text-center lg:text-left">
           <p className="text-[11px] sm:text-xs text-slate-400 leading-normal whitespace-normal lg:whitespace-nowrap">
-            © {new Date().getFullYear()} Business Clinic. Business Clinic is a business division/brand of Spuntech Solutions Pvt Ltd. All rights reserved.
+            © {new Date().getFullYear()} India Business Clinic. India Business Clinic is a business division/brand of Spuntech Solutions Pvt Ltd. All rights reserved.
           </p>
           <div className="flex items-center space-x-4 sm:space-x-6 text-[11px] sm:text-xs shrink-0 whitespace-nowrap">
             <Link href="/contact" className="hover:text-accent transition-colors">

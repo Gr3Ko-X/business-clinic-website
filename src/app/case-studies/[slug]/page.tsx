@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props) {
   if (!cs) return {};
 
   return {
-    title: `${cs.title} ${cs.subtitle || ""} | Business Clinic Case Study`,
+    title: `${cs.title} ${cs.subtitle || ""} | India Business Clinic Case Study`,
     description: cs.summary,
   };
 }

@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Methodology | Business Clinic",
+  title: "Methodology | India Business Clinic",
   description: "Learn about our execution methodologies: the 4E framework for global companies entering India and the 5D framework for industrial growth optimization.",
 };
 

@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Defence & Aerospace Clinic | Business Clinic",
+  title: "Defence & Aerospace Clinic | India Business Clinic",
   description: "Regulatory facilitation, offset advisory, indigenization, and WPC frequency licensing for the Indian defence sector.",
 };
 
@@ -53,7 +53,7 @@ export default function DefenceAerospaceClinicPage() {
 
   const founderBackground = {
     name: "Col Sanjay Chandra (Retd)",
-    role: "Founder, Business Clinic",
+    role: "Founder, India Business Clinic",
     tenure: "35+ Years of Strategic Leadership & Defence Manufacturing",
     details: [
       "Former Director, PMO Suraj, Electronic Warfare Directorate, Indian Army (Corps of Signals)",
@@ -141,7 +141,7 @@ export default function DefenceAerospaceClinicPage() {
         </div>
       </section>
 
-      {/* 3. Founder Authority & Case Projects (Business Clinic Facts) */}
+      {/* 3. Founder Authority & Case Projects (India Business Clinic Facts) */}
       <section className="py-8 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-12 items-center">
@@ -242,7 +242,7 @@ export default function DefenceAerospaceClinicPage() {
             </div>
           </div>
           <p className="text-xs text-center text-slate-600 mt-6 sm:mt-8 leading-relaxed max-w-lg mx-auto font-medium">
-            Disclaimer: The above information reflects general regulatory requirements compiled from public sources (DPIIT/DoT/WPC portals) and does not constitute formal legal advice. Business Clinic does not guarantee licensing approvals.
+            Disclaimer: The above information reflects general regulatory requirements compiled from public sources (DPIIT/DoT/WPC portals) and does not constitute formal legal advice. India Business Clinic does not guarantee licensing approvals.
           </p>
         </div>
       </section>
@@ -287,7 +287,7 @@ export default function DefenceAerospaceClinicPage() {
             <div className="lg:col-span-5 space-y-6 sm:space-y-8">
               <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 sm:p-8 space-y-4 sm:space-y-6">
                 <h3 className="font-serif text-base sm:text-lg font-bold text-primary border-b border-slate-200 pb-3">
-                  Business Clinic Value Proposition
+                  India Business Clinic Value Proposition
                 </h3>
                 <div className="space-y-3 sm:space-y-4">
                   {[

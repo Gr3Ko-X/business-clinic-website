@@ -18,11 +18,11 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Business Clinic | India Entry & Operational Advisory Solutions",
+  title: "India Business Clinic | India Entry & Operational Advisory Solutions",
   description: "Empowering global companies to enter India, and Indian Industries to diagnose, troubleshoot, and resolve industrial challenges through execution-focused advisory.",
   keywords: "India Entry, Industrial Growth, Defence Industrial Licensing, Factory Setup, Vendor Audit, Operational troubleshooting, Industrial consulting India",
   openGraph: {
-    title: "Business Clinic | India Entry & Operational Advisory Solutions",
+    title: "India Business Clinic | India Entry & Operational Advisory Solutions",
     description: "Empowering global companies to enter India, and Indian Industries to resolve industrial challenges through execution-focused advisory.",
     type: "website",
     locale: "en_IN",

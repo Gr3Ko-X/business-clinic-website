@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Industrial Assurance & Validation Services | Business Clinic",
+  title: "Industrial Assurance & Validation Services | India Business Clinic",
   description: "Quality surveillance, vendor audits, and validation testing for mission-critical manufacturing and engineering.",
 };
 

@@ -77,11 +77,11 @@ export default function IndiaEntryMadeEasy() {
   ];
 
   return (
-    <div className="bg-slate-100/70 min-h-screen py-8 sm:py-12 print:bg-white print:py-0 font-sans antialiased text-slate-800">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-slate-100/70 min-h-screen py-4 sm:py-12 print:bg-white print:py-0 font-sans antialiased text-slate-800">
+      <div className="max-w-4xl mx-auto px-3.5 sm:px-6 lg:px-8">
         
         {/* Top Navigation Bar */}
-        <div className="flex items-center justify-between mb-6 print:hidden">
+        <div className="flex items-center justify-between mb-4 sm:mb-6 print:hidden">
           <Link
             href="/insights"
             className="inline-flex items-center space-x-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-[#0C1D4A] transition-colors"
@@ -103,16 +103,16 @@ export default function IndiaEntryMadeEasy() {
         </div>
 
         {/* Paper Document Container */}
-        <article className="bg-white border border-slate-200/80 shadow-md rounded-2xl p-6 sm:p-12 lg:p-16 print:shadow-none print:border-none print:p-0">
+        <article className="bg-white border border-slate-200/80 shadow-md rounded-2xl p-4 sm:p-12 lg:p-16 print:shadow-none print:border-none print:p-0">
           
           {/* Masthead / Header */}
-          <header className="border-b border-slate-200 pb-8 mb-8 text-center sm:text-left">
+          <header className="border-b border-slate-200 pb-5 sm:pb-8 mb-6 sm:mb-8 text-left">
             <div className="inline-flex items-center space-x-2 px-3 py-1 bg-amber-50 border border-amber-200/80 rounded-full text-[11px] font-bold text-amber-900 uppercase tracking-widest mb-4">
               <Sparkles className="w-3.5 h-3.5 text-amber-700" />
               <span>Foreign Enterprise Setup Guide</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0C1D4A] tracking-tight leading-tight mb-2">
+            <h1 className="text-xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0C1D4A] tracking-tight leading-tight mb-2">
               INDIA ENTRY MADE EASY
             </h1>
             <p className="text-base sm:text-lg font-semibold text-[#D98A10] tracking-normal mb-4">
@@ -125,7 +125,7 @@ export default function IndiaEntryMadeEasy() {
                   Prepared by Sanjay Chandra
                 </p>
                 <p className="text-slate-500 font-medium">
-                  Business Clinic
+                  India Business Clinic
                 </p>
               </div>
 
@@ -141,7 +141,7 @@ export default function IndiaEntryMadeEasy() {
           </header>
 
           {/* Table of Contents */}
-          <nav aria-label="Table of contents" className="mb-10 p-5 bg-slate-50 border border-slate-200/90 rounded-xl print:hidden">
+          <nav aria-label="Table of contents" className="mb-6 sm:mb-10 p-3.5 sm:p-5 bg-slate-50 border border-slate-200/90 rounded-xl print:hidden">
             <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-3">
               Contents
             </h3>
@@ -208,7 +208,7 @@ export default function IndiaEntryMadeEasy() {
             <h2 className="text-xl sm:text-2xl font-serif font-bold text-[#0C1D4A] border-b border-slate-100 pb-2">
               Executive Summary
             </h2>
-            <div className="bg-amber-50/50 border-l-4 border-[#D98A10] p-4 sm:p-5 rounded-r-xl space-y-3 text-sm sm:text-base text-slate-700 leading-relaxed text-justify">
+            <div className="bg-amber-50/50 border-l-4 border-[#D98A10] p-4 sm:p-5 rounded-r-xl space-y-3 text-sm sm:text-base text-slate-700 leading-relaxed text-left sm:text-justify">
               <p>
                 India represents one of the world&apos;s most dynamic and rapidly growing markets. This guide outlines the end-to-end framework required for a foreign enterprise to establish a compliant, scalable, and sustainable business presence in India. This manual is structured modularly, allowing companies to execute specific modules independently based on their market readiness stage.
               </p>
@@ -268,7 +268,7 @@ export default function IndiaEntryMadeEasy() {
             </div>
 
             {/* MODULE 1 */}
-            <div id="module-1" className="p-6 rounded-2xl border border-slate-200 bg-white shadow-xs space-y-4">
+            <div id="module-1" className="p-4 sm:p-6 rounded-2xl border border-slate-200 bg-white shadow-xs space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
                 <div>
                   <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#D98A10]">
@@ -315,7 +315,7 @@ export default function IndiaEntryMadeEasy() {
             </div>
 
             {/* MODULE 2 */}
-            <div id="module-2" className="p-6 rounded-2xl border border-slate-200 bg-white shadow-xs space-y-4">
+            <div id="module-2" className="p-4 sm:p-6 rounded-2xl border border-slate-200 bg-white shadow-xs space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
                 <div>
                   <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#D98A10]">
@@ -348,14 +348,14 @@ export default function IndiaEntryMadeEasy() {
                         {e.badge}
                       </span>
                     </div>
-                    <p className="text-xs text-slate-600 leading-relaxed text-justify">{e.desc}</p>
+                    <p className="text-xs text-slate-600 leading-relaxed text-left sm:text-justify">{e.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* MODULE 3 */}
-            <div id="module-3" className="p-6 rounded-2xl border border-slate-200 bg-white shadow-xs space-y-4">
+            <div id="module-3" className="p-4 sm:p-6 rounded-2xl border border-slate-200 bg-white shadow-xs space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
                 <div>
                   <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#D98A10]">
@@ -408,7 +408,7 @@ export default function IndiaEntryMadeEasy() {
             </div>
 
             {/* MODULE 4 */}
-            <div id="module-4" className="p-6 rounded-2xl border border-slate-200 bg-white shadow-xs space-y-4">
+            <div id="module-4" className="p-4 sm:p-6 rounded-2xl border border-slate-200 bg-white shadow-xs space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
                 <div>
                   <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#D98A10]">
@@ -461,7 +461,7 @@ export default function IndiaEntryMadeEasy() {
             </div>
 
             {/* MODULE 5 */}
-            <div id="module-5" className="p-6 rounded-2xl border border-slate-200 bg-white shadow-xs space-y-4">
+            <div id="module-5" className="p-4 sm:p-6 rounded-2xl border border-slate-200 bg-white shadow-xs space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
                 <div>
                   <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#D98A10]">
@@ -508,7 +508,7 @@ export default function IndiaEntryMadeEasy() {
             </div>
 
             {/* MODULE 6 */}
-            <div id="module-6" className="p-6 rounded-2xl border border-slate-200 bg-white shadow-xs space-y-4">
+            <div id="module-6" className="p-4 sm:p-6 rounded-2xl border border-slate-200 bg-white shadow-xs space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
                 <div>
                   <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#D98A10]">
@@ -601,7 +601,7 @@ export default function IndiaEntryMadeEasy() {
           </section>
 
           {/* Section: Strategic Contact Callout Box */}
-          <div className="bg-[#0C1D4A] text-white rounded-2xl p-6 sm:p-10 shadow-lg relative overflow-hidden space-y-6">
+          <div className="bg-[#0C1D4A] text-white rounded-2xl p-4 sm:p-10 shadow-lg relative overflow-hidden space-y-6">
             <div className="space-y-3 relative z-10 max-w-2xl">
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#D98A10]">
                 On-Ground Execution Advisory
@@ -609,13 +609,13 @@ export default function IndiaEntryMadeEasy() {
               <h3 className="font-serif text-2xl sm:text-3xl font-bold leading-tight text-white">
                 Ready to Establish Your Business in India?
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed text-justify">
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed text-left sm:text-justify">
                 Navigating cross-border legalities and regulatory approvals requires experienced on-the-ground support. For seamless, modular, or turnkey assistance with your India market expansion, connect with our specialist advisors.
               </p>
             </div>
 
             {/* Direct Contact Details Card */}
-            <div className="bg-white/10 border border-white/15 rounded-xl p-5 relative z-10 max-w-md space-y-2">
+            <div className="bg-white/10 border border-white/15 rounded-xl p-4 sm:p-5 relative z-10 max-w-md space-y-2">
               <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#D98A10]">
                 Contact IndiaBusinessClinic
               </span>
@@ -630,17 +630,17 @@ export default function IndiaEntryMadeEasy() {
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 pt-2 relative z-10">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 relative z-10">
               <Link
                 href="/services/india-entry-support-foreign-industry/scorecard"
-                className="inline-flex items-center space-x-2 bg-[#D98A10] hover:bg-[#c57e0e] text-white text-xs sm:text-sm font-semibold px-6 py-3 rounded-xl shadow-md transition-all cursor-pointer"
+                className="inline-flex items-center justify-center space-x-2 bg-[#D98A10] hover:bg-[#c57e0e] text-white text-xs sm:text-sm font-semibold px-6 py-3 rounded-xl shadow-md transition-all cursor-pointer"
               >
                 <span>Assess India Entry Readiness</span>
                 <ChevronRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/15 text-white text-xs sm:text-sm font-semibold px-5 py-3 rounded-xl border border-white/20 transition-all cursor-pointer"
+                className="inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/15 text-white text-xs sm:text-sm font-semibold px-5 py-3 rounded-xl border border-white/20 transition-all cursor-pointer"
               >
                 <span>Schedule An Executive Dialogue</span>
               </Link>
@@ -650,7 +650,7 @@ export default function IndiaEntryMadeEasy() {
           {/* Document Footer */}
           <footer className="mt-12 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2">
             <span>India Entry Made Easy • Strategic Guide for Foreign Enterprise Setup</span>
-            <span>Authored by Sanjay Chandra | Business Clinic</span>
+            <span>Authored by Sanjay Chandra | India Business Clinic</span>
           </footer>
         </article>
       </div>

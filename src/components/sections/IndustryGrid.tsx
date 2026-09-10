@@ -354,7 +354,7 @@ export default function IndustryGrid() {
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl">
               Under Col Sanjay Chandra (Retd) — Former Director, PMO Suraj, and Former SVP Defence
-              Manufacturing — Business Clinic has supported international technology and industrial
+              Manufacturing — India Business Clinic has supported international technology and industrial
               partners entering and executing in India.
             </p>
 

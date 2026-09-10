@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Business & Industrial Consulting | Business Clinic",
+  title: "Business & Industrial Consulting | India Business Clinic",
   description: "Operational troubleshooting, manufacturing excellence, and business growth advisory for Indian MSMEs and global firms.",
 };
 

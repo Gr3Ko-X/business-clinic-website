@@ -28,7 +28,7 @@ export default function BtsLandingHero() {
             </p>
 
             <h1 className="font-serif font-bold text-2xl sm:text-4xl lg:text-5xl xl:text-[3.25rem] text-white leading-[1.12] sm:leading-[1.08] tracking-tight text-balance">
-              Business Clinic at{" "}
+              India Business Clinic at{" "}
               <span className="text-[#c58f1a]">Bengaluru Tech Summit 2026</span>
             </h1>
 

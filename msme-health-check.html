@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MSME Health Check — Business Clinic</title>
+<title>MSME Health Check — India Business Clinic</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
@@ -143,7 +143,7 @@
 <body>
 <div class="wrap">
   <div class="brandline">
-    <div class="brand"><b>Business Clinic</b> · MSME Troubleshooting</div>
+    <div class="brand"><b>India Business Clinic</b> · MSME Troubleshooting</div>
     <div style="display:flex;align-items:center;gap:12px;">
       <button id="headerResetBtn" class="reset-link">↺ Reset</button>
       <div class="tag">Self-Assessment</div>
@@ -152,7 +152,7 @@
 
   <div id="app"></div>
 
-  <footer id="footerNote">Business Clinic — action-oriented advisory for Indian MSMEs. This preliminary score is directional; a full diagnostic refines it.</footer>
+  <footer id="footerNote">India Business Clinic — action-oriented advisory for Indian MSMEs. This preliminary score is directional; a full diagnostic refines it.</footer>
 </div>
 
 <script>
@@ -342,7 +342,7 @@ function renderContactModal(){
         <h2>Before you begin</h2>
         <button id="modalCancel" title="Cancel and go back" style="appearance:none;border:none;background:transparent;cursor:pointer;font-size:20px;line-height:1;color:var(--ink-soft);padding:2px 4px;">&times;</button>
       </div>
-      <p class="mdesc">Tell us who to send your health check results to. Business Clinic will use this to follow up with your Preliminary Health Check and, if relevant, an invitation to a diagnostic session.</p>
+      <p class="mdesc">Tell us who to send your health check results to. India Business Clinic will use this to follow up with your Preliminary Health Check and, if relevant, an invitation to a diagnostic session.</p>
 
       <div class="field" id="m-name-field">
         <label>Full Name <span class="req">*</span></label>
@@ -374,7 +374,7 @@ function renderContactModal(){
         <span id="modalErr" style="font-size:12px;color:var(--rust);"></span>
         <button class="btn" id="modalSubmit">Continue to Assessment →</button>
       </div>
-      <div class="modal-note">Submitting this form sends your details to Business Clinic via email. It is not stored anywhere else.</div>
+      <div class="modal-note">Submitting this form sends your details to India Business Clinic via email. It is not stored anywhere else.</div>
     </div>
   `;
   document.body.appendChild(div);
@@ -416,7 +416,7 @@ function renderContactModal(){
     const payload = {
       access_key: WEB3FORMS_ACCESS_KEY,
       subject: `New MSME Health Check lead: ${state.profile.company || name}`,
-      from_name: 'Business Clinic Scorecard',
+      from_name: 'India Business Clinic Scorecard',
       "Full Name": name,
       "Designation": designation,
       "Email": email,
@@ -643,7 +643,7 @@ function renderRequestModal(type){
         <h2>${title}</h2>
         <button id="requestCancel" title="Close" style="appearance:none;border:none;background:transparent;cursor:pointer;font-size:20px;line-height:1;color:var(--ink-soft);padding:2px 4px;">&times;</button>
       </div>
-      <p class="mdesc">We already have your details from the assessment. Confirm below and Business Clinic will reach out to schedule.</p>
+      <p class="mdesc">We already have your details from the assessment. Confirm below and India Business Clinic will reach out to schedule.</p>
 
       <div class="field" id="r-name-field">
         <label>Full Name <span class="req">*</span></label>
@@ -681,7 +681,7 @@ function renderRequestModal(type){
         <span id="requestErr" style="font-size:12px;color:var(--rust);"></span>
         <button class="btn" id="requestSubmit">Send Request →</button>
       </div>
-      <div class="modal-note">This sends your request directly to Business Clinic by email.</div>
+      <div class="modal-note">This sends your request directly to India Business Clinic by email.</div>
     </div>
   `;
   document.body.appendChild(div);
@@ -722,7 +722,7 @@ function renderRequestModal(type){
     const payload = {
       access_key: WEB3FORMS_ACCESS_KEY,
       subject: `New ${isDiagnostic ? 'Diagnostic Consultation' : 'Industrial Health Audit'} request: ${state.profile.company || name}`,
-      from_name: 'Business Clinic MSME Health Check',
+      from_name: 'India Business Clinic MSME Health Check',
       "Request Type": isDiagnostic ? 'Free 30-Minute Diagnostic Consultation' : 'Detailed Industrial Health Audit',
       "Full Name": name,
       "Email": email,
@@ -760,7 +760,7 @@ function renderRequestModal(type){
       <div style="text-align:center;padding:10px 0;">
         <div style="font-size:36px;margin-bottom:10px;">✓</div>
         <h2>Request sent</h2>
-        <p class="mdesc">Business Clinic has received your request and will be in touch shortly at ${email}.</p>
+        <p class="mdesc">India Business Clinic has received your request and will be in touch shortly at ${email}.</p>
         <button class="btn" id="requestClose">Close</button>
       </div>
     `;
@@ -823,7 +823,7 @@ function renderResults(){
 
       <div class="cta-box">
         <h3>Recommended Next Step</h3>
-        <p>This self-assessment is directional. Business Clinic can go deeper with a structured diagnostic — and if you want it, help you fix what's found, not just report on it.</p>
+        <p>This self-assessment is directional. India Business Clinic can go deeper with a structured diagnostic — and if you want it, help you fix what's found, not just report on it.</p>
         <div class="confirm-btn-row" style="justify-content:flex-start;flex-wrap:wrap;">
           <button class="btn" id="ctaDiagnostic">Free 30-Minute Diagnostic Consultation</button>
           <button class="btn secondary" id="ctaAudit" style="background:transparent;border:1px solid rgba(255,255,255,0.35);color:#fff;">Detailed Industrial Health Audit</button>

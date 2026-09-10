@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Legal, Company Secretary & CA Services | Business Clinic",
+  title: "Legal, Company Secretary & CA Services | India Business Clinic",
   description: "Legal and statutory support, finance & accounts, secretarial services, HR & payroll management, and industrial logistics coordination.",
 };
 

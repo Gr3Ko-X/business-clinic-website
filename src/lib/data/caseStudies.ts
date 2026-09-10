@@ -145,7 +145,7 @@ export const caseStudiesData: CaseStudy[] = [
       ],
       author: {
         name: "Col Sanjay Chandra (Retd)",
-        title: "Founder, Business Clinic",
+        title: "Founder, India Business Clinic",
         role: "Former Director, PMO Suraj, Indian Army",
         company: "MSME Growth Strategist | Defence Manufacturing Expert"
       }

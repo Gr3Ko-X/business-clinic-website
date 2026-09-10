@@ -4,8 +4,8 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Award, Globe2, ShieldAlert, Cpu, Calendar } from "lucide-react";
 
 export const metadata = {
-  title: "About Us | Business Clinic",
-  description: "Learn about Business Clinic, led by Col Sanjay Chandra (Retd), bringing 35+ years of military precision, global OEM experience, and manufacturing excellence to India entry and MSME growth.",
+  title: "About Us | India Business Clinic",
+  description: "Learn about India Business Clinic, led by Col Sanjay Chandra (Retd), bringing 35+ years of military precision, global OEM experience, and manufacturing excellence to India entry and MSME growth.",
 };
 
 export default function AboutPage() {
@@ -94,7 +94,7 @@ export default function AboutPage() {
               <div className="inline-flex items-center space-x-2 bg-white/10 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full border border-white/15">
                 <span className="w-2 h-2 rounded-full bg-[#D98A10] animate-pulse"></span>
                 <span className="text-[11px] sm:text-xs font-bold tracking-widest text-[#D98A10] uppercase">
-                  About Business Clinic
+                  About India Business Clinic
                 </span>
               </div>
 
@@ -104,7 +104,7 @@ export default function AboutPage() {
 
               {/* Paragraph 1 - Justified */}
               <p className="text-slate-200 text-xs sm:text-[15px] leading-relaxed text-justify hyphens-auto">
-                <strong className="text-white font-semibold">Business Clinic</strong> is the industrial advisory and execution-support division of <strong className="text-white font-semibold">Spuntech Solutions Pvt. Ltd.</strong> It helps global companies navigate the complexities of establishing, developing, and scaling their business footprint in India, while supporting Indian MSMEs in addressing critical business and industrial challenges.
+                <strong className="text-white font-semibold">India Business Clinic</strong> is the industrial advisory and execution-support division of <strong className="text-white font-semibold">Spuntech Solutions Pvt. Ltd.</strong> It helps global companies navigate the complexities of establishing, developing, and scaling their business footprint in India, while supporting Indian MSMEs in addressing critical business and industrial challenges.
               </p>
 
               {/* Divider Line between Paragraphs */}
@@ -113,7 +113,7 @@ export default function AboutPage() {
               {/* Paragraph 2 - Justified */}
               <div className="space-y-2.5 sm:space-y-3">
                 <p className="text-slate-200 text-xs sm:text-[15px] leading-relaxed text-justify hyphens-auto">
-                  Combining <strong className="text-white font-semibold">industrial expertise, business advisory, and execution capabilities</strong>, Business Clinic bridges the gap between strategy and implementation. Our support extends across the entire journey—from <strong className="text-white font-semibold">diagnosis, strategy, and planning to documentation, regulatory compliance, project execution, validation, and ongoing operational support.</strong>
+                  Combining <strong className="text-white font-semibold">industrial expertise, business advisory, and execution capabilities</strong>, India Business Clinic bridges the gap between strategy and implementation. Our support extends across the entire journey—from <strong className="text-white font-semibold">diagnosis, strategy, and planning to documentation, regulatory compliance, project execution, validation, and ongoing operational support.</strong>
                 </p>
                 <p className="text-slate-300 text-xs sm:text-[15px] leading-relaxed text-justify hyphens-auto">
                   Our <strong className="text-white font-semibold">single-window, execution-oriented approach</strong> is designed to deliver practical, outcome-focused solutions across a wide range of industrial sectors, including <strong className="text-white font-semibold">manufacturing, engineering, defence, aerospace, electronics, and other technology-intensive industries.</strong>
@@ -228,7 +228,7 @@ export default function AboutPage() {
               </h2>
               
               <blockquote className="border-l-4 border-accent pl-4 sm:pl-6 italic text-slate-700 font-serif text-sm sm:text-lg">
-                “For over 35 years, I’ve transformed technical challenges into measurable business outcomes. Business Clinic is built to help Indian Industries and global companies achieve sustainable growth in India’s evolving industrial ecosystem.”
+                “For over 35 years, I’ve transformed technical challenges into measurable business outcomes. India Business Clinic is built to help Indian Industries and global companies achieve sustainable growth in India’s evolving industrial ecosystem.”
               </blockquote>
 
               <p className="text-slate-600 text-xs sm:text-base leading-relaxed">
@@ -348,7 +348,7 @@ export default function AboutPage() {
               Scalable Team Architecture
             </h2>
             <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-              Business Clinic utilizes a hybrid team layout under a Principal Architect to provide highly specialized expertise without bloated corporate overheads.
+              India Business Clinic utilizes a hybrid team layout under a Principal Architect to provide highly specialized expertise without bloated corporate overheads.
             </p>
           </div>
 
