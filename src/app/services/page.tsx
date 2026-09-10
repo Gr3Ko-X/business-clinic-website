@@ -52,9 +52,9 @@ export default function ServicesPage() {
       </section>
 
       {/* 2. Services List */}
-      <section className="py-20">
+      <section className="py-12 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-24 max-w-5xl mx-auto">
+          <div className="space-y-12 sm:space-y-20 max-w-5xl mx-auto">
             {servicesData.map((category, idx) => {
               const Icon = getIcon(category.iconName);
               const num = `0${idx + 1}`;
@@ -62,7 +62,7 @@ export default function ServicesPage() {
                 <div
                   key={category.id}
                   id={category.id}
-                  className="scroll-mt-24 bg-slate-50 border border-slate-200/80 rounded-lg p-8 sm:p-12 shadow-sm space-y-8 hover:shadow-md transition-all duration-300"
+                  className="scroll-mt-24 bg-slate-50 border border-slate-200/80 rounded-2xl sm:rounded-lg p-5 sm:p-8 lg:p-12 shadow-sm space-y-8 hover:shadow-md transition-all duration-300"
                 >
                   {/* Category Header */}
                   <div className="flex flex-col sm:flex-row justify-between items-start gap-4 pb-6 border-b border-slate-200">
@@ -74,7 +74,7 @@ export default function ServicesPage() {
                         <span className="text-xs font-bold text-slate-400 tracking-widest block">
                           CLINIC {num}
                         </span>
-                        <h2 className="font-serif text-2xl font-bold text-primary">
+                        <h2 className="font-serif text-xl sm:text-2xl font-bold text-primary">
                           {category.title}
                         </h2>
                       </div>
@@ -116,7 +116,7 @@ export default function ServicesPage() {
                         {category.detailedServices.map((service, sIdx) => (
                           <div
                             key={sIdx}
-                            className="bg-white border border-slate-100 rounded-sm p-5 space-y-1.5 shadow-xs"
+                            className="bg-white border border-slate-100 rounded-xl sm:rounded-sm p-4 sm:p-5 space-y-1.5 shadow-xs"
                           >
                             <h4 className="font-sans font-bold text-sm text-primary">
                               {service.name}
@@ -140,7 +140,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 3. Bottom Consultation */}
-      <section className="bg-slate-50/50 py-16 border-t border-slate-100 text-center">
+      <section className="bg-slate-50/50 py-12 sm:py-16 border-t border-slate-100 text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary">
             Need an Execution Plan for Your Facility?
@@ -151,7 +151,7 @@ export default function ServicesPage() {
           <div className="pt-2">
             <Link
               href="/contact"
-              className="inline-flex items-center space-x-2 bg-accent hover:bg-accent-dark text-white px-7 py-3 rounded-sm font-bold text-xs uppercase tracking-wider transition-all"
+              className="inline-flex items-center justify-center space-x-2 bg-accent hover:bg-accent-dark text-white px-7 py-3 rounded-xl sm:rounded-sm font-bold text-xs uppercase tracking-wider transition-all w-full sm:w-auto"
             >
               <span>Speak to an Advisor</span>
               <ArrowRight className="h-4 w-4" />

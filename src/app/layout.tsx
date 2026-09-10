@@ -53,7 +53,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-white text-slate-800">
         <Header />
-        <main className="flex-grow pt-[92px] lg:pt-[80px]">{children}</main>
+        <main className="flex-grow pt-[69px] sm:pt-[76px] lg:pt-[80px]">{children}</main>
         <Footer />
         <BackToTop />
       </body>

@@ -9,26 +9,26 @@ export default function InsightsGrid() {
   const articles = insightsIndexData.slice(0, 3);
 
   return (
-    <section className="bg-white py-20 border-b border-slate-100">
+    <section className="bg-white py-12 sm:py-16 lg:py-20 border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-10 sm:mb-16 gap-6">
           <div className="max-w-2xl space-y-4 text-left">
             <span className="text-xs font-bold tracking-widest text-accent uppercase block">
               Featured Insights
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-primary">
               Industrial Insights &amp; Capability Notes
             </h2>
-            <p className="text-slate-600 text-sm leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               Read our analysis on navigating India's industrial ecosystem, regulatory guidelines, and operations.
             </p>
           </div>
-          <div className="shrink-0">
+          <div className="w-full sm:w-auto shrink-0">
             <Link
               href="/insights"
-              className="inline-flex items-center space-x-2 border border-primary hover:bg-primary/5 text-primary px-6 py-3 rounded-sm font-semibold text-sm transition-all"
+              className="inline-flex items-center justify-center space-x-2 border border-primary hover:bg-primary/5 text-primary px-6 py-3 rounded-xl sm:rounded-sm font-semibold text-sm transition-all w-full sm:w-auto"
             >
               <span>View All Articles</span>
               <ArrowRight className="h-4 w-4 text-accent" />
@@ -37,11 +37,11 @@ export default function InsightsGrid() {
         </div>
 
         {/* Articles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
           {articles.map((art) => (
             <article
               key={art.slug}
-              className="bg-slate-50/50 border border-slate-200/60 rounded-md p-6 flex flex-col justify-between hover:bg-white hover:shadow-md hover:border-accent/40 transition-all duration-300"
+              className="bg-slate-50/50 border border-slate-200/60 rounded-2xl sm:rounded-md p-5 sm:p-6 flex flex-col justify-between hover:bg-white hover:shadow-md hover:border-accent/40 transition-all duration-300"
             >
               <div>
                 {art.image && (

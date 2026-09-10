@@ -38,13 +38,14 @@ const pillars: Pillar[] = [
   {
     id: "msme-growth",
     num: "01",
-    title: "MSME Clinic - Tool",
+    title: "MSME Clinic",
     badgeIcon: TrendingUp,
     bullets: [
-      "Operational Troubleshooting",
-      "Manufacturing Excellence",
-      "Technology & Engineering Consulting",
-      "Business Growth Consulting",
+      "Operational Troubleshooting & Bottlenecks",
+      "Lean Manufacturing & OEE Optimization",
+      "Technology & Engineering Advisory",
+      "Quality Systems & Process Restructuring",
+      "Manufacturing Growth & Scaling Support",
     ],
     btnText: "Explore MSME Clinic",
     ctaHref: "/services/indian-msme-troubleshooting",
@@ -104,15 +105,14 @@ const pillars: Pillar[] = [
   {
     id: "india-entry",
     num: "02",
-    title: "India Entry Clinic - Tool",
+    title: "India Entry Clinic",
     badgeIcon: Building,
     bullets: [
-      "India Market Entry Advisory",
-      "Company Formation Support",
-      "Industrial Setup Services",
-      "Local Partnership Development",
-      "Recruitment & Team Setup",
-      "Ongoing India Operations Support",
+      "India Market Entry & Feasibility Advisory",
+      "Company Formation & Regulatory Clearances",
+      "Industrial Plant & Factory Setup Support",
+      "Local Partner & Joint Venture Due Diligence",
+      "Ongoing Operations & Ecosystem Liaison",
     ],
     btnText: "Explore India Entry Clinic",
     ctaHref: "/services/india-entry-support-foreign-industry",
@@ -190,10 +190,10 @@ const pillars: Pillar[] = [
     title: "Defence & Aerospace Clinic",
     badgeIcon: Shield,
     bullets: [
-      "Defence Industrial Licensing",
-      "Offset Opportunities",
-      "Vendor Ecosystem Mapping",
-      "Technology Collaboration Assistance",
+      "Defence Industrial Licensing & Approvals",
+      "Offset Opportunities & DPSU Linkages",
+      "Vendor Ecosystem & Supply Chain Mapping",
+      "Technology Collaboration & ToT Support",
       "Compliance Guidance & Documentation",
     ],
     btnText: "Explore Defence Clinic",
@@ -222,9 +222,11 @@ const pillars: Pillar[] = [
     title: "Support Clinic",
     badgeIcon: Briefcase,
     bullets: [
-      "Industrial Assurance",
-      "Risk & Project Management",
-      "Ancillary Services",
+      "Industrial Assurance & Quality Surveillance",
+      "Production Validation (FAT, FAI, ATP, PDI)",
+      "Vendor Reliability & Factory Audit Integrity",
+      "Techno-Commercial & SOP Documentation",
+      "Legal, Secretarial, CA & Regulatory Panel",
     ],
     btnText: "Explore Support Clinic",
     ctaHref: "/contact",
@@ -268,7 +270,7 @@ const pillars: Pillar[] = [
 function PillarEmblem({ id }: { id: string }) {
   if (id === "india-entry") {
     return (
-      <svg className="w-10 h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
+      <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
         <circle cx="32" cy="32" r="24" stroke="#D98A10" strokeWidth="2" />
         <ellipse cx="32" cy="32" rx="12" ry="24" stroke="#D98A10" strokeWidth="2" />
         <line x1="8" y1="32" x2="56" y2="32" stroke="#D98A10" strokeWidth="2" />
@@ -280,7 +282,7 @@ function PillarEmblem({ id }: { id: string }) {
 
   if (id === "msme-growth") {
     return (
-      <svg className="w-10 h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
+      <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
         <path d="M10 50 L10 26 L24 26 L24 50 L38 50 L38 18 L52 18 L52 50 Z" stroke="#D98A10" strokeWidth="2" fill="#D98A10" fillOpacity="0.1" />
         <path d="M12 36 L28 22 L40 30 L54 12" stroke="#0C1D4A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M46 12 L54 12 L54 20" stroke="#0C1D4A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
@@ -290,7 +292,7 @@ function PillarEmblem({ id }: { id: string }) {
 
   if (id === "defence-ecosystem") {
     return (
-      <svg className="w-10 h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
+      <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
         <path d="M32 8 L50 16 C50 34 38 48 32 54 C26 48 14 34 14 16 Z" stroke="#D98A10" strokeWidth="2.5" fill="#D98A10" fillOpacity="0.1" />
         <path d="M24 30 L30 36 L42 22" stroke="#0C1D4A" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
@@ -298,7 +300,7 @@ function PillarEmblem({ id }: { id: string }) {
   }
 
   return (
-    <svg className="w-10 h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
+    <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
       <rect x="14" y="18" width="36" height="32" rx="3" stroke="#D98A10" strokeWidth="2" fill="#D98A10" fillOpacity="0.1" />
       <path d="M24 18 V12 A2 2 0 0 1 26 10 H38 A2 2 0 0 1 40 12 V18" stroke="#0C1D4A" strokeWidth="2.5" />
       <line x1="14" y1="30" x2="50" y2="30" stroke="#0C1D4A" strokeWidth="2" />
@@ -319,7 +321,7 @@ export default function Pillars() {
   const activeCategory = activeModal?.categories[activeCategoryIndex];
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-slate-800 font-sans antialiased py-10 sm:py-16 lg:py-20 px-3 sm:px-6 lg:px-8 relative overflow-hidden selection:bg-[#D98A10] selection:text-white">
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-800 font-sans antialiased py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden selection:bg-[#D98A10] selection:text-white">
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0C1D4A_1px,transparent_1px)] [background-size:20px_20px]" />
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#D98A10]/5 rounded-full filter blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#0C1D4A]/5 rounded-full filter blur-3xl pointer-events-none" />
@@ -338,7 +340,7 @@ export default function Pillars() {
             <span className="text-[#D98A10] font-serif block mt-1">From Setup to Scale</span>
           </h2>
 
-          <p className="text-slate-600 text-xs sm:text-base max-w-2xl mx-auto leading-relaxed pt-1">
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed pt-1">
             Comprehensive, single-window advisory and execution services across four specialized clinics
           </p>
         </div>
@@ -358,39 +360,41 @@ export default function Pillars() {
                   </div>
                 </div>
 
-                <div className="p-5 sm:p-7 flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6 relative z-10">
+                <div className="p-5 sm:p-7 flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 relative z-10 flex-1 justify-between">
                   <div className="relative shrink-0 my-1 sm:my-0">
-                    <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-dashed border-[#D98A10]/60 p-1.5 flex items-center justify-center bg-gradient-to-br from-amber-50/50 to-white shadow-md group-hover:scale-105 transition-transform duration-300">
-                      <div className="w-full h-full rounded-full border-2 border-[#D98A10] bg-white flex items-center justify-center p-3 shadow-inner relative overflow-hidden">
+                    <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full border-2 border-dashed border-[#D98A10]/60 p-1 sm:p-1.5 flex items-center justify-center bg-gradient-to-br from-amber-50/50 to-white shadow-md group-hover:scale-105 transition-transform duration-300">
+                      <div className="w-full h-full rounded-full border-2 border-[#D98A10] bg-white flex items-center justify-center p-2.5 sm:p-3 shadow-inner relative overflow-hidden">
                         <PillarEmblem id={pillar.id} />
                       </div>
                     </div>
                   </div>
 
-                  <div className="flex-1 text-center sm:text-left space-y-3.5">
-                    <div className="flex items-center justify-center sm:justify-start space-x-2.5">
-                      <span className="bg-[#0C1D4A] text-white font-serif font-bold text-xs px-2.5 py-1 rounded-md shadow-xs">
-                        {pillar.num}
-                      </span>
-                      <span className="text-[#0C1D4A] font-light text-sm">|</span>
-                      <h3 className="font-serif font-bold text-lg sm:text-xl text-[#0C1D4A]">
-                        {pillar.title}
-                      </h3>
+                  <div className="flex-1 text-center sm:text-left space-y-3 sm:space-y-3.5 flex flex-col justify-between h-full w-full">
+                    <div>
+                      <div className="flex items-center justify-center sm:justify-start space-x-2.5">
+                        <span className="bg-[#0C1D4A] text-white font-serif font-bold text-xs px-2.5 py-1 rounded-md shadow-xs">
+                          {pillar.num}
+                        </span>
+                        <span className="text-[#0C1D4A] font-light text-sm">|</span>
+                        <h3 className="font-serif font-bold text-lg sm:text-xl text-[#0C1D4A]">
+                          {pillar.title}
+                        </h3>
+                      </div>
+
+                      <ul className="space-y-2 text-left pt-2.5 sm:pt-1">
+                        {pillar.bullets.map((bullet) => (
+                          <li key={bullet} className="flex items-start space-x-2.5 text-xs sm:text-base text-slate-700 font-medium">
+                            <CheckCircle2 className="w-4 h-4 text-[#D98A10] shrink-0 mt-0.5" />
+                            <span className="leading-snug">{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
 
-                    <ul className="space-y-2 text-left pt-1">
-                      {pillar.bullets.map((bullet) => (
-                        <li key={bullet} className="flex items-start space-x-2.5 text-sm sm:text-base text-slate-700 font-medium">
-                          <CheckCircle2 className="w-4 h-4 text-[#D98A10] shrink-0 mt-0.5" />
-                          <span className="leading-snug">{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <div className="pt-2">
+                    <div className="pt-3 sm:pt-2">
                       <button
                         onClick={() => setActiveModal(pillar)}
-                        className="inline-flex items-center justify-center space-x-2 bg-white hover:bg-slate-50 border border-slate-300 hover:border-[#0C1D4A] text-[#0C1D4A] font-bold text-xs px-4 py-2.5 rounded-lg transition-all shadow-2xs hover:shadow-md cursor-pointer group/btn"
+                        className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white hover:bg-slate-50 border border-slate-300 hover:border-[#0C1D4A] text-[#0C1D4A] font-bold text-xs px-4 py-2.5 rounded-lg transition-all shadow-2xs hover:shadow-md cursor-pointer group/btn"
                       >
                         <span>{pillar.btnText}</span>
                         <ArrowRight className="w-3.5 h-3.5 text-[#D98A10] group-hover/btn:translate-x-1 transition-transform" />

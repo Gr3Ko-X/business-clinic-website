@@ -19,26 +19,26 @@ export default function CaseStudiesGrid() {
   };
 
   return (
-    <section className="bg-slate-50/50 py-20 border-b border-slate-100">
+    <section className="bg-slate-50/50 py-12 sm:py-16 lg:py-20 border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-10 sm:mb-16 gap-6">
           <div className="max-w-2xl space-y-4 text-left">
             <span className="text-xs font-bold tracking-widest text-accent uppercase block">
               Case Studies
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-primary">
               Proven Industrial Track Record
             </h2>
-            <p className="text-slate-600 text-sm leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               Factual profiles of complex programs coordinated and validated under our leadership.
             </p>
           </div>
-          <div className="shrink-0">
+          <div className="shrink-0 w-full sm:w-auto">
             <Link
               href="/case-studies"
-              className="inline-flex items-center space-x-2 border border-primary hover:bg-primary/5 text-primary px-6 py-3 rounded-sm font-semibold text-sm transition-all"
+              className="inline-flex items-center justify-center space-x-2 border border-primary hover:bg-primary/5 text-primary px-6 py-3 rounded-xl sm:rounded-sm font-semibold text-sm transition-all w-full sm:w-auto"
             >
               <span>View Case Studies</span>
               <ArrowRight className="h-4 w-4 text-accent" />
@@ -47,13 +47,13 @@ export default function CaseStudiesGrid() {
         </div>
 
         {/* Case Studies Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
           {caseStudiesIndexData.map((cs) => {
             const Icon = getIcon(cs.slug);
             return (
               <div
                 key={cs.slug}
-                className="bg-white border border-slate-200/80 rounded-md p-6 flex flex-col justify-between hover:shadow-lg hover:border-accent/40 transition-all duration-300"
+                className="bg-white border border-slate-200/80 rounded-2xl sm:rounded-md p-5 sm:p-6 flex flex-col justify-between hover:shadow-lg hover:border-accent/40 transition-all duration-300"
               >
                 <div className="space-y-4">
                   {/* Category & Icon */}

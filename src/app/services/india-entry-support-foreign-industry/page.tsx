@@ -321,11 +321,11 @@ export default function IndiaEntryClinicPage() {
       </section>
 
       {/* 5.2. Major States Comparison Section */}
-      <section className="py-20 bg-slate-50/50 border-t border-b border-slate-100">
+      <section className="py-12 sm:py-20 bg-slate-50/50 border-t border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 space-y-3">
+          <div className="text-center mb-8 sm:mb-12 space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#D98A10] uppercase">Geographic Profiling</span>
-            <h2 className="text-3xl font-serif font-bold text-primary">Major States in India</h2>
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary">Major States in India</h2>
             <p className="text-slate-600 text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
               Comparison matrix showing manufacturing capabilities and ease indices for key industrial states in India.
             </p>
@@ -335,16 +335,16 @@ export default function IndiaEntryClinicPage() {
             <table className="min-w-full divide-y divide-slate-200 text-left text-xs sm:text-sm">
               <thead className="bg-slate-50 text-slate-700 uppercase tracking-wider text-xs font-bold">
                 <tr>
-                  <th className="px-6 py-4">State</th>
-                  <th className="px-6 py-4">Manufacturing</th>
-                  <th className="px-6 py-4">Electronics</th>
-                  <th className="px-6 py-4">Automotive</th>
-                  <th className="px-6 py-4">Aerospace</th>
-                  <th className="px-6 py-4">Ease of Biz</th>
-                  <th className="px-6 py-4">Incentives</th>
+                  <th className="px-3.5 sm:px-6 py-3 sm:py-4">State</th>
+                  <th className="px-3.5 sm:px-6 py-3 sm:py-4">Manufacturing</th>
+                  <th className="px-3.5 sm:px-6 py-3 sm:py-4">Electronics</th>
+                  <th className="px-3.5 sm:px-6 py-3 sm:py-4">Automotive</th>
+                  <th className="px-3.5 sm:px-6 py-3 sm:py-4">Aerospace</th>
+                  <th className="px-3.5 sm:px-6 py-3 sm:py-4">Ease of Biz</th>
+                  <th className="px-3.5 sm:px-6 py-3 sm:py-4">Incentives</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-200 text-slate-600 font-medium">
+              <tbody className="divide-y divide-slate-200 text-slate-600 font-medium whitespace-nowrap">
                 {[
                   { name: "Gujarat", mfg: "★★★★★", elec: "★★★★☆", auto: "★★★★☆", aero: "★★★☆☆", ease: "High", inc: "High" },
                   { name: "Tamil Nadu", mfg: "★★★★★", elec: "★★★★★", auto: "★★★★★", aero: "★★★★☆", ease: "High", inc: "High" },
@@ -353,13 +353,13 @@ export default function IndiaEntryClinicPage() {
                   { name: "Uttar Pradesh", mfg: "★★★★☆", elec: "★★★☆☆", auto: "★★★☆☆", aero: "★★★☆☆", ease: "Improving", inc: "High" }
                 ].map((row, idx) => (
                   <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
-                    <td className="px-6 py-4 font-bold text-primary">{row.name}</td>
-                    <td className="px-6 py-4 text-[#D98A10]">{row.mfg}</td>
-                    <td className="px-6 py-4 text-[#D98A10]">{row.elec}</td>
-                    <td className="px-6 py-4 text-[#D98A10]">{row.auto}</td>
-                    <td className="px-6 py-4 text-[#D98A10]">{row.aero}</td>
-                    <td className="px-6 py-4">{row.ease}</td>
-                    <td className="px-6 py-4">{row.inc}</td>
+                    <td className="px-3.5 sm:px-6 py-3 sm:py-4 font-bold text-primary">{row.name}</td>
+                    <td className="px-3.5 sm:px-6 py-3 sm:py-4 text-[#D98A10]">{row.mfg}</td>
+                    <td className="px-3.5 sm:px-6 py-3 sm:py-4 text-[#D98A10]">{row.elec}</td>
+                    <td className="px-3.5 sm:px-6 py-3 sm:py-4 text-[#D98A10]">{row.auto}</td>
+                    <td className="px-3.5 sm:px-6 py-3 sm:py-4 text-[#D98A10]">{row.aero}</td>
+                    <td className="px-3.5 sm:px-6 py-3 sm:py-4">{row.ease}</td>
+                    <td className="px-3.5 sm:px-6 py-3 sm:py-4">{row.inc}</td>
                   </tr>
                 ))}
               </tbody>
@@ -369,11 +369,11 @@ export default function IndiaEntryClinicPage() {
       </section>
 
       {/* 5.3. ROM Timeline & Cost Budget Planning Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 space-y-3">
+          <div className="text-center mb-8 sm:mb-12 space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#D98A10] uppercase">Financial &amp; Planning Benchmarks</span>
-            <h2 className="text-3xl font-serif font-bold text-primary">Indicative Timelines &amp; Cost Planning</h2>
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-primary">Indicative Timelines &amp; Cost Planning</h2>
             <p className="text-slate-600 text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
               Standard Rough Order of Magnitude (ROM) metrics for establishing operations in India during 2026.
             </p>
@@ -381,7 +381,7 @@ export default function IndiaEntryClinicPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             {/* Timeline Table */}
-            <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 space-y-4">
+            <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 sm:p-6 space-y-4">
               <h3 className="font-serif text-base font-bold text-primary border-b border-slate-200 pb-2">Operational Set Up Durations</h3>
               <div className="space-y-3 text-xs sm:text-sm">
                 {[

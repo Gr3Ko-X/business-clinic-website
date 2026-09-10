@@ -102,7 +102,7 @@ export default function Expertise() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#F7FAFC] via-[#F1F5F9] to-[#E2E8F0] text-slate-800 font-sans antialiased pt-20 pb-8 sm:pt-24 sm:pb-12 lg:pt-28 lg:pb-16 px-3 sm:px-6 lg:px-8 relative overflow-hidden selection:bg-[#D98A10] selection:text-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#F7FAFC] via-[#F1F5F9] to-[#E2E8F0] text-slate-800 font-sans antialiased pt-12 pb-8 sm:pt-20 sm:pb-12 lg:pt-28 lg:pb-16 px-3 sm:px-6 lg:px-8 relative overflow-hidden selection:bg-[#D98A10] selection:text-white">
       
       {/* Background World Map Vector Overlay */}
       <div className="absolute inset-0 opacity-[0.035] pointer-events-none bg-[radial-gradient(#0C1D4A_1.2px,transparent_1.2px)] [background-size:24px_24px]"></div>
@@ -135,7 +135,7 @@ export default function Expertise() {
           <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#D98A10] to-[#E2A128] rounded-full mx-auto my-2"></div>
 
           {/* Subtitle Paragraph */}
-          <p className="text-slate-600 text-xs sm:text-base max-w-2xl mx-auto leading-relaxed px-1">
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed px-1">
             From India market entry to industrial growth and defence facilitation — <br className="hidden sm:inline" />
             we provide execution-focused advisory that delivers measurable output.
           </p>
@@ -158,25 +158,25 @@ export default function Expertise() {
                     {/* Circle Emblem Badge */}
                     <div className="relative">
                       {card.id === "india-entry" && (
-                        <div className="w-12 h-12 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#0C1D4A] to-[#061230] p-0.5 shadow-md flex items-center justify-center border-2 border-[#D98A10]">
+                        <div className="w-10 h-10 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#0C1D4A] to-[#061230] p-0.5 shadow-md flex items-center justify-center border-2 border-[#D98A10]">
                           <div className="w-full h-full rounded-full bg-[#0C1D4A] flex items-center justify-center text-[#D98A10]">
-                            <Globe className="w-5 h-5 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
+                            <Globe className="w-4 h-4 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
                           </div>
                         </div>
                       )}
 
                       {card.id === "msme-growth" && (
-                        <div className="w-12 h-12 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#D98A10] to-[#B37007] p-0.5 shadow-md flex items-center justify-center border-2 border-amber-200">
+                        <div className="w-10 h-10 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#D98A10] to-[#B37007] p-0.5 shadow-md flex items-center justify-center border-2 border-amber-200">
                           <div className="w-full h-full rounded-full bg-[#D98A10] flex items-center justify-center text-white">
-                            <Factory className="w-5 h-5 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
+                            <Factory className="w-4 h-4 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
                           </div>
                         </div>
                       )}
 
                       {card.id === "defence-facilitation" && (
-                        <div className="w-12 h-12 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#0C1D4A] to-[#061230] p-0.5 shadow-md flex items-center justify-center border-2 border-[#D98A10]">
+                        <div className="w-10 h-10 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#0C1D4A] to-[#061230] p-0.5 shadow-md flex items-center justify-center border-2 border-[#D98A10]">
                           <div className="w-full h-full rounded-full bg-[#0C1D4A] flex items-center justify-center text-[#D98A10]">
-                            <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
+                            <ShieldCheck className="w-4 h-4 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
                           </div>
                         </div>
                       )}
@@ -196,28 +196,28 @@ export default function Expertise() {
                   </div>
 
                   {/* Card Title Headline with constant minimum height for horizontal alignment */}
-                  <div className="min-h-[48px] sm:min-h-[58px] lg:min-h-[64px] flex items-end mt-4 sm:mt-5">
-                    <h3 className="text-lg sm:text-xl xl:text-2xl font-serif font-bold text-[#0C1D4A] leading-snug">
+                  <div className="min-h-0 sm:min-h-[58px] lg:min-h-[64px] flex items-end mt-3 sm:mt-5">
+                    <h3 className="text-base sm:text-xl xl:text-2xl font-serif font-bold text-[#0C1D4A] leading-snug">
                       {card.heading}
                     </h3>
                   </div>
 
                   {/* Divider Line */}
-                  <div className="w-full h-px bg-slate-100 my-3 sm:my-4"></div>
+                  <div className="w-full h-px bg-slate-100 my-2.5 sm:my-4"></div>
 
                   {/* Bullet Highlights Grid - 3-across with proper column isolation & typography */}
-                  <div className="grid grid-cols-3 gap-1.5 sm:gap-2 xl:gap-3 pt-2 pb-2 sm:pb-4 items-start">
+                  <div className="grid grid-cols-3 gap-1.5 sm:gap-2 xl:gap-3 pt-1 sm:pt-2 pb-2 sm:pb-4 items-start">
                     {card.bullets.map((bullet, idx) => {
                       const BulletIcon = bullet.icon;
                       return (
                         <div
                           key={idx}
-                          className="flex flex-col items-center text-center space-y-2 group/bullet min-w-0 w-full px-0.5"
+                          className="flex flex-col items-center text-center space-y-1.5 sm:space-y-2 group/bullet min-w-0 w-full px-0.5"
                         >
-                          <div className="w-11 h-11 sm:w-12 sm:h-12 xl:w-14 xl:h-14 rounded-xl xl:rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#0C1D4A] group-hover/bullet:bg-amber-50 group-hover/bullet:border-[#D98A10] group-hover/bullet:text-[#D98A10] transition-all shadow-xs group-hover/bullet:scale-105 duration-200 shrink-0">
-                            <BulletIcon className="w-5 h-5 xl:w-6 xl:h-6 stroke-[1.8]" />
+                          <div className="w-9 h-9 sm:w-12 sm:h-12 xl:w-14 xl:h-14 rounded-lg sm:rounded-xl xl:rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#0C1D4A] group-hover/bullet:bg-amber-50 group-hover/bullet:border-[#D98A10] group-hover/bullet:text-[#D98A10] transition-all shadow-xs group-hover/bullet:scale-105 duration-200 shrink-0">
+                            <BulletIcon className="w-4 h-4 sm:w-5 sm:h-5 xl:w-6 xl:h-6 stroke-[1.8]" />
                           </div>
-                          <span className="text-[11px] sm:text-xs xl:text-[13px] font-semibold text-slate-700 leading-snug group-hover/bullet:text-accent transition-colors w-full text-center break-words hyphens-auto">
+                          <span className="text-[10px] sm:text-xs xl:text-[13px] font-semibold text-slate-700 leading-tight sm:leading-snug group-hover/bullet:text-accent transition-colors w-full text-center break-words">
                             {bullet.label}
                           </span>
                         </div>
@@ -228,7 +228,7 @@ export default function Expertise() {
                 </div>
 
                   {/* Card Background Graphic Watermark Illustrations */}
-                  <div className="relative flex-1 min-h-[90px] sm:min-h-[120px] flex items-end justify-center px-4 overflow-hidden">
+                  <div className="relative flex-1 min-h-[60px] sm:min-h-[120px] flex items-end justify-center px-4 overflow-hidden">
                   
                   {card.watermarkType === "architecture" && (
                     <div className="w-full opacity-65 group-hover:opacity-85 transition-opacity flex justify-center pb-2">

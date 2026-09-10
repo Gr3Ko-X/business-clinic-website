@@ -979,7 +979,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
                 RIGHT MAIN CANVAS: QUESTION MICRO-CARDS
                 ---------------------------------------------------- */}
             <main className="lg:col-span-8 space-y-6">
-              <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-10 shadow-sm space-y-8">
+              <div className="bg-white border border-slate-200/80 rounded-2xl p-4 sm:p-10 shadow-sm space-y-8">
                 
                 {/* Category Header */}
                 <div className="border-b border-slate-100 pb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -1017,13 +1017,13 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
                         </div>
 
                         {/* Executive Option Selectors: Yes / Partially / No */}
-                        <div className="grid grid-cols-3 gap-2.5 sm:gap-4 pl-9">
+                        <div className="grid grid-cols-3 gap-2.5 sm:gap-4 pl-0 sm:pl-9">
                           
                           {/* Option: YES */}
                           <button
                             type="button"
                             onClick={() => handleSelectAnswer(qIdx, "yes")}
-                            className={`p-3 rounded-xl border text-xs sm:text-sm font-semibold flex items-center justify-center space-x-1.5 transition-all cursor-pointer ${
+                            className={`p-2 sm:p-3 rounded-xl border text-[11px] sm:text-sm font-semibold flex items-center justify-center space-x-1.5 transition-all cursor-pointer ${
                               currentAnswer === "yes"
                                 ? "bg-emerald-700 border-emerald-700 text-white shadow-sm ring-2 ring-emerald-600/30"
                                 : "bg-slate-50/70 border-slate-200 text-slate-700 hover:border-emerald-500 hover:bg-emerald-50/40"
@@ -1037,7 +1037,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
                           <button
                             type="button"
                             onClick={() => handleSelectAnswer(qIdx, "partial")}
-                            className={`p-3 rounded-xl border text-xs sm:text-sm font-semibold flex items-center justify-center space-x-1.5 transition-all cursor-pointer ${
+                            className={`p-2 sm:p-3 rounded-xl border text-[11px] sm:text-sm font-semibold flex items-center justify-center space-x-1.5 transition-all cursor-pointer ${
                               currentAnswer === "partial"
                                 ? "bg-[#D98A10] border-[#D98A10] text-white shadow-sm ring-2 ring-[#D98A10]/30"
                                 : "bg-slate-50/70 border-slate-200 text-slate-700 hover:border-[#D98A10] hover:bg-amber-50/40"
@@ -1051,7 +1051,7 @@ export default function IndiaEntryReadinessScorecard({ embedded = false }: { emb
                           <button
                             type="button"
                             onClick={() => handleSelectAnswer(qIdx, "no")}
-                            className={`p-3 rounded-xl border text-xs sm:text-sm font-semibold flex items-center justify-center space-x-1.5 transition-all cursor-pointer ${
+                            className={`p-2 sm:p-3 rounded-xl border text-[11px] sm:text-sm font-semibold flex items-center justify-center space-x-1.5 transition-all cursor-pointer ${
                               currentAnswer === "no"
                                 ? "bg-slate-700 border-slate-700 text-white shadow-sm ring-2 ring-slate-600/30"
                                 : "bg-slate-50/70 border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-100"

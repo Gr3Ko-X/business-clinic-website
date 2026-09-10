@@ -120,8 +120,8 @@ export default function Header() {
       <div
         className={`transition-all duration-300 border-b border-[#c58f1a]/40 ${
           scrolled
-            ? "bg-[#0c1d4a]/98 backdrop-blur-md shadow-lg py-3"
-            : "bg-[#0c1d4a] shadow-md py-5"
+            ? "bg-[#0c1d4a]/98 backdrop-blur-md shadow-lg py-2.5 sm:py-3"
+            : "bg-[#0c1d4a] shadow-md py-3.5 sm:py-5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -129,7 +129,7 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group min-w-0">
               <BrandMark size={36} />
-              <BrandWordmark className="text-base sm:text-lg lg:text-xl font-semibold truncate" />
+              <BrandWordmark className="text-sm sm:text-lg lg:text-xl font-semibold truncate" />
             </Link>
 
             {/* Desktop Nav with Hover Dropdowns */}
@@ -530,7 +530,7 @@ export default function Header() {
         className={`lg:hidden fixed inset-0 z-40 bg-white transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full pointer-events-none"
         }`}
-        style={{ top: scrolled ? "60px" : "76px" }}
+        style={{ top: scrolled ? "58px" : "69px" }}
       >
         {isOpen && (
         <div className="px-4 pt-6 pb-6 space-y-3 bg-white border-t border-slate-100 h-full flex flex-col justify-between overflow-y-auto">

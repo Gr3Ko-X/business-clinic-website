@@ -75,13 +75,13 @@ export default function IndustriesPage() {
       </section>
 
       {/* 2. Industries detailed list */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+      <section className="py-12 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-20">
           
           {/* Part 1: Industries We Transform */}
-          <div className="space-y-10 max-w-5xl mx-auto">
+          <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto">
             <div className="border-l-4 border-accent pl-4">
-              <h2 className="font-serif text-2xl font-bold text-primary">
+              <h2 className="font-serif text-xl sm:text-2xl font-bold text-primary">
                 Industries We Transform
               </h2>
               <p className="text-slate-500 text-sm">
@@ -89,14 +89,14 @@ export default function IndustriesPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               {targetIndustries.map((ind) => {
                 const Icon = getIcon(ind.iconName);
                 return (
                   <div
                     key={ind.id}
                     id={ind.id}
-                    className="scroll-mt-24 bg-slate-50 border border-slate-200/80 rounded-lg p-8 hover:bg-white hover:shadow-md hover:border-accent/40 transition-all duration-300 flex flex-col justify-between"
+                    className="scroll-mt-24 bg-slate-50 border border-slate-200/80 rounded-2xl sm:rounded-lg p-5 sm:p-8 hover:bg-white hover:shadow-md hover:border-accent/40 transition-all duration-300 flex flex-col justify-between"
                   >
                     <div className="space-y-6">
                       {/* Header */}
@@ -139,7 +139,7 @@ export default function IndustriesPage() {
                     <div className="pt-6 mt-6 border-t border-slate-200/60">
                       <Link
                         href="/contact"
-                        className="inline-flex items-center space-x-2 bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-sm font-semibold text-xs transition-all shadow-xs"
+                        className="inline-flex items-center justify-center space-x-2 bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-xl sm:rounded-sm font-semibold text-xs transition-all shadow-xs w-full sm:w-auto"
                       >
                         <span>Discuss {ind.name} Project</span>
                         <ArrowRight className="h-3.5 w-3.5" />
@@ -152,9 +152,9 @@ export default function IndustriesPage() {
           </div>
 
           {/* Part 2: Deep Domain Knowledge */}
-          <div className="space-y-10 max-w-5xl mx-auto pt-10 border-t border-slate-100">
+          <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto pt-10 border-t border-slate-100">
             <div className="border-l-4 border-accent pl-4">
-              <h2 className="font-serif text-2xl font-bold text-primary">
+              <h2 className="font-serif text-xl sm:text-2xl font-bold text-primary">
                 Deep Domain Knowledge
               </h2>
               <p className="text-slate-500 text-sm">
@@ -162,14 +162,14 @@ export default function IndustriesPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               {domainKnowledge.map((ind) => {
                 const Icon = getIcon(ind.iconName);
                 return (
                   <div
                     key={ind.id}
                     id={ind.id}
-                    className="scroll-mt-24 bg-slate-50 border border-slate-200/80 rounded-lg p-8 hover:bg-white hover:shadow-md hover:border-accent/40 transition-all duration-300 flex flex-col justify-between"
+                    className="scroll-mt-24 bg-slate-50 border border-slate-200/80 rounded-2xl sm:rounded-lg p-5 sm:p-8 hover:bg-white hover:shadow-md hover:border-accent/40 transition-all duration-300 flex flex-col justify-between"
                   >
                     <div className="space-y-6">
                       {/* Header */}
@@ -212,7 +212,7 @@ export default function IndustriesPage() {
                     <div className="pt-6 mt-6 border-t border-slate-200/60">
                       <Link
                         href="/contact"
-                        className="inline-flex items-center space-x-2 bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-sm font-semibold text-xs transition-all shadow-xs"
+                        className="inline-flex items-center justify-center space-x-2 bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-xl sm:rounded-sm font-semibold text-xs transition-all shadow-xs w-full sm:w-auto"
                       >
                         <span>Discuss {ind.name} Project</span>
                         <ArrowRight className="h-3.5 w-3.5" />

@@ -30,7 +30,7 @@ Primary conversion actions: **Talk to an Expert / Schedule a Consultation** (`/c
 | Founder | Col Sanjay Chandra (Retd) |
 | Email | Primary: sanjay@indiabusinessclinic.com <br/> Alternate: indiabusinessclinic@gmail.com |
 | WhatsApp | +91 9560714343 (`wa.me/919560714343`) |
-| LinkedIn | Col Sanjay Chandra (Retd) profile linked in footer |
+| LinkedIn | [Col Sanjay Chandra (Retd)](https://www.linkedin.com/in/colsanjaychandra/) profile linked in footer |
 | Locale / SEO | `en_IN`; keywords around India entry, defence licensing, vendor audit, factory setup |
 
 Client change notes in `Changes.txt` (labelled “Omega Vercel”) drove much of the current IA: service taxonomy, “Why Business Clinic” credentials, capability spectrum, footer legal line, and clinic naming (India Entry, Indian MSME, Defence & Aerospace, Support).

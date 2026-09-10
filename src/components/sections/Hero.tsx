@@ -95,7 +95,7 @@ export default function App() {
               {/* Tagline Badge - Updated branding header */}
               <div className="inline-flex items-center space-x-2 bg-[#0C1D4A]/5 border border-[#0C1D4A]/15 px-3.5 py-1.5 rounded-full shadow-sm max-w-full">
                 <span className="w-2 h-2 rounded-full bg-[#D98A10] animate-pulse shrink-0"></span>
-                <span className="text-xs sm:text-xs font-bold tracking-wider text-[#0C1D4A] uppercase font-sans">
+                <span className="text-[11px] sm:text-xs font-bold tracking-wider text-[#0C1D4A] uppercase font-sans text-center">
                   India Entry Solutions &amp; Industrial Troubleshooting
                 </span>
               </div>
@@ -127,24 +127,24 @@ export default function App() {
               */}
 
               {/* NEW 2x2 CLINICS GRID */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-left">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-2 text-left">
                 {/* 1. India Entry Clinic */}
                 <Link
                   href="/services/india-entry-support-foreign-industry"
-                  className="bg-white/70 backdrop-blur-md border border-slate-200/80 hover:border-[#D98A10] hover:shadow-lg p-5 rounded-2xl transition-all group flex flex-col justify-between shadow-xs"
+                  className="bg-white/70 backdrop-blur-md border border-slate-200/80 hover:border-[#D98A10] hover:shadow-lg p-3.5 sm:p-5 rounded-xl sm:rounded-2xl transition-all group flex flex-col justify-between shadow-xs"
                 >
-                  <div className="space-y-2">
-                    <div className="w-9 h-9 rounded-xl bg-amber-50 text-[#D98A10] flex items-center justify-center border border-amber-100 group-hover:scale-105 transition-transform">
-                      <Globe className="h-5 w-5 stroke-[2]" />
+                  <div className="space-y-1.5 sm:space-y-2">
+                    <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-amber-50 text-[#D98A10] flex items-center justify-center border border-amber-100 group-hover:scale-105 transition-transform">
+                      <Globe className="h-4 w-4 sm:h-5 sm:w-5 stroke-[2]" />
                     </div>
-                    <h3 className="font-serif font-bold text-base text-primary group-hover:text-accent transition-colors">
+                    <h3 className="font-serif font-bold text-sm sm:text-base text-primary group-hover:text-accent transition-colors">
                       India Entry Clinic
                     </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                       Helping foreign companies enter, establish and grow in India.
                     </p>
                   </div>
-                  <div className="flex items-center space-x-1.5 text-xs font-bold text-[#D98A10] uppercase tracking-wider pt-3">
+                  <div className="flex items-center space-x-1.5 text-[11px] sm:text-xs font-bold text-[#D98A10] uppercase tracking-wider pt-2 sm:pt-3">
                     <span>Explore Clinic</span>
                     <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -153,20 +153,20 @@ export default function App() {
                 {/* 2. Indian MSME Clinic */}
                 <Link
                   href="/services/indian-msme-troubleshooting"
-                  className="bg-white/70 backdrop-blur-md border border-slate-200/80 hover:border-[#D98A10] hover:shadow-lg p-5 rounded-2xl transition-all group flex flex-col justify-between shadow-xs"
+                  className="bg-white/70 backdrop-blur-md border border-slate-200/80 hover:border-[#D98A10] hover:shadow-lg p-3.5 sm:p-5 rounded-xl sm:rounded-2xl transition-all group flex flex-col justify-between shadow-xs"
                 >
-                  <div className="space-y-2">
-                    <div className="w-9 h-9 rounded-xl bg-blue-50 text-[#0C1D4A] flex items-center justify-center border border-blue-100 group-hover:scale-105 transition-transform">
-                      <Building2 className="h-5 w-5 stroke-[2]" />
+                  <div className="space-y-1.5 sm:space-y-2">
+                    <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-blue-50 text-[#0C1D4A] flex items-center justify-center border border-blue-100 group-hover:scale-105 transition-transform">
+                      <Building2 className="h-4 w-4 sm:h-5 sm:w-5 stroke-[2]" />
                     </div>
-                    <h3 className="font-serif font-bold text-base text-primary group-hover:text-accent transition-colors">
+                    <h3 className="font-serif font-bold text-sm sm:text-base text-primary group-hover:text-accent transition-colors">
                       MSME Clinic
                     </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                       Diagnosing and solving business and operational challenges of MSMEs.
                     </p>
                   </div>
-                  <div className="flex items-center space-x-1.5 text-xs font-bold text-[#D98A10] uppercase tracking-wider pt-3">
+                  <div className="flex items-center space-x-1.5 text-[11px] sm:text-xs font-bold text-[#D98A10] uppercase tracking-wider pt-2 sm:pt-3">
                     <span>Explore Clinic</span>
                     <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -175,20 +175,20 @@ export default function App() {
                 {/* 3. Defence & Aerospace Clinic */}
                 <Link
                   href="/services/defence-aerospace-clinic"
-                  className="bg-white/70 backdrop-blur-md border border-slate-200/80 hover:border-[#D98A10] hover:shadow-lg p-5 rounded-2xl transition-all group flex flex-col justify-between shadow-xs"
+                  className="bg-white/70 backdrop-blur-md border border-slate-200/80 hover:border-[#D98A10] hover:shadow-lg p-3.5 sm:p-5 rounded-xl sm:rounded-2xl transition-all group flex flex-col justify-between shadow-xs"
                 >
-                  <div className="space-y-2">
-                    <div className="w-9 h-9 rounded-xl bg-amber-50 text-[#D98A10] flex items-center justify-center border border-amber-100 group-hover:scale-105 transition-transform">
-                      <ShieldCheck className="h-5 w-5 stroke-[2]" />
+                  <div className="space-y-1.5 sm:space-y-2">
+                    <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-amber-50 text-[#D98A10] flex items-center justify-center border border-amber-100 group-hover:scale-105 transition-transform">
+                      <ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5 stroke-[2]" />
                     </div>
-                    <h3 className="font-serif font-bold text-base text-primary group-hover:text-accent transition-colors">
+                    <h3 className="font-serif font-bold text-sm sm:text-base text-primary group-hover:text-accent transition-colors">
                       Defence &amp; Aerospace Clinic
                     </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                       Providing specialised industrial, technical and regulatory support to defence and aerospace companies.
                     </p>
                   </div>
-                  <div className="flex items-center space-x-1.5 text-xs font-bold text-[#D98A10] uppercase tracking-wider pt-3">
+                  <div className="flex items-center space-x-1.5 text-[11px] sm:text-xs font-bold text-[#D98A10] uppercase tracking-wider pt-2 sm:pt-3">
                     <span>Explore Clinic</span>
                     <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -197,20 +197,20 @@ export default function App() {
                 {/* 4. Support Clinic */}
                 <Link
                   href="/services/legal-company-secretary-ca-services"
-                  className="bg-white/70 backdrop-blur-md border border-slate-200/80 hover:border-[#D98A10] hover:shadow-lg p-5 rounded-2xl transition-all group flex flex-col justify-between shadow-xs"
+                  className="bg-white/70 backdrop-blur-md border border-slate-200/80 hover:border-[#D98A10] hover:shadow-lg p-3.5 sm:p-5 rounded-xl sm:rounded-2xl transition-all group flex flex-col justify-between shadow-xs"
                 >
-                  <div className="space-y-2">
-                    <div className="w-9 h-9 rounded-xl bg-blue-50 text-[#0C1D4A] flex items-center justify-center border border-blue-100 group-hover:scale-105 transition-transform">
-                      <Briefcase className="h-5 w-5 stroke-[2]" />
+                  <div className="space-y-1.5 sm:space-y-2">
+                    <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-blue-50 text-[#0C1D4A] flex items-center justify-center border border-blue-100 group-hover:scale-105 transition-transform">
+                      <Briefcase className="h-4 w-4 sm:h-5 sm:w-5 stroke-[2]" />
                     </div>
-                    <h3 className="font-serif font-bold text-base text-primary group-hover:text-accent transition-colors">
+                    <h3 className="font-serif font-bold text-sm sm:text-base text-primary group-hover:text-accent transition-colors">
                       Support Clinic
                     </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                       Providing technical documentation, audits, inspections and execution support.
                     </p>
                   </div>
-                  <div className="flex items-center space-x-1.5 text-xs font-bold text-[#D98A10] uppercase tracking-wider pt-3">
+                  <div className="flex items-center space-x-1.5 text-[11px] sm:text-xs font-bold text-[#D98A10] uppercase tracking-wider pt-2 sm:pt-3">
                     <span>Explore Clinic</span>
                     <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -231,33 +231,33 @@ export default function App() {
             <div className="lg:col-span-5 relative">
               <div className="absolute -inset-2 bg-gradient-to-tr from-[#D98A10]/20 via-[#0C1D4A]/30 to-[#D98A10]/20 rounded-3xl blur-2xl opacity-60" />
 
-              <div className="relative rounded-3xl bg-[#0C1D4A] border border-[#0C1D4A]/80 shadow-2xl overflow-hidden p-6 sm:p-7 space-y-5 text-white">
+              <div className="relative rounded-2xl sm:rounded-3xl bg-[#0C1D4A] border border-[#0C1D4A]/80 shadow-2xl overflow-hidden p-4 sm:p-7 space-y-3.5 sm:space-y-5 text-white">
                 <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[url('/window.svg')] bg-no-repeat bg-center bg-cover" />
 
-                <div className="relative z-10 space-y-4">
-                  <div className="flex items-start justify-between gap-3 border-b border-white/10 pb-4">
-                    <div className="space-y-2 min-w-0">
+                <div className="relative z-10 space-y-3.5 sm:space-y-4">
+                  <div className="flex items-start justify-between gap-3 border-b border-white/10 pb-3 sm:pb-4">
+                    <div className="space-y-1.5 sm:space-y-2 min-w-0">
                       
-                      <h3 className="font-serif font-bold text-xl sm:text-2xl text-white leading-tight">
+                      <h3 className="font-serif font-bold text-lg sm:text-2xl text-white leading-tight">
                         Why Choose India Business Clinic?
                       </h3>
-                      <p className="text-sm text-slate-300 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                         Deep industrial competence with hands-on on-ground execution for operations in India.
                       </p>
                     </div>
           
                   </div>
 
-                  <div className="grid grid-cols-1 gap-2.5">
+                  <div className="grid grid-cols-1 gap-1.5 sm:gap-2.5">
                     {whyChooseCredentials.map((bullet) => (
                       <div
                         key={bullet}
-                        className="flex items-start space-x-3 bg-white/5 border border-white/10 p-3 rounded-xl hover:bg-white/10 transition-colors"
+                        className="flex items-start space-x-2.5 sm:space-x-3 bg-white/5 border border-white/10 p-2 sm:p-3 rounded-lg sm:rounded-xl hover:bg-white/10 transition-colors"
                       >
-                        <div className="bg-[#D98A10]/20 border border-[#D98A10]/30 rounded-lg p-1 shrink-0 mt-0.5">
-                          <Check className="h-3.5 w-3.5 text-[#D98A10] stroke-[3]" />
+                        <div className="bg-[#D98A10]/20 border border-[#D98A10]/30 rounded-md sm:rounded-lg p-1 shrink-0 mt-0.5">
+                          <Check className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#D98A10] stroke-[3]" />
                         </div>
-                        <span className="text-sm font-semibold text-slate-100 leading-snug">
+                        <span className="text-xs sm:text-sm font-semibold text-slate-100 leading-snug">
                           {bullet}
                         </span>
                       </div>
@@ -266,7 +266,7 @@ export default function App() {
 
                   <Link
                     href="/about#leadership-profile"
-                    className="w-full inline-flex items-center justify-center space-x-2 bg-[#D98A10] hover:bg-[#C47A08] text-white px-6 py-3.5 rounded-xl font-bold text-sm transition-all shadow-md hover:shadow-lg group"
+                    className="w-full inline-flex items-center justify-center space-x-2 bg-[#D98A10] hover:bg-[#C47A08] text-white px-5 sm:px-6 py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl font-bold text-xs sm:text-sm transition-all shadow-md hover:shadow-lg group"
                   >
                     <span>Leadership Profile</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -276,27 +276,24 @@ export default function App() {
             </div>
 
           </div>
-{/* STATS ARE USED IN THE HERO2 */}
-          {}
-          <div className="mt-16 sm:mt-20 bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl shadow-xl p-6 sm:p-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 divide-y lg:divide-y-0 lg:divide-x divide-slate-200">
-              {stats.map((stat, idx) => {
+          {/* STATS ARE USED IN THE HERO2 */}
+          <div className="mt-8 sm:mt-20 bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-xl sm:rounded-2xl shadow-xl p-3 sm:p-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+              {stats.map((stat) => {
                 const StatIcon = stat.icon;
                 return (
                   <div
                     key={stat.label}
-                    className={`flex items-center space-x-4 ${
-                      idx > 0 ? "pt-6 lg:pt-0 lg:pl-6" : ""
-                    }`}
+                    className="flex items-center space-x-2 sm:space-x-4 p-1.5 sm:p-0"
                   >
-                    <div className="p-3.5 rounded-xl bg-amber-50 border border-amber-200/80 text-[#D98A10] shrink-0 shadow-xs">
-                      <StatIcon className="w-6 h-6" />
+                    <div className="p-1.5 sm:p-3.5 rounded-lg sm:rounded-xl bg-amber-50 border border-amber-200/80 text-[#D98A10] shrink-0 shadow-xs">
+                      <StatIcon className="w-3.5 h-3.5 sm:w-6 sm:h-6" />
                     </div>
                     <div>
-                      <p className="text-3xl font-serif font-bold text-[#0C1D4A]">
+                      <p className="text-xl sm:text-3xl font-serif font-bold text-[#0C1D4A]">
                         {stat.value}
                       </p>
-                      <p className="text-xs uppercase tracking-wider font-bold text-slate-500 mt-0.5">
+                      <p className="text-[10px] sm:text-xs uppercase tracking-wider font-bold text-slate-500 mt-0.5">
                         {stat.label}
                       </p>
                     </div>

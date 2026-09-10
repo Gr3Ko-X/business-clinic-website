@@ -119,7 +119,7 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-slate-800 font-sans antialiased py-10 sm:py-16 lg:py-20 px-3 sm:px-6 lg:px-8 relative overflow-hidden selection:bg-[#D98A10] selection:text-white">
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-800 font-sans antialiased py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden selection:bg-[#D98A10] selection:text-white">
       
       {}
       <div className="absolute inset-0 opacity-[0.025] pointer-events-none bg-[radial-gradient(#0C1D4A_1px,transparent_1px)] [background-size:24px_24px]"></div>
@@ -146,7 +146,7 @@ export default function App() {
           </h2>
 
           {/* Subtitle Description (NO FULL STOPS) */}
-          <p className="text-slate-600 text-xs sm:text-base max-w-2xl mx-auto leading-relaxed pt-1">
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed pt-1">
             Structured, end-to-end roadmaps designed for seamless India entry and manufacturing turnaround
           </p>
         </div>
@@ -157,12 +157,12 @@ export default function App() {
           {/* ==========================================
               CONTAINER 1: GLOBAL ENTERPRISES: 4E METHODOLOGY
              ========================================== */}
-          <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-md p-6 sm:p-8 flex flex-col items-center transition-all hover:shadow-xl">
+          <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-md p-3.5 sm:p-8 flex flex-col items-center transition-all hover:shadow-xl">
             
             {/* Top Center Pill Header Badge */}
-            <div className="inline-flex bg-[#0C1D4A] text-white px-5 sm:px-7 py-2 rounded-full shadow-md border border-[#D98A10]/50 items-center space-x-2.5 mb-8 sm:mb-10 whitespace-nowrap">
-              <Globe className="w-4 h-4 text-[#D98A10]" />
-              <span className="text-sm sm:text-base font-bold tracking-widest uppercase">
+            <div className="inline-flex bg-[#0C1D4A] text-white px-3.5 sm:px-7 py-1.5 sm:py-2 rounded-full shadow-md border border-[#D98A10]/50 items-center space-x-2.5 mb-5 sm:mb-10 text-center max-w-full">
+              <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D98A10] shrink-0" />
+              <span className="text-[11px] sm:text-base font-bold tracking-widest uppercase">
                 GLOBAL ENTERPRISES: 4E METHODOLOGY
               </span>
             </div>
@@ -188,9 +188,9 @@ export default function App() {
                     {/* Circular Arc Icon Badge Container */}
                     <div className="relative mb-3.5">
                       {/* Outer Gold Arc Emblem Ring */}
-                      <div className="w-20 h-20 sm:w-22 sm:h-22 rounded-full border-2 border-transparent border-t-[#D98A10] border-r-[#D98A10] p-1.5 flex items-center justify-center rotate-45 group-hover:rotate-180 transition-transform duration-500 bg-white shadow-md">
-                        <div className="w-full h-full rounded-full border border-slate-200 bg-white flex items-center justify-center p-3 -rotate-45 group-hover:-rotate-180 transition-transform duration-500">
-                          <Icon className="w-7 h-7 text-[#0C1D4A] group-hover:scale-110 transition-transform" />
+                      <div className="w-16 h-16 sm:w-22 sm:h-22 rounded-full border-2 border-transparent border-t-[#D98A10] border-r-[#D98A10] p-1 sm:p-1.5 flex items-center justify-center rotate-45 group-hover:rotate-180 transition-transform duration-500 bg-white shadow-md">
+                        <div className="w-full h-full rounded-full border border-slate-200 bg-white flex items-center justify-center p-2 sm:p-3 -rotate-45 group-hover:-rotate-180 transition-transform duration-500">
+                          <Icon className="w-5 h-5 sm:w-7 sm:h-7 text-[#0C1D4A] group-hover:scale-110 transition-transform" />
                         </div>
                       </div>
                     </div>
@@ -241,12 +241,12 @@ export default function App() {
           {/* ==========================================
               CONTAINER 2: INDIAN MSMEs: 5D METHODOLOGY
              ========================================== */}
-          <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-md p-6 sm:p-8 flex flex-col items-center transition-all hover:shadow-xl">
+          <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-md p-3.5 sm:p-8 flex flex-col items-center transition-all hover:shadow-xl">
             
             {/* Top Center Pill Header Badge */}
-            <div className="inline-flex bg-[#0C1D4A] text-white px-5 sm:px-7 py-2 rounded-full shadow-md border border-[#D98A10]/50 items-center space-x-2.5 mb-8 sm:mb-10 whitespace-nowrap">
-              <Factory className="w-4 h-4 text-[#D98A10]" />
-              <span className="text-sm sm:text-base font-bold tracking-widest uppercase">
+            <div className="inline-flex bg-[#0C1D4A] text-white px-3.5 sm:px-7 py-1.5 sm:py-2 rounded-full shadow-md border border-[#D98A10]/50 items-center space-x-2.5 mb-5 sm:mb-10 text-center max-w-full">
+              <Factory className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D98A10] shrink-0" />
+              <span className="text-[11px] sm:text-base font-bold tracking-widest uppercase">
                 INDIAN MSMEs: 5D METHODOLOGY
               </span>
             </div>
@@ -272,9 +272,9 @@ export default function App() {
                     {/* Circular Arc Badge Container with Dark Blue Arc */}
                     <div className="relative mb-3.5">
                       {/* Outer Navy Blue Arc Emblem Ring */}
-                      <div className="w-20 h-20 sm:w-22 sm:h-22 rounded-full border-2 border-transparent border-t-[#0C1D4A] border-l-[#0C1D4A] p-1.5 flex items-center justify-center -rotate-45 group-hover:rotate-90 transition-transform duration-500 bg-white shadow-md">
-                        <div className="w-full h-full rounded-full border border-slate-200 bg-white flex items-center justify-center p-3 rotate-45 group-hover:-rotate-90 transition-transform duration-500">
-                          <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#0C1D4A] group-hover:text-[#D98A10] transition-colors" />
+                      <div className="w-16 h-16 sm:w-22 sm:h-22 rounded-full border-2 border-transparent border-t-[#0C1D4A] border-l-[#0C1D4A] p-1 sm:p-1.5 flex items-center justify-center -rotate-45 group-hover:rotate-90 transition-transform duration-500 bg-white shadow-md">
+                        <div className="w-full h-full rounded-full border border-slate-200 bg-white flex items-center justify-center p-2 sm:p-3 rotate-45 group-hover:-rotate-90 transition-transform duration-500">
+                          <Icon className="w-5 h-5 sm:w-7 sm:h-7 text-[#0C1D4A] group-hover:text-[#D98A10] transition-colors" />
                         </div>
                       </div>
                     </div>

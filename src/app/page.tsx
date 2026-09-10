@@ -40,39 +40,37 @@ export default function Home() {
 
       <BtsLandingHero />
 
-      <>
-                <div className="text-center space-y-6 px-24 bg-[#f5f8fb]">
-            <div className="inline-flex items-center space-x-3">
-              <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#D98A10]"></span>
-              <p className="text-xs uppercase tracking-widest text-[#0C1D4A] font-bold">
+        <div className="text-center space-y-4 sm:space-y-6 px-3 sm:px-8 lg:px-24 py-6 sm:py-14 bg-[#f5f8fb]">
+          <div className="inline-flex items-center space-x-3">
+              <span className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-[#D98A10]"></span>
+              <p className="text-[11px] sm:text-xs uppercase tracking-widest text-[#0C1D4A] font-bold">
                 Who We Serve
               </p>
-              <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#D98A10]"></span>
+              <span className="h-px w-8 sm:w-12 bg-gradient-to-l from-transparent to-[#D98A10]"></span>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-4">
               {whoWeServe.map((item) => {
                 const Icon = item.icon;
                 return (
                   <div
                     key={item.name}
-                    className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/80 backdrop-blur-sm border border-slate-200 hover:border-[#D98A10] hover:shadow-lg transition-all duration-300 group cursor-pointer"
+                    className="flex flex-col items-center justify-center p-2.5 sm:p-4 rounded-lg sm:rounded-xl bg-white/80 backdrop-blur-sm border border-slate-200 hover:border-[#D98A10] hover:shadow-lg transition-all duration-300 group cursor-pointer"
                   >
-                    <div className="p-3 rounded-xl bg-slate-100 group-hover:bg-amber-50 text-[#0C1D4A] group-hover:text-[#D98A10] mb-2.5 transition-colors">
-                      <Icon className="h-5 w-5" />
+                    <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-slate-100 group-hover:bg-amber-50 text-[#0C1D4A] group-hover:text-[#D98A10] mb-1.5 sm:mb-2.5 transition-colors">
+                      <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
                     </div>
-                    <span className="text-xs font-bold text-center text-[#0C1D4A] group-hover:text-[#D98A10] transition-colors">
+                    <span className="text-[11px] sm:text-xs font-bold text-center text-[#0C1D4A] group-hover:text-[#D98A10] transition-colors leading-tight">
                       {item.name}
                     </span>
-                    <span className="text-xs text-slate-500 text-center mt-1 font-medium">
+                    <span className="text-[10px] sm:text-xs text-slate-500 text-center mt-0.5 sm:mt-1 font-medium leading-tight">
                       {item.detail}
                     </span>
                   </div>
                 );
               })}
-            </div>
           </div>
-      </>
+        </div>
       {/* 2. Core Expertise */}
       <Expertise />
 
