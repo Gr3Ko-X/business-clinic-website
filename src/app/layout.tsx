@@ -3,6 +3,7 @@ import { Lora, Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import BackToTop from "@/components/layout/BackToTop";
 
 const lora = Lora({
   variable: "--font-lora",
@@ -54,6 +55,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-grow pt-[92px] lg:pt-[80px]">{children}</main>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );

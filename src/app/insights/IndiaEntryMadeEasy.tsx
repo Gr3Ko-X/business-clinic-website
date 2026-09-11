@@ -606,7 +606,7 @@ export default function IndiaEntryMadeEasy() {
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#D98A10]">
                 On-Ground Execution Advisory
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold leading-tight">
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold leading-tight text-white">
                 Ready to Establish Your Business in India?
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed text-justify">
