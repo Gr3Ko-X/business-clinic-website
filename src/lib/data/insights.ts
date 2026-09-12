@@ -190,10 +190,10 @@ Mobile / WhatsApp: +91 9560714343
 # Capability Note: Licensing & Regulatory Support
 ## Defence and RF Manufacturing in India
 
-**By Business Clinic**
+**By India Business Clinic**
 
 ### Introduction
-Business Clinic is a premier consulting firm specializing in defense licensing and regulatory compliance for high-technology manufacturing in India. Led by retired Indian Army officers from the Corps of Signals, our leadership brings unparalleled, first-hand expertise in frequency management, spectrum planning, and communication system oversight.
+India Business Clinic is a premier consulting firm specializing in defense licensing and regulatory compliance for high-technology manufacturing in India. Led by retired Indian Army officers from the Corps of Signals, our leadership brings unparalleled, first-hand expertise in frequency management, spectrum planning, and communication system oversight.
 
 Our core strength lies in our dual-spectrum expertise. As qualified Electronics & Telecommunication engineers with over 30 years of distinguished experience—including pivotal tenures with premier government organizations like the Defence Research and Development Organisation (DRDO)—we bridge the gap between complex engineering and rigorous regulatory frameworks.
 
@@ -202,7 +202,7 @@ We provide end-to-end strategic advisory and technical support for organizations
 - WPC / Wireless Approvals
 - National-level regulatory clearances
 
-With an operational footprint spanning military operations, defense R&D, and high-tech manufacturing ecosystems, Business Clinic is uniquely positioned to serve as your strategic partner. We offer specialized, mission-critical guidance for organizations establishing manufacturing capabilities for radar antennas in the 3 GHz and 10 GHz bands in India.
+With an operational footprint spanning military operations, defense R&D, and high-tech manufacturing ecosystems, India Business Clinic is uniquely positioned to serve as your strategic partner. We offer specialized, mission-critical guidance for organizations establishing manufacturing capabilities for radar antennas in the 3 GHz and 10 GHz bands in India.
 
 ### Expertise & Professional Background
 
@@ -248,7 +248,7 @@ d. Accelerated processing through accurate and compliant documentation
 e. High credibility and understanding of defence-security protocols
 
 ### Conclusion
-Manufacturing radar antennas in the 3 GHz and 10 GHz bands requires navigation through defence, wireless, and industrial licensing frameworks in India. With my combined defence, technical, and regulatory experience, Business Clinic offers seamless support to ensure full compliance with DIL, WPC, SACFA, and associated statutory requirements.
+Manufacturing radar antennas in the 3 GHz and 10 GHz bands requires navigation through defence, wireless, and industrial licensing frameworks in India. With my combined defence, technical, and regulatory experience, India Business Clinic offers seamless support to ensure full compliance with DIL, WPC, SACFA, and associated statutory requirements.
 `
   },
 
@@ -308,8 +308,8 @@ operational launch.
 Rather than focusing only on regulatory requirements, the handbook
 emphasizes practical actions that help companies reduce risk, accelerate
 implementation, and make informed investment decisions.
-How Business Clinic Can Help?
-Business Clinic specializes in assisting foreign companies throughout their India
+How India Business Clinic Can Help?
+India Business Clinic specializes in assisting foreign companies throughout their India
 market entry journey by providing execution-oriented advisory and
 implementation support. Our services include:
 - India Market Assessment and Opportunity Analysis.
@@ -327,7 +327,7 @@ and expand their business operations in India through structured planning,
 informed decision-making, and disciplined execution. We have a modular
 structured process t  - help our clients which follows defined stages of
 progression as under:
-Business Clinic India Entry Framework™
+India Business Clinic India Entry Framework™
 1. Assess
 2. Strategize
 3. Structure
@@ -715,7 +715,7 @@ The cost given above is for 2026. For subsequent years escalation of 6 t  - 8% m
 under normal circumstances.
 Caution: If you come across figures quoted at large variance from above it should raise a red
 flag at your end. Lesser quotes are more dangerous than higher ones.
-How Business Clinic Can Help?
+How India Business Clinic Can Help?
 - India Entry Strategy
 - Market Assessment
 - State Selection
@@ -871,9 +871,9 @@ Adequate budgeting reduces implementation risks and prevents avoidable delays.
 India should be viewed as a long-term investment. While some businesses achieve profitability within
 tw  - t  - three years, success depends on market conditions, execution quality, and sustained
 investment.
-Working with Business Clinic
-20. How can Business Clinic support our India entry?
-Business Clinic provides execution-oriented advisory and implementation support throughout the
+Working with India Business Clinic
+20. How can India Business Clinic support our India entry?
+India Business Clinic provides execution-oriented advisory and implementation support throughout the
 market entry journey, including:
 - India Market Assessment
 - Market Entry Strategy
@@ -906,7 +906,7 @@ experienced local execution support.
     contentMarkdown: `
 Bengaluru Tech Summit 2026: Don’t Just Attend, Outsmart It
 By Sanjay Chandra
-Business Clinic
+India Business Clinic
 Executive Summary
 The Bengaluru Tech Summit (BTS) 2026, themed “AI & Beyond,” is not merely a technology
 exhibition but a global marketplace of innovation, investment, and collaboration. With 1,800+
@@ -925,10 +925,10 @@ deals is preparation, focus, and execution.
 In short, BTS 2026 is not an event t  - attend — it is an opportunity t  - outsmart. Those wh  - treat
 it as a business-development engine will leave with pilots, partnerships, investments, and
 market entry strategies that redefine growth trajectories.
-Business Clinic can help companies turn BTS 2026 from a networking event int  - a
+India Business Clinic can help companies turn BTS 2026 from a networking event int  - a
 structured business-development opportunity. From pre-summit target identification
 and meeting preparation t  - on-ground opportunity validation and post-summit follow-
-up, Business Clinic helps companies identify the right people, qualify opportunities and
+up, India Business Clinic helps companies identify the right people, qualify opportunities and
 convert promising conversations int  - customers, partnerships, pilots, investments and
 India-entry opportunities.
 Introduction
@@ -1062,8 +1062,8 @@ A useful KPI
 meetings → 10 qualified opportunities → 5 follow-ups → 2 pilots/deals.
 - That is how an MSME or startup can turn BTS from an exhibition int  - a business-
 development engine.
-How Business Clinic Can Help You Exploit BTS 2026
-Business Clinic helps companies move from attending BTS t  - converting BTS int  - business.
+How India Business Clinic Can Help You Exploit BTS 2026
+India Business Clinic helps companies move from attending BTS t  - converting BTS int  - business.
 Before the Summit, we help define your business objectives, identify and prioritise relevant
 customers, technology partners, investors, distributors and India-entry opportunities, and
 prepare a targeted engagement plan. During the Summit, we help you Discover, Validate and
@@ -1094,7 +1094,7 @@ hypotheses, and secure partnerships that redefine your growth trajectory. The wi
     contentMarkdown: `
 MSME: HR GAPS IN RECRUITMENT
 By
-Business Clinic
+India Business Clinic
 Introduction
 Organizations are not built on bricks and mortar or plant and machinery. Quality human
 resources are the backbone of any establishment — they drive productivity, innovation

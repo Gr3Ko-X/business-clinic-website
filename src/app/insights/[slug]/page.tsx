@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props) {
   if (!article) return {};
   
   return {
-    title: `${article.title} | Business Clinic`,
+    title: `${article.title} | India Business Clinic`,
     description: article.summary,
   };
 }
@@ -73,13 +73,13 @@ export default async function InsightDetailPage({ params }: Props) {
   }
 
   return (
-    <article className="bg-white py-12 sm:py-16">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <article className="bg-white py-8 sm:py-16">
+      <div className="max-w-3xl mx-auto px-3.5 sm:px-6 lg:px-8">
         
         {/* Back Link */}
         <Link
           href="/insights"
-          className="inline-flex items-center space-x-2 text-slate-500 hover:text-accent text-sm font-semibold transition-colors mb-8"
+          className="inline-flex items-center space-x-2 text-slate-500 hover:text-accent text-sm font-semibold transition-colors mb-5 sm:mb-8"
         >
           <ArrowLeft className="h-4 w-4" />
           <span>Back to Insights</span>
@@ -103,7 +103,7 @@ export default async function InsightDetailPage({ params }: Props) {
             </span>
           </div>
           
-          <h1 className="text-3xl sm:text-4xl font-serif font-bold text-primary leading-tight">
+          <h1 className="text-2xl sm:text-4xl font-serif font-bold text-primary leading-tight">
             {article.title}
           </h1>
           <p className="text-slate-500 text-sm sm:text-base leading-relaxed italic">
@@ -176,7 +176,7 @@ export default async function InsightDetailPage({ params }: Props) {
         </div>
 
         {/* Call To Action Box inside Article */}
-        <div className="bg-slate-50 border border-slate-200 rounded-lg p-6 sm:p-8 mt-12 text-center space-y-4">
+        <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 sm:p-8 mt-8 sm:mt-12 text-center space-y-4">
           <h3 className="font-serif text-lg font-bold text-primary">
             Need Expert Insight on This Topic?
           </h3>

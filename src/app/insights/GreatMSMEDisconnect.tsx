@@ -33,59 +33,59 @@ export default function GreatMSMEDisconnect() {
   };
 
   return (
-    <div className="bg-slate-100/70 min-h-screen py-8 sm:py-12 print:bg-white print:py-0 font-sans antialiased text-slate-800">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-slate-100/70 min-h-screen py-4 sm:py-12 print:bg-white print:py-0 font-sans antialiased text-slate-800">
+      <div className="max-w-4xl mx-auto px-3.5 sm:px-6 lg:px-8">
         
         {/* Top Navigation Bar */}
-        <div className="flex items-center justify-between mb-6 print:hidden">
+        <div className="flex items-center justify-between mb-4 sm:mb-6 print:hidden">
           <Link
             href="/insights"
-            className="inline-flex items-center space-x-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-[#0C1D4A] transition-colors"
+            className="inline-flex items-center space-x-1.5 sm:space-x-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-[#0C1D4A] transition-colors"
           >
-            <ArrowLeft className="h-4 w-4" />
+            <ArrowLeft className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             <span>Back to Insights</span>
           </Link>
 
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 sm:space-x-3">
             <button
               onClick={handlePrint}
-              className="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors shadow-xs cursor-pointer"
+              className="inline-flex items-center space-x-1 sm:space-x-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-semibold text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors shadow-xs cursor-pointer"
               title="Print or Save as PDF"
             >
-              <Printer className="h-3.5 w-3.5 text-slate-500" />
+              <Printer className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-slate-500" />
               <span>Print / Save PDF</span>
             </button>
           </div>
         </div>
 
         {/* Paper Document Container */}
-        <article className="bg-white border border-slate-200/80 shadow-md rounded-2xl p-6 sm:p-12 lg:p-16 print:shadow-none print:border-none print:p-0">
+        <article className="bg-white border border-slate-200/80 shadow-md rounded-2xl p-4 sm:p-12 lg:p-16 print:shadow-none print:border-none print:p-0">
           
           {/* Masthead / Header */}
-          <header className="border-b border-slate-200 pb-8 mb-8 text-center sm:text-left">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 bg-amber-50 border border-amber-200/80 rounded-full text-[11px] font-bold text-amber-900 uppercase tracking-widest mb-4">
-              <Sparkles className="w-3.5 h-3.5 text-amber-700" />
+          <header className="border-b border-slate-200 pb-5 sm:pb-8 mb-6 sm:mb-8 text-left">
+            <div className="inline-flex items-center space-x-2 px-2.5 sm:px-3 py-1 bg-amber-50 border border-amber-200/80 rounded-full text-[10px] sm:text-[11px] font-bold text-amber-900 uppercase tracking-widest mb-3 sm:mb-4">
+              <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-700" />
               <span>Special Approach Paper & Diagnostic</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0C1D4A] tracking-tight leading-tight mb-2">
+            <h1 className="text-xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0C1D4A] tracking-tight leading-tight mb-2">
               THE GREAT MSME DISCONNECT
             </h1>
-            <p className="text-sm sm:text-base font-semibold text-[#D98A10] uppercase tracking-wider mb-4">
+            <p className="text-xs sm:text-base font-semibold text-[#D98A10] uppercase tracking-wider mb-3 sm:mb-4">
               An Approach Paper with Diagnostics and Remedy
             </p>
 
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pt-4 border-t border-slate-100 text-xs sm:text-sm text-slate-600 gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pt-3 sm:pt-4 border-t border-slate-100 text-xs sm:text-sm text-slate-600 gap-2 sm:gap-3">
               <div>
                 <p className="font-semibold text-slate-900">
                   By Sanjay Chandra
                 </p>
                 <p className="text-slate-500 font-medium">
-                  Business Clinic
+                  India Business Clinic
                 </p>
               </div>
 
-              <div className="flex items-center space-x-4 text-xs text-slate-500 font-medium">
+              <div className="flex flex-wrap items-center gap-x-3 sm:gap-x-4 gap-y-1 text-xs text-slate-500 font-medium">
                 <span className="flex items-center space-x-1">
                   <Clock className="w-3.5 h-3.5" />
                   <span>12 min read</span>
@@ -97,8 +97,8 @@ export default function GreatMSMEDisconnect() {
           </header>
 
           {/* Table of Contents */}
-          <nav aria-label="Table of contents" className="mb-10 p-5 bg-slate-50 border border-slate-200/90 rounded-xl print:hidden">
-            <div className="flex items-center space-x-2 text-xs font-bold text-[#0C1D4A] uppercase tracking-wider mb-3">
+          <nav aria-label="Table of contents" className="mb-6 sm:mb-10 p-3.5 sm:p-5 bg-slate-50 border border-slate-200/90 rounded-xl print:hidden">
+            <div className="flex items-center space-x-2 text-xs font-bold text-[#0C1D4A] uppercase tracking-wider mb-2.5 sm:mb-3">
               <ListOrdered className="w-4 h-4 text-[#D98A10]" />
               <span>Table of Contents</span>
             </div>
@@ -139,7 +139,7 @@ export default function GreatMSMEDisconnect() {
           </nav>
 
           {/* Main Paper Content */}
-          <div className="space-y-10 text-slate-700 leading-relaxed text-sm sm:text-base [&_p]:text-justify [&_p]:[text-justify:inter-word] [&_li]:text-justify">
+          <div className="space-y-8 sm:space-y-10 text-slate-700 leading-relaxed text-sm sm:text-base [&_p]:text-left sm:[&_p]:text-justify sm:[&_p]:[text-justify:inter-word] [&_li]:text-left sm:[&_li]:text-justify">
             
             {/* SECTION 1: INTRODUCTION & SPECTRUM */}
             <section id="introduction" className="space-y-4">
@@ -698,11 +698,11 @@ export default function GreatMSMEDisconnect() {
                   Sanjay Chandra
                 </h3>
                 <p className="text-xs text-[#D98A10] font-bold uppercase tracking-wider">
-                  Lead Advisor · Business Clinic
+                  Lead Advisor · India Business Clinic
                 </p>
               </div>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
-                Business Clinic delivers action-oriented diagnostics and operational problem solving for Indian MSMEs, Tier-1 industrial vendors, and global manufacturers establishing on-ground footprints.
+                India Business Clinic delivers action-oriented diagnostics and operational problem solving for Indian MSMEs, Tier-1 industrial vendors, and global manufacturers establishing on-ground footprints.
               </p>
               <div className="pt-2">
                 <Link

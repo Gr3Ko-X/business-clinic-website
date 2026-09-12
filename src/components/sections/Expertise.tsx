@@ -102,7 +102,7 @@ export default function Expertise() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#F7FAFC] via-[#F1F5F9] to-[#E2E8F0] text-slate-800 font-sans antialiased pt-20 pb-8 sm:pt-24 sm:pb-12 lg:pt-28 lg:pb-16 px-3 sm:px-6 lg:px-8 relative overflow-hidden selection:bg-[#D98A10] selection:text-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#F7FAFC] via-[#F1F5F9] to-[#E2E8F0] text-slate-800 font-sans antialiased pt-12 pb-8 sm:pt-20 sm:pb-12 lg:pt-28 lg:pb-16 px-3 sm:px-6 lg:px-8 relative overflow-hidden selection:bg-[#D98A10] selection:text-white">
       
       {/* Background World Map Vector Overlay */}
       <div className="absolute inset-0 opacity-[0.035] pointer-events-none bg-[radial-gradient(#0C1D4A_1.2px,transparent_1.2px)] [background-size:24px_24px]"></div>
@@ -135,7 +135,7 @@ export default function Expertise() {
           <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-[#D98A10] to-[#E2A128] rounded-full mx-auto my-2"></div>
 
           {/* Subtitle Paragraph */}
-          <p className="text-slate-600 text-xs sm:text-base max-w-2xl mx-auto leading-relaxed px-1">
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed px-1">
             From India market entry to industrial growth and defence facilitation — <br className="hidden sm:inline" />
             we provide execution-focused advisory that delivers measurable output.
           </p>
@@ -158,25 +158,25 @@ export default function Expertise() {
                     {/* Circle Emblem Badge */}
                     <div className="relative">
                       {card.id === "india-entry" && (
-                        <div className="w-12 h-12 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#0C1D4A] to-[#061230] p-0.5 shadow-md flex items-center justify-center border-2 border-[#D98A10]">
+                        <div className="w-10 h-10 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#0C1D4A] to-[#061230] p-0.5 shadow-md flex items-center justify-center border-2 border-[#D98A10]">
                           <div className="w-full h-full rounded-full bg-[#0C1D4A] flex items-center justify-center text-[#D98A10]">
-                            <Globe className="w-5 h-5 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
+                            <Globe className="w-4 h-4 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
                           </div>
                         </div>
                       )}
 
                       {card.id === "msme-growth" && (
-                        <div className="w-12 h-12 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#D98A10] to-[#B37007] p-0.5 shadow-md flex items-center justify-center border-2 border-amber-200">
+                        <div className="w-10 h-10 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#D98A10] to-[#B37007] p-0.5 shadow-md flex items-center justify-center border-2 border-amber-200">
                           <div className="w-full h-full rounded-full bg-[#D98A10] flex items-center justify-center text-white">
-                            <Factory className="w-5 h-5 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
+                            <Factory className="w-4 h-4 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
                           </div>
                         </div>
                       )}
 
                       {card.id === "defence-facilitation" && (
-                        <div className="w-12 h-12 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#0C1D4A] to-[#061230] p-0.5 shadow-md flex items-center justify-center border-2 border-[#D98A10]">
+                        <div className="w-10 h-10 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#0C1D4A] to-[#061230] p-0.5 shadow-md flex items-center justify-center border-2 border-[#D98A10]">
                           <div className="w-full h-full rounded-full bg-[#0C1D4A] flex items-center justify-center text-[#D98A10]">
-                            <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
+                            <ShieldCheck className="w-4 h-4 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
                           </div>
                         </div>
                       )}
@@ -196,28 +196,28 @@ export default function Expertise() {
                   </div>
 
                   {/* Card Title Headline with constant minimum height for horizontal alignment */}
-                  <div className="min-h-[48px] sm:min-h-[58px] lg:min-h-[64px] flex items-end mt-4 sm:mt-5">
-                    <h3 className="text-lg sm:text-xl xl:text-2xl font-serif font-bold text-[#0C1D4A] leading-snug">
+                  <div className="min-h-0 sm:min-h-[58px] lg:min-h-[64px] flex items-end mt-3 sm:mt-5">
+                    <h3 className="text-base sm:text-xl xl:text-2xl font-serif font-bold text-[#0C1D4A] leading-snug">
                       {card.heading}
                     </h3>
                   </div>
 
                   {/* Divider Line */}
-                  <div className="w-full h-px bg-slate-100 my-3 sm:my-4"></div>
+                  <div className="w-full h-px bg-slate-100 my-2.5 sm:my-4"></div>
 
                   {/* Bullet Highlights Grid - 3-across with proper column isolation & typography */}
-                  <div className="grid grid-cols-3 gap-1.5 sm:gap-2 xl:gap-3 pt-2 pb-2 sm:pb-4 items-start">
+                  <div className="grid grid-cols-3 gap-1.5 sm:gap-2 xl:gap-3 pt-1 sm:pt-2 pb-2 sm:pb-4 items-start">
                     {card.bullets.map((bullet, idx) => {
                       const BulletIcon = bullet.icon;
                       return (
                         <div
                           key={idx}
-                          className="flex flex-col items-center text-center space-y-2 group/bullet min-w-0 w-full px-0.5"
+                          className="flex flex-col items-center text-center space-y-1.5 sm:space-y-2 group/bullet min-w-0 w-full px-0.5"
                         >
-                          <div className="w-11 h-11 sm:w-12 sm:h-12 xl:w-14 xl:h-14 rounded-xl xl:rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#0C1D4A] group-hover/bullet:bg-amber-50 group-hover/bullet:border-[#D98A10] group-hover/bullet:text-[#D98A10] transition-all shadow-xs group-hover/bullet:scale-105 duration-200 shrink-0">
-                            <BulletIcon className="w-5 h-5 xl:w-6 xl:h-6 stroke-[1.8]" />
+                          <div className="w-9 h-9 sm:w-12 sm:h-12 xl:w-14 xl:h-14 rounded-lg sm:rounded-xl xl:rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#0C1D4A] group-hover/bullet:bg-amber-50 group-hover/bullet:border-[#D98A10] group-hover/bullet:text-[#D98A10] transition-all shadow-xs group-hover/bullet:scale-105 duration-200 shrink-0">
+                            <BulletIcon className="w-4 h-4 sm:w-5 sm:h-5 xl:w-6 xl:h-6 stroke-[1.8]" />
                           </div>
-                          <span className="text-[11px] sm:text-xs xl:text-[13px] font-semibold text-slate-700 leading-snug group-hover/bullet:text-accent transition-colors w-full text-center break-words hyphens-auto">
+                          <span className="text-[10px] sm:text-xs xl:text-[13px] font-semibold text-slate-700 leading-tight sm:leading-snug group-hover/bullet:text-accent transition-colors w-full text-center break-words">
                             {bullet.label}
                           </span>
                         </div>
@@ -228,7 +228,7 @@ export default function Expertise() {
                 </div>
 
                   {/* Card Background Graphic Watermark Illustrations */}
-                  <div className="relative flex-1 min-h-[90px] sm:min-h-[120px] flex items-end justify-center px-4 overflow-hidden">
+                  <div className="relative flex-1 min-h-[60px] sm:min-h-[120px] flex items-end justify-center px-4 overflow-hidden">
                   
                   {card.watermarkType === "architecture" && (
                     <div className="w-full opacity-65 group-hover:opacity-85 transition-opacity flex justify-center pb-2">
@@ -329,6 +329,141 @@ export default function Expertise() {
         </div>
 
       </div>
+
+
+      {/* Interactive Tool Diagnostic Modal — commented out; CTAs navigate to pages instead
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/80 backdrop-blur-sm animate-in fade-in duration-200">
+          <div className="relative w-full max-w-lg bg-white border border-slate-200 rounded-2xl sm:rounded-3xl shadow-2xl p-5 sm:p-8 space-y-4 sm:space-y-5 text-slate-900 max-h-[90vh] overflow-y-auto">
+            
+            <button
+              onClick={() => setShowModal(null)}
+              className="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-1.5 rounded-full hover:bg-slate-100 transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="flex items-center space-x-3 border-b border-slate-100 pb-3 sm:pb-4 pr-6">
+              <div className="p-2.5 sm:p-3 rounded-2xl bg-amber-50 text-[#D98A10] border border-amber-200 shrink-0">
+                <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
+              </div>
+              <div>
+                <h3 className="font-serif font-bold text-base sm:text-lg text-[#0C1D4A]">
+                  {showModal === "india-entry" && "India Entry Readiness Scorecard"}
+                  {showModal === "msme-growth" && "MSME Company Health Check"}
+                  {showModal === "defence-facilitation" && "Defence Advisory Enquiry"}
+                </h3>
+                <p className="text-sm sm:text-xs text-slate-500">India Business Clinic Interactive Diagnostic</p>
+              </div>
+            </div>
+
+            {!modalCompleted ? (
+              <div className="space-y-3 sm:space-y-4">
+                <p className="text-sm text-[#D98A10] font-bold uppercase tracking-wider">
+                  Step {modalStep} of 2: Preliminary Assessment
+                </p>
+
+                {modalStep === 1 && (
+                  <div className="space-y-3">
+                    <h4 className="text-sm sm:text-base font-semibold text-[#0C1D4A]">
+                      {showModal === "india-entry" && "What is your primary focus area for entering the Indian market?"}
+                      {showModal === "msme-growth" && "What is the primary bottleneck currently facing your plant operations?"}
+                      {showModal === "defence-facilitation" && "What specific defence regulatory support do you require?"}
+                    </h4>
+
+                    <div className="space-y-2">
+                      {(showModal === "india-entry"
+                        ? [
+                            "Evaluating entry strategy & regulatory feasibility",
+                            "Setting up local factory footprint & state compliance",
+                            "Building local supply chain & vendor partners",
+                            "Seeking single-window operational execution partner"
+                          ]
+                        : showModal === "msme-growth"
+                        ? [
+                            "Low OEE, production delays & operational bottlenecks",
+                            "Quality assurance gaps & vendor audit support",
+                            "Lack of structured SOPs & organization capability",
+                            "Growth & scale-up execution challenges"
+                          ]
+                        : [
+                            "Defence Industrial Licensing & regulatory clearances",
+                            "Offset management & Transfer of Technology (ToT)",
+                            "Indian industrial partnerships & indigenisation",
+                            "WPC facilitation & RF equipment import clearances"
+                          ]
+                      ).map((option, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setModalStep(2)}
+                          className="w-full text-left p-3 sm:p-3.5 rounded-xl bg-slate-50 hover:bg-amber-50/80 border border-slate-200 hover:border-[#D98A10] text-xs font-medium text-slate-800 transition-all flex items-center justify-between group cursor-pointer"
+                        >
+                          <span className="pr-2">{option}</span>
+                          <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-[#D98A10] shrink-0" />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {modalStep === 2 && (
+                  <div className="space-y-3">
+                    <h4 className="text-sm sm:text-base font-semibold text-[#0C1D4A]">
+                      What is your intended timeline for advisory engagement?
+                    </h4>
+
+                    <div className="space-y-2">
+                      {[
+                        "Immediate (Within next 1-3 months)",
+                        "Short Term (3-6 months)",
+                        "Strategic Planning (6-12 months)",
+                        "Exploring preliminary feasibility"
+                      ].map((option, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setModalCompleted(true)}
+                          className="w-full text-left p-3 sm:p-3.5 rounded-xl bg-slate-50 hover:bg-amber-50/80 border border-slate-200 hover:border-[#D98A10] text-xs font-medium text-slate-800 transition-all flex items-center justify-between group cursor-pointer"
+                        >
+                          <span className="pr-2">{option}</span>
+                          <Check className="w-4 h-4 text-[#D98A10] shrink-0" />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="space-y-3 sm:space-y-4 text-center py-2 sm:py-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto border border-emerald-200">
+                  <Check className="w-5 h-5 sm:w-6 sm:h-6 stroke-[3]" />
+                </div>
+                <h4 className="text-base sm:text-lg font-bold font-serif text-[#0C1D4A]">Diagnostic Information Saved!</h4>
+                <p className="text-xs text-slate-600 max-w-sm mx-auto">
+                  Enter your business contact email below to receive your customized advisory roadmap report.
+                </p>
+
+                <div className="space-y-2.5 sm:space-y-3 pt-2">
+                  <input
+                    type="email"
+                    placeholder="Enter corporate email address..."
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-xs text-slate-900 focus:outline-none focus:border-[#D98A10]"
+                  />
+                  <button
+                    onClick={() => setShowModal(null)}
+                    className="w-full py-3 sm:py-3.5 bg-gradient-to-r from-[#D98A10] to-[#C47A08] hover:from-[#C47A08] hover:to-[#A86804] text-white font-bold text-xs rounded-xl transition-all shadow-md cursor-pointer"
+                  >
+                    Generate Diagnostic Roadmap Report
+                  </button>
+                </div>
+              </div>
+            )}
+
+          </div>
+        </div>
+      )}
+      */}
+
+
     </div>
   );
 }

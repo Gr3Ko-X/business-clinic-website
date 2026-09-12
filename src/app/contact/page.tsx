@@ -125,12 +125,12 @@ function ContactPageContent() {
       </section>
 
       {/* 2. Form & Contact cards */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-5xl mx-auto">
+      <section className="py-8 sm:py-20">
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 max-w-5xl mx-auto">
             
             {/* Left: Contact Info cards */}
-            <div className="lg:col-span-5 space-y-8">
+            <div className="lg:col-span-5 space-y-5 sm:space-y-8">
               <div className="space-y-4">
                 <h2 className="font-serif text-xl sm:text-2xl font-bold text-primary">
                   Direct Contact
@@ -143,7 +143,7 @@ function ContactPageContent() {
               {/* Detail cards */}
               <div className="space-y-4">
                 {/* Email card */}
-                <div className="bg-slate-50 border border-slate-200/80 p-6 rounded-md flex items-start space-x-4">
+                <div className="bg-slate-50 border border-slate-200/80 p-4 sm:p-6 rounded-xl sm:rounded-md flex items-start space-x-4">
                   <div className="p-3 bg-white text-accent rounded-full border border-slate-200 shadow-xs shrink-0 mt-0.5">
                     <Mail className="h-5 w-5" />
                   </div>
@@ -173,7 +173,7 @@ function ContactPageContent() {
                 </div>
 
                 {/* Whatsapp card */}
-                <div className="bg-slate-50 border border-slate-200/80 p-6 rounded-md flex items-start space-x-4">
+                <div className="bg-slate-50 border border-slate-200/80 p-4 sm:p-6 rounded-xl sm:rounded-md flex items-start space-x-4">
                   <div className="p-3 bg-white text-accent rounded-full border border-slate-200 shadow-xs shrink-0">
                     <MessageSquare className="h-5 w-5" />
                   </div>
@@ -196,7 +196,7 @@ function ContactPageContent() {
                 </div>
 
                 {/* Operations commitment */}
-                <div className="bg-cream/30 border border-accent/20 p-6 rounded-md flex items-start space-x-4">
+                <div className="bg-cream/30 border border-accent/20 p-4 sm:p-6 rounded-xl sm:rounded-md flex items-start space-x-4">
                   <div className="p-3 bg-white text-accent rounded-full border border-accent/20 shadow-xs shrink-0">
                     <Clock className="h-5 w-5" />
                   </div>
@@ -213,11 +213,11 @@ function ContactPageContent() {
             </div>
 
             {/* Right: Contact Form */}
-            <div className="lg:col-span-7 bg-slate-50 border border-slate-200/80 rounded-lg p-8 sm:p-10 shadow-xs">
+            <div className="lg:col-span-7 bg-slate-50 border border-slate-200/80 rounded-2xl sm:rounded-lg p-4 sm:p-10 shadow-xs">
               {showBtsBanner && !formSubmitted && (
                 <div className="mb-6 flex items-start justify-between gap-3 rounded-lg border border-[#c58f1a]/30 bg-amber-50/80 px-4 py-3">
                   <p className="text-xs sm:text-sm text-[#0c1d4a] font-medium leading-relaxed">
-                    You&apos;re booking a <span className="font-bold">BTS 2026 India Entry discussion</span> with Business Clinic at Bengaluru Tech Summit.
+                    You&apos;re booking a <span className="font-bold">BTS 2026 India Entry discussion</span> with India Business Clinic at Bengaluru Tech Summit.
                   </p>
                   <button
                     type="button"
@@ -395,7 +395,7 @@ function ContactPageContent() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full inline-flex items-center justify-center space-x-2 bg-accent hover:bg-accent-dark text-white py-3.5 px-6 rounded-sm font-bold text-xs uppercase tracking-wider transition-all shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
+                      className="w-full inline-flex items-center justify-center space-x-2 bg-accent hover:bg-accent-dark text-white py-3.5 px-6 rounded-xl sm:rounded-sm font-bold text-xs uppercase tracking-wider transition-all shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       <Calendar className="h-4.5 w-4.5 text-white" />
                       <span>

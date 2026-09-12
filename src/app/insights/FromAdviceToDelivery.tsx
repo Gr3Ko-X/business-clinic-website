@@ -27,58 +27,58 @@ export default function FromAdviceToDelivery() {
   };
 
   return (
-    <div className="bg-slate-100/70 min-h-screen py-8 sm:py-12 print:bg-white print:py-0 font-sans antialiased text-slate-800">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-slate-100/70 min-h-screen py-4 sm:py-12 print:bg-white print:py-0 font-sans antialiased text-slate-800">
+      <div className="max-w-4xl mx-auto px-3.5 sm:px-6 lg:px-8">
         
         {/* Top Navigation Bar */}
-        <div className="flex items-center justify-between mb-6 print:hidden">
+        <div className="flex items-center justify-between mb-4 sm:mb-6 print:hidden">
           <Link
             href="/insights"
-            className="inline-flex items-center space-x-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-[#0C1D4A] transition-colors"
+            className="inline-flex items-center space-x-1.5 sm:space-x-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-[#0C1D4A] transition-colors"
           >
-            <ArrowLeft className="h-4 w-4" />
+            <ArrowLeft className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             <span>Back to Insights</span>
           </Link>
 
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 sm:space-x-3">
             <button
               onClick={handlePrint}
-              className="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors shadow-xs cursor-pointer"
+              className="inline-flex items-center space-x-1 sm:space-x-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-semibold text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors shadow-xs cursor-pointer"
               title="Print or Save as PDF"
             >
-              <Printer className="h-3.5 w-3.5 text-slate-500" />
+              <Printer className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-slate-500" />
               <span>Print / Save PDF</span>
             </button>
           </div>
         </div>
 
         {/* Paper Document Container */}
-        <article className="bg-white border border-slate-200/80 shadow-md rounded-2xl p-6 sm:p-12 lg:p-16 print:shadow-none print:border-none print:p-0">
+        <article className="bg-white border border-slate-200/80 shadow-md rounded-2xl p-4 sm:p-12 lg:p-16 print:shadow-none print:border-none print:p-0">
           
           {/* Header Banner / Running Header */}
-          <div className="flex justify-between items-center text-[11px] uppercase tracking-widest text-slate-400 font-bold border-b border-slate-100 pb-3 mb-8">
+          <div className="flex justify-between items-center text-[10px] sm:text-[11px] uppercase tracking-widest text-slate-400 font-bold border-b border-slate-100 pb-2.5 sm:pb-3 mb-6 sm:mb-8">
             <span>India Business Clinic</span>
             <span>From Advice to Delivery</span>
           </div>
 
           {/* Masthead */}
-          <header className="border-b border-slate-200 pb-8 mb-8 text-center sm:text-left">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 bg-amber-50 border border-amber-200/80 rounded-full text-[11px] font-bold text-amber-900 uppercase tracking-widest mb-4">
-              <Sparkles className="w-3.5 h-3.5 text-amber-700" />
+          <header className="border-b border-slate-200 pb-5 sm:pb-8 mb-6 sm:mb-8 text-left">
+            <div className="inline-flex items-center space-x-2 px-2.5 sm:px-3 py-1 bg-amber-50 border border-amber-200/80 rounded-full text-[10px] sm:text-[11px] font-bold text-amber-900 uppercase tracking-widest mb-3 sm:mb-4">
+              <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-700" />
               <span>Advisory Framework &amp; Operating Model</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0C1D4A] tracking-tight leading-tight mb-2">
+            <h1 className="text-xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0C1D4A] tracking-tight leading-tight mb-2">
               FROM ADVICE TO DELIVERY
             </h1>
-            <p className="text-base sm:text-lg font-semibold text-[#D98A10] uppercase tracking-wider mb-3">
+            <p className="text-xs sm:text-lg font-semibold text-[#D98A10] uppercase tracking-wider mb-2 sm:mb-3">
               The India Business Clinic Model
             </p>
-            <p className="text-sm sm:text-base text-slate-600 italic font-medium">
+            <p className="text-xs sm:text-base text-slate-600 italic font-medium">
               A practical model for helping global companies understand, establish and scale in India.
             </p>
 
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pt-6 mt-6 border-t border-slate-100 text-xs sm:text-sm text-slate-600 gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pt-4 sm:pt-6 mt-4 sm:mt-6 border-t border-slate-100 text-xs sm:text-sm text-slate-600 gap-2 sm:gap-3">
               <div>
                 <p className="font-semibold text-slate-900">
                   By Col Sanjay Chandra (Retd)
@@ -88,7 +88,7 @@ export default function FromAdviceToDelivery() {
                 </p>
               </div>
 
-              <div className="flex items-center space-x-4 text-xs text-slate-500 font-medium">
+              <div className="flex flex-wrap items-center gap-x-3 sm:gap-x-4 gap-y-1 text-xs text-slate-500 font-medium">
                 <span className="flex items-center space-x-1">
                   <Clock className="w-3.5 h-3.5" />
                   <span>7 min read</span>
@@ -100,8 +100,8 @@ export default function FromAdviceToDelivery() {
           </header>
 
           {/* Table of Contents */}
-          <nav aria-label="Table of contents" className="mb-10 p-5 bg-slate-50 border border-slate-200/90 rounded-xl print:hidden">
-            <div className="flex items-center space-x-2 text-xs font-bold text-[#0C1D4A] uppercase tracking-wider mb-3">
+          <nav aria-label="Table of contents" className="mb-6 sm:mb-10 p-3.5 sm:p-5 bg-slate-50 border border-slate-200/90 rounded-xl print:hidden">
+            <div className="flex items-center space-x-2 text-xs font-bold text-[#0C1D4A] uppercase tracking-wider mb-2.5 sm:mb-3">
               <ListOrdered className="w-4 h-4 text-[#D98A10]" />
               <span>Document Outline</span>
             </div>
@@ -138,9 +138,9 @@ export default function FromAdviceToDelivery() {
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
                 <span>8. Why India Needs This Model</span>
               </a>
-              <a href="#global-perspective-indian-grounding" className="text-slate-600 hover:text-[#D98A10] transition-colors py-0.5 flex items-center space-x-2">
+              <a href="#who-we-work-with" className="text-slate-600 hover:text-[#D98A10] transition-colors py-0.5 flex items-center space-x-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
-                <span>9. Global Perspective with Indian Grounding</span>
+                <span>9. Who We Work With</span>
               </a>
               <a href="#three-principles" className="text-slate-600 hover:text-[#D98A10] transition-colors py-0.5 flex items-center space-x-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
@@ -162,7 +162,7 @@ export default function FromAdviceToDelivery() {
           </nav>
 
           {/* Document Body */}
-          <div className="space-y-10 text-[15px] sm:text-[16px] leading-relaxed text-slate-700 font-normal">
+          <div className="space-y-8 sm:space-y-10 text-[15px] sm:text-[16px] leading-relaxed text-slate-700 font-normal [&_p]:text-left sm:[&_p]:text-justify sm:[&_p]:[text-justify:inter-word] [&_li]:text-left sm:[&_li]:text-justify">
             
             {/* Section 1: Introduction */}
             <section id="introduction" className="space-y-4 scroll-mt-8">
@@ -707,23 +707,25 @@ export default function FromAdviceToDelivery() {
             </section>
 
             {/* Advisory CTA Card */}
-            <div className="mt-12 p-6 sm:p-8 bg-[#0C1D4A] text-white rounded-xl shadow-lg flex flex-col sm:flex-row items-center justify-between gap-6 print:hidden">
-              <div className="space-y-2 text-center sm:text-left">
+            <div className="mt-12 p-6 sm:p-8 md:p-10 bg-gradient-to-br from-[#0C1D4A] via-[#0B2240] to-[#061230] text-white rounded-2xl shadow-xl border border-[#D98A10]/25 flex flex-col items-center sm:items-start text-center sm:text-left gap-6 print:hidden relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#D98A10]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+              <div className="space-y-2.5 relative z-10 max-w-2xl">
                 <span className="text-xs font-bold text-amber-400 uppercase tracking-widest block">
                   Translate Strategy Into Delivery
                 </span>
-                <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-white leading-tight">
                   Ready to Discuss Your India Journey?
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                   Connect with Col Sanjay Chandra and the India Business Clinic team for an executive dialogue on market entry, partner due diligence, or operational handholding.
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto relative z-10">
                 <Link
                   href="/services/india-entry-support-foreign-industry/scorecard"
-                  className="inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-5 py-2.5 rounded-sm font-semibold text-xs transition-all uppercase tracking-wider text-center"
+                  className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3 rounded-lg font-semibold text-xs transition-all uppercase tracking-wider text-center"
                 >
                   <span>Readiness Scorecard</span>
                 </Link>
@@ -731,7 +733,7 @@ export default function FromAdviceToDelivery() {
                   href="https://wa.me/919560714343?text=Hello%2C%20I%20would%20like%20to%20consult%20an%20expert%20at%20Business%20Clinic."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-5 py-2.5 rounded-sm font-semibold text-xs transition-all uppercase tracking-wider shadow-md text-center"
+                  className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-6 py-3 rounded-lg font-semibold text-xs transition-all uppercase tracking-wider shadow-md text-center"
                 >
                   <span>Talk to an Expert (+91 9560714343)</span>
                   <ChevronRight className="w-4 h-4" />
@@ -749,7 +751,7 @@ export default function FromAdviceToDelivery() {
             </div>
             <div className="text-right sm:text-right text-slate-400">
               <p>Confidential &amp; Proprietary</p>
-              <p>© {new Date().getFullYear()} Business Clinic. All rights reserved.</p>
+              <p>© {new Date().getFullYear()} India Business Clinic. All rights reserved.</p>
             </div>
           </footer>
 

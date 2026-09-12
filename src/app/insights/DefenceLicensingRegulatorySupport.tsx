@@ -57,59 +57,59 @@ export default function DefenceLicensingRegulatorySupport() {
   ];
 
   return (
-    <div className="bg-slate-100/70 min-h-screen py-8 sm:py-12 print:bg-white print:py-0 font-sans antialiased text-slate-800">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-slate-100/70 min-h-screen py-4 sm:py-12 print:bg-white print:py-0 font-sans antialiased text-slate-800">
+      <div className="max-w-4xl mx-auto px-3.5 sm:px-6 lg:px-8">
         
         {/* Top Navigation Bar */}
-        <div className="flex items-center justify-between mb-6 print:hidden">
+        <div className="flex items-center justify-between mb-4 sm:mb-6 print:hidden">
           <Link
             href="/insights"
-            className="inline-flex items-center space-x-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-[#0C1D4A] transition-colors"
+            className="inline-flex items-center space-x-1.5 sm:space-x-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-[#0C1D4A] transition-colors"
           >
-            <ArrowLeft className="h-4 w-4" />
+            <ArrowLeft className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             <span>Back to Insights</span>
           </Link>
 
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 sm:space-x-3">
             <button
               onClick={handlePrint}
-              className="inline-flex items-center space-x-1.5 px-3 py-1.5 text-xs font-semibold text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors shadow-xs cursor-pointer"
+              className="inline-flex items-center space-x-1 sm:space-x-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-semibold text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors shadow-xs cursor-pointer"
               title="Print or Save as PDF"
             >
-              <Printer className="h-3.5 w-3.5 text-slate-500" />
+              <Printer className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-slate-500" />
               <span>Print / Save PDF</span>
             </button>
           </div>
         </div>
 
         {/* Paper Document Container */}
-        <article className="bg-white border border-slate-200/80 shadow-md rounded-2xl p-6 sm:p-12 lg:p-16 print:shadow-none print:border-none print:p-0">
+        <article className="bg-white border border-slate-200/80 shadow-md rounded-2xl p-4 sm:p-12 lg:p-16 print:shadow-none print:border-none print:p-0">
           
           {/* Masthead / Header */}
-          <header className="border-b border-slate-200 pb-8 mb-8 text-center sm:text-left">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 bg-amber-50 border border-amber-200/80 rounded-full text-[11px] font-bold text-amber-900 uppercase tracking-widest mb-4">
-              <Sparkles className="w-3.5 h-3.5 text-amber-700" />
+          <header className="border-b border-slate-200 pb-5 sm:pb-8 mb-6 sm:mb-8 text-left">
+            <div className="inline-flex items-center space-x-2 px-2.5 sm:px-3 py-1 bg-amber-50 border border-amber-200/80 rounded-full text-[10px] sm:text-[11px] font-bold text-amber-900 uppercase tracking-widest mb-3 sm:mb-4">
+              <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-700" />
               <span>Capability Note // Defence & Spectrum Advisory</span>
             </div>
 
-            <p className="text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-[#D98A10] mb-2">
+            <p className="text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-[#D98A10] mb-1.5 sm:mb-2">
               Capability Note: Licensing & Regulatory Support
             </p>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0C1D4A] tracking-tight leading-tight mb-3">
+            <h1 className="text-xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0C1D4A] tracking-tight leading-tight mb-2 sm:mb-3">
               Defence and RF Manufacturing in India
             </h1>
 
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pt-4 border-t border-slate-100 text-xs sm:text-sm text-slate-600 gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pt-3 sm:pt-4 border-t border-slate-100 text-xs sm:text-sm text-slate-600 gap-2 sm:gap-3">
               <div>
                 <p className="font-semibold text-slate-900">
-                  By Business Clinic
+                  By India Business Clinic
                 </p>
                 <p className="text-slate-500 font-medium">
                   Defence & Aerospace Advisory Division
                 </p>
               </div>
 
-              <div className="flex items-center space-x-4 text-xs text-slate-500 font-medium">
+              <div className="flex flex-wrap items-center gap-x-3 sm:gap-x-4 gap-y-1 text-xs text-slate-500 font-medium">
                 <span className="flex items-center space-x-1">
                   <Clock className="w-3.5 h-3.5" />
                   <span>8 min read</span>
@@ -121,8 +121,8 @@ export default function DefenceLicensingRegulatorySupport() {
           </header>
 
           {/* Table of Contents */}
-          <nav aria-label="Table of contents" className="mb-10 p-5 bg-slate-50 border border-slate-200/90 rounded-xl print:hidden">
-            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-3">
+          <nav aria-label="Table of contents" className="mb-6 sm:mb-10 p-3.5 sm:p-5 bg-slate-50 border border-slate-200/90 rounded-xl print:hidden">
+            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-2.5 sm:mb-3">
               Contents
             </h3>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs text-slate-600">
@@ -145,15 +145,27 @@ export default function DefenceLicensingRegulatorySupport() {
                 </a>
               </li>
               <li>
-                <a href="#wpc-approvals" className="hover:text-[#0C1D4A] hover:underline flex items-center space-x-1.5">
+                <a href="#services-offered" className="hover:text-[#0C1D4A] hover:underline flex items-center space-x-1.5">
                   <span className="text-[#D98A10] font-mono font-bold">•</span>
-                  <span>WPC & Spectrum-Related Approvals</span>
+                  <span>Services Offered (DIL & WPC)</span>
                 </a>
               </li>
               <li>
-                <a href="#value-proposition" className="hover:text-[#0C1D4A] hover:underline flex items-center space-x-1.5">
+                <a href="#dil-roadmap" className="hover:text-[#0C1D4A] hover:underline flex items-center space-x-1.5">
                   <span className="text-[#D98A10] font-mono font-bold">•</span>
-                  <span>Value Proposition</span>
+                  <span>7-Step Defence Licensing Process</span>
+                </a>
+              </li>
+              <li>
+                <a href="#wpc-spectrum-approvals" className="hover:text-[#0C1D4A] hover:underline flex items-center space-x-1.5">
+                  <span className="text-[#D98A10] font-mono font-bold">•</span>
+                  <span>WPC Clearances & Frequency Allocations</span>
+                </a>
+              </li>
+              <li>
+                <a href="#why-choose-us" className="hover:text-[#0C1D4A] hover:underline flex items-center space-x-1.5">
+                  <span className="text-[#D98A10] font-mono font-bold">•</span>
+                  <span>Why India Business Clinic?</span>
                 </a>
               </li>
               <li>
@@ -166,12 +178,12 @@ export default function DefenceLicensingRegulatorySupport() {
           </nav>
 
           {/* Section 1: Introduction */}
-          <section id="introduction" className="mb-10 space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed text-justify">
+          <section id="introduction" className="mb-8 sm:mb-10 space-y-3 sm:space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed text-left sm:text-justify">
             <h2 className="text-xl sm:text-2xl font-serif font-bold text-[#0C1D4A] border-b border-slate-100 pb-2">
               Introduction
             </h2>
             <p>
-              Business Clinic is a premier consulting firm specializing in defense licensing and regulatory compliance for high-technology manufacturing in India. Led by retired Indian Army officers from the Corps of Signals, our leadership brings unparalleled, first-hand expertise in frequency management, spectrum planning, and communication system oversight.
+              India Business Clinic is a premier consulting firm specializing in defense licensing and regulatory compliance for high-technology manufacturing in India. Led by retired Indian Army officers from the Corps of Signals, our leadership brings unparalleled, first-hand expertise in frequency management, spectrum planning, and communication system oversight.
             </p>
             <p>
               Our core strength lies in our dual-spectrum expertise. As qualified Electronics & Telecommunication engineers with over 30 years of distinguished experience—including pivotal tenures with premier government organizations like the Defence Research and Development Organisation (DRDO)—we bridge the gap between complex engineering and rigorous regulatory frameworks.
@@ -211,7 +223,7 @@ export default function DefenceLicensingRegulatorySupport() {
             </div>
 
             <p>
-              With an operational footprint spanning military operations, defense R&D, and high-tech manufacturing ecosystems, Business Clinic is uniquely positioned to serve as your strategic partner. We offer specialized, mission-critical guidance for organizations establishing manufacturing capabilities for radar antennas in the 3 GHz and 10 GHz bands in India.
+              With an operational footprint spanning military operations, defense R&D, and high-tech manufacturing ecosystems, India Business Clinic is uniquely positioned to serve as your strategic partner. We offer specialized, mission-critical guidance for organizations establishing manufacturing capabilities for radar antennas in the 3 GHz and 10 GHz bands in India.
             </p>
           </section>
 
@@ -458,7 +470,7 @@ export default function DefenceLicensingRegulatorySupport() {
                 Manufacturing radar antennas in the 3 GHz and 10 GHz bands requires navigation through defence, wireless, and industrial licensing frameworks in India.
               </p>
               <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
-                With our combined defence, technical, and regulatory experience, Business Clinic offers seamless support to ensure full compliance with DIL, WPC, SACFA, and associated statutory requirements.
+                With our combined defence, technical, and regulatory experience, India Business Clinic offers seamless support to ensure full compliance with DIL, WPC, SACFA, and associated statutory requirements.
               </p>
             </div>
           </section>
@@ -497,7 +509,7 @@ export default function DefenceLicensingRegulatorySupport() {
           {/* Document Footer */}
           <footer className="mt-12 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2">
             <span>Capability Note: Licensing & Regulatory Support | Defence & RF Manufacturing</span>
-            <span>Business Clinic Defence Advisory Division</span>
+            <span>India Business Clinic Defence Advisory Division</span>
           </footer>
         </article>
       </div>

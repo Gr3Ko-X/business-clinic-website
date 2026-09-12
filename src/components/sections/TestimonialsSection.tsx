@@ -97,18 +97,18 @@ export default function TestimonialsSection() {
   const active = tabs.find((t) => t.id === activeTab) ?? tabs[0];
 
   return (
-    <section className="bg-white py-16 sm:py-20 border-b border-slate-100">
+    <section className="bg-white py-12 sm:py-16 lg:py-20 border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 space-y-4">
           <span className="text-xs font-bold tracking-widest text-accent uppercase">
             Testimonials
           </span>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-primary">
             What Our Clients Say About Us
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
             Feedback from international companies entering India and MSMEs strengthening operations
-            with Business Clinic.
+            with India Business Clinic.
           </p>
         </div>
 
@@ -155,7 +155,7 @@ export default function TestimonialsSection() {
           {active.items.map((t) => (
             <article
               key={t.author}
-              className="bg-slate-50/80 border border-slate-200/70 rounded-xl p-6 sm:p-7 relative flex flex-col justify-between hover:border-[#c58f1a]/40 hover:shadow-md transition-all"
+              className="bg-slate-50/80 border border-slate-200/70 rounded-xl p-5 sm:p-7 relative flex flex-col justify-between hover:border-[#c58f1a]/40 hover:shadow-md transition-all"
             >
               <Quote
                 className="absolute top-5 right-5 h-8 w-8 text-[#c58f1a]/20"

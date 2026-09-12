@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props) {
   if (!cs) return {};
 
   return {
-    title: `${cs.title} ${cs.subtitle || ""} | Business Clinic Case Study`,
+    title: `${cs.title} ${cs.subtitle || ""} | India Business Clinic Case Study`,
     description: cs.summary,
   };
 }
@@ -77,20 +77,20 @@ export default async function CaseStudyDetailPage({ params }: Props) {
   };
 
   return (
-    <article className="bg-white py-12 sm:py-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <article className="bg-white py-8 sm:py-16">
+      <div className="max-w-4xl mx-auto px-3.5 sm:px-6 lg:px-8">
         
         {/* Back Link */}
         <Link
           href="/case-studies"
-          className="inline-flex items-center space-x-2 text-slate-500 hover:text-accent text-sm font-semibold transition-colors mb-8 group"
+          className="inline-flex items-center space-x-2 text-slate-500 hover:text-accent text-sm font-semibold transition-colors mb-5 sm:mb-8 group"
         >
           <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
           <span>Back to Case Studies</span>
         </Link>
 
         {/* Header Details */}
-        <header className="space-y-4 pb-8 border-b border-slate-200 mb-10">
+        <header className="space-y-3 sm:space-y-4 pb-6 sm:pb-8 border-b border-slate-200 mb-6 sm:mb-10">
           <div className="flex flex-wrap items-center gap-3 text-xs font-semibold text-slate-500">
             <span className="bg-accent/10 text-accent px-3 py-1 rounded-sm uppercase tracking-wider font-bold">
               {cs.client}
@@ -104,7 +104,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
           </h1>
 
           {cs.subtitle && (
-            <p className="text-xl sm:text-2xl font-serif font-bold text-accent tracking-wide">
+            <p className="text-lg sm:text-2xl font-serif font-bold text-accent tracking-wide">
               {cs.subtitle}
             </p>
           )}
@@ -116,7 +116,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
 
         {isFullCaseStudy ? (
           /* Rich Full Case Study Layout exactly mirroring PDF structure */
-          <div className="space-y-12 text-slate-700 leading-relaxed text-sm sm:text-base">
+          <div className="space-y-8 sm:space-y-12 text-slate-700 leading-relaxed text-sm sm:text-base">
             
             {/* Executive Summary (if present) */}
             {details.executiveSummary && details.executiveSummary.length > 0 && (
@@ -125,7 +125,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
                   <FileText className="h-6 w-6 text-accent shrink-0" />
                   <span>Executive Summary</span>
                 </h2>
-                <div className="space-y-3 bg-amber-50/40 border border-amber-200/80 rounded-lg p-5 sm:p-6 text-slate-800">
+                <div className="space-y-3 bg-amber-50/40 border border-amber-200/80 rounded-lg p-4 sm:p-6 text-slate-800">
                   {details.executiveSummary.map((para, idx) => (
                     <p key={idx} className="leading-relaxed">
                       {para}
@@ -142,7 +142,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
                   <Shield className="h-6 w-6 text-accent shrink-0" />
                   <span>{isNumberedPdf ? "1. Background" : "Background"}</span>
                 </h2>
-                <div className="space-y-3 bg-slate-50/70 border border-slate-200/80 rounded-lg p-5 sm:p-6 text-slate-700">
+                <div className="space-y-3 bg-slate-50/70 border border-slate-200/80 rounded-lg p-4 sm:p-6 text-slate-700">
                   {details.background.map((para, idx) => (
                     <p key={idx} className="leading-relaxed">
                       {para}
@@ -159,7 +159,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
                   <Briefcase className="h-6 w-6 text-accent shrink-0" />
                   <span>{isNumberedPdf ? "2. Association" : "My Association"}</span>
                 </h2>
-                <div className="bg-primary/5 border border-primary/15 rounded-lg p-5 sm:p-6 space-y-4">
+                <div className="bg-primary/5 border border-primary/15 rounded-lg p-4 sm:p-6 space-y-4">
                   {details.associationPreamble && (
                     <p className="text-slate-800 font-semibold text-sm sm:text-base">
                       {details.associationPreamble}
@@ -197,7 +197,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
                     {details.designPhilosophy.map((item, idx) => (
                       <div
                         key={idx}
-                        className="flex items-start space-x-3.5 bg-slate-50 border border-slate-200 rounded-md p-4"
+                        className="flex items-start space-x-3.5 bg-slate-50 border border-slate-200 rounded-md p-3 sm:p-4"
                       >
                         <div className="h-2 w-2 rounded-full bg-accent mt-2 shrink-0" />
                         <span className="text-slate-800 text-sm font-medium">{item}</span>
@@ -219,7 +219,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
                   {details.designMethodology.map((item, idx) => (
                     <div
                       key={idx}
-                      className="flex items-start space-x-3 bg-white border border-slate-200 rounded-md p-4 shadow-2xs hover:border-accent/40 transition-colors"
+                      className="flex items-start space-x-3 bg-white border border-slate-200 rounded-md p-3 sm:p-4 shadow-2xs hover:border-accent/40 transition-colors"
                     >
                       <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
                       <span className="text-slate-700 text-sm leading-relaxed">{item}</span>
@@ -239,7 +239,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {details.keyFeatures.developer && (
-                    <div className="bg-slate-50 border border-slate-200/80 rounded-md p-4">
+                    <div className="bg-slate-50 border border-slate-200/80 rounded-md p-3 sm:p-4">
                       <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-1">
                         Developer
                       </span>
@@ -249,7 +249,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
                     </div>
                   )}
                   {details.keyFeatures.purpose && (
-                    <div className="bg-slate-50 border border-slate-200/80 rounded-md p-4">
+                    <div className="bg-slate-50 border border-slate-200/80 rounded-md p-3 sm:p-4">
                       <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-1">
                         Purpose
                       </span>
@@ -271,7 +271,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
                       {details.keyFeatures.components.map((comp, idx) => (
                         <div
                           key={idx}
-                          className="flex items-start space-x-3 bg-white border border-slate-200 rounded-md p-3.5 shadow-xs hover:border-accent/40 transition-colors"
+                          className="flex items-start space-x-3 bg-white border border-slate-200 rounded-md p-3 sm:p-3.5 shadow-xs hover:border-accent/40 transition-colors"
                         >
                           <div className="h-2 w-2 rounded-full bg-accent mt-2 shrink-0" />
                           <span className="text-slate-700 text-sm">{comp}</span>
@@ -292,7 +292,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
                       {details.keyFeatures.capabilities.map((cap, idx) => (
                         <li
                           key={idx}
-                          className="flex items-start space-x-3 bg-accent/5 border border-accent/20 rounded-md p-3.5"
+                          className="flex items-start space-x-3 bg-accent/5 border border-accent/20 rounded-md p-3 sm:p-3.5"
                         >
                           <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
                           <span className="text-slate-800 text-sm font-medium">{cap}</span>
@@ -326,7 +326,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
                     {details.categorizedChallenges.map((item, idx) => (
                       <div
                         key={idx}
-                        className="grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-4 p-4 items-start hover:bg-slate-50/60 transition-colors"
+                        className="grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-4 p-3 sm:p-4 items-start hover:bg-slate-50/60 transition-colors"
                       >
                         <div className="sm:col-span-4">
                           <span
@@ -361,7 +361,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
                   {details.challenges.map((ch, idx) => (
                     <div
                       key={idx}
-                      className="flex items-start space-x-3.5 bg-amber-50/40 border border-amber-200/70 rounded-md p-4 transition-all hover:bg-amber-50/70"
+                      className="flex items-start space-x-3.5 bg-amber-50/40 border border-amber-200/70 rounded-md p-3 sm:p-4 transition-all hover:bg-amber-50/70"
                     >
                       <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-amber-100 text-amber-900 text-xs font-bold shrink-0 mt-0.5">
                         {idx + 1}
@@ -394,7 +394,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
                   {details.remedies.map((rem, idx) => (
                     <div
                       key={idx}
-                      className="flex items-start space-x-3.5 bg-emerald-50/30 border border-emerald-200/70 rounded-md p-4 transition-all hover:bg-emerald-50/60"
+                      className="flex items-start space-x-3.5 bg-emerald-50/30 border border-emerald-200/70 rounded-md p-3 sm:p-4 transition-all hover:bg-emerald-50/60"
                     >
                       <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-emerald-100 text-emerald-900 text-xs font-bold shrink-0 mt-0.5">
                         {idx + 1}
@@ -422,7 +422,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
                   {details.lessonsLearned.map((lesson, idx) => (
                     <div
                       key={idx}
-                      className="bg-slate-50 border border-slate-200 rounded-lg p-5 flex flex-col justify-between hover:border-accent/40 transition-colors"
+                      className="bg-slate-50 border border-slate-200 rounded-lg p-4 sm:p-5 flex flex-col justify-between hover:border-accent/40 transition-colors"
                     >
                       <div className="space-y-2">
                         <span className="text-xs font-bold text-accent uppercase tracking-wider block">
@@ -443,7 +443,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
                   <Compass className="h-6 w-6 text-accent shrink-0" />
                   <span>{isNumberedPdf ? "8. Conclusion" : "Conclusion"}</span>
                 </h2>
-                <div className="bg-slate-50/80 border-l-4 border-primary p-5 sm:p-6 rounded-r-lg space-y-3 text-slate-700">
+                <div className="bg-slate-50/80 border-l-4 border-primary p-4 sm:p-6 rounded-r-lg space-y-3 text-slate-700">
                   {details.conclusion.map((c, idx) => (
                     <p key={idx} className="leading-relaxed">
                       {c}
@@ -477,7 +477,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
             {/* 10. Author Sign-Off */}
             {details.author && (
               <section className="pt-4 border-t border-slate-200">
-                <div className="bg-slate-100/70 border border-slate-200 rounded-lg p-6 max-w-lg">
+                <div className="bg-slate-100/70 border border-slate-200 rounded-lg p-4 sm:p-6 max-w-lg">
                   <span className="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-2">
                     {isNumberedPdf ? "10. Author" : "Written By"}
                   </span>
@@ -527,7 +527,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
               </p>
               <ul className="space-y-3">
                 {details.keyDeliverables.map((kd, idx) => (
-                  <li key={idx} className="flex items-start space-x-3 bg-slate-50 border border-slate-200/40 rounded-sm p-4">
+                  <li key={idx} className="flex items-start space-x-3 bg-slate-50 border border-slate-200/40 rounded-sm p-3 sm:p-4">
                     <Check className="h-5 w-5 text-accent shrink-0 mt-0.5" />
                     <span className="text-slate-700 text-xs sm:text-sm font-semibold">{kd}</span>
                   </li>
@@ -538,7 +538,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
         )}
 
         {/* Consultation Callout */}
-        <div className="bg-primary text-white border border-slate-800 rounded-lg p-6 sm:p-8 mt-16 text-center space-y-4">
+        <div className="bg-primary text-white border border-slate-800 rounded-lg p-5 sm:p-8 mt-10 sm:mt-16 text-center space-y-3 sm:space-y-4">
           <h3 className="font-serif text-lg sm:text-xl font-bold text-white">
             {cs.category === "Defence & Aerospace"
               ? "Need Similar Defence Installation Surveillance or Program Oversight?"

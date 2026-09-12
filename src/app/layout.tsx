@@ -18,11 +18,11 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Business Clinic | India Entry & Operational Advisory Solutions",
+  title: "India Business Clinic | India Entry & Operational Advisory Solutions",
   description: "Empowering global companies to enter India, and Indian Industries to diagnose, troubleshoot, and resolve industrial challenges through execution-focused advisory.",
   keywords: "India Entry, Industrial Growth, Defence Industrial Licensing, Factory Setup, Vendor Audit, Operational troubleshooting, Industrial consulting India",
   openGraph: {
-    title: "Business Clinic | India Entry & Operational Advisory Solutions",
+    title: "India Business Clinic | India Entry & Operational Advisory Solutions",
     description: "Empowering global companies to enter India, and Indian Industries to resolve industrial challenges through execution-focused advisory.",
     type: "website",
     locale: "en_IN",
@@ -53,7 +53,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-white text-slate-800">
         <Header />
-        <main className="flex-grow pt-[92px] lg:pt-[80px]">{children}</main>
+        <main className="flex-grow pt-[69px] sm:pt-[76px] lg:pt-[80px]">{children}</main>
         <Footer />
         <BackToTop />
       </body>

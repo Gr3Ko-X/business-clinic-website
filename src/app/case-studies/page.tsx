@@ -4,7 +4,7 @@ import { caseStudiesData } from "@/lib/data/caseStudies";
 import { ArrowRight, Shield, Anchor, Zap } from "lucide-react";
 
 export const metadata = {
-  title: "Execution Case Studies | Business Clinic",
+  title: "Execution Case Studies | India Business Clinic",
   description: "Factual profiles of complex programs coordinated, set up, and validated under our leadership across defence, Navy, and industrial sectors.",
 };
 
@@ -47,15 +47,15 @@ export default function CaseStudiesListPage() {
       </section>
 
       {/* Case Studies Grid Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <section className="py-10 sm:py-20">
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8 max-w-5xl mx-auto">
             {caseStudiesData.map((cs) => {
               const Icon = getIcon(cs.slug);
               return (
                 <div
                   key={cs.slug}
-                  className="bg-slate-50/50 border border-slate-200/80 rounded-lg p-6 flex flex-col justify-between hover:bg-white hover:shadow-md hover:border-accent/40 transition-all duration-300"
+                  className="bg-slate-50/50 border border-slate-200/80 rounded-lg p-4 sm:p-6 flex flex-col justify-between hover:bg-white hover:shadow-md hover:border-accent/40 transition-all duration-300"
                 >
                   <div className="space-y-4">
                     {/* Meta */}

@@ -16,7 +16,7 @@ function MarqueeTrack() {
           {item.href ? (
             <Link
               href={item.href}
-              className={`px-4 text-sm sm:text-base font-bold uppercase tracking-[0.18em] whitespace-nowrap transition-colors hover:text-[#c58f1a] ${
+              className={`px-3 sm:px-4 text-xs sm:text-base font-bold uppercase tracking-[0.14em] sm:tracking-[0.18em] whitespace-nowrap transition-colors hover:text-[#c58f1a] ${
                 item.accent ? "text-[#c58f1a]" : "text-white"
               }`}
             >
@@ -24,7 +24,7 @@ function MarqueeTrack() {
             </Link>
           ) : (
             <span
-              className={`px-4 text-sm sm:text-base font-bold uppercase tracking-[0.18em] whitespace-nowrap ${
+              className={`px-3 sm:px-4 text-xs sm:text-base font-bold uppercase tracking-[0.14em] sm:tracking-[0.18em] whitespace-nowrap ${
                 item.accent ? "text-[#c58f1a]" : "text-white"
               }`}
             >
@@ -43,10 +43,10 @@ function MarqueeTrack() {
 export default function MarqueeSection() {
   return (
     <section
-      aria-label="Business Clinic highlights"
+      aria-label="India Business Clinic highlights"
       className="relative z-10 bg-[#071333] border-t-2 border-t-[#c58f1a] border-b border-b-[#c58f1a]/40 shadow-inner overflow-hidden"
     >
-      <div className="py-3.5 sm:py-4">
+      <div className="py-2.5 sm:py-3.5">
         <div className="animate-marquee">
           <MarqueeTrack />
           <MarqueeTrack />

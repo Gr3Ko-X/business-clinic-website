@@ -3,7 +3,7 @@ export const BTS_CONTACT_HREF = "/contact?source=bts-2026&service=india-entry";
 export const BTS_WHATSAPP_HREF =
   "https://wa.me/919560714343?text=" +
   encodeURIComponent(
-    "Hello Business Clinic — I scanned your BTS 2026 QR code and would like to book an India Entry discussion at Bengaluru Tech Summit 2026."
+    "Hello India Business Clinic — I scanned your BTS 2026 QR code and would like to book an India Entry discussion at Bengaluru Tech Summit 2026."
   );
 
 export const BTS_QR_URL =

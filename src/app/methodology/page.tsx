@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Methodology | Business Clinic",
+  title: "Methodology | India Business Clinic",
   description: "Learn about our execution methodologies: the 4E framework for global companies entering India and the 5D framework for industrial growth optimization.",
 };
 
@@ -139,9 +139,9 @@ export default function MethodologyPage() {
       </section>
 
       {/* 2. Detailed methodologies loop */}
-      <section className="py-20">
+      <section className="py-12 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-24 max-w-5xl mx-auto">
+          <div className="space-y-12 sm:space-y-20 max-w-5xl mx-auto">
             {methodologiesData.map((framework) => (
               <div key={framework.id} className="space-y-8">
                 {/* Title Card */}
@@ -155,7 +155,7 @@ export default function MethodologyPage() {
                 </div>
 
                 {/* Vertical Step Timeline Layout */}
-                <div className="relative border-l border-slate-200 pl-6 sm:pl-8 ml-4 space-y-12">
+                <div className="relative border-l border-slate-200 pl-6 sm:pl-8 ml-6 sm:ml-8 space-y-10 sm:space-y-12">
                   {framework.steps.map((step, sIdx) => {
                     const Icon = getIcon(step.iconName);
                     const subSteps = getStepBreakdown(framework.id, step.name);
@@ -163,8 +163,8 @@ export default function MethodologyPage() {
                       <div key={step.name} className="relative scroll-mt-24 group">
                         
                         {/* Timeline Node Icon */}
-                        <div className="absolute -left-[45px] sm:-left-[53px] top-0 p-2.5 bg-white border-2 border-slate-200 text-primary rounded-full group-hover:border-accent group-hover:text-accent transition-colors duration-300 shadow-sm z-10">
-                          <Icon className="h-5 w-5" />
+                        <div className="absolute left-0 -translate-x-1/2 top-0 p-2 sm:p-2.5 bg-white border-2 border-slate-200 text-primary rounded-full group-hover:border-accent group-hover:text-accent transition-colors duration-300 shadow-sm z-10">
+                          <Icon className="h-4 sm:h-5 w-4 sm:w-5" />
                         </div>
 
                         {/* Title and details */}
@@ -184,7 +184,7 @@ export default function MethodologyPage() {
                           </p>
 
                           {/* Sub-steps details list */}
-                          <div className="bg-slate-50 border border-slate-200/40 rounded-sm p-5 max-w-3xl space-y-2">
+                          <div className="bg-slate-50 border border-slate-200/40 rounded-xl sm:rounded-sm p-4 sm:p-5 max-w-3xl space-y-2">
                             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">
                               Engagement Deliverables
                             </h4>
@@ -208,7 +208,7 @@ export default function MethodologyPage() {
           </div>
 
           {/* Bottom Commitment Statement */}
-          <div className="mt-20 bg-slate-50 border border-slate-200 rounded-lg p-8 max-w-3xl mx-auto text-center space-y-4">
+          <div className="mt-12 sm:mt-20 bg-slate-50 border border-slate-200 rounded-2xl sm:rounded-lg p-5 sm:p-8 max-w-3xl mx-auto text-center space-y-4">
             <div className="inline-flex p-2 bg-accent/10 rounded-full text-accent">
               <ShieldCheck className="h-6 w-6" />
             </div>
@@ -221,7 +221,7 @@ export default function MethodologyPage() {
             <div className="pt-2">
               <Link
                 href="/contact"
-                className="inline-flex items-center space-x-2 bg-accent hover:bg-accent-dark text-white px-6 py-2.5 rounded-sm font-semibold text-xs transition-all uppercase tracking-wider"
+                className="inline-flex items-center justify-center space-x-2 bg-accent hover:bg-accent-dark text-white px-6 py-2.5 rounded-xl sm:rounded-sm font-semibold text-xs transition-all uppercase tracking-wider w-full sm:w-auto"
               >
                 <span>Initiate Diagnostics Assessment</span>
                 <ArrowRight className="h-3.5 w-3.5" />

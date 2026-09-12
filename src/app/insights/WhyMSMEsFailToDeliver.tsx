@@ -40,11 +40,11 @@ export default function WhyMSMEsFailToDeliver() {
   };
 
   return (
-    <div className="bg-slate-100/70 min-h-screen py-8 sm:py-12 print:bg-white print:py-0 font-sans antialiased text-slate-800">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-slate-100/70 min-h-screen py-4 sm:py-12 print:bg-white print:py-0 font-sans antialiased text-slate-800">
+      <div className="max-w-4xl mx-auto px-3.5 sm:px-6 lg:px-8">
         
         {/* Top Navigation Bar */}
-        <div className="flex items-center justify-between mb-6 print:hidden">
+        <div className="flex items-center justify-between mb-4 sm:mb-6 print:hidden">
           <Link
             href="/insights"
             className="inline-flex items-center space-x-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-[#0C1D4A] transition-colors"
@@ -66,16 +66,16 @@ export default function WhyMSMEsFailToDeliver() {
         </div>
 
         {/* Paper Document Container */}
-        <article className="bg-white border border-slate-200/80 shadow-md rounded-2xl p-6 sm:p-12 lg:p-16 print:shadow-none print:border-none print:p-0">
+        <article className="bg-white border border-slate-200/80 shadow-md rounded-2xl p-4 sm:p-12 lg:p-16 print:shadow-none print:border-none print:p-0">
           
           {/* Masthead / Header */}
-          <header className="border-b border-slate-200 pb-8 mb-8 text-center sm:text-left">
+          <header className="border-b border-slate-200 pb-5 sm:pb-8 mb-6 sm:mb-8 text-left">
             <div className="inline-flex items-center space-x-2 px-3 py-1 bg-amber-50 border border-amber-200/80 rounded-full text-[11px] font-bold text-amber-900 uppercase tracking-widest mb-4">
               <Sparkles className="w-3.5 h-3.5 text-amber-700" />
               <span>Manufacturing Diagnostic &amp; Operations Advisory</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0C1D4A] tracking-tight leading-tight mb-2">
+            <h1 className="text-xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0C1D4A] tracking-tight leading-tight mb-2">
               WHY MSMEs FAIL TO DELIVER
             </h1>
             <p className="text-base sm:text-lg font-semibold text-[#D98A10] tracking-normal mb-2">
@@ -91,7 +91,7 @@ export default function WhyMSMEsFailToDeliver() {
                   By Sanjay Chandra
                 </p>
                 <p className="text-slate-500 font-medium">
-                  Business Clinic &amp; Delhi Digitech
+                  India Business Clinic
                 </p>
               </div>
 
@@ -112,7 +112,7 @@ export default function WhyMSMEsFailToDeliver() {
           </header>
 
           {/* Table of Contents */}
-          <nav aria-label="Table of contents" className="mb-10 p-5 bg-slate-50 border border-slate-200/90 rounded-xl print:hidden">
+          <nav aria-label="Table of contents" className="mb-6 sm:mb-10 p-3.5 sm:p-5 bg-slate-50 border border-slate-200/90 rounded-xl print:hidden">
             <div className="flex items-center space-x-2 text-xs font-bold text-[#0C1D4A] uppercase tracking-wider mb-3">
               <ListOrdered className="w-4 h-4 text-[#D98A10]" />
               <span>Table of Contents</span>
@@ -234,7 +234,7 @@ export default function WhyMSMEsFailToDeliver() {
             </p>
 
             {/* Bottleneck 1 */}
-            <div id="bottleneck-1-flow" className="p-6 bg-slate-50/70 border border-slate-200 rounded-xl mb-6 scroll-mt-6">
+            <div id="bottleneck-1-flow" className="p-4 sm:p-6 bg-slate-50/70 border border-slate-200 rounded-xl mb-6 scroll-mt-6">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center space-x-3">
                   <span className="w-8 h-8 rounded-lg bg-[#0C1D4A] text-white flex items-center justify-center font-bold text-xs">
@@ -277,7 +277,7 @@ export default function WhyMSMEsFailToDeliver() {
             </div>
 
             {/* Bottleneck 2 */}
-            <div id="bottleneck-2-quality" className="p-6 bg-slate-50/70 border border-slate-200 rounded-xl mb-6 scroll-mt-6">
+            <div id="bottleneck-2-quality" className="p-4 sm:p-6 bg-slate-50/70 border border-slate-200 rounded-xl mb-6 scroll-mt-6">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center space-x-3">
                   <span className="w-8 h-8 rounded-lg bg-[#0C1D4A] text-white flex items-center justify-center font-bold text-xs">
@@ -311,7 +311,7 @@ export default function WhyMSMEsFailToDeliver() {
             </div>
 
             {/* Bottleneck 3 */}
-            <div id="bottleneck-3-supply-chain" className="p-6 bg-slate-50/70 border border-slate-200 rounded-xl mb-6 scroll-mt-6">
+            <div id="bottleneck-3-supply-chain" className="p-4 sm:p-6 bg-slate-50/70 border border-slate-200 rounded-xl mb-6 scroll-mt-6">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center space-x-3">
                   <span className="w-8 h-8 rounded-lg bg-[#0C1D4A] text-white flex items-center justify-center font-bold text-xs">
@@ -344,7 +344,7 @@ export default function WhyMSMEsFailToDeliver() {
             </div>
 
             {/* Bottleneck 4 */}
-            <div id="bottleneck-4-maintenance" className="p-6 bg-slate-50/70 border border-slate-200 rounded-xl mb-6 scroll-mt-6">
+            <div id="bottleneck-4-maintenance" className="p-4 sm:p-6 bg-slate-50/70 border border-slate-200 rounded-xl mb-6 scroll-mt-6">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center space-x-3">
                   <span className="w-8 h-8 rounded-lg bg-[#0C1D4A] text-white flex items-center justify-center font-bold text-xs">
@@ -370,7 +370,7 @@ export default function WhyMSMEsFailToDeliver() {
             </div>
 
             {/* Bottleneck 5 */}
-            <div id="bottleneck-5-capacity" className="p-6 bg-slate-50/70 border border-slate-200 rounded-xl mb-6 scroll-mt-6">
+            <div id="bottleneck-5-capacity" className="p-4 sm:p-6 bg-slate-50/70 border border-slate-200 rounded-xl mb-6 scroll-mt-6">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center space-x-3">
                   <span className="w-8 h-8 rounded-lg bg-[#0C1D4A] text-white flex items-center justify-center font-bold text-xs">
@@ -676,7 +676,7 @@ export default function WhyMSMEsFailToDeliver() {
 
           {/* Section 6: Industrial Advisory & Action Plan */}
           <section id="consultation-cta" className="mb-8 scroll-mt-6">
-            <div className="p-6 sm:p-8 bg-linear-to-br from-[#0C1D4A] to-[#1a337e] rounded-2xl text-white shadow-lg">
+            <div className="p-4 sm:p-8 bg-linear-to-br from-[#0C1D4A] to-[#1a337e] rounded-2xl text-white shadow-lg">
               <div className="max-w-2xl">
                 <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[#D98A10]/20 border border-[#D98A10]/40 rounded-full text-[11px] font-bold text-[#F5D76E] uppercase tracking-widest mb-4">
                   <span>Turnaround Advisory</span>
@@ -685,7 +685,7 @@ export default function WhyMSMEsFailToDeliver() {
                   Eliminate Delivery Bottlenecks &amp; Stabilize Your Shop Floor
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-200 leading-relaxed mb-6">
-                  Business Clinic provides hands-on diagnostic audits and operational restructuring for Indian manufacturing MSMEs. From shop-floor layout re-engineering and TPM implementation to vendor quality controls and finite capacity scheduling, we help industrial units achieve Tier-1 OEM delivery standards.
+                  India Business Clinic provides hands-on diagnostic audits and operational restructuring for Indian manufacturing MSMEs. From shop-floor layout re-engineering and TPM implementation to vendor quality controls and finite capacity scheduling, we help industrial units achieve Tier-1 OEM delivery standards.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3 pt-2">
@@ -722,7 +722,7 @@ export default function WhyMSMEsFailToDeliver() {
 
           {/* Document Footer */}
           <footer className="pt-6 border-t border-slate-200 text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p>© 2026 Business Clinic &amp; Delhi Digitech. All rights reserved.</p>
+            <p>© 2026 India Business Clinic &amp; Delhi Digitech. All rights reserved.</p>
             <div className="flex items-center space-x-4">
               <Link href="/insights" className="hover:text-[#0C1D4A] underline">
                 More Insights

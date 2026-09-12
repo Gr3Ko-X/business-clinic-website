@@ -282,7 +282,7 @@ export default function IndustryGrid() {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0C1D4A] tracking-tight leading-tight">
               Industries We Transform
             </h2>
-            <p className="text-slate-600 text-xs sm:text-base max-w-2xl lg:max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base max-w-2xl lg:max-w-xl mx-auto lg:mx-0 leading-relaxed">
               Led by Col Sanjay Chandra (Retd) — 35+ years across defence manufacturing, global OEM
               collaboration, and industrial execution. Sector expertise built for India entry and
               on-ground delivery.
@@ -354,7 +354,7 @@ export default function IndustryGrid() {
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl">
               Under Col Sanjay Chandra (Retd) — Former Director, PMO Suraj, and Former SVP Defence
-              Manufacturing — Business Clinic has supported international technology and industrial
+              Manufacturing — India Business Clinic has supported international technology and industrial
               partners entering and executing in India.
             </p>
 
@@ -445,13 +445,13 @@ export default function IndustryGrid() {
                 </ul>
               </div>
 
-              <div className="pt-2 flex justify-between items-center">
+              <div className="pt-2 flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-2.5">
                 <button
                   onClick={() => {
                     setSelectedSector(null);
                     setIsConsultModalOpen(true);
                   }}
-                  className="py-2.5 px-4 bg-[#D98A10] hover:bg-[#b8730b] text-white font-bold text-xs rounded-xl transition-all shadow-md cursor-pointer flex items-center space-x-1.5"
+                  className="py-2.5 px-4 bg-[#D98A10] hover:bg-[#b8730b] text-white font-bold text-xs rounded-xl transition-all shadow-md cursor-pointer flex items-center justify-center space-x-1.5"
                 >
                   <span>Request Sector Brief</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -459,7 +459,7 @@ export default function IndustryGrid() {
 
                 <button
                   onClick={() => setSelectedSector(null)}
-                  className="py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition-all cursor-pointer"
+                  className="py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition-all cursor-pointer text-center"
                 >
                   Close View
                 </button>

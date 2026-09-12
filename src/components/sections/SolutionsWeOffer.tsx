@@ -51,13 +51,13 @@ export default function SolutionsWeOffer() {
   ];
 
   return (
-    <section className="py-20 bg-slate-50/50 border-t border-b border-slate-100" id="solutions-offered">
+    <section className="py-12 sm:py-16 lg:py-20 bg-slate-50/50 border-t border-b border-slate-100" id="solutions-offered">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3">
           <span className="text-xs font-bold tracking-widest text-[#D98A10] uppercase">
             Capabilities
           </span>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-primary">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-primary">
             Solutions We Offer
           </h2>
           <div className="w-12 h-1 bg-accent mx-auto mt-2 rounded-full"></div>
@@ -66,13 +66,13 @@ export default function SolutionsWeOffer() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
           {solutions.map((sol) => {
             const Icon = sol.icon;
             return (
               <div 
                 key={sol.title} 
-                className="bg-white border border-slate-200/60 rounded-2xl p-8 flex flex-col justify-between hover:shadow-lg transition-all hover:border-slate-300 group"
+                className="bg-white border border-slate-200/60 rounded-2xl p-5 sm:p-8 flex flex-col justify-between hover:shadow-lg transition-all hover:border-slate-300 group"
               >
                 <div className="space-y-4">
                   <div className="p-3 bg-cream text-accent rounded-xl w-12 h-12 flex items-center justify-center border border-amber-100 group-hover:scale-105 transition-transform duration-300">
