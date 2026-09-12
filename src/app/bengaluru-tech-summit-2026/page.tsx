@@ -12,7 +12,6 @@ import {
   Shield,
   Target,
   MessageSquare,
-  Download,
   ExternalLink,
 } from "lucide-react";
 import BtsLandingHero from "@/components/sections/BtsLandingHero";
@@ -20,7 +19,6 @@ import BtsStickyCta from "@/components/sections/BtsStickyCta";
 import {
   BTS_ASSESSMENT_ITEMS,
   BTS_CONTACT_HREF,
-  BTS_QR_URL,
   BTS_WHATSAPP_HREF,
 } from "@/lib/bts";
 
@@ -174,39 +172,15 @@ export default function BengaluruTechSummit2026Page() {
 
       {/* QR collateral */}
       <section className="py-8 sm:py-16 bg-white border-y border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center max-w-4xl mx-auto">
-            <div className="flex justify-center">
-              <div className="bg-white p-3 sm:p-4 rounded-xl border border-slate-200 shadow-sm">
-                <Image
-                  src="/qr/bengaluru-tech-summit-2026.svg"
-                  alt="QR code for India Business Clinic BTS 2026 landing page"
-                  width={200}
-                  height={200}
-                  className="w-36 h-36 sm:w-48 sm:h-48"
-                />
-              </div>
-            </div>
-            <div className="space-y-3 sm:space-y-4 text-center md:text-left">
-              <h3 className="font-serif font-bold text-base sm:text-lg text-[#0c1d4a]">
-                Scan for India Entry Partner
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Use this QR on business cards, brochures, presentations, and BTS collateral.
-                Scans open this page with tracking for BTS-generated traffic.
-              </p>
-              <p className="text-[11px] sm:text-xs font-mono text-slate-500 break-all bg-slate-50 border border-slate-200 rounded-lg px-3 py-2">
-                {BTS_QR_URL}
-              </p>
-              <a
-                href="/qr/bengaluru-tech-summit-2026.svg"
-                download="business-clinic-bts-2026-qr.svg"
-                className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#c58f1a] hover:text-[#a37210] transition-colors"
-              >
-                <Download className="h-4 w-4" />
-                <span>Download QR (SVG)</span>
-              </a>
-            </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+          <div className="bg-white p-3 sm:p-4 rounded-xl border border-slate-200 shadow-sm">
+            <Image
+              src="/qr/bengaluru-tech-summit-2026.svg"
+              alt="QR code for India Business Clinic BTS 2026 landing page"
+              width={200}
+              height={200}
+              className="w-36 h-36 sm:w-48 sm:h-48"
+            />
           </div>
         </div>
       </section>

@@ -264,7 +264,7 @@ export default function IndustryGrid() {
   );
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-slate-800 font-sans antialiased py-10 sm:py-16 lg:py-20 px-3 sm:px-6 lg:px-8 relative overflow-hidden selection:bg-[#D98A10] selection:text-white">
+    <div className="bg-[#F8FAFC] text-slate-800 font-sans antialiased pt-6 sm:pt-8 lg:pt-10 pb-10 sm:pb-14 lg:pb-16 px-3 sm:px-6 lg:px-8 relative overflow-hidden selection:bg-[#D98A10] selection:text-white">
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0C1D4A_1px,transparent_1px)] [background-size:24px_24px]" />
       <div className="absolute top-1/3 left-10 w-96 h-96 bg-[#D98A10]/5 rounded-full filter blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/3 right-10 w-96 h-96 bg-[#0C1D4A]/5 rounded-full filter blur-3xl pointer-events-none" />

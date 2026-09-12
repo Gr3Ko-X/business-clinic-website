@@ -9,11 +9,11 @@ export default function InsightsGrid() {
   const articles = insightsIndexData.slice(0, 3);
 
   return (
-    <section className="bg-white py-12 sm:py-16 lg:py-20 border-b border-slate-100">
+    <section className="bg-white py-10 sm:py-12 lg:py-14 border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-10 sm:mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-8 sm:mb-12 gap-6">
           <div className="max-w-2xl space-y-4 text-left">
             <span className="text-xs font-bold tracking-widest text-accent uppercase block">
               Featured Insights
@@ -77,7 +77,7 @@ export default function InsightsGrid() {
                 </h3>
 
                 {/* Summary */}
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6 text-left lg:text-justify">
                   {art.summary}
                 </p>
               </div>

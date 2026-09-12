@@ -176,10 +176,18 @@ export default function IndustrialAssuranceValidationPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
-            {scopeServices.map((service) => {
+            {scopeServices.map((service, idx) => {
               const Icon = service.icon;
+              const isLast = idx === scopeServices.length - 1;
               return (
-                <div key={service.title} className="bg-slate-50 border border-slate-200/60 rounded-2xl p-5 sm:p-8 hover:bg-white hover:shadow-md hover:border-accent/40 transition-all duration-300 flex flex-col justify-between">
+                <div
+                  key={service.title}
+                  className={`bg-slate-50 border border-slate-200/60 rounded-2xl p-5 sm:p-8 hover:bg-white hover:shadow-md hover:border-accent/40 transition-all duration-300 flex flex-col justify-between ${
+                    isLast
+                      ? "md:col-span-2 md:w-[calc(50%-0.75rem)] lg:w-[calc(50%-1rem)] md:mx-auto"
+                      : ""
+                  }`}
+                >
                   <div className="space-y-3 sm:space-y-4">
                     <div className="p-2.5 sm:p-3 bg-primary text-white rounded-xl inline-block">
                       <Icon className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />

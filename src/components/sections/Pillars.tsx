@@ -321,7 +321,7 @@ export default function Pillars() {
   const activeCategory = activeModal?.categories[activeCategoryIndex];
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-slate-800 font-sans antialiased py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden selection:bg-[#D98A10] selection:text-white">
+    <div className="bg-[#F8FAFC] text-slate-800 font-sans antialiased pt-10 sm:pt-14 lg:pt-16 pb-8 sm:pb-10 lg:pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden selection:bg-[#D98A10] selection:text-white">
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0C1D4A_1px,transparent_1px)] [background-size:20px_20px]" />
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#D98A10]/5 rounded-full filter blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#0C1D4A]/5 rounded-full filter blur-3xl pointer-events-none" />

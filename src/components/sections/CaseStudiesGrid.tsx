@@ -19,11 +19,11 @@ export default function CaseStudiesGrid() {
   };
 
   return (
-    <section className="bg-slate-50/50 py-12 sm:py-16 lg:py-20 border-b border-slate-100">
+    <section className="bg-slate-50/50 py-10 sm:py-12 lg:py-14 border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-10 sm:mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-8 sm:mb-12 gap-6">
           <div className="max-w-2xl space-y-4 text-left">
             <span className="text-xs font-bold tracking-widest text-accent uppercase block">
               Case Studies
@@ -75,7 +75,7 @@ export default function CaseStudiesGrid() {
                   </h3>
 
                   {/* Summary */}
-                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed text-left lg:text-justify">
                     {cs.summary}
                   </p>
                 </div>

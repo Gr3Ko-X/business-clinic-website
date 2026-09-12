@@ -97,9 +97,9 @@ export default function TestimonialsSection() {
   const active = tabs.find((t) => t.id === activeTab) ?? tabs[0];
 
   return (
-    <section className="bg-white py-12 sm:py-16 lg:py-20 border-b border-slate-100">
+    <section className="bg-white py-10 sm:py-12 lg:py-14 border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 space-y-4">
           <span className="text-xs font-bold tracking-widest text-accent uppercase">
             Testimonials
           </span>
@@ -166,7 +166,7 @@ export default function TestimonialsSection() {
                 <span className="inline-block text-xs font-bold uppercase tracking-wider text-[#c58f1a] bg-amber-50 border border-amber-100 px-2.5 py-1 rounded-md">
                   {active.label}
                 </span>
-                <p className="text-slate-700 text-sm sm:text-base leading-relaxed italic">
+                <p className="text-slate-700 text-sm sm:text-base leading-relaxed italic text-left lg:text-justify">
                   &ldquo;{t.quote}&rdquo;
                 </p>
               </div>

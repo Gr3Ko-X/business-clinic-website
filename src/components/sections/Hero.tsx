@@ -140,7 +140,7 @@ export default function App() {
                     <h3 className="font-serif font-bold text-sm sm:text-base text-primary group-hover:text-accent transition-colors">
                       India Entry Clinic
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-left lg:text-justify">
                       Helping foreign companies enter, establish and grow in India.
                     </p>
                   </div>
@@ -162,7 +162,7 @@ export default function App() {
                     <h3 className="font-serif font-bold text-sm sm:text-base text-primary group-hover:text-accent transition-colors">
                       MSME Clinic
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-left lg:text-justify">
                       Diagnosing and solving business and operational challenges of MSMEs.
                     </p>
                   </div>
@@ -184,7 +184,7 @@ export default function App() {
                     <h3 className="font-serif font-bold text-sm sm:text-base text-primary group-hover:text-accent transition-colors">
                       Defence &amp; Aerospace Clinic
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-left lg:text-justify">
                       Providing specialised industrial, technical and regulatory support to defence and aerospace companies.
                     </p>
                   </div>
@@ -206,7 +206,7 @@ export default function App() {
                     <h3 className="font-serif font-bold text-sm sm:text-base text-primary group-hover:text-accent transition-colors">
                       Support Clinic
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-left lg:text-justify">
                       Providing technical documentation, audits, inspections and execution support.
                     </p>
                   </div>

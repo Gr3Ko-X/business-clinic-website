@@ -102,7 +102,7 @@ export default function Expertise() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#F7FAFC] via-[#F1F5F9] to-[#E2E8F0] text-slate-800 font-sans antialiased pt-12 pb-8 sm:pt-20 sm:pb-12 lg:pt-28 lg:pb-16 px-3 sm:px-6 lg:px-8 relative overflow-hidden selection:bg-[#D98A10] selection:text-white">
+    <div className="bg-gradient-to-b from-[#F7FAFC] via-[#F1F5F9] to-[#E2E8F0] text-slate-800 font-sans antialiased pt-10 pb-8 sm:pt-14 sm:pb-10 lg:pt-16 lg:pb-12 px-3 sm:px-6 lg:px-8 relative overflow-hidden selection:bg-[#D98A10] selection:text-white">
       
       {/* Background World Map Vector Overlay */}
       <div className="absolute inset-0 opacity-[0.035] pointer-events-none bg-[radial-gradient(#0C1D4A_1.2px,transparent_1.2px)] [background-size:24px_24px]"></div>
