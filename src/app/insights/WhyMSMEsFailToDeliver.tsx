@@ -91,7 +91,7 @@ export default function WhyMSMEsFailToDeliver() {
                   By Sanjay Chandra
                 </p>
                 <p className="text-slate-500 font-medium">
-                  India Business Clinic &amp; Delhi Digitech
+                  India Business Clinic
                 </p>
               </div>
 
