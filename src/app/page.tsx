@@ -40,7 +40,7 @@ export default function Home() {
 
       <BtsLandingHero />
 
-        <div className="text-center space-y-4 sm:space-y-6 px-3 sm:px-8 lg:px-24 py-6 sm:py-14 bg-[#f5f8fb]">
+        <div className="text-center space-y-4 sm:space-y-6 px-3 sm:px-8 lg:px-24 py-6 sm:py-10 bg-[#f5f8fb]">
           <div className="inline-flex items-center space-x-3">
               <span className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-[#D98A10]"></span>
               <p className="text-[11px] sm:text-xs uppercase tracking-widest text-[#0C1D4A] font-bold">

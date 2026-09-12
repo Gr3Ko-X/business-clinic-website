@@ -51,9 +51,9 @@ export default function SolutionsWeOffer() {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-slate-50/50 border-t border-b border-slate-100" id="solutions-offered">
+    <section className="py-10 sm:py-12 lg:py-14 bg-slate-50/50 border-t border-b border-slate-100" id="solutions-offered">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 space-y-3">
           <span className="text-xs font-bold tracking-widest text-[#D98A10] uppercase">
             Capabilities
           </span>
@@ -81,7 +81,7 @@ export default function SolutionsWeOffer() {
                   <h3 className="font-serif text-lg font-bold text-primary group-hover:text-accent transition-colors">
                     {sol.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed text-left lg:text-justify">
                     {sol.desc}
                   </p>
                 </div>

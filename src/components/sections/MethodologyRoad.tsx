@@ -119,7 +119,7 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-slate-800 font-sans antialiased py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden selection:bg-[#D98A10] selection:text-white">
+    <div className="bg-[#F8FAFC] text-slate-800 font-sans antialiased pt-10 sm:pt-12 lg:pt-14 pb-6 sm:pb-8 lg:pb-10 px-4 sm:px-6 lg:px-8 relative overflow-hidden selection:bg-[#D98A10] selection:text-white">
       
       {}
       <div className="absolute inset-0 opacity-[0.025] pointer-events-none bg-[radial-gradient(#0C1D4A_1px,transparent_1px)] [background-size:24px_24px]"></div>
@@ -323,7 +323,7 @@ export default function App() {
         </div>
 
         {}
-        <div className="mt-10 sm:mt-14 max-w-4xl mx-auto">
+        <div className="mt-8 sm:mt-10 max-w-4xl mx-auto">
           <div className="relative bg-[#0C1D4A] border border-[#D98A10]/50 rounded-2xl sm:rounded-full p-3.5 sm:p-4 shadow-xl overflow-hidden flex items-center justify-center">
             
             {/* Background Accent Glow */}

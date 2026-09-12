@@ -12,7 +12,7 @@ export default function FounderSection() {
   ];
 
   return (
-    <section className="bg-slate-50/50 py-12 sm:py-16 lg:py-20 border-b border-slate-100">
+    <section className="bg-slate-50/50 py-10 sm:py-12 lg:py-14 border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
