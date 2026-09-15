@@ -209,41 +209,41 @@ export default function IndustryGrid() {
   const renderCard = (card: SectorCard) => (
     <div
       key={card.id}
-      className="group bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-md hover:shadow-xl transition-all duration-300 p-5 sm:p-7 flex flex-col justify-between relative overflow-hidden hover:-translate-y-1"
+      className="group bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-md hover:shadow-xl transition-all duration-300 p-4 sm:p-7 flex flex-col justify-between relative overflow-hidden hover:-translate-y-1"
     >
       <div className="absolute top-0 right-0 w-32 h-32 bg-amber-50/50 rounded-bl-full -z-0 pointer-events-none transition-transform group-hover:scale-110" />
 
       <div>
-        <div className="flex items-center space-x-4 mb-5">
+        <div className="flex items-center space-x-3 sm:space-x-4 mb-3 sm:mb-5">
           <div className="relative shrink-0">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-transparent border-t-[#D98A10] border-r-[#D98A10] p-1 flex items-center justify-center rotate-45 group-hover:rotate-180 transition-transform duration-500 bg-white shadow-md">
-              <div className="w-full h-full rounded-full border border-slate-200 bg-white flex items-center justify-center p-2.5 -rotate-45 group-hover:-rotate-180 transition-transform duration-500">
+            <div className="w-13 h-13 sm:w-20 sm:h-20 rounded-full border-2 border-transparent border-t-[#D98A10] border-r-[#D98A10] p-0.5 sm:p-1 flex items-center justify-center rotate-45 group-hover:rotate-180 transition-transform duration-500 bg-white shadow-md">
+              <div className="w-full h-full rounded-full border border-slate-200 bg-white flex items-center justify-center p-1.5 sm:p-2.5 -rotate-45 group-hover:-rotate-180 transition-transform duration-500 [&>svg]:w-6 [&>svg]:h-6 sm:[&>svg]:w-10 sm:[&>svg]:h-10">
                 {card.icon}
               </div>
             </div>
           </div>
 
-          <div className="space-y-1 min-w-0">
+          <div className="space-y-0.5 sm:space-y-1 min-w-0">
             <div className="flex items-center space-x-1.5">
-              <span className="bg-[#0C1D4A] text-white text-xs font-bold px-2 py-0.5 rounded-md tracking-wider">
+              <span className="bg-[#0C1D4A] text-white text-[11px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 rounded-md tracking-wider">
                 {card.num}
               </span>
               <span className="text-slate-300 font-light text-xs">|</span>
             </div>
-            <h3 className="font-serif font-bold text-base sm:text-lg text-[#0C1D4A] leading-snug group-hover:text-[#D98A10] transition-colors">
+            <h3 className="font-serif font-bold text-sm sm:text-lg text-[#0C1D4A] leading-snug group-hover:text-[#D98A10] transition-colors">
               {card.title}
             </h3>
             {"subtitle" in card && card.subtitle ? (
-              <p className="text-xs text-slate-500 leading-snug">{card.subtitle}</p>
+              <p className="text-[11px] sm:text-xs text-slate-500 leading-snug">{card.subtitle}</p>
             ) : null}
           </div>
         </div>
 
-        <ul className="space-y-2.5 my-4 border-t border-slate-100 pt-4">
+        <ul className="space-y-1.5 sm:space-y-2.5 my-3 sm:my-4 border-t border-slate-100 pt-3 sm:pt-4">
           {card.bullets.map((bullet) => (
-            <li key={bullet} className="flex items-start space-x-2.5 text-sm sm:text-base text-slate-700">
-              <div className="w-4 h-4 rounded-full bg-[#D98A10] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
-                <Check className="w-2.5 h-2.5 stroke-[3]" />
+            <li key={bullet} className="flex items-start space-x-2 sm:space-x-2.5 text-xs sm:text-base text-slate-700">
+              <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-[#D98A10] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                <Check className="w-2 h-2 sm:w-2.5 sm:h-2.5 stroke-[3]" />
               </div>
               <span className="leading-snug">{bullet}</span>
             </li>
@@ -251,10 +251,10 @@ export default function IndustryGrid() {
         </ul>
       </div>
 
-      <div className="pt-4 border-t border-slate-100/80 mt-2">
+      <div className="pt-3 sm:pt-4 border-t border-slate-100/80 mt-1 sm:mt-2">
         <button
           onClick={() => setSelectedSector(card)}
-          className="w-full py-2.5 px-4 rounded-xl border border-[#0C1D4A]/20 hover:border-[#0C1D4A] text-[#0C1D4A] hover:bg-[#0C1D4A] hover:text-white font-bold text-xs flex items-center justify-center space-x-2 transition-all duration-200 cursor-pointer group/btn"
+          className="w-full py-2 sm:py-2.5 px-3 sm:px-4 rounded-xl border border-[#0C1D4A]/20 hover:border-[#0C1D4A] text-[#0C1D4A] hover:bg-[#0C1D4A] hover:text-white font-bold text-xs flex items-center justify-center space-x-1.5 sm:space-x-2 transition-all duration-200 cursor-pointer group/btn"
         >
           <span>Explore Solutions</span>
           <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
@@ -271,7 +271,7 @@ export default function IndustryGrid() {
 
       <div className="max-w-7xl mx-auto relative z-10 space-y-12 sm:space-y-16">
         {/* Header + Leadership visual */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-7 text-center lg:text-left space-y-3 px-2">
             <div className="inline-flex items-center space-x-2 bg-white border border-[#D98A10]/40 rounded-full px-5 py-1.5 shadow-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-[#D98A10] animate-pulse" />
@@ -290,7 +290,7 @@ export default function IndustryGrid() {
           </div>
 
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[280px] aspect-square rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-lg p-6 flex items-center justify-center">
+            <div className="relative w-full max-w-[130px] sm:max-w-[180px] lg:max-w-[280px] aspect-square rounded-xl sm:rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-md sm:shadow-lg p-3 sm:p-4 lg:p-6 flex items-center justify-center">
               <Image
                 src="/images/logo/IBC.png"
                 alt="India Business Clinic"
@@ -314,7 +314,7 @@ export default function IndustryGrid() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
             {transformSectors.map((card) => renderCard(card))}
           </div>
         </div>
@@ -330,47 +330,47 @@ export default function IndustryGrid() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
             {domainSectors.map((card) => renderCard(card))}
           </div>
         </div>
 
         {/* International works highlight */}
-        <div className="rounded-2xl sm:rounded-3xl bg-[#0C1D4A] text-white border border-[#D98A10]/40 overflow-hidden shadow-xl">
-          <div className="p-6 sm:p-8 lg:p-10 space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
-              <div className="w-11 h-11 rounded-full bg-[#D98A10]/20 border border-[#D98A10]/50 flex items-center justify-center shrink-0">
-                <Globe2 className="w-5 h-5 text-[#D98A10]" />
+        <div className="rounded-xl sm:rounded-3xl bg-[#0C1D4A] text-white border border-[#D98A10]/40 overflow-hidden shadow-lg sm:shadow-xl">
+          <div className="p-3.5 sm:p-8 lg:p-10 space-y-3.5 sm:space-y-6">
+            <div className="flex flex-row sm:flex-row items-center sm:items-center gap-2.5 sm:gap-4">
+              <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-[#D98A10]/20 border border-[#D98A10]/50 flex items-center justify-center shrink-0">
+                <Globe2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#D98A10]" />
               </div>
               <div>
-                <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#D98A10]">
+                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.18em] text-[#D98A10]">
                   Leadership · International Work
                 </span>
-                <h3 className="font-serif font-bold text-xl sm:text-2xl text-white mt-1">
+                <h3 className="font-serif font-bold text-base sm:text-2xl text-white mt-0.5 sm:mt-1 leading-snug">
                   Proven delivery with global OEMs &amp; strategic programmes
                 </h3>
               </div>
             </div>
 
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl">
+            <p className="text-slate-300 text-xs sm:text-base leading-relaxed max-w-3xl">
               Under Col Sanjay Chandra (Retd) — Former Director, PMO Suraj, and Former SVP Defence
               Manufacturing — India Business Clinic has supported international technology and industrial
               partners entering and executing in India.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4">
               {internationalWorks.map((work) => (
                 <Link
                   key={work.title}
                   href={work.href}
-                  className="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#D98A10]/40 rounded-xl p-4 transition-all"
+                  className="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#D98A10]/40 rounded-lg sm:rounded-xl p-2.5 sm:p-4 transition-all"
                 >
-                  <h4 className="font-serif font-bold text-sm text-white group-hover:text-[#D98A10] transition-colors">
+                  <h4 className="font-serif font-bold text-xs sm:text-sm text-white group-hover:text-[#D98A10] transition-colors">
                     {work.title}
                   </h4>
-                  <p className="text-sm text-slate-400 mt-1.5 leading-relaxed">{work.detail}</p>
-                  <span className="inline-flex items-center gap-1 text-xs font-bold text-[#D98A10] uppercase tracking-wider mt-3">
-                    View <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                  <p className="text-[11px] sm:text-sm text-slate-400 mt-1 sm:mt-1.5 leading-snug sm:leading-relaxed">{work.detail}</p>
+                  <span className="inline-flex items-center gap-1 text-[10px] sm:text-xs font-bold text-[#D98A10] uppercase tracking-wider mt-2 sm:mt-3">
+                    View <ArrowRight className="w-2.5 h-2.5 sm:w-3 sm:h-3 group-hover:translate-x-0.5 transition-transform" />
                   </span>
                 </Link>
               ))}

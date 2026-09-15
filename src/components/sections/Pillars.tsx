@@ -270,7 +270,7 @@ const pillars: Pillar[] = [
 function PillarEmblem({ id }: { id: string }) {
   if (id === "india-entry") {
     return (
-      <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
+      <svg className="w-5 h-5 sm:w-10 sm:h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
         <circle cx="32" cy="32" r="24" stroke="#D98A10" strokeWidth="2" />
         <ellipse cx="32" cy="32" rx="12" ry="24" stroke="#D98A10" strokeWidth="2" />
         <line x1="8" y1="32" x2="56" y2="32" stroke="#D98A10" strokeWidth="2" />
@@ -282,7 +282,7 @@ function PillarEmblem({ id }: { id: string }) {
 
   if (id === "msme-growth") {
     return (
-      <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
+      <svg className="w-5 h-5 sm:w-10 sm:h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
         <path d="M10 50 L10 26 L24 26 L24 50 L38 50 L38 18 L52 18 L52 50 Z" stroke="#D98A10" strokeWidth="2" fill="#D98A10" fillOpacity="0.1" />
         <path d="M12 36 L28 22 L40 30 L54 12" stroke="#0C1D4A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M46 12 L54 12 L54 20" stroke="#0C1D4A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
@@ -292,7 +292,7 @@ function PillarEmblem({ id }: { id: string }) {
 
   if (id === "defence-ecosystem") {
     return (
-      <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
+      <svg className="w-5 h-5 sm:w-10 sm:h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
         <path d="M32 8 L50 16 C50 34 38 48 32 54 C26 48 14 34 14 16 Z" stroke="#D98A10" strokeWidth="2.5" fill="#D98A10" fillOpacity="0.1" />
         <path d="M24 30 L30 36 L42 22" stroke="#0C1D4A" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
@@ -300,7 +300,7 @@ function PillarEmblem({ id }: { id: string }) {
   }
 
   return (
-    <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
+    <svg className="w-5 h-5 sm:w-10 sm:h-10 text-[#D98A10]" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5">
       <rect x="14" y="18" width="36" height="32" rx="3" stroke="#D98A10" strokeWidth="2" fill="#D98A10" fillOpacity="0.1" />
       <path d="M24 18 V12 A2 2 0 0 1 26 10 H38 A2 2 0 0 1 40 12 V18" stroke="#0C1D4A" strokeWidth="2.5" />
       <line x1="14" y1="30" x2="50" y2="30" stroke="#0C1D4A" strokeWidth="2" />
@@ -345,33 +345,46 @@ export default function Pillars() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch">
           {pillars.map((pillar) => {
             const RibbonIcon = pillar.badgeIcon;
             return (
               <div
                 key={pillar.id}
                 id={pillar.id}
-                className="scroll-mt-28 relative bg-white rounded-2xl border border-slate-200/90 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between group"
+                className="scroll-mt-28 relative bg-white rounded-xl sm:rounded-2xl border border-slate-200/90 shadow-sm sm:shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col justify-between group"
               >
-                <div className="absolute top-0 right-0 w-16 h-16 pointer-events-none overflow-hidden z-20">
-                  <div className="absolute top-0 right-0 bg-gradient-to-bl from-[#D98A10] via-[#C47A08] to-[#A86804] text-white p-2.5 rounded-bl-2xl shadow-md flex items-center justify-center">
-                    <RibbonIcon className="w-4 h-4 text-white" />
+                <div className="absolute top-0 right-0 w-9 h-9 sm:w-16 sm:h-16 pointer-events-none overflow-hidden z-20">
+                  <div className="absolute top-0 right-0 bg-gradient-to-bl from-[#D98A10] via-[#C47A08] to-[#A86804] text-white p-1.5 sm:p-2.5 rounded-bl-lg sm:rounded-bl-2xl shadow-sm sm:shadow-md flex items-center justify-center">
+                    <RibbonIcon className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                   </div>
                 </div>
 
-                <div className="p-5 sm:p-7 flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 relative z-10 flex-1 justify-between">
-                  <div className="relative shrink-0 my-1 sm:my-0">
-                    <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full border-2 border-dashed border-[#D98A10]/60 p-1 sm:p-1.5 flex items-center justify-center bg-gradient-to-br from-amber-50/50 to-white shadow-md group-hover:scale-105 transition-transform duration-300">
-                      <div className="w-full h-full rounded-full border-2 border-[#D98A10] bg-white flex items-center justify-center p-2.5 sm:p-3 shadow-inner relative overflow-hidden">
-                        <PillarEmblem id={pillar.id} />
+                <div className="p-3 sm:p-7 flex flex-col sm:flex-row items-start gap-2.5 sm:gap-6 relative z-10 flex-1 justify-between">
+                  <div className="flex items-center gap-2.5 sm:block w-full sm:w-auto">
+                    <div className="relative shrink-0">
+                      <div className="w-9 h-9 sm:w-28 sm:h-28 rounded-full border border-dashed border-[#D98A10]/60 p-0.5 sm:p-1.5 flex items-center justify-center bg-gradient-to-br from-amber-50/50 to-white shadow-xs sm:shadow-md group-hover:scale-105 transition-transform duration-300">
+                        <div className="w-full h-full rounded-full border border-[#D98A10] sm:border-2 bg-white flex items-center justify-center p-1 sm:p-3 shadow-inner relative overflow-hidden">
+                          <PillarEmblem id={pillar.id} />
+                        </div>
                       </div>
+                    </div>
+                    {/* Mobile Title row aligned with emblem */}
+                    <div className="sm:hidden flex items-center space-x-1.5">
+                      <span className="bg-[#0C1D4A] text-white font-serif font-bold text-[10px] px-1.5 py-0.5 rounded shadow-xs">
+                        {pillar.num}
+                      </span>
+                      <span className="text-[#0C1D4A] font-light text-xs">|</span>
+                      <h3 className="font-serif font-bold text-sm text-[#0C1D4A]">
+                        {pillar.title}
+                      </h3>
                     </div>
                   </div>
 
-                  <div className="flex-1 text-center sm:text-left space-y-3 sm:space-y-3.5 flex flex-col justify-between h-full w-full">
+                  <div className="flex-1 text-left space-y-2 sm:space-y-3.5 flex flex-col justify-between h-full w-full">
                     <div>
-                      <div className="flex items-center justify-center sm:justify-start space-x-2.5">
+                      {/* Desktop Title Row */}
+                      <div className="hidden sm:flex items-center space-x-2.5">
                         <span className="bg-[#0C1D4A] text-white font-serif font-bold text-xs px-2.5 py-1 rounded-md shadow-xs">
                           {pillar.num}
                         </span>
@@ -381,23 +394,23 @@ export default function Pillars() {
                         </h3>
                       </div>
 
-                      <ul className="space-y-2 text-left pt-2.5 sm:pt-1">
+                      <ul className="space-y-1 sm:space-y-2 text-left pt-1">
                         {pillar.bullets.map((bullet) => (
-                          <li key={bullet} className="flex items-start space-x-2.5 text-xs sm:text-base text-slate-700 font-medium">
-                            <CheckCircle2 className="w-4 h-4 text-[#D98A10] shrink-0 mt-0.5" />
+                          <li key={bullet} className="flex items-start space-x-2 sm:space-x-2.5 text-[11px] sm:text-base text-slate-700 font-medium">
+                            <CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4 text-[#D98A10] shrink-0 mt-0.5" />
                             <span className="leading-snug">{bullet}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    <div className="pt-3 sm:pt-2">
+                    <div className="pt-1.5 sm:pt-2">
                       <button
                         onClick={() => setActiveModal(pillar)}
-                        className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white hover:bg-slate-50 border border-slate-300 hover:border-[#0C1D4A] text-[#0C1D4A] font-bold text-xs px-4 py-2.5 rounded-lg transition-all shadow-2xs hover:shadow-md cursor-pointer group/btn"
+                        className="w-full sm:w-auto inline-flex items-center justify-center space-x-1.5 sm:space-x-2 bg-white hover:bg-slate-50 border border-slate-300 hover:border-[#0C1D4A] text-[#0C1D4A] font-bold text-[11px] sm:text-xs px-3 sm:px-4 py-1.5 sm:py-2.5 rounded-md sm:rounded-lg transition-all shadow-2xs hover:shadow-md cursor-pointer group/btn"
                       >
                         <span>{pillar.btnText}</span>
-                        <ArrowRight className="w-3.5 h-3.5 text-[#D98A10] group-hover/btn:translate-x-1 transition-transform" />
+                        <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#D98A10] group-hover/btn:translate-x-1 transition-transform" />
                       </button>
                     </div>
                   </div>

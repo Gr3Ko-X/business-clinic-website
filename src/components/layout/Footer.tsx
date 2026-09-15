@@ -198,12 +198,22 @@ export default function Footer() {
             © {new Date().getFullYear()} India Business Clinic. India Business Clinic is a business division/brand of Spuntech Solutions Pvt Ltd. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center lg:justify-end gap-x-3.5 sm:gap-x-4 gap-y-1.5 text-[11px] sm:text-xs shrink-0 whitespace-nowrap">
-            <Link href="/policy" className="text-slate-400 hover:text-accent transition-colors">
-              Privacy Policy
+            <Link href="/policy" className="group text-slate-400 hover:text-white transition-colors">
+              Privacy{" "}
+              <span className="text-accent group-hover:text-white font-medium transition-colors">
+                Policy
+              </span>
             </Link>
             <span className="text-slate-700">|</span>
-            <Link href="/terms" className="text-slate-400 hover:text-accent transition-colors">
-              Terms &amp; Conditions
+            <Link href="/terms" className="group text-slate-400 hover:text-white transition-colors">
+              <span className="text-accent group-hover:text-white font-medium transition-colors">
+                T
+              </span>
+              erms &amp;{" "}
+              <span className="text-accent group-hover:text-white font-medium transition-colors">
+                C
+              </span>
+              onditions
             </Link>
             {/* <span className="text-slate-700">|</span>
             <Link href="/contact" className="text-slate-400 hover:text-accent transition-colors">

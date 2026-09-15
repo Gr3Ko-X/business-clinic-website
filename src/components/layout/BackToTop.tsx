@@ -7,7 +7,7 @@ export default function BackToTop() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 1050);
+    const onScroll = () => setVisible(window.scrollY > 1550);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -23,7 +23,7 @@ export default function BackToTop() {
       onClick={scrollToTop}
       aria-label="Back to top"
       className={`
-        fixed z-40 rounded-full p-3
+        fixed z-40 rounded-full p-2.5 sm:p-3
         bg-[#0c1d4a] text-white shadow-lg shadow-black/20
         cursor-pointer
         transition-all duration-300 ease-out
@@ -35,12 +35,12 @@ export default function BackToTop() {
           ? "opacity-100 translate-y-0 pointer-events-auto"
           : "opacity-0 translate-y-3 pointer-events-none"
         }
-        bottom-6 right-6
-        lg:bottom-8 lg:right-8
-        max-lg:bottom-20
+        bottom-20 right-4
+        sm:bottom-20 sm:right-6
+        lg:bottom-24 lg:right-8
       `}
     >
-      <ArrowUp className="h-5 w-5" strokeWidth={2.5} />
+      <ArrowUp className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={2.5} />
     </button>
   );
 }

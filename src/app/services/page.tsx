@@ -62,25 +62,25 @@ export default function ServicesPage() {
                 <div
                   key={category.id}
                   id={category.id}
-                  className="scroll-mt-24 bg-slate-50 border border-slate-200/80 rounded-2xl sm:rounded-lg p-4 sm:p-8 lg:p-12 shadow-sm space-y-5 sm:space-y-8 hover:shadow-md transition-all duration-300"
+                  className="scroll-mt-24 bg-slate-50 border border-slate-200/80 rounded-xl sm:rounded-lg p-3 sm:p-8 lg:p-12 shadow-xs sm:shadow-sm space-y-3.5 sm:space-y-8 hover:shadow-md transition-all duration-300"
                 >
                   {/* Category Header */}
-                  <div className="flex flex-col sm:flex-row justify-between items-start gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-slate-200">
-                    <div className="flex items-center space-x-3 sm:space-x-4">
-                      <div className="p-2.5 sm:p-3.5 bg-primary text-white rounded-full">
-                        <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
+                  <div className="flex flex-col sm:flex-row justify-between items-start gap-2.5 sm:gap-4 pb-3 sm:pb-6 border-b border-slate-200">
+                    <div className="flex items-center space-x-2.5 sm:space-x-4">
+                      <div className="p-2 sm:p-3.5 bg-primary text-white rounded-full shrink-0">
+                        <Icon className="h-4 w-4 sm:h-6 sm:w-6" />
                       </div>
                       <div>
-                        <span className="text-xs font-bold text-slate-400 tracking-widest block">
+                        <span className="text-[10px] sm:text-xs font-bold text-slate-400 tracking-widest block">
                           CLINIC {num}
                         </span>
-                        <h2 className="font-serif text-lg sm:text-2xl font-bold text-primary">
+                        <h2 className="font-serif text-base sm:text-2xl font-bold text-primary">
                           {category.title}
                         </h2>
                       </div>
                     </div>
                     <div className="text-left">
-                      <span className="inline-block text-xs font-bold text-accent bg-accent/10 px-3 py-1 rounded-sm">
+                      <span className="inline-block text-[11px] sm:text-xs font-bold text-accent bg-accent/10 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-sm">
                         {category.tagline}
                       </span>
                     </div>
@@ -92,14 +92,14 @@ export default function ServicesPage() {
                   </p>
 
                   {/* Bullet Summary (Highlights) */}
-                  <div className="space-y-3 sm:space-y-4">
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                  <div className="space-y-2 sm:space-y-4">
+                    <h3 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-500">
                       Core Operations Focus
                     </h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                       {category.bulletPoints.map((bp) => (
                         <div key={bp} className="flex items-center space-x-2 text-xs sm:text-sm text-slate-700">
-                          <Check className="h-4 w-4 text-accent shrink-0" />
+                          <Check className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-accent shrink-0" />
                           <span>{bp}</span>
                         </div>
                       ))}
@@ -108,21 +108,21 @@ export default function ServicesPage() {
 
                   {/* Detailed Services Grid */}
                   {category.detailedServices && (
-                    <div className="pt-4 sm:pt-6 border-t border-slate-200 space-y-3 sm:space-y-4">
-                      <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                    <div className="pt-3 sm:pt-6 border-t border-slate-200 space-y-2.5 sm:space-y-4">
+                      <h3 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-500">
                         Detailed Scope of Engagement
                       </h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-6">
                         {category.detailedServices.map((service, sIdx) => (
                           <div
                             key={sIdx}
-                            className="bg-white border border-slate-100 rounded-xl sm:rounded-sm p-3.5 sm:p-5 space-y-1 sm:space-y-1.5 shadow-xs"
+                            className="bg-white border border-slate-100 rounded-lg sm:rounded-sm p-2.5 sm:p-5 space-y-1 sm:space-y-1.5 shadow-xs"
                           >
                             <h4 className="font-sans font-bold text-xs sm:text-sm text-primary">
                               {service.name}
                             </h4>
                             {service.description && (
-                              <p className="text-xs text-slate-500 leading-relaxed">
+                              <p className="text-[11px] sm:text-xs text-slate-500 leading-relaxed">
                                 {service.description}
                               </p>
                             )}
