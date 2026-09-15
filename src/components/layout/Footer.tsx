@@ -116,6 +116,7 @@ export default function Footer() {
                     India Entry Scorecard
                   </Link>
                 </li>
+              
               </ul>
             </div>
           </div>
@@ -190,18 +191,47 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Copyright */}
+      {/* Bottom Copyright & Legal / Attribution Bar */}
       <div className="bg-[#071333] py-5 sm:py-6 border-t border-[#0a1835] text-xs text-slate-500">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between items-center gap-3 lg:gap-0 text-center lg:text-left">
-          <p className="text-[11px] sm:text-xs text-slate-400 leading-normal whitespace-normal lg:whitespace-nowrap">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between items-center gap-4 text-center lg:text-left">
+          <p className="text-[11px] sm:text-xs text-slate-400 leading-normal whitespace-normal">
             © {new Date().getFullYear()} India Business Clinic. India Business Clinic is a business division/brand of Spuntech Solutions Pvt Ltd. All rights reserved.
           </p>
-          <div className="flex items-center space-x-4 sm:space-x-6 text-[11px] sm:text-xs shrink-0 whitespace-nowrap">
-            <Link href="/contact" className="hover:text-accent transition-colors">
-              Schedule Consultation
+          <div className="flex flex-wrap items-center justify-center lg:justify-end gap-x-3.5 sm:gap-x-4 gap-y-1.5 text-[11px] sm:text-xs shrink-0 whitespace-nowrap">
+            <Link href="/policy" className="group text-slate-400 hover:text-white transition-colors">
+              Privacy{" "}
+              <span className="text-accent group-hover:text-white font-medium transition-colors">
+                Policy
+              </span>
             </Link>
             <span className="text-slate-700">|</span>
-            <span className="text-slate-500">India Entry &amp; Operations Partner</span>
+            <Link href="/terms" className="group text-slate-400 hover:text-white transition-colors">
+              <span className="text-accent group-hover:text-white font-medium transition-colors">
+                T
+              </span>
+              erms &amp;{" "}
+              <span className="text-accent group-hover:text-white font-medium transition-colors">
+                C
+              </span>
+              onditions
+            </Link>
+            {/* <span className="text-slate-700">|</span>
+            <Link href="/contact" className="text-slate-400 hover:text-accent transition-colors">
+              Schedule Consultation
+            </Link> */}
+            <span className="text-slate-700">|</span>
+            <span className="text-slate-400 inline-flex items-center gap-1">
+              Design by{" "}
+              <a
+                href="https://www.alphadelving.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-white font-medium transition-colors inline-flex items-center gap-0.5"
+              >
+                Alpha Delving
+                <span className="text-[10px] text-accent/80 font-mono">↗</span>
+              </a>
+            </span>
           </div>
         </div>
       </div>

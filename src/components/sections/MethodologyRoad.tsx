@@ -152,7 +152,7 @@ export default function App() {
         </div>
 
         {}
-        <div className="space-y-12 sm:space-y-16 max-w-6xl mx-auto">
+        <div className="space-y-8 sm:space-y-16 max-w-6xl mx-auto">
           
           {/* ==========================================
               CONTAINER 1: GLOBAL ENTERPRISES: 4E METHODOLOGY
@@ -160,7 +160,7 @@ export default function App() {
           <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-md p-3.5 sm:p-8 flex flex-col items-center transition-all hover:shadow-xl">
             
             {/* Top Center Pill Header Badge */}
-            <div className="inline-flex bg-[#0C1D4A] text-white px-3.5 sm:px-7 py-1.5 sm:py-2 rounded-full shadow-md border border-[#D98A10]/50 items-center space-x-2.5 mb-5 sm:mb-10 text-center max-w-full">
+            <div className="inline-flex bg-[#0C1D4A] text-white px-3.5 sm:px-7 py-1.5 sm:py-2 rounded-full shadow-md border border-[#D98A10]/50 items-center space-x-2.5 mb-4 sm:mb-10 text-center max-w-full">
               <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D98A10] shrink-0" />
               <span className="text-[11px] sm:text-base font-bold tracking-widest uppercase">
                 GLOBAL ENTERPRISES: 4E METHODOLOGY
@@ -168,59 +168,60 @@ export default function App() {
             </div>
 
             {/* 4E Grid Flow */}
-            <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-4 lg:gap-2 relative items-start">
+            <div className="w-full grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 lg:gap-2 relative items-stretch sm:items-start">
               {globalMethodology.map((item, idx) => {
                 const Icon = item.icon;
                 const isLast = idx === globalMethodology.length - 1;
 
                 return (
-                  <div key={item.step} className="relative flex flex-col items-center text-center group px-2">
+                  <div
+                    key={item.step}
+                    onClick={() => setActiveStepModal(item)}
+                    className="relative flex flex-col items-center justify-between text-center group p-2.5 sm:p-0 rounded-xl sm:rounded-none bg-slate-50/70 sm:bg-transparent border border-slate-200/60 sm:border-0 hover:bg-amber-50/40 sm:hover:bg-transparent transition-all cursor-pointer"
+                  >
                     
                     {/* Top Step Code Badge */}
-                    <div className="flex items-center space-x-1 mb-3">
-                      <span className="text-sm sm:text-base font-bold text-[#D98A10]">{item.step}</span>
+                    <div className="flex items-center space-x-1 mb-1.5 sm:mb-3">
+                      <span className="text-xs sm:text-base font-bold text-[#D98A10]">{item.step}</span>
                       <span className="text-slate-300 font-light">|</span>
-                      <span className="text-sm sm:text-base font-serif font-bold text-[#0C1D4A] tracking-wider">
+                      <span className="text-xs sm:text-base font-serif font-bold text-[#0C1D4A] tracking-wider">
                         {item.code}
                       </span>
                     </div>
 
                     {/* Circular Arc Icon Badge Container */}
-                    <div className="relative mb-3.5">
+                    <div className="relative mb-1.5 sm:mb-3.5">
                       {/* Outer Gold Arc Emblem Ring */}
-                      <div className="w-16 h-16 sm:w-22 sm:h-22 rounded-full border-2 border-transparent border-t-[#D98A10] border-r-[#D98A10] p-1 sm:p-1.5 flex items-center justify-center rotate-45 group-hover:rotate-180 transition-transform duration-500 bg-white shadow-md">
-                        <div className="w-full h-full rounded-full border border-slate-200 bg-white flex items-center justify-center p-2 sm:p-3 -rotate-45 group-hover:-rotate-180 transition-transform duration-500">
-                          <Icon className="w-5 h-5 sm:w-7 sm:h-7 text-[#0C1D4A] group-hover:scale-110 transition-transform" />
+                      <div className="w-11 h-11 sm:w-22 sm:h-22 rounded-full border-2 border-transparent border-t-[#D98A10] border-r-[#D98A10] p-0.5 sm:p-1.5 flex items-center justify-center rotate-45 group-hover:rotate-180 transition-transform duration-500 bg-white shadow-xs sm:shadow-md">
+                        <div className="w-full h-full rounded-full border border-slate-200 bg-white flex items-center justify-center p-1 sm:p-3 -rotate-45 group-hover:-rotate-180 transition-transform duration-500">
+                          <Icon className="w-4 h-4 sm:w-7 sm:h-7 text-[#0C1D4A] group-hover:scale-110 transition-transform" />
                         </div>
                       </div>
                     </div>
 
-                    {/* Stage Title & Short Subtitle */}
-                    <div className="space-y-1 max-w-[190px]">
+                    {/* Stage Title & Short Subtitle - Hidden on mobile, visible on desktop */}
+                    <div className="hidden sm:block space-y-0.5 sm:space-y-1 max-w-[190px]">
                       {item.description ? (
                         <>
-                          <h4 className="font-bold text-sm sm:text-base text-[#0C1D4A] leading-snug">
+                          <h4 className="font-bold text-xs sm:text-base text-[#0C1D4A] leading-snug">
                             {item.description}
                           </h4>
-                          <p className="text-sm sm:text-xs text-slate-500 leading-tight">
+                          <p className="text-[11px] sm:text-xs text-slate-500 leading-tight">
                             {item.methodology}
                           </p>
                         </>
                       ) : (
-                        <h4 className="font-bold text-sm sm:text-base text-[#0C1D4A] leading-snug">
+                        <h4 className="font-bold text-xs sm:text-base text-[#0C1D4A] leading-snug">
                           {item.methodology}
                         </h4>
                       )}
                     </div>
 
                     {/* Interactive Clickable Info Trigger */}
-                    <button
-                      onClick={() => setActiveStepModal(item)}
-                      className="mt-3 text-xs font-bold text-[#D98A10] hover:text-[#0C1D4A] inline-flex items-center space-x-1 transition-colors cursor-pointer"
-                    >
-                      <span>Explore Stage</span>
+                    <div className="mt-1 sm:mt-3 text-[10.5px] sm:text-xs font-bold text-[#D98A10] group-hover:text-[#0C1D4A] inline-flex items-center space-x-0.5 sm:space-x-1 transition-colors">
+                      <span>View Details</span>
                       <ChevronRight className="w-3 h-3" />
-                    </button>
+                    </div>
 
                     {/* Connector Arrow for Desktop Layout */}
                     {!isLast && (
@@ -244,7 +245,7 @@ export default function App() {
           <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-md p-3.5 sm:p-8 flex flex-col items-center transition-all hover:shadow-xl">
             
             {/* Top Center Pill Header Badge */}
-            <div className="inline-flex bg-[#0C1D4A] text-white px-3.5 sm:px-7 py-1.5 sm:py-2 rounded-full shadow-md border border-[#D98A10]/50 items-center space-x-2.5 mb-5 sm:mb-10 text-center max-w-full">
+            <div className="inline-flex bg-[#0C1D4A] text-white px-3.5 sm:px-7 py-1.5 sm:py-2 rounded-full shadow-md border border-[#D98A10]/50 items-center space-x-2.5 mb-4 sm:mb-10 text-center max-w-full">
               <Factory className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D98A10] shrink-0" />
               <span className="text-[11px] sm:text-base font-bold tracking-widest uppercase">
                 INDIAN MSMEs: 5D METHODOLOGY
@@ -252,41 +253,47 @@ export default function App() {
             </div>
 
             {/* 5D Connected Step Flow */}
-            <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-4 lg:gap-2 relative items-start">
+            <div className="w-full grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-2.5 sm:gap-4 lg:gap-2 relative items-stretch sm:items-start">
               {msmeMethodology.map((item, idx) => {
                 const Icon = item.icon;
                 const isLast = idx === msmeMethodology.length - 1;
 
                 return (
-                  <div key={item.step} className="relative flex flex-col items-center text-center group px-1">
+                  <div
+                    key={item.step}
+                    onClick={() => setActiveStepModal(item)}
+                    className={`relative flex flex-col items-center justify-between text-center group p-2.5 sm:p-0 rounded-xl sm:rounded-none bg-slate-50/70 sm:bg-transparent border border-slate-200/60 sm:border-0 hover:bg-amber-50/40 sm:hover:bg-transparent transition-all cursor-pointer ${
+                      idx === 4 ? "col-span-2 sm:col-span-1 max-w-[200px] sm:max-w-none mx-auto w-full sm:w-auto" : ""
+                    }`}
+                  >
                     
                     {/* Step Code Header */}
-                    <div className="flex items-center space-x-1 mb-3">
-                      <span className="text-sm sm:text-base font-bold text-[#0C1D4A]">{item.step}</span>
+                    <div className="flex items-center space-x-1 mb-1.5 sm:mb-3">
+                      <span className="text-xs sm:text-base font-bold text-[#0C1D4A]">{item.step}</span>
                       <span className="text-slate-300 font-light">|</span>
-                      <span className="text-sm sm:text-base font-serif font-bold text-[#0C1D4A] tracking-wider">
+                      <span className="text-xs sm:text-base font-serif font-bold text-[#0C1D4A] tracking-wider">
                         {item.code}
                       </span>
                     </div>
 
                     {/* Circular Arc Badge Container with Dark Blue Arc */}
-                    <div className="relative mb-3.5">
+                    <div className="relative mb-1.5 sm:mb-3.5">
                       {/* Outer Navy Blue Arc Emblem Ring */}
-                      <div className="w-16 h-16 sm:w-22 sm:h-22 rounded-full border-2 border-transparent border-t-[#0C1D4A] border-l-[#0C1D4A] p-1 sm:p-1.5 flex items-center justify-center -rotate-45 group-hover:rotate-90 transition-transform duration-500 bg-white shadow-md">
-                        <div className="w-full h-full rounded-full border border-slate-200 bg-white flex items-center justify-center p-2 sm:p-3 rotate-45 group-hover:-rotate-90 transition-transform duration-500">
-                          <Icon className="w-5 h-5 sm:w-7 sm:h-7 text-[#0C1D4A] group-hover:text-[#D98A10] transition-colors" />
+                      <div className="w-11 h-11 sm:w-22 sm:h-22 rounded-full border-2 border-transparent border-t-[#0C1D4A] border-l-[#0C1D4A] p-0.5 sm:p-1.5 flex items-center justify-center -rotate-45 group-hover:rotate-90 transition-transform duration-500 bg-white shadow-xs sm:shadow-md">
+                        <div className="w-full h-full rounded-full border border-slate-200 bg-white flex items-center justify-center p-1 sm:p-3 rotate-45 group-hover:-rotate-90 transition-transform duration-500">
+                          <Icon className="w-4 h-4 sm:w-7 sm:h-7 text-[#0C1D4A] group-hover:text-[#D98A10] transition-colors" />
                         </div>
                       </div>
                     </div>
 
-                    {/* Stage Title */}
-                    <div className="space-y-1 max-w-[170px]">
+                    {/* Stage Title - Hidden on mobile, visible on desktop */}
+                    <div className="hidden sm:block space-y-0.5 sm:space-y-1 max-w-[170px]">
                       {item.description ? (
                         <>
                           <p className="text-xs text-[#0C1D4A] font-bold leading-snug">
                             {item.description}
                           </p>
-                          <p className="text-sm text-slate-500 font-medium leading-snug">
+                          <p className="text-[11px] sm:text-xs text-slate-500 font-medium leading-snug">
                             {item.methodology}
                           </p>
                         </>
@@ -298,13 +305,10 @@ export default function App() {
                     </div>
 
                     {/* Interactive Clickable Info Trigger */}
-                    <button
-                      onClick={() => setActiveStepModal(item)}
-                      className="mt-3 text-xs font-bold text-[#0C1D4A] hover:text-[#D98A10] inline-flex items-center space-x-1 transition-colors cursor-pointer"
-                    >
-                      <span>Explore Stage</span>
+                    <div className="mt-1 sm:mt-3 text-[10.5px] sm:text-xs font-bold text-[#0C1D4A] group-hover:text-[#D98A10] inline-flex items-center space-x-0.5 sm:space-x-1 transition-colors">
+                      <span>View Details</span>
                       <ChevronRight className="w-3 h-3" />
-                    </button>
+                    </div>
 
                     {/* Desktop Connector Line Nodes */}
                     {!isLast && (

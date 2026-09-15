@@ -53,6 +53,21 @@ const nextConfig: NextConfig = {
         destination: "/services/india-entry-support-foreign-industry/scorecard",
         permanent: false,
       },
+      {
+        source: "/privacy-policy",
+        destination: "/policy",
+        permanent: true,
+      },
+      {
+        source: "/privacy",
+        destination: "/policy",
+        permanent: true,
+      },
+      {
+        source: "/terms-and-conditions",
+        destination: "/terms",
+        permanent: true,
+      },
     ];
   },
 };

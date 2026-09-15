@@ -142,15 +142,15 @@ export default function Expertise() {
         </div>
 
         {/* 3 Main Cards Grid - Fully Responsive */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6 xl:gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 xl:gap-8 items-stretch">
           {cards.map((card) => {
             return (
               <div
                 key={card.id}
-                className="relative flex flex-col justify-between bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 overflow-hidden group"
+                className="relative flex flex-col justify-between bg-white rounded-xl sm:rounded-3xl border border-slate-200/90 shadow-sm sm:shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 overflow-hidden group"
               >
                 {/* Header Content Area */}
-                <div className="relative pt-5 sm:pt-7 px-4 sm:px-6 xl:px-7 pb-3 sm:pb-4">
+                <div className="relative pt-3.5 sm:pt-7 px-3 sm:px-6 xl:px-7 pb-2 sm:pb-4">
                   
                   {/* Top Header Row: Circle Emblem & Card Number */}
                   <div className="flex items-start justify-between relative z-10">
@@ -158,25 +158,25 @@ export default function Expertise() {
                     {/* Circle Emblem Badge */}
                     <div className="relative">
                       {card.id === "india-entry" && (
-                        <div className="w-10 h-10 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#0C1D4A] to-[#061230] p-0.5 shadow-md flex items-center justify-center border-2 border-[#D98A10]">
+                        <div className="w-8 h-8 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#0C1D4A] to-[#061230] p-0.5 shadow-xs sm:shadow-md flex items-center justify-center border border-[#D98A10] sm:border-2">
                           <div className="w-full h-full rounded-full bg-[#0C1D4A] flex items-center justify-center text-[#D98A10]">
-                            <Globe className="w-4 h-4 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
+                            <Globe className="w-3.5 h-3.5 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
                           </div>
                         </div>
                       )}
 
                       {card.id === "msme-growth" && (
-                        <div className="w-10 h-10 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#D98A10] to-[#B37007] p-0.5 shadow-md flex items-center justify-center border-2 border-amber-200">
+                        <div className="w-8 h-8 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#D98A10] to-[#B37007] p-0.5 shadow-xs sm:shadow-md flex items-center justify-center border border-amber-200 sm:border-2">
                           <div className="w-full h-full rounded-full bg-[#D98A10] flex items-center justify-center text-white">
-                            <Factory className="w-4 h-4 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
+                            <Factory className="w-3.5 h-3.5 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
                           </div>
                         </div>
                       )}
 
                       {card.id === "defence-facilitation" && (
-                        <div className="w-10 h-10 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#0C1D4A] to-[#061230] p-0.5 shadow-md flex items-center justify-center border-2 border-[#D98A10]">
+                        <div className="w-8 h-8 sm:w-14 sm:h-14 xl:w-16 xl:h-16 rounded-full bg-gradient-to-br from-[#0C1D4A] to-[#061230] p-0.5 shadow-xs sm:shadow-md flex items-center justify-center border border-[#D98A10] sm:border-2">
                           <div className="w-full h-full rounded-full bg-[#0C1D4A] flex items-center justify-center text-[#D98A10]">
-                            <ShieldCheck className="w-4 h-4 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
+                            <ShieldCheck className="w-3.5 h-3.5 sm:w-6 sm:h-6 xl:w-7 xl:h-7 stroke-[1.8]" />
                           </div>
                         </div>
                       )}
@@ -185,10 +185,10 @@ export default function Expertise() {
                     {/* Step Number & Category Tag */}
                     <div className="text-right">
                       <div className="flex items-center justify-end space-x-1.5 text-xs font-bold text-[#D98A10]">
-                        <span className="text-sm sm:text-base font-serif font-bold text-[#D98A10]">{card.num}</span>
-                        <span className="w-3 sm:w-4 h-px bg-[#D98A10]"></span>
+                        <span className="text-[11px] sm:text-base font-serif font-bold text-[#D98A10]">{card.num}</span>
+                        <span className="w-2 sm:w-4 h-px bg-[#D98A10]"></span>
                       </div>
-                      <span className="text-xs sm:text-sm xl:text-base font-bold tracking-wider text-slate-500 uppercase font-sans">
+                      <span className="text-[10px] sm:text-sm xl:text-base font-bold tracking-wider text-slate-500 uppercase font-sans">
                         {card.title}
                       </span>
                     </div>
@@ -196,28 +196,28 @@ export default function Expertise() {
                   </div>
 
                   {/* Card Title Headline with constant minimum height for horizontal alignment */}
-                  <div className="min-h-0 sm:min-h-[58px] lg:min-h-[64px] flex items-end mt-3 sm:mt-5">
-                    <h3 className="text-base sm:text-xl xl:text-2xl font-serif font-bold text-[#0C1D4A] leading-snug">
+                  <div className="min-h-0 sm:min-h-[58px] lg:min-h-[64px] flex items-end mt-1.5 sm:mt-5">
+                    <h3 className="text-[13px] sm:text-xl xl:text-2xl font-serif font-bold text-[#0C1D4A] leading-snug">
                       {card.heading}
                     </h3>
                   </div>
 
                   {/* Divider Line */}
-                  <div className="w-full h-px bg-slate-100 my-2.5 sm:my-4"></div>
+                  <div className="w-full h-px bg-slate-100 my-1.5 sm:my-4"></div>
 
                   {/* Bullet Highlights Grid - 3-across with proper column isolation & typography */}
-                  <div className="grid grid-cols-3 gap-1.5 sm:gap-2 xl:gap-3 pt-1 sm:pt-2 pb-2 sm:pb-4 items-start">
+                  <div className="grid grid-cols-3 gap-1 sm:gap-2 xl:gap-3 pt-0.5 sm:pt-2 pb-0.5 sm:pb-4 items-start">
                     {card.bullets.map((bullet, idx) => {
                       const BulletIcon = bullet.icon;
                       return (
                         <div
                           key={idx}
-                          className="flex flex-col items-center text-center space-y-1.5 sm:space-y-2 group/bullet min-w-0 w-full px-0.5"
+                          className="flex flex-col items-center text-center space-y-0.5 sm:space-y-2 group/bullet min-w-0 w-full px-0.5"
                         >
-                          <div className="w-9 h-9 sm:w-12 sm:h-12 xl:w-14 xl:h-14 rounded-lg sm:rounded-xl xl:rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#0C1D4A] group-hover/bullet:bg-amber-50 group-hover/bullet:border-[#D98A10] group-hover/bullet:text-[#D98A10] transition-all shadow-xs group-hover/bullet:scale-105 duration-200 shrink-0">
-                            <BulletIcon className="w-4 h-4 sm:w-5 sm:h-5 xl:w-6 xl:h-6 stroke-[1.8]" />
+                          <div className="w-7 h-7 sm:w-12 sm:h-12 xl:w-14 xl:h-14 rounded-md sm:rounded-xl xl:rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#0C1D4A] group-hover/bullet:bg-amber-50 group-hover/bullet:border-[#D98A10] group-hover/bullet:text-[#D98A10] transition-all shadow-2xs group-hover/bullet:scale-105 duration-200 shrink-0">
+                            <BulletIcon className="w-3 h-3 sm:w-5 sm:h-5 xl:w-6 xl:h-6 stroke-[1.8]" />
                           </div>
-                          <span className="text-[10px] sm:text-xs xl:text-[13px] font-semibold text-slate-700 leading-tight sm:leading-snug group-hover/bullet:text-accent transition-colors w-full text-center break-words">
+                          <span className="text-[9px] sm:text-xs xl:text-[13px] font-semibold text-slate-700 leading-tight sm:leading-snug group-hover/bullet:text-accent transition-colors w-full text-center break-words">
                             {bullet.label}
                           </span>
                         </div>
@@ -227,8 +227,8 @@ export default function Expertise() {
 
                 </div>
 
-                  {/* Card Background Graphic Watermark Illustrations */}
-                  <div className="relative flex-1 min-h-[60px] sm:min-h-[120px] flex items-end justify-center px-4 overflow-hidden">
+                {/* Card Background Graphic Watermark Illustrations (Hidden on mobile to eliminate blank space) */}
+                <div className="hidden sm:flex relative flex-1 min-h-[90px] xl:min-h-[110px] items-end justify-center px-4 overflow-hidden">
                   
                   {card.watermarkType === "architecture" && (
                     <div className="w-full opacity-65 group-hover:opacity-85 transition-opacity flex justify-center pb-2">
@@ -279,16 +279,16 @@ export default function Expertise() {
                 </div>
 
                 {/* Card Button CTA Area */}
-                <div className="p-4 sm:p-6 pt-2 relative z-10 space-y-2.5 sm:space-y-3 bg-white/90 backdrop-blur-xs">
+                <div className="p-2.5 sm:p-6 pt-1 sm:pt-2 relative z-10 space-y-1 sm:space-y-3 bg-white/90 backdrop-blur-xs">
                   <Link
                     href={card.btnLink}
-                    className={`w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base transition-all duration-300 flex items-center justify-center space-x-2 group/btn cursor-pointer ${card.btnStyle}`}
+                    className={`w-full py-2 sm:py-3.5 px-3 sm:px-5 rounded-lg sm:rounded-2xl font-bold text-[11.5px] sm:text-base transition-all duration-300 flex items-center justify-center space-x-1.5 sm:space-x-2 group/btn cursor-pointer ${card.btnStyle}`}
                   >
                     <span className="text-center">{card.btnText}</span>
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform shrink-0" />
+                    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 transition-transform shrink-0" />
                   </Link>
 
-                  <p className="text-center text-sm sm:text-base text-slate-500 font-medium leading-tight">
+                  <p className="text-center text-[10.5px] sm:text-sm text-slate-500 font-medium leading-tight">
                     {card.subtext}
                   </p>
                 </div>
@@ -300,25 +300,25 @@ export default function Expertise() {
 
         {/* Bottom Horizontal Value Highlights Bar */}
         {}
-        <div className="mt-8 sm:mt-12 bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl shadow-lg p-4 sm:p-5 max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 divide-y md:divide-y-0 md:divide-x divide-slate-200/80">
+        <div className="mt-6 sm:mt-12 bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl shadow-md sm:shadow-lg p-3 sm:p-5 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-6 divide-y md:divide-y-0 md:divide-x divide-slate-200/80">
             {bottomHighlights.map((hl, idx) => {
               const HlIcon = hl.icon;
               return (
                 <div
                   key={hl.title}
-                  className={`flex items-center space-x-3.5 ${
-                    idx > 0 ? "pt-3 md:pt-0 md:pl-6" : ""
+                  className={`flex items-center space-x-3 ${
+                    idx > 0 ? "pt-2.5 md:pt-0 md:pl-6" : ""
                   }`}
                 >
-                  <div className={`p-2.5 rounded-xl ${hl.color} shadow-xs shrink-0`}>
-                    <HlIcon className="w-5 h-5" />
+                  <div className={`p-2 sm:p-2.5 rounded-lg sm:rounded-xl ${hl.color} shadow-xs shrink-0`}>
+                    <HlIcon className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <h4 className="text-sm sm:text-base font-bold text-[#0C1D4A] tracking-tight">
+                    <h4 className="text-xs sm:text-base font-bold text-[#0C1D4A] tracking-tight">
                       {hl.title}
                     </h4>
-                    <p className="text-sm text-slate-500 font-medium">
+                    <p className="text-[11px] sm:text-sm text-slate-500 font-medium leading-tight">
                       {hl.desc}
                     </p>
                   </div>

@@ -66,26 +66,26 @@ export default function SolutionsWeOffer() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-8">
           {solutions.map((sol) => {
             const Icon = sol.icon;
             return (
               <div 
                 key={sol.title} 
-                className="bg-white border border-slate-200/60 rounded-2xl p-5 sm:p-8 flex flex-col justify-between hover:shadow-lg transition-all hover:border-slate-300 group"
+                className="bg-white border border-slate-200/60 rounded-2xl p-4 sm:p-8 flex flex-col justify-between hover:shadow-lg transition-all hover:border-slate-300 group"
               >
-                <div className="space-y-4">
-                  <div className="p-3 bg-cream text-accent rounded-xl w-12 h-12 flex items-center justify-center border border-amber-100 group-hover:scale-105 transition-transform duration-300">
-                    <Icon className="h-6 w-6 shrink-0" />
+                <div className="space-y-2.5 sm:space-y-4">
+                  <div className="p-2 sm:p-3 bg-cream text-accent rounded-xl w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border border-amber-100 group-hover:scale-105 transition-transform duration-300">
+                    <Icon className="h-5 w-5 sm:h-6 sm:w-6 shrink-0" />
                   </div>
-                  <h3 className="font-serif text-lg font-bold text-primary group-hover:text-accent transition-colors">
+                  <h3 className="font-serif text-base sm:text-lg font-bold text-primary group-hover:text-accent transition-colors">
                     {sol.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed text-left lg:text-justify">
+                  <p className="text-xs sm:text-base text-slate-600 leading-relaxed text-left lg:text-justify word-spacing: 0.1 rem">
                     {sol.desc}
                   </p>
                 </div>
-                <div className="pt-6">
+                <div className="pt-3 sm:pt-6">
                   <Link 
                     href={sol.path}
                     className="inline-flex items-center space-x-1.5 text-xs font-bold text-[#D98A10] uppercase tracking-wider hover:text-accent transition-colors"

@@ -37,17 +37,17 @@ export default function InsightsGrid() {
         </div>
 
         {/* Articles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-8">
           {articles.map((art) => (
             <article
               key={art.slug}
-              className="bg-slate-50/50 border border-slate-200/60 rounded-2xl sm:rounded-md p-5 sm:p-6 flex flex-col justify-between hover:bg-white hover:shadow-md hover:border-accent/40 transition-all duration-300"
+              className="bg-slate-50/50 border border-slate-200/60 rounded-2xl sm:rounded-md p-4 sm:p-6 flex flex-col justify-between hover:bg-white hover:shadow-md hover:border-accent/40 transition-all duration-300"
             >
               <div>
                 {art.image && (
                   <Link
                     href={`/insights/${art.slug}`}
-                    className="block mb-4 rounded-md overflow-hidden border border-slate-200 shadow-xs group"
+                    className="block mb-3 sm:mb-4 rounded-md overflow-hidden border border-slate-200 shadow-xs group"
                   >
                     <div className="relative aspect-[16/9] w-full bg-slate-100 overflow-hidden">
                       <Image
@@ -61,8 +61,8 @@ export default function InsightsGrid() {
                 )}
 
                 {/* Meta details */}
-                <div className="flex items-center justify-between text-sm text-slate-500 font-semibold mb-4">
-                  <span className="bg-accent/10 text-accent px-2 py-0.5 rounded-sm uppercase tracking-wider">
+                <div className="flex items-center justify-between text-xs sm:text-sm text-slate-500 font-semibold mb-2.5 sm:mb-4">
+                  <span className="bg-accent/10 text-accent px-2 py-0.5 rounded-sm uppercase tracking-wider text-[11px] sm:text-xs">
                     {art.category}
                   </span>
                   <span className="flex items-center space-x-1">
@@ -72,18 +72,18 @@ export default function InsightsGrid() {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-serif text-base sm:text-lg font-bold text-primary mb-3 hover:text-accent transition-colors">
+                <h3 className="font-serif text-sm sm:text-lg font-bold text-primary mb-2 sm:mb-3 hover:text-accent transition-colors leading-snug">
                   <Link href={`/insights/${art.slug}`}>{art.title}</Link>
                 </h3>
 
                 {/* Summary */}
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6 text-left lg:text-justify">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3.5 sm:mb-6 text-left lg:text-justify">
                   {art.summary}
                 </p>
               </div>
 
               {/* Action Link */}
-              <div className="border-t border-slate-100 pt-4 flex justify-between items-center text-xs">
+              <div className="border-t border-slate-100 pt-3 sm:pt-4 flex justify-between items-center text-xs">
                 <span className="text-slate-400 font-medium">{art.publishDate}</span>
                 <Link
                   href={`/insights/${art.slug}`}

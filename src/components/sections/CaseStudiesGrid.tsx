@@ -47,41 +47,41 @@ export default function CaseStudiesGrid() {
         </div>
 
         {/* Case Studies Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-8">
           {caseStudiesIndexData.map((cs) => {
             const Icon = getIcon(cs.slug);
             return (
               <div
                 key={cs.slug}
-                className="bg-white border border-slate-200/80 rounded-2xl sm:rounded-md p-5 sm:p-6 flex flex-col justify-between hover:shadow-lg hover:border-accent/40 transition-all duration-300"
+                className="bg-white border border-slate-200/80 rounded-2xl sm:rounded-md p-4 sm:p-6 flex flex-col justify-between hover:shadow-lg hover:border-accent/40 transition-all duration-300"
               >
-                <div className="space-y-4">
+                <div className="space-y-2.5 sm:space-y-4">
                   {/* Category & Icon */}
                   <div className="flex justify-between items-center text-xs font-semibold">
-                    <span className="bg-accent/10 text-accent px-2 py-0.5 rounded-sm uppercase tracking-wide">
+                    <span className="bg-accent/10 text-accent px-2 py-0.5 rounded-sm uppercase tracking-wide text-[11px] sm:text-xs">
                       {cs.client}
                     </span>
-                    <Icon className="h-5 w-5 text-slate-400" />
+                    <Icon className="h-4 w-4 sm:h-5 sm:w-5 text-slate-400" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-serif text-base sm:text-lg font-bold text-primary leading-tight">
+                  <h3 className="font-serif text-sm sm:text-lg font-bold text-primary leading-tight">
                     {cs.title}
                     {cs.subtitle && (
-                      <span className="block text-accent text-xs sm:text-sm font-sans font-semibold mt-1">
+                      <span className="block text-accent text-xs sm:text-sm font-sans font-semibold mt-0.5 sm:mt-1">
                         {cs.subtitle}
                       </span>
                     )}
                   </h3>
 
                   {/* Summary */}
-                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed text-left lg:text-justify">
+                  <p className="text-xs sm:text-base text-slate-600 leading-relaxed text-left lg:text-justify">
                     {cs.summary}
                   </p>
                 </div>
 
                 {/* Bottom link */}
-                <div className="border-t border-slate-100 pt-4 mt-6">
+                <div className="border-t border-slate-100 pt-3 sm:pt-4 mt-3.5 sm:mt-6">
                   <Link
                     href={`/case-studies/${cs.slug}`}
                     className="inline-flex items-center space-x-1 text-primary hover:text-accent font-bold text-xs uppercase tracking-wider transition-colors"
