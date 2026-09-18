@@ -18,6 +18,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.indiabusinessclinic.com"),
   title: "India Business Clinic | India Entry & Operational Advisory Solutions",
   description: "Empowering global companies to enter India, and Indian Industries to diagnose, troubleshoot, and resolve industrial challenges through execution-focused advisory.",
   keywords: "India Entry, Industrial Growth, Defence Industrial Licensing, Factory Setup, Vendor Audit, Operational troubleshooting, Industrial consulting India",
@@ -51,6 +52,9 @@ export default function RootLayout({
       lang="en"
       className={`${lora.variable} ${outfit.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="canonical" href="https://www.indiabusinessclinic.com/" />
+      </head>
       <body className="min-h-full flex flex-col bg-white text-slate-800">
         <Header />
         <main className="flex-grow pt-[69px] sm:pt-[76px] lg:pt-[80px]">{children}</main>
