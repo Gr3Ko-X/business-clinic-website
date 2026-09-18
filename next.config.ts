@@ -68,6 +68,11 @@ const nextConfig: NextConfig = {
         destination: "/terms",
         permanent: true,
       },
+      {
+        source: "/robot.txt",
+        destination: "/robots.txt",
+        permanent: true,
+      },
     ];
   },
 };
