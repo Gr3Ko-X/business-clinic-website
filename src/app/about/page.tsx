@@ -6,6 +6,9 @@ import { ArrowRight, CheckCircle2, Award, Globe2, ShieldAlert, Cpu, Calendar } f
 export const metadata = {
   title: "About Us | India Business Clinic",
   description: "Learn about India Business Clinic, led by Col Sanjay Chandra (Retd), bringing 35+ years of military precision, global OEM experience, and manufacturing excellence to India entry and MSME growth.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {

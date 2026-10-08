@@ -6,6 +6,9 @@ import { Globe, Factory, ShieldCheck, FileText, Briefcase, Check, ArrowRight } f
 export const metadata = {
   title: "Our Services | India Business Clinic",
   description: "Explore our specialized industrial advisory clinics including India Entry support, Industrial Growth advisory, Industrial Quality Assurance, Documentation services, and Support solutions.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 export default function ServicesPage() {

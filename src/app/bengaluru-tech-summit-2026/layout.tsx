@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     index: false,
     follow: true,
   },
+  alternates: {
+    canonical: "/bengaluru-tech-summit-2026",
+  },
   openGraph: {
     title: "India Business Clinic — India Entry Partner at BTS 2026",
     description:

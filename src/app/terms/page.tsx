@@ -14,6 +14,9 @@ export const metadata = {
   title: "Terms & Conditions | India Business Clinic",
   description:
     "Terms and Conditions governing access to and use of the website operated by Spuntech Solutions Pvt. Ltd. through its India Business Clinic division.",
+  alternates: {
+    canonical: "/terms",
+  },
 };
 
 const sections = [

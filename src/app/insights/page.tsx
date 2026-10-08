@@ -7,6 +7,9 @@ import { Clock, ArrowRight, BookOpen } from "lucide-react";
 export const metadata = {
   title: "Featured Insights & Capability Notes | India Business Clinic",
   description: "Browse our articles and capability notes on India market entry, regulatory compliance, industrial operational growth, and industrial setups.",
+  alternates: {
+    canonical: "/insights",
+  },
 };
 
 export default function InsightsListPage() {

@@ -15,6 +15,9 @@ import {
 export const metadata = {
   title: "Defence & Aerospace Clinic | India Business Clinic",
   description: "Regulatory facilitation, offset advisory, indigenization, and WPC frequency licensing for the Indian defence sector.",
+  alternates: {
+    canonical: "/services/defence-aerospace-clinic",
+  },
 };
 
 export default function DefenceAerospaceClinicPage() {

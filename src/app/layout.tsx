@@ -54,7 +54,6 @@ export default function RootLayout({
       className={`${lora.variable} ${outfit.variable} h-full antialiased`}
     >
       <head>
-        <link rel="canonical" href="https://www.indiabusinessclinic.com/" />
         {/* Google tag (gtag.js) */}
         <Script
           strategy="afterInteractive"
