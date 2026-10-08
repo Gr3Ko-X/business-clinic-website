@@ -16,6 +16,9 @@ import {
 export const metadata = {
   title: "Legal, Company Secretary & CA Services | India Business Clinic",
   description: "Legal and statutory support, finance & accounts, secretarial services, HR & payroll management, and industrial logistics coordination.",
+  alternates: {
+    canonical: "/services/legal-company-secretary-ca-services",
+  },
 };
 
 export default function SupportClinicPage() {

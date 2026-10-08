@@ -14,6 +14,9 @@ import {
 export const metadata = {
   title: "Industrial Assurance & Validation Services | India Business Clinic",
   description: "Quality surveillance, vendor audits, and validation testing for mission-critical manufacturing and engineering.",
+  alternates: {
+    canonical: "/services/industrial-assurance-validation",
+  },
 };
 
 export default function IndustrialAssuranceValidationPage() {
