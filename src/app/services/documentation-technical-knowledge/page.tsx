@@ -16,6 +16,9 @@ import {
 export const metadata = {
   title: "Documentation & Technical Knowledge Services | India Business Clinic",
   description: "Techno-commercial documentation, SOP development, Transfer of Technology (ToT) support, and plant standing orders for industrial setups.",
+  alternates: {
+    canonical: "/services/documentation-technical-knowledge",
+  },
 };
 
 export default function DocumentationTechnicalKnowledgePage() {

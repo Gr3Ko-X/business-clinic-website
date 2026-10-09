@@ -32,6 +32,9 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `${article.title} | India Business Clinic`,
     description: article.summary,
+    alternates: {
+      canonical: `/insights/${slug}`,
+    },
   };
 }
 

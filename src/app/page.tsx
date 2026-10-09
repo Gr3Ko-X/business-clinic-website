@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from "react";
 import Hero from "@/components/sections/Hero";
 import MarqueeSection from "@/components/sections/MarqueeSection";
@@ -12,6 +13,12 @@ import SolutionsWeOffer from "@/components/sections/SolutionsWeOffer";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import { Cpu, Laptop, Shield, ShieldCheck, Building2, Globe } from "lucide-react";
 import BtsLandingHero from "@/components/sections/BtsLandingHero";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
 

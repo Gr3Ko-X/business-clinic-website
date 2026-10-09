@@ -15,6 +15,9 @@ export const metadata = {
   title: "Privacy Policy | India Business Clinic",
   description:
     "Privacy Policy of Spuntech Solutions Pvt. Ltd. (India Business Clinic division) governing how we collect, use, store, protect, and disclose personal information.",
+  alternates: {
+    canonical: "/policy",
+  },
 };
 
 const sections = [

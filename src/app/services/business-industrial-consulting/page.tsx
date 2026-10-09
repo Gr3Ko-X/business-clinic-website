@@ -17,6 +17,9 @@ import {
 export const metadata = {
   title: "Business & Industrial Consulting | India Business Clinic",
   description: "Operational troubleshooting, manufacturing excellence, and business growth advisory for Indian MSMEs and global firms.",
+  alternates: {
+    canonical: "/services/business-industrial-consulting",
+  },
 };
 
 export default function BusinessIndustrialConsultingPage() {

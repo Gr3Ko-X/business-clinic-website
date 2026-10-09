@@ -6,6 +6,9 @@ import { Plane, Cpu, Zap, Settings, Rss, Activity, Check, ArrowRight } from "luc
 export const metadata = {
   title: "Industries We Serve | India Business Clinic",
   description: "Specialized industrial execution and technical advisory tailored across high-impact manufacturing sectors including Defence, Electronics, Power, Telecommunications and Power & Cutting Edge Technology.",
+  alternates: {
+    canonical: "/industries",
+  },
 };
 
 export default function IndustriesPage() {

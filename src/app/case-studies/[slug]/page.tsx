@@ -38,6 +38,9 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `${cs.title} ${cs.subtitle || ""} | India Business Clinic Case Study`,
     description: cs.summary,
+    alternates: {
+      canonical: `/case-studies/${slug}`,
+    },
   };
 }
 

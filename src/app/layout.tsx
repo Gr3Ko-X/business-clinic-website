@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Lora, Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
@@ -53,7 +54,26 @@ export default function RootLayout({
       className={`${lora.variable} ${outfit.variable} h-full antialiased`}
     >
       <head>
-        <link rel="canonical" href="https://www.indiabusinessclinic.com/" />
+        {/* Google tag (gtag.js) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-E5MBZC4BKL"
+        />
+        <Script
+          id="google-tag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-E5MBZC4BKL');
+              gtag('config', 'GT-NM8H9XZS');
+            `,
+          }}
+        />
+        {/* End Google tag */}
       </head>
       <body className="min-h-full flex flex-col bg-white text-slate-800">
         <Header />

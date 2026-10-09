@@ -6,6 +6,9 @@ import { ArrowRight, Shield, Anchor, Zap } from "lucide-react";
 export const metadata = {
   title: "Execution Case Studies | India Business Clinic",
   description: "Factual profiles of complex programs coordinated, set up, and validated under our leadership across defence, Navy, and industrial sectors.",
+  alternates: {
+    canonical: "/case-studies",
+  },
 };
 
 export default function CaseStudiesListPage() {
